@@ -8,12 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		0E2EF2E31C274DD200762053 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E21C274DD200762053 /* AppDelegate.swift */; };
-		0E2EF2E51C274DD200762053 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E41C274DD200762053 /* ViewController.swift */; };
+		0E2EF2E51C274DD200762053 /* SongListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E41C274DD200762053 /* SongListVC.swift */; };
 		0E2EF2E81C274DD200762053 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E61C274DD200762053 /* Main.storyboard */; };
 		0E2EF2EA1C274DD200762053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E91C274DD200762053 /* Assets.xcassets */; };
 		0E2EF2ED1C274DD200762053 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2EB1C274DD200762053 /* LaunchScreen.storyboard */; };
 		0E2EF2F81C274DD300762053 /* Caroling_CompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF2F71C274DD300762053 /* Caroling_CompanionTests.swift */; };
 		0E2EF3031C274DD300762053 /* Caroling_CompanionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF3021C274DD300762053 /* Caroling_CompanionUITests.swift */; };
+		0E2EF3111C2752C000762053 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF3101C2752C000762053 /* Song.swift */; };
+		0E2EF3151C2753B200762053 /* SongLyricsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF3141C2753B200762053 /* SongLyricsVC.swift */; };
+		0EFC6D961C27CAB5005EAB2F /* AwayInAManger.html in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC6D831C27CAB5005EAB2F /* AwayInAManger.html */; };
+		0EFC6D971C27CAB5005EAB2F /* DoYouHearWhatIHear.html in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC6D841C27CAB5005EAB2F /* DoYouHearWhatIHear.html */; };
+		0EFC6D981C27CAB5005EAB2F /* FrostyTheSnowman.html in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC6D851C27CAB5005EAB2F /* FrostyTheSnowman.html */; };
+		0EFC6D991C27CAB5005EAB2F /* HarkTheHarald.html in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC6D861C27CAB5005EAB2F /* HarkTheHarald.html */; };
+		0EFC6D9A1C27CAB5005EAB2F /* HaveYourselfAMerryLittleChristmas.html in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC6D871C27CAB5005EAB2F /* HaveYourselfAMerryLittleChristmas.html */; };
+		0EFC6D9B1C27CAB5005EAB2F /* HereComesSantaClaus.html in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC6D881C27CAB5005EAB2F /* HereComesSantaClaus.html */; };
+		0EFC6D9C1C27CAB5005EAB2F /* ItCameUponAMidnightClear.html in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC6D891C27CAB5005EAB2F /* ItCameUponAMidnightClear.html */; };
+		0EFC6D9D1C27CAB5005EAB2F /* JingleBells.html in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC6D8A1C27CAB5005EAB2F /* JingleBells.html */; };
+		0EFC6D9E1C27CAB5005EAB2F /* JoyToTheWorld.html in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC6D8B1C27CAB5005EAB2F /* JoyToTheWorld.html */; };
+		0EFC6D9F1C27CAB5005EAB2F /* LetItSnow.html in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC6D8C1C27CAB5005EAB2F /* LetItSnow.html */; };
+		0EFC6DA01C27CAB5005EAB2F /* LittleDrummer.html in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC6D8D1C27CAB5005EAB2F /* LittleDrummer.html */; };
+		0EFC6DA11C27CAB5005EAB2F /* OChristmasTree.html in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC6D8E1C27CAB5005EAB2F /* OChristmasTree.html */; };
+		0EFC6DA21C27CAB5005EAB2F /* OComeAllYeFaithful.html in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC6D8F1C27CAB5005EAB2F /* OComeAllYeFaithful.html */; };
+		0EFC6DA31C27CAB5005EAB2F /* RudolphTheRedNoseReindeer.html in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC6D901C27CAB5005EAB2F /* RudolphTheRedNoseReindeer.html */; };
+		0EFC6DA41C27CAB5005EAB2F /* SilentNight.html in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC6D911C27CAB5005EAB2F /* SilentNight.html */; };
+		0EFC6DA51C27CAB5005EAB2F /* SilverBells.html in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC6D921C27CAB5005EAB2F /* SilverBells.html */; };
+		0EFC6DA61C27CAB5005EAB2F /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC6D931C27CAB5005EAB2F /* style.css */; };
+		0EFC6DA71C27CAB5005EAB2F /* TheFirstNoel.html in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC6D941C27CAB5005EAB2F /* TheFirstNoel.html */; };
+		0EFC6DA81C27CAB5005EAB2F /* WinterWonderland.html in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC6D951C27CAB5005EAB2F /* WinterWonderland.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +57,7 @@
 /* Begin PBXFileReference section */
 		0E2EF2DF1C274DD200762053 /* Caroling Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Caroling Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2EF2E21C274DD200762053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0E2EF2E41C274DD200762053 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0E2EF2E41C274DD200762053 /* SongListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListVC.swift; sourceTree = "<group>"; };
 		0E2EF2E71C274DD200762053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E2EF2E91C274DD200762053 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E2EF2EC1C274DD200762053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +68,27 @@
 		0E2EF2FE1C274DD300762053 /* Caroling CompanionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Caroling CompanionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2EF3021C274DD300762053 /* Caroling_CompanionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caroling_CompanionUITests.swift; sourceTree = "<group>"; };
 		0E2EF3041C274DD300762053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E2EF3101C2752C000762053 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		0E2EF3141C2753B200762053 /* SongLyricsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongLyricsVC.swift; sourceTree = "<group>"; };
+		0EFC6D831C27CAB5005EAB2F /* AwayInAManger.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AwayInAManger.html; sourceTree = "<group>"; };
+		0EFC6D841C27CAB5005EAB2F /* DoYouHearWhatIHear.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = DoYouHearWhatIHear.html; sourceTree = "<group>"; };
+		0EFC6D851C27CAB5005EAB2F /* FrostyTheSnowman.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = FrostyTheSnowman.html; sourceTree = "<group>"; };
+		0EFC6D861C27CAB5005EAB2F /* HarkTheHarald.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = HarkTheHarald.html; sourceTree = "<group>"; };
+		0EFC6D871C27CAB5005EAB2F /* HaveYourselfAMerryLittleChristmas.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = HaveYourselfAMerryLittleChristmas.html; sourceTree = "<group>"; };
+		0EFC6D881C27CAB5005EAB2F /* HereComesSantaClaus.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = HereComesSantaClaus.html; sourceTree = "<group>"; };
+		0EFC6D891C27CAB5005EAB2F /* ItCameUponAMidnightClear.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ItCameUponAMidnightClear.html; sourceTree = "<group>"; };
+		0EFC6D8A1C27CAB5005EAB2F /* JingleBells.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = JingleBells.html; sourceTree = "<group>"; };
+		0EFC6D8B1C27CAB5005EAB2F /* JoyToTheWorld.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = JoyToTheWorld.html; sourceTree = "<group>"; };
+		0EFC6D8C1C27CAB5005EAB2F /* LetItSnow.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = LetItSnow.html; sourceTree = "<group>"; };
+		0EFC6D8D1C27CAB5005EAB2F /* LittleDrummer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = LittleDrummer.html; sourceTree = "<group>"; };
+		0EFC6D8E1C27CAB5005EAB2F /* OChristmasTree.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = OChristmasTree.html; sourceTree = "<group>"; };
+		0EFC6D8F1C27CAB5005EAB2F /* OComeAllYeFaithful.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = OComeAllYeFaithful.html; sourceTree = "<group>"; };
+		0EFC6D901C27CAB5005EAB2F /* RudolphTheRedNoseReindeer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RudolphTheRedNoseReindeer.html; sourceTree = "<group>"; };
+		0EFC6D911C27CAB5005EAB2F /* SilentNight.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = SilentNight.html; sourceTree = "<group>"; };
+		0EFC6D921C27CAB5005EAB2F /* SilverBells.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = SilverBells.html; sourceTree = "<group>"; };
+		0EFC6D931C27CAB5005EAB2F /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		0EFC6D941C27CAB5005EAB2F /* TheFirstNoel.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = TheFirstNoel.html; sourceTree = "<group>"; };
+		0EFC6D951C27CAB5005EAB2F /* WinterWonderland.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WinterWonderland.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +140,14 @@
 			isa = PBXGroup;
 			children = (
 				0E2EF2E21C274DD200762053 /* AppDelegate.swift */,
-				0E2EF2E41C274DD200762053 /* ViewController.swift */,
+				0E2EF2E41C274DD200762053 /* SongListVC.swift */,
+				0E2EF3141C2753B200762053 /* SongLyricsVC.swift */,
+				0E2EF3101C2752C000762053 /* Song.swift */,
 				0E2EF2E61C274DD200762053 /* Main.storyboard */,
 				0E2EF2E91C274DD200762053 /* Assets.xcassets */,
 				0E2EF2EB1C274DD200762053 /* LaunchScreen.storyboard */,
 				0E2EF2EE1C274DD200762053 /* Info.plist */,
+				0EFC6D821C27CAB5005EAB2F /* HTML Songs */,
 			);
 			path = "Caroling Companion";
 			sourceTree = "<group>";
@@ -123,6 +168,32 @@
 				0E2EF3041C274DD300762053 /* Info.plist */,
 			);
 			path = "Caroling CompanionUITests";
+			sourceTree = "<group>";
+		};
+		0EFC6D821C27CAB5005EAB2F /* HTML Songs */ = {
+			isa = PBXGroup;
+			children = (
+				0EFC6D831C27CAB5005EAB2F /* AwayInAManger.html */,
+				0EFC6D841C27CAB5005EAB2F /* DoYouHearWhatIHear.html */,
+				0EFC6D851C27CAB5005EAB2F /* FrostyTheSnowman.html */,
+				0EFC6D861C27CAB5005EAB2F /* HarkTheHarald.html */,
+				0EFC6D871C27CAB5005EAB2F /* HaveYourselfAMerryLittleChristmas.html */,
+				0EFC6D881C27CAB5005EAB2F /* HereComesSantaClaus.html */,
+				0EFC6D891C27CAB5005EAB2F /* ItCameUponAMidnightClear.html */,
+				0EFC6D8A1C27CAB5005EAB2F /* JingleBells.html */,
+				0EFC6D8B1C27CAB5005EAB2F /* JoyToTheWorld.html */,
+				0EFC6D8C1C27CAB5005EAB2F /* LetItSnow.html */,
+				0EFC6D8D1C27CAB5005EAB2F /* LittleDrummer.html */,
+				0EFC6D8E1C27CAB5005EAB2F /* OChristmasTree.html */,
+				0EFC6D8F1C27CAB5005EAB2F /* OComeAllYeFaithful.html */,
+				0EFC6D901C27CAB5005EAB2F /* RudolphTheRedNoseReindeer.html */,
+				0EFC6D911C27CAB5005EAB2F /* SilentNight.html */,
+				0EFC6D921C27CAB5005EAB2F /* SilverBells.html */,
+				0EFC6D931C27CAB5005EAB2F /* style.css */,
+				0EFC6D941C27CAB5005EAB2F /* TheFirstNoel.html */,
+				0EFC6D951C27CAB5005EAB2F /* WinterWonderland.html */,
+			);
+			path = "HTML Songs";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,8 +301,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E2EF2ED1C274DD200762053 /* LaunchScreen.storyboard in Resources */,
+				0EFC6D9C1C27CAB5005EAB2F /* ItCameUponAMidnightClear.html in Resources */,
+				0EFC6DA11C27CAB5005EAB2F /* OChristmasTree.html in Resources */,
+				0EFC6D961C27CAB5005EAB2F /* AwayInAManger.html in Resources */,
+				0EFC6DA41C27CAB5005EAB2F /* SilentNight.html in Resources */,
+				0EFC6D9A1C27CAB5005EAB2F /* HaveYourselfAMerryLittleChristmas.html in Resources */,
+				0EFC6D991C27CAB5005EAB2F /* HarkTheHarald.html in Resources */,
+				0EFC6D9F1C27CAB5005EAB2F /* LetItSnow.html in Resources */,
+				0EFC6DA21C27CAB5005EAB2F /* OComeAllYeFaithful.html in Resources */,
+				0EFC6DA31C27CAB5005EAB2F /* RudolphTheRedNoseReindeer.html in Resources */,
+				0EFC6D9D1C27CAB5005EAB2F /* JingleBells.html in Resources */,
+				0EFC6DA71C27CAB5005EAB2F /* TheFirstNoel.html in Resources */,
 				0E2EF2EA1C274DD200762053 /* Assets.xcassets in Resources */,
 				0E2EF2E81C274DD200762053 /* Main.storyboard in Resources */,
+				0EFC6D9B1C27CAB5005EAB2F /* HereComesSantaClaus.html in Resources */,
+				0EFC6D971C27CAB5005EAB2F /* DoYouHearWhatIHear.html in Resources */,
+				0EFC6DA01C27CAB5005EAB2F /* LittleDrummer.html in Resources */,
+				0EFC6DA81C27CAB5005EAB2F /* WinterWonderland.html in Resources */,
+				0EFC6D981C27CAB5005EAB2F /* FrostyTheSnowman.html in Resources */,
+				0EFC6DA61C27CAB5005EAB2F /* style.css in Resources */,
+				0EFC6D9E1C27CAB5005EAB2F /* JoyToTheWorld.html in Resources */,
+				0EFC6DA51C27CAB5005EAB2F /* SilverBells.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +346,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E2EF2E51C274DD200762053 /* ViewController.swift in Sources */,
+				0E2EF3111C2752C000762053 /* Song.swift in Sources */,
+				0E2EF2E51C274DD200762053 /* SongListVC.swift in Sources */,
 				0E2EF2E31C274DD200762053 /* AppDelegate.swift in Sources */,
+				0E2EF3151C2753B200762053 /* SongLyricsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +576,7 @@
 				0E2EF3091C274DD300762053 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0E2EF30A1C274DD300762053 /* Build configuration list for PBXNativeTarget "Caroling CompanionTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +585,7 @@
 				0E2EF30C1C274DD300762053 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0E2EF30D1C274DD300762053 /* Build configuration list for PBXNativeTarget "Caroling CompanionUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +594,7 @@
 				0E2EF30F1C274DD300762053 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
