@@ -264,6 +264,7 @@
 				TargetAttributes = {
 					0E2EF2DE1C274DD200762053 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = J2C764CY4K;
 					};
 					0E2EF2F21C274DD300762053 = {
 						CreatedOnToolsVersion = 7.2;
@@ -491,6 +492,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Caroling Companion/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "lt.chase.Caroling-Companion";
@@ -502,6 +504,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Caroling Companion/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "lt.chase.Caroling-Companion";
