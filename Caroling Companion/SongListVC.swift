@@ -27,92 +27,92 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let AwayInAManger = Song()
         AwayInAManger.name = "Away In A Manger"
-        AwayInAManger.file = "AwayInAManger"
+        AwayInAManger.lyrics = awayInAManger
         self.songs.append(AwayInAManger)
         
         let DoYouHearWhatIHear = Song()
         DoYouHearWhatIHear.name = "Do You Hear What I Hear"
-        DoYouHearWhatIHear.file = "DoYouHearWhatIHear"
+        DoYouHearWhatIHear.lyrics = doYouHearWhatIHear
         self.songs.append(DoYouHearWhatIHear)
         
         let FrostyTheSnowman = Song()
         FrostyTheSnowman.name = "Frosty The Snowman"
-        FrostyTheSnowman.file = "FrostyTheSnowman"
+        FrostyTheSnowman.lyrics = "FrostyTheSnowman"
         self.songs.append(FrostyTheSnowman)
         
         let HarkTheHarald = Song()
         HarkTheHarald.name = "Hark The Harald"
-        HarkTheHarald.file = "HarkTheHarald"
+        HarkTheHarald.lyrics = "HarkTheHarald"
         self.songs.append(HarkTheHarald)
         
         let HaveYourselfAMerryLittleChristmas = Song()
         HaveYourselfAMerryLittleChristmas.name = "Have Yourself A Merry Little Christmas"
-        HaveYourselfAMerryLittleChristmas.file = "HaveYourselfAMerryLittleChristmas"
+        HaveYourselfAMerryLittleChristmas.lyrics = "HaveYourselfAMerryLittleChristmas"
         self.songs.append(HaveYourselfAMerryLittleChristmas)
         
         let HereComesSantaClaus = Song()
         HereComesSantaClaus.name = "Here Comes Santa Claus"
-        HereComesSantaClaus.file = "HereComesSantaClaus"
+        HereComesSantaClaus.lyrics = "HereComesSantaClaus"
         self.songs.append(HereComesSantaClaus)
         
         let ItCameUponAMidnightClear = Song()
         ItCameUponAMidnightClear.name = "It Came Upon A Midnight Clear"
-        ItCameUponAMidnightClear.file = "ItCameUponAMidnightClear"
+        ItCameUponAMidnightClear.lyrics = "ItCameUponAMidnightClear"
         self.songs.append(ItCameUponAMidnightClear)
         
         let JingleBells = Song()
         JingleBells.name = "Jingle Bells"
-        JingleBells.file = "JingleBells"
+        JingleBells.lyrics = "JingleBells"
         self.songs.append(JingleBells)
         
         let JoyToTheWorld = Song()
         JoyToTheWorld.name = "Joy To The World"
-        JoyToTheWorld.file = "JoyToTheWorld"
+        JoyToTheWorld.lyrics = "JoyToTheWorld"
         self.songs.append(JoyToTheWorld)
         
         let LetItSnow = Song()
         LetItSnow.name = "Let It Snow"
-        LetItSnow.file = "LetItSnow"
+        LetItSnow.lyrics = "LetItSnow"
         self.songs.append(LetItSnow)
         
         let LittleDrummer = Song()
         LittleDrummer.name = "Little Drummer"
-        LittleDrummer.file = "LittleDrummer"
+        LittleDrummer.lyrics = "LittleDrummer"
         self.songs.append(LittleDrummer)
         
         let OChristmasTree = Song()
         OChristmasTree.name = "O Christmas Tree"
-        OChristmasTree.file = "OChristmasTree"
+        OChristmasTree.lyrics = "OChristmasTree"
         self.songs.append(OChristmasTree)
         
         let OComeAllYeFaithful = Song()
         OComeAllYeFaithful.name = "O Come All Ye Faithful"
-        OComeAllYeFaithful.file = "OComeAllYeFaithful"
+        OComeAllYeFaithful.lyrics = "OComeAllYeFaithful"
         self.songs.append(OComeAllYeFaithful)
         
         let RudolphTheRedNoseReindeer = Song()
         RudolphTheRedNoseReindeer.name = "Rudolph The Red Nose Reindeer"
-        RudolphTheRedNoseReindeer.file = "RudolphTheRedNoseReindeer"
+        RudolphTheRedNoseReindeer.lyrics = "RudolphTheRedNoseReindeer"
         self.songs.append(RudolphTheRedNoseReindeer)
         
         let SilentNight = Song()
         SilentNight.name = "Silent Night"
-        SilentNight.file = "SilentNight"
+        SilentNight.lyrics = "SilentNight"
         self.songs.append(SilentNight)
         
         let SilverBells = Song()
         SilverBells.name = "Silver Bells"
-        SilverBells.file = "SilverBells"
+        SilverBells.lyrics = "SilverBells"
         self.songs.append(SilverBells)
         
         let TheFirstNoel = Song()
         TheFirstNoel.name = "The First Noel"
-        TheFirstNoel.file = "TheFirstNoel"
+        TheFirstNoel.lyrics = "TheFirstNoel"
         self.songs.append(TheFirstNoel)
         
         let WinterWonderland = Song()
         WinterWonderland.name = "Winter Wonder land"
-        WinterWonderland.file = "WinterWonderland"
+        WinterWonderland.lyrics = "WinterWonderland"
         self.songs.append(WinterWonderland)
 
     }

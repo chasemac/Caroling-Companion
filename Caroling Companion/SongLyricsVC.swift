@@ -8,35 +8,41 @@
 
 import UIKit
 
+
+
 class SongLyricsVC: UIViewController {
     
-    @IBOutlet weak var webView: UIWebView!
     var song = Song()
+    
+    @IBOutlet weak var txtView: UITextView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       initText()
         
-        let localPath = NSBundle.mainBundle().URLForResource("\(song.file)", withExtension: "html")
-        let localRequest = NSURLRequest(URL: localPath!)
-        webView.loadRequest(localRequest)
+       txtView.text = song.lyrics
+
+    }
+    
+    func initText() {
+        txtView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "preferredContentSizeChanged:", name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        
+        // this bug still exists in iOS 9
+        txtView.scrollEnabled = false
+        txtView.scrollEnabled = true
+        txtView.scrollRectToVisible(CGRectMake(0, 0, 1, 1), animated: false)
+    }
+    
+    func preferredContentSizeChanged(notification: NSNotification) {
+        txtView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     
     
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

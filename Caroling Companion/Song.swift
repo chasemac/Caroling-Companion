@@ -10,5 +10,5 @@ import UIKit
 
 class Song {
     var name = ""
-    var file = ""
+    var lyrics = ""
 }
