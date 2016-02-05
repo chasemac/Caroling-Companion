@@ -38,21 +38,3 @@ let theFirstNoel = "THE FIRST NOEL \n  \n The First Noel the angel did say \n Wa
 
 let winterWonderland = "WINTER WONDERLAND \n  \n Sleigh bells ring \n are you listening \n in the lane \n snow is glistening \n A beautiful sight \n we're happy tonight \n walking in a winter wonderland \n  \n Gone away is the bluebird \n here to stay is a new bird \n He sings a love song \n as we go along \n walking in a winter wonderland \n  \n In the meadow we can build a snowman \n Then pretend that he is Parson Brown \n He'll say: Are you married? \n we'll say: No man \n But you can do the job \n when you're in town \n  \n Later on \n we'll conspire \n as we dream by the fire \n To face unafraid \n the plans that we've made \n walking in a winter wonderland \n  \n In the meadow we can build a snowman \n and pretend that he's a circus clown \n We'll have lots of fun with mister snowman \n until the the other kids knock him down \n  \n When it snows \n ain't it thrilling \n Though your nose gets a chilling \n We'll frolic and play \n the Eskimo way \n walking in a winter wonderland \n  \n Walking in a winter wonderland \n walking in a winter wonderland"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

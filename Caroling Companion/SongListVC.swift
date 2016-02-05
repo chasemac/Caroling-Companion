@@ -21,6 +21,7 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
     }
     
     func createSongs() {
