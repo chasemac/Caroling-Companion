@@ -71,7 +71,7 @@
 		0E2EF3041C274DD300762053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E2EF3101C2752C000762053 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		0E2EF3141C2753B200762053 /* SongLyricsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongLyricsVC.swift; sourceTree = "<group>"; };
-		0EB2076A1C6412B800B6C5A1 /* Songs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Songs.swift; sourceTree = "<group>"; };
+		0EB2076A1C6412B800B6C5A1 /* Songs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Songs.swift; path = Songs/Songs.swift; sourceTree = "<group>"; };
 		0EFC6D831C27CAB5005EAB2F /* AwayInAManger.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AwayInAManger.html; sourceTree = "<group>"; };
 		0EFC6D841C27CAB5005EAB2F /* DoYouHearWhatIHear.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = DoYouHearWhatIHear.html; sourceTree = "<group>"; };
 		0EFC6D851C27CAB5005EAB2F /* FrostyTheSnowman.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = FrostyTheSnowman.html; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 				0E2EF2E91C274DD200762053 /* Assets.xcassets */,
 				0E2EF2EB1C274DD200762053 /* LaunchScreen.storyboard */,
 				0E2EF2EE1C274DD200762053 /* Info.plist */,
-				0EB207691C6412B800B6C5A1 /* Songs */,
+				0EB2076A1C6412B800B6C5A1 /* Songs.swift */,
 				0EFC6D821C27CAB5005EAB2F /* HTML Songs */,
 			);
 			path = "Caroling Companion";
@@ -171,14 +171,6 @@
 				0E2EF3041C274DD300762053 /* Info.plist */,
 			);
 			path = "Caroling CompanionUITests";
-			sourceTree = "<group>";
-		};
-		0EB207691C6412B800B6C5A1 /* Songs */ = {
-			isa = PBXGroup;
-			children = (
-				0EB2076A1C6412B800B6C5A1 /* Songs.swift */,
-			);
-			path = Songs;
 			sourceTree = "<group>";
 		};
 		0EFC6D821C27CAB5005EAB2F /* HTML Songs */ = {
