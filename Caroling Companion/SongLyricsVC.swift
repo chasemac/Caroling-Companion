@@ -40,9 +40,6 @@ class SongLyricsVC: UIViewController {
         txtView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         
     }
-
-
-    
-    
+  
     
 }
