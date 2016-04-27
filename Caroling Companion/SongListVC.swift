@@ -19,7 +19,6 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,7 +27,8 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        let songName = self.songs[indexPath.row]
+        let sortedSongs = songs.sort { $0 < $1 }
+        let songName = sortedSongs[indexPath.row]
         cell.textLabel!.text = songName
         return cell
     }
