@@ -36,7 +36,6 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let songLyrics = songsDict[self.songs[indexPath.row]]
-        print(indexPath.row)
         self.performSegueWithIdentifier("detailSegue", sender: songLyrics)
     }
     
