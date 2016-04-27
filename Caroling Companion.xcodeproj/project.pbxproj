@@ -14,7 +14,6 @@
 		0E2EF2ED1C274DD200762053 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2EB1C274DD200762053 /* LaunchScreen.storyboard */; };
 		0E2EF2F81C274DD300762053 /* Caroling_CompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF2F71C274DD300762053 /* Caroling_CompanionTests.swift */; };
 		0E2EF3031C274DD300762053 /* Caroling_CompanionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF3021C274DD300762053 /* Caroling_CompanionUITests.swift */; };
-		0E2EF3111C2752C000762053 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF3101C2752C000762053 /* Song.swift */; };
 		0E2EF3151C2753B200762053 /* SongLyricsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF3141C2753B200762053 /* SongLyricsVC.swift */; };
 		0EB2076B1C6412B800B6C5A1 /* Songs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB2076A1C6412B800B6C5A1 /* Songs.swift */; };
 /* End PBXBuildFile section */
@@ -50,7 +49,6 @@
 		0E2EF2FE1C274DD300762053 /* Caroling CompanionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Caroling CompanionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2EF3021C274DD300762053 /* Caroling_CompanionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caroling_CompanionUITests.swift; sourceTree = "<group>"; };
 		0E2EF3041C274DD300762053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E2EF3101C2752C000762053 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		0E2EF3141C2753B200762053 /* SongLyricsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongLyricsVC.swift; sourceTree = "<group>"; };
 		0EB2076A1C6412B800B6C5A1 /* Songs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Songs.swift; path = Songs/Songs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,10 +101,8 @@
 		0E2EF2E11C274DD200762053 /* Caroling Companion */ = {
 			isa = PBXGroup;
 			children = (
+				0ED558311CCEEE44008C0B3E /* Controller */,
 				0E2EF2E21C274DD200762053 /* AppDelegate.swift */,
-				0E2EF2E41C274DD200762053 /* SongListVC.swift */,
-				0E2EF3141C2753B200762053 /* SongLyricsVC.swift */,
-				0E2EF3101C2752C000762053 /* Song.swift */,
 				0EB2076A1C6412B800B6C5A1 /* Songs.swift */,
 				0E2EF2E61C274DD200762053 /* Main.storyboard */,
 				0E2EF2E91C274DD200762053 /* Assets.xcassets */,
@@ -132,6 +128,15 @@
 				0E2EF3041C274DD300762053 /* Info.plist */,
 			);
 			path = "Caroling CompanionUITests";
+			sourceTree = "<group>";
+		};
+		0ED558311CCEEE44008C0B3E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0E2EF2E41C274DD200762053 /* SongListVC.swift */,
+				0E2EF3141C2753B200762053 /* SongLyricsVC.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +271,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E2EF3111C2752C000762053 /* Song.swift in Sources */,
 				0E2EF2E51C274DD200762053 /* SongListVC.swift in Sources */,
 				0EB2076B1C6412B800B6C5A1 /* Songs.swift in Sources */,
 				0E2EF2E31C274DD200762053 /* AppDelegate.swift in Sources */,

@@ -12,7 +12,7 @@ import UIKit
 
 class SongLyricsVC: UIViewController {
     
-    var song = Song()
+    var song = ""
     
     @IBOutlet weak var txtView: UITextView!
 
@@ -21,14 +21,14 @@ class SongLyricsVC: UIViewController {
         super.viewDidLoad()
        initText()
         
-       txtView.text = song.lyrics
+       txtView.text = song
 
     }
     
     func initText() {
         txtView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "preferredContentSizeChanged:", name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SongLyricsVC.preferredContentSizeChanged(_:)), name: UIContentSizeCategoryDidChangeNotification, object: nil)
         
         // this bug still exists in iOS 9
         txtView.scrollEnabled = false
