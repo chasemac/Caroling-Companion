@@ -106,6 +106,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "Caroling Companion"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

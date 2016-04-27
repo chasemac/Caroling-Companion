@@ -12,7 +12,8 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var songs: [String] = Array(songsDict.keys)
+    var songs: [String] = Array(songsDict.keys).sort { $0 < $1 }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +28,7 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        let sortedSongs = songs.sort { $0 < $1 }
-        let songName = sortedSongs[indexPath.row]
+        let songName = songs[indexPath.row]
         cell.textLabel!.text = songName
         return cell
     }
@@ -36,6 +36,7 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let songLyrics = songsDict[self.songs[indexPath.row]]
+        print(indexPath.row)
         self.performSegueWithIdentifier("detailSegue", sender: songLyrics)
     }
     
