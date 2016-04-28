@@ -22,15 +22,26 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.tableView.delegate = self
     }
     
+//    override func viewDidAppear(animated: Bool) {
+//        tableView.reloadData()
+//    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.songs.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        let songName = songs[indexPath.row]
-        cell.textLabel!.text = songName
-        return cell
+        
+        if let cell = tableView.dequeueReusableCellWithIdentifier("SongCell", forIndexPath: indexPath) as? SongCell {
+            let songName = songs[indexPath.row]
+            cell.configureCell(songName)
+            return cell
+        } else {
+            print("error")
+           return SongCell()
+            
+        }
+        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
