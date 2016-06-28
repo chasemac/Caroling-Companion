@@ -23,9 +23,6 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         self.tableView.delegate = self
     }
     
-//    override func viewDidAppear(animated: Bool) {
-//        tableView.reloadData()
-//    }
     
     func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool {
         return true

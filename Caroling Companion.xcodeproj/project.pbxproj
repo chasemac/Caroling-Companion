@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E10D3411D232837005A41FB /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E10D3401D232837005A41FB /* Song.swift */; };
 		0E2EF2E31C274DD200762053 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E21C274DD200762053 /* AppDelegate.swift */; };
 		0E2EF2E51C274DD200762053 /* SongListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E41C274DD200762053 /* SongListVC.swift */; };
 		0E2EF2E81C274DD200762053 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E61C274DD200762053 /* Main.storyboard */; };
@@ -24,7 +25,7 @@
 		0E8F09981CD2B5CB00CF771E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09971CD2B5CB00CF771E /* Constants.swift */; };
 		0E8F09991CD2B5CB00CF771E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09971CD2B5CB00CF771E /* Constants.swift */; };
 		0E8F099A1CD2B5CB00CF771E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09971CD2B5CB00CF771E /* Constants.swift */; };
-		0EB2076B1C6412B800B6C5A1 /* SongsDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB2076A1C6412B800B6C5A1 /* SongsDict.swift */; };
+		0EB2076B1C6412B800B6C5A1 /* Songs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB2076A1C6412B800B6C5A1 /* Songs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E10D3401D232837005A41FB /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Song.swift; path = ../Song.swift; sourceTree = "<group>"; };
 		0E2EF2DF1C274DD200762053 /* Caroling Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Caroling Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2EF2E21C274DD200762053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E2EF2E41C274DD200762053 /* SongListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListVC.swift; sourceTree = "<group>"; };
@@ -62,7 +64,7 @@
 		0E8F098F1CD29BB600CF771E /* SongCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
 		0E8F09931CD2B5A000CF771E /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		0E8F09971CD2B5CB00CF771E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		0EB2076A1C6412B800B6C5A1 /* SongsDict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SongsDict.swift; path = Songs/SongsDict.swift; sourceTree = "<group>"; };
+		0EB2076A1C6412B800B6C5A1 /* Songs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Songs.swift; path = Songs/Songs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,15 +115,16 @@
 		0E2EF2E11C274DD200762053 /* Caroling Companion */ = {
 			isa = PBXGroup;
 			children = (
+				0E8F09971CD2B5CB00CF771E /* Constants.swift */,
 				0E8F098E1CD29B8B00CF771E /* View */,
 				0ED558311CCEEE44008C0B3E /* Controller */,
 				0E2EF2E21C274DD200762053 /* AppDelegate.swift */,
-				0EB2076A1C6412B800B6C5A1 /* SongsDict.swift */,
+				0E10D3401D232837005A41FB /* Song.swift */,
+				0EB2076A1C6412B800B6C5A1 /* Songs.swift */,
 				0E2EF2E61C274DD200762053 /* Main.storyboard */,
 				0E2EF2E91C274DD200762053 /* Assets.xcassets */,
 				0E2EF2EB1C274DD200762053 /* LaunchScreen.storyboard */,
 				0E2EF2EE1C274DD200762053 /* Info.plist */,
-				0E8F09971CD2B5CB00CF771E /* Constants.swift */,
 			);
 			path = "Caroling Companion";
 			sourceTree = "<group>";
@@ -295,9 +298,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E2EF2E51C274DD200762053 /* SongListVC.swift in Sources */,
-				0EB2076B1C6412B800B6C5A1 /* SongsDict.swift in Sources */,
+				0EB2076B1C6412B800B6C5A1 /* Songs.swift in Sources */,
 				0E2EF2E31C274DD200762053 /* AppDelegate.swift in Sources */,
 				0E8F09941CD2B5A000CF771E /* MaterialView.swift in Sources */,
+				0E10D3411D232837005A41FB /* Song.swift in Sources */,
 				0E8F09981CD2B5CB00CF771E /* Constants.swift in Sources */,
 				0E8F09901CD29BB600CF771E /* SongCell.swift in Sources */,
 				0E2EF3151C2753B200762053 /* SongLyricsVC.swift in Sources */,
