@@ -1,0 +1,6 @@
+framework module Pods_Caroling_CompanionTests {
+  umbrella header "Pods-Caroling CompanionTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
