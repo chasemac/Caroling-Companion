@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISplitViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -26,6 +26,10 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //    override func viewDidAppear(animated: Bool) {
 //        tableView.reloadData()
 //    }
+    
+    func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool {
+        return true
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.songs.count

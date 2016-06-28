@@ -13,8 +13,10 @@ import UIKit
 class SongLyricsVC: UIViewController {
     
     var song = ""
+    var songTitle = ""
     
     @IBOutlet weak var txtView: UITextView!
+    @IBOutlet weak var titleTxtView: UITextView!
 
     
     override func viewDidLoad() {
@@ -22,6 +24,7 @@ class SongLyricsVC: UIViewController {
        initText()
         
        txtView.text = song
+        titleTxtView.text = songTitle
 
     }
     

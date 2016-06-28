@@ -152,28 +152,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dxW-RS-sep">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="109" width="600" height="491"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Title of Christmas Song" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="A6D-Vv-mEj">
+                                <rect key="frame" x="0.0" y="64" width="600" height="45"/>
+                                <color key="backgroundColor" red="0.87450980389999999" green="0.87843137250000003" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="5O2-3M-Wt4"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="A6D-Vv-mEj" firstAttribute="top" secondItem="200-WV-s29" secondAttribute="bottom" id="FVI-4i-yiP"/>
                             <constraint firstItem="eVS-hI-XLG" firstAttribute="top" secondItem="dxW-RS-sep" secondAttribute="bottom" id="IX6-XZ-YFY"/>
+                            <constraint firstItem="A6D-Vv-mEj" firstAttribute="leading" secondItem="kQ5-iD-2pc" secondAttribute="leading" id="Qlt-Ei-S2V"/>
+                            <constraint firstItem="dxW-RS-sep" firstAttribute="top" secondItem="A6D-Vv-mEj" secondAttribute="bottom" id="eHr-Qp-ozQ"/>
                             <constraint firstItem="dxW-RS-sep" firstAttribute="trailing" secondItem="kQ5-iD-2pc" secondAttribute="trailingMargin" constant="20" id="hld-VM-ZU2"/>
-                            <constraint firstItem="dxW-RS-sep" firstAttribute="top" secondItem="200-WV-s29" secondAttribute="bottom" id="sto-M5-dbl"/>
+                            <constraint firstItem="dxW-RS-sep" firstAttribute="top" secondItem="200-WV-s29" secondAttribute="bottom" constant="40" id="sto-M5-dbl"/>
                             <constraint firstItem="dxW-RS-sep" firstAttribute="top" secondItem="200-WV-s29" secondAttribute="bottom" id="vkl-mt-vFe"/>
                             <constraint firstItem="dxW-RS-sep" firstAttribute="leading" secondItem="kQ5-iD-2pc" secondAttribute="leadingMargin" constant="-20" id="x4F-qM-Yat"/>
+                            <constraint firstAttribute="trailing" secondItem="A6D-Vv-mEj" secondAttribute="trailing" id="zo7-kV-FiY"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="sto-M5-dbl"/>
                                 <exclude reference="vkl-mt-vFe"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="titleTxtView" destination="A6D-Vv-mEj" id="lDz-5M-8r8"/>
                         <outlet property="txtView" destination="dxW-RS-sep" id="nA8-rr-RX4"/>
                     </connections>
                 </viewController>
