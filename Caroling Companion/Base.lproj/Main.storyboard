@@ -159,17 +159,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Title of Christmas Song" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="A6D-Vv-mEj">
-                                <rect key="frame" x="0.0" y="64" width="600" height="45"/>
-                                <color key="backgroundColor" red="0.87450980389999999" green="0.87843137250000003" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="5O2-3M-Wt4"/>
-                                </constraints>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Song lyrics singing singing Christmas wooo!!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dxW-RS-sep">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Song lyrics singing singing Christmas wooo!!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dxW-RS-sep">
                                 <rect key="frame" x="20" y="117" width="560" height="383"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -187,22 +177,28 @@
                                     <constraint firstAttribute="width" priority="10" constant="160" id="7R3-tx-A5n"/>
                                 </constraints>
                             </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PF0-h7-ih7">
+                                <rect key="frame" x="0.0" y="72" width="600" height="27.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="23"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dxW-RS-sep" firstAttribute="top" secondItem="PF0-h7-ih7" secondAttribute="bottom" constant="8" id="0WJ-oX-6fm"/>
                             <constraint firstItem="j43-WJ-BUp" firstAttribute="centerX" secondItem="kQ5-iD-2pc" secondAttribute="centerX" id="0c9-fg-byP"/>
-                            <constraint firstItem="A6D-Vv-mEj" firstAttribute="top" secondItem="200-WV-s29" secondAttribute="bottom" id="FVI-4i-yiP"/>
+                            <constraint firstItem="PF0-h7-ih7" firstAttribute="leading" secondItem="kQ5-iD-2pc" secondAttribute="leading" id="1K7-4W-mX1"/>
+                            <constraint firstAttribute="trailing" secondItem="PF0-h7-ih7" secondAttribute="trailing" id="FS1-5y-uNf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dxW-RS-sep" secondAttribute="trailing" id="OYe-de-fsW"/>
-                            <constraint firstItem="A6D-Vv-mEj" firstAttribute="leading" secondItem="kQ5-iD-2pc" secondAttribute="leading" id="Qlt-Ei-S2V"/>
-                            <constraint firstItem="dxW-RS-sep" firstAttribute="top" secondItem="A6D-Vv-mEj" secondAttribute="bottom" constant="8" id="Ug9-KN-ZpK"/>
                             <constraint firstItem="j43-WJ-BUp" firstAttribute="top" secondItem="dxW-RS-sep" secondAttribute="bottom" constant="8" id="nv6-He-SqU"/>
                             <constraint firstAttribute="leadingMargin" secondItem="dxW-RS-sep" secondAttribute="leading" id="tUj-1l-3yH"/>
+                            <constraint firstItem="PF0-h7-ih7" firstAttribute="top" secondItem="200-WV-s29" secondAttribute="bottom" constant="8" id="uVi-x3-hLn"/>
                             <constraint firstItem="eVS-hI-XLG" firstAttribute="top" secondItem="j43-WJ-BUp" secondAttribute="bottom" constant="2" id="wuB-1Q-ZkZ"/>
-                            <constraint firstAttribute="trailing" secondItem="A6D-Vv-mEj" secondAttribute="trailing" id="zo7-kV-FiY"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="titleTxtView" destination="A6D-Vv-mEj" id="lDz-5M-8r8"/>
+                        <outlet property="songTitle" destination="PF0-h7-ih7" id="AoB-2O-mEt"/>
                         <outlet property="txtView" destination="dxW-RS-sep" id="nA8-rr-RX4"/>
                         <outlet property="videoView" destination="j43-WJ-BUp" id="Bkl-n0-td9"/>
                     </connections>

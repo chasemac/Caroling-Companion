@@ -17,7 +17,9 @@ class SongLyricsVC: UIViewController {
     var song = [:]
     
     @IBOutlet weak var txtView: UITextView!
-    @IBOutlet weak var titleTxtView: UITextView!
+    @IBOutlet weak var songTitle: UILabel!
+
+
     @IBOutlet weak var videoView: UIWebView!
 
     
@@ -26,7 +28,7 @@ class SongLyricsVC: UIViewController {
        initText()
         
        txtView.text = song[Constants.SongFields.lyrics] as! String!
-        titleTxtView.text = song[Constants.SongFields.title] as! String!
+        songTitle.text = song[Constants.SongFields.title] as! String!
 
         
         let youtubeURL = song[Constants.SongFields.videoUrl] as! String!
