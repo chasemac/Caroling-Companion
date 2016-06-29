@@ -15,8 +15,6 @@ import Firebase
 class SongLyricsVC: UIViewController {
     
     var song = [:]
-
-    
     
     @IBOutlet weak var txtView: UITextView!
     @IBOutlet weak var titleTxtView: UITextView!
@@ -29,6 +27,7 @@ class SongLyricsVC: UIViewController {
         
        txtView.text = song[Constants.SongFields.lyrics] as! String!
         titleTxtView.text = song[Constants.SongFields.title] as! String!
+
         
         let youtubeURL = song[Constants.SongFields.videoUrl] as! String!
         

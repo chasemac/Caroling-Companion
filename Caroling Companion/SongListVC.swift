@@ -4,7 +4,6 @@
 //
 //  Created by Chase McElroy on 12/20/15.
 //  Copyright © 2015 Chase McElroy. All rights reserved.
-//
 
 import UIKit
 import Firebase
@@ -12,9 +11,6 @@ import Firebase
 class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISplitViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-
-    
-    var songs: [String] = Array(songsDict.keys).sort { $0 < $1 }
     
     var ref: FIRDatabaseReference!
     private var _refHandle: FIRDatabaseHandle!
@@ -42,14 +38,9 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         })
     }
     
-    override func viewWillAppear(animated: Bool) {
-        
-    }
-    
     override func viewWillDisappear(animated: Bool) {
         self.ref.removeObserverWithHandle(_refHandle)
     }
-    
     
     func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool {
         return true
@@ -68,9 +59,6 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
 
             let title = song[Constants.SongFields.title] as String!
             
-       //     let songName = songs[indexPath.row]
-        
-            
             cell.configureCell(title)
             return cell
         } else {
@@ -78,19 +66,14 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
            return SongCell()
             
         }
-        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        
         // Unpack message from Firebase DataSnapshot
         let songSnapshot: FIRDataSnapshot! = self.songsF[indexPath.row]
         let song = songSnapshot.value as! Dictionary<String, String>
-        print(song)
-        
-
         
         self.performSegueWithIdentifier("detailSegue", sender: song)
     }
@@ -98,9 +81,6 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let detailVC = segue.destinationViewController as! SongLyricsVC
         detailVC.song = sender as! NSDictionary
-        
     }
-    
-
 }
 
