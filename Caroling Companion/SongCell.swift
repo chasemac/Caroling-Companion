@@ -23,8 +23,8 @@ class SongCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(songName: String) {
-     songNameLabel.text = songName
+    func configureCell(title: String) {
+     songNameLabel.text = title
     }
 
 }

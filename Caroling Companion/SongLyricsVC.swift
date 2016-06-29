@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import Firebase
+
 
 
 
 class SongLyricsVC: UIViewController {
     
-    var song = ""
-    var songTitle = ""
+    var song = [:]
+
+    
     
     @IBOutlet weak var txtView: UITextView!
     @IBOutlet weak var titleTxtView: UITextView!
@@ -24,16 +27,20 @@ class SongLyricsVC: UIViewController {
         super.viewDidLoad()
        initText()
         
-       txtView.text = song
-        titleTxtView.text = songTitle
+       txtView.text = song[Constants.SongFields.lyrics] as! String!
+        titleTxtView.text = song[Constants.SongFields.title] as! String!
         
-        let youtubeURL = "https://www.youtube.com/embed/Z8vhMH2Irn0"
+        let youtubeURL = song[Constants.SongFields.videoUrl] as! String!
         
         videoView.allowsInlineMediaPlayback = true
         
         videoView.loadHTMLString("<iframe width=\"\(videoView.frame.width)\" height=\"\(videoView.frame.height)\" src=\"\(youtubeURL)?&playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
+        
+        
 
     }
+    
+
     
     func initText() {
         txtView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)

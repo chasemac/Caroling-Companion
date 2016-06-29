@@ -9,4 +9,16 @@
 import Foundation
 import UIKit
 
+
+
 let SHADOW_COLOR: CGFloat = 157.0 / 255.0
+
+
+struct Constants {
+    
+    struct SongFields {
+        static let title = "title"
+        static let lyrics = "lyrics"
+        static let videoUrl = "video"
+    }
+}
