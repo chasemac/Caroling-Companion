@@ -11,3 +11,6 @@ Christmas Caroling Lyrics iPhone App
 Caroling companion was created to spread joy to the world one song at a time.
 
 - Chase
+
+Uses Google's Firebase Database for storage of song titles, lyrics, and video URL's.
+The same data is used on http://carolingcompanion.com/ the site I created with Ember.JS.
