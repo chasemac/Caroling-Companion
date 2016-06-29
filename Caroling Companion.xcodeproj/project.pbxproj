@@ -15,7 +15,21 @@
 		0E2EF2F81C274DD300762053 /* Caroling_CompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF2F71C274DD300762053 /* Caroling_CompanionTests.swift */; };
 		0E2EF3031C274DD300762053 /* Caroling_CompanionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF3021C274DD300762053 /* Caroling_CompanionUITests.swift */; };
 		0E2EF3151C2753B200762053 /* SongLyricsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF3141C2753B200762053 /* SongLyricsVC.swift */; };
-		0EB2076B1C6412B800B6C5A1 /* Songs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB2076A1C6412B800B6C5A1 /* Songs.swift */; };
+		0E5A4C8C1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */; };
+		0E5A4C8D1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */; };
+		0E5A4C8E1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */; };
+		0E8F09901CD29BB600CF771E /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F098F1CD29BB600CF771E /* SongCell.swift */; };
+		0E8F09911CD29BB600CF771E /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F098F1CD29BB600CF771E /* SongCell.swift */; };
+		0E8F09921CD29BB600CF771E /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F098F1CD29BB600CF771E /* SongCell.swift */; };
+		0E8F09941CD2B5A000CF771E /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09931CD2B5A000CF771E /* MaterialView.swift */; };
+		0E8F09951CD2B5A000CF771E /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09931CD2B5A000CF771E /* MaterialView.swift */; };
+		0E8F09961CD2B5A000CF771E /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09931CD2B5A000CF771E /* MaterialView.swift */; };
+		0E8F09981CD2B5CB00CF771E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09971CD2B5CB00CF771E /* Constants.swift */; };
+		0E8F09991CD2B5CB00CF771E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09971CD2B5CB00CF771E /* Constants.swift */; };
+		0E8F099A1CD2B5CB00CF771E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09971CD2B5CB00CF771E /* Constants.swift */; };
+		1884AC98B239FF6B40531B5F /* Pods_Caroling_CompanionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAAD88E628E3FEA0F7FDD16 /* Pods_Caroling_CompanionUITests.framework */; };
+		529ECB0E09B07D2817BB6536 /* Pods_Caroling_CompanionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5F8E4323D460A1169A2528E /* Pods_Caroling_CompanionTests.framework */; };
+		ED128F58D8670ED985D19B2F /* Pods_Caroling_Companion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F239E4E11B507DF3AE0D5AF /* Pods_Caroling_Companion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +64,19 @@
 		0E2EF3021C274DD300762053 /* Caroling_CompanionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caroling_CompanionUITests.swift; sourceTree = "<group>"; };
 		0E2EF3041C274DD300762053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E2EF3141C2753B200762053 /* SongLyricsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongLyricsVC.swift; sourceTree = "<group>"; };
-		0EB2076A1C6412B800B6C5A1 /* Songs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Songs.swift; path = Songs/Songs.swift; sourceTree = "<group>"; };
+		0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0E8F098F1CD29BB600CF771E /* SongCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
+		0E8F09931CD2B5A000CF771E /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		0E8F09971CD2B5CB00CF771E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		139E4C9C9FF2D31426683A48 /* Pods-Caroling CompanionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caroling CompanionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Caroling CompanionTests/Pods-Caroling CompanionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1FAAD88E628E3FEA0F7FDD16 /* Pods_Caroling_CompanionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Caroling_CompanionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F1A323237DEE42C9A5F03C7 /* Pods-Caroling CompanionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caroling CompanionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Caroling CompanionTests/Pods-Caroling CompanionTests.release.xcconfig"; sourceTree = "<group>"; };
+		2F239E4E11B507DF3AE0D5AF /* Pods_Caroling_Companion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Caroling_Companion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44EFE6C23538FAB6AC36543C /* Pods-Caroling CompanionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caroling CompanionUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Caroling CompanionUITests/Pods-Caroling CompanionUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A90FF3EB68EE7626C211FB7 /* Pods-Caroling Companion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caroling Companion.release.xcconfig"; path = "Pods/Target Support Files/Pods-Caroling Companion/Pods-Caroling Companion.release.xcconfig"; sourceTree = "<group>"; };
+		8CC439CFE3E7102455F3E8DB /* Pods-Caroling Companion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caroling Companion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Caroling Companion/Pods-Caroling Companion.debug.xcconfig"; sourceTree = "<group>"; };
+		DF58722DD22BFF50DBBDAD47 /* Pods-Caroling CompanionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caroling CompanionUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Caroling CompanionUITests/Pods-Caroling CompanionUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F5F8E4323D460A1169A2528E /* Pods_Caroling_CompanionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Caroling_CompanionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED128F58D8670ED985D19B2F /* Pods_Caroling_Companion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				529ECB0E09B07D2817BB6536 /* Pods_Caroling_CompanionTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1884AC98B239FF6B40531B5F /* Pods_Caroling_CompanionUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +114,8 @@
 				0E2EF2F61C274DD300762053 /* Caroling CompanionTests */,
 				0E2EF3011C274DD300762053 /* Caroling CompanionUITests */,
 				0E2EF2E01C274DD200762053 /* Products */,
+				E89E415390DBD8523FF5E629 /* Pods */,
+				1094CDB9BD9E31BC23C76C64 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,13 +132,15 @@
 		0E2EF2E11C274DD200762053 /* Caroling Companion */ = {
 			isa = PBXGroup;
 			children = (
+				0E8F09971CD2B5CB00CF771E /* Constants.swift */,
+				0E8F098E1CD29B8B00CF771E /* View */,
 				0ED558311CCEEE44008C0B3E /* Controller */,
 				0E2EF2E21C274DD200762053 /* AppDelegate.swift */,
-				0EB2076A1C6412B800B6C5A1 /* Songs.swift */,
 				0E2EF2E61C274DD200762053 /* Main.storyboard */,
 				0E2EF2E91C274DD200762053 /* Assets.xcassets */,
 				0E2EF2EB1C274DD200762053 /* LaunchScreen.storyboard */,
 				0E2EF2EE1C274DD200762053 /* Info.plist */,
+				0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */,
 			);
 			path = "Caroling Companion";
 			sourceTree = "<group>";
@@ -130,6 +163,15 @@
 			path = "Caroling CompanionUITests";
 			sourceTree = "<group>";
 		};
+		0E8F098E1CD29B8B00CF771E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0E8F098F1CD29BB600CF771E /* SongCell.swift */,
+				0E8F09931CD2B5A000CF771E /* MaterialView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		0ED558311CCEEE44008C0B3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +181,29 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		1094CDB9BD9E31BC23C76C64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F239E4E11B507DF3AE0D5AF /* Pods_Caroling_Companion.framework */,
+				F5F8E4323D460A1169A2528E /* Pods_Caroling_CompanionTests.framework */,
+				1FAAD88E628E3FEA0F7FDD16 /* Pods_Caroling_CompanionUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E89E415390DBD8523FF5E629 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8CC439CFE3E7102455F3E8DB /* Pods-Caroling Companion.debug.xcconfig */,
+				4A90FF3EB68EE7626C211FB7 /* Pods-Caroling Companion.release.xcconfig */,
+				139E4C9C9FF2D31426683A48 /* Pods-Caroling CompanionTests.debug.xcconfig */,
+				2F1A323237DEE42C9A5F03C7 /* Pods-Caroling CompanionTests.release.xcconfig */,
+				44EFE6C23538FAB6AC36543C /* Pods-Caroling CompanionUITests.debug.xcconfig */,
+				DF58722DD22BFF50DBBDAD47 /* Pods-Caroling CompanionUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,9 +211,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E2EF3071C274DD300762053 /* Build configuration list for PBXNativeTarget "Caroling Companion" */;
 			buildPhases = (
+				0427BDEB44A85AF6D237A6AC /* [CP] Check Pods Manifest.lock */,
 				0E2EF2DB1C274DD200762053 /* Sources */,
 				0E2EF2DC1C274DD200762053 /* Frameworks */,
 				0E2EF2DD1C274DD200762053 /* Resources */,
+				6D94B341B1AE2B307565A646 /* [CP] Embed Pods Frameworks */,
+				43B19E1589BC38E7BBE229D0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,9 +231,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E2EF30A1C274DD300762053 /* Build configuration list for PBXNativeTarget "Caroling CompanionTests" */;
 			buildPhases = (
+				5A419559461FEBCD2F20F358 /* [CP] Check Pods Manifest.lock */,
 				0E2EF2EF1C274DD300762053 /* Sources */,
 				0E2EF2F01C274DD300762053 /* Frameworks */,
 				0E2EF2F11C274DD300762053 /* Resources */,
+				5F2011AE54244DE5D32F2FEA /* [CP] Embed Pods Frameworks */,
+				7BFBA7C9AAB305D7EECC9B8C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,9 +252,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E2EF30D1C274DD300762053 /* Build configuration list for PBXNativeTarget "Caroling CompanionUITests" */;
 			buildPhases = (
+				F1DBF848AAD1CFB4CCBBD469 /* [CP] Check Pods Manifest.lock */,
 				0E2EF2FA1C274DD300762053 /* Sources */,
 				0E2EF2FB1C274DD300762053 /* Frameworks */,
 				0E2EF2FC1C274DD300762053 /* Resources */,
+				AC01E2D4B498BAEDCBD4A01D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E2EF2ED1C274DD200762053 /* LaunchScreen.storyboard in Resources */,
+				0E5A4C8C1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */,
 				0E2EF2EA1C274DD200762053 /* Assets.xcassets in Resources */,
 				0E2EF2E81C274DD200762053 /* Main.storyboard in Resources */,
 			);
@@ -254,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E5A4C8D1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +336,134 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E5A4C8E1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0427BDEB44A85AF6D237A6AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		43B19E1589BC38E7BBE229D0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caroling Companion/Pods-Caroling Companion-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A419559461FEBCD2F20F358 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5F2011AE54244DE5D32F2FEA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caroling CompanionTests/Pods-Caroling CompanionTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D94B341B1AE2B307565A646 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caroling Companion/Pods-Caroling Companion-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BFBA7C9AAB305D7EECC9B8C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caroling CompanionTests/Pods-Caroling CompanionTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC01E2D4B498BAEDCBD4A01D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caroling CompanionUITests/Pods-Caroling CompanionUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1DBF848AAD1CFB4CCBBD469 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0E2EF2DB1C274DD200762053 /* Sources */ = {
@@ -272,8 +471,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E2EF2E51C274DD200762053 /* SongListVC.swift in Sources */,
-				0EB2076B1C6412B800B6C5A1 /* Songs.swift in Sources */,
 				0E2EF2E31C274DD200762053 /* AppDelegate.swift in Sources */,
+				0E8F09941CD2B5A000CF771E /* MaterialView.swift in Sources */,
+				0E8F09981CD2B5CB00CF771E /* Constants.swift in Sources */,
+				0E8F09901CD29BB600CF771E /* SongCell.swift in Sources */,
 				0E2EF3151C2753B200762053 /* SongLyricsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,7 +483,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E8F09951CD2B5A000CF771E /* MaterialView.swift in Sources */,
+				0E8F09911CD29BB600CF771E /* SongCell.swift in Sources */,
 				0E2EF2F81C274DD300762053 /* Caroling_CompanionTests.swift in Sources */,
+				0E8F09991CD2B5CB00CF771E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +494,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E8F09961CD2B5A000CF771E /* MaterialView.swift in Sources */,
+				0E8F09921CD29BB600CF771E /* SongCell.swift in Sources */,
 				0E2EF3031C274DD300762053 /* Caroling_CompanionUITests.swift in Sources */,
+				0E8F099A1CD2B5CB00CF771E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +624,7 @@
 		};
 		0E2EF3081C274DD300762053 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CC439CFE3E7102455F3E8DB /* Pods-Caroling Companion.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Chase McElroy (BPJRK55M23)";
@@ -425,13 +633,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "bio.chase.Caroling-Companion";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "564d020e-fdf4-49fb-ab5a-bf79dd849668";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		0E2EF3091C274DD300762053 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A90FF3EB68EE7626C211FB7 /* Pods-Caroling Companion.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Chase McElroy (J2C764CY4K)";
@@ -440,13 +649,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "bio.chase.Caroling-Companion";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "564d020e-fdf4-49fb-ab5a-bf79dd849668";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		0E2EF30B1C274DD300762053 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 139E4C9C9FF2D31426683A48 /* Pods-Caroling CompanionTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Caroling CompanionTests/Info.plist";
@@ -459,6 +669,7 @@
 		};
 		0E2EF30C1C274DD300762053 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F1A323237DEE42C9A5F03C7 /* Pods-Caroling CompanionTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Caroling CompanionTests/Info.plist";
@@ -471,6 +682,7 @@
 		};
 		0E2EF30E1C274DD300762053 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44EFE6C23538FAB6AC36543C /* Pods-Caroling CompanionUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Caroling CompanionUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -483,6 +695,7 @@
 		};
 		0E2EF30F1C274DD300762053 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF58722DD22BFF50DBBDAD47 /* Pods-Caroling CompanionUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Caroling CompanionUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
