@@ -28,7 +28,9 @@ class SongLyricsVC: UIViewController {
         let lyrics = song[Constants.SongFields.lyrics] as! String!
         let video = song[Constants.SongFields.videoUrl] as! String!
         
-        txtView.text = lyrics
+        let lyricsSwift = (lyrics as NSString).stringByReplacingOccurrencesOfString("<br>", withString: "\n")
+        
+        txtView.text = lyricsSwift
         songTitle.text = title
 
         
