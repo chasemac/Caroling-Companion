@@ -155,12 +155,12 @@
                         <viewControllerLayoutGuide type="top" id="200-WV-s29"/>
                         <viewControllerLayoutGuide type="bottom" id="eVS-hI-XLG"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kQ5-iD-2pc">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="kQ5-iD-2pc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Song lyrics singing singing Christmas wooo!!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dxW-RS-sep">
-                                <rect key="frame" x="20" y="117" width="560" height="383"/>
+                            <textView multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Song lyrics singing singing Christmas wooo!!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dxW-RS-sep">
+                                <rect key="frame" x="20" y="99.5" width="560" height="400.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="280" placeholder="YES" id="nge-GW-ihm"/>
@@ -186,7 +186,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dxW-RS-sep" firstAttribute="top" secondItem="PF0-h7-ih7" secondAttribute="bottom" constant="8" id="0WJ-oX-6fm"/>
+                            <constraint firstItem="dxW-RS-sep" firstAttribute="top" secondItem="PF0-h7-ih7" secondAttribute="bottom" id="0WJ-oX-6fm"/>
                             <constraint firstItem="j43-WJ-BUp" firstAttribute="centerX" secondItem="kQ5-iD-2pc" secondAttribute="centerX" id="0c9-fg-byP"/>
                             <constraint firstItem="PF0-h7-ih7" firstAttribute="leading" secondItem="kQ5-iD-2pc" secondAttribute="leading" id="1K7-4W-mX1"/>
                             <constraint firstAttribute="trailing" secondItem="PF0-h7-ih7" secondAttribute="trailing" id="FS1-5y-uNf"/>
