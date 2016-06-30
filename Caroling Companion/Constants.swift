@@ -12,6 +12,7 @@ import UIKit
 
 
 let SHADOW_COLOR: CGFloat = 157.0 / 255.0
+let YOUTUBE_URL: String = "https://www.youtube.com/embed/"
 
 
 struct Constants {

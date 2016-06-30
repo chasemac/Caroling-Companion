@@ -9,9 +9,6 @@
 import UIKit
 import Firebase
 
-
-
-
 class SongLyricsVC: UIViewController {
     
     var song = [:]
@@ -27,11 +24,15 @@ class SongLyricsVC: UIViewController {
         super.viewDidLoad()
        initText()
         
-       txtView.text = song[Constants.SongFields.lyrics] as! String!
-        songTitle.text = song[Constants.SongFields.title] as! String!
+        let title = song[Constants.SongFields.title] as! String!
+        let lyrics = song[Constants.SongFields.lyrics] as! String!
+        let video = song[Constants.SongFields.videoUrl] as! String!
+        
+        txtView.text = lyrics
+        songTitle.text = title
 
         
-        let youtubeURL = song[Constants.SongFields.videoUrl] as! String!
+        let youtubeURL = YOUTUBE_URL + video
         
         videoView.allowsInlineMediaPlayback = true
         
