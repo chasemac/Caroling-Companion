@@ -25,6 +25,8 @@ class SongCell: UITableViewCell {
     
     func configureCell(title: String) {
      songNameLabel.text = title
+        
     }
+    
 
 }
