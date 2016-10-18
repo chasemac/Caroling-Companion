@@ -12,43 +12,14 @@
 		0E2EF2E81C274DD200762053 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E61C274DD200762053 /* Main.storyboard */; };
 		0E2EF2EA1C274DD200762053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E91C274DD200762053 /* Assets.xcassets */; };
 		0E2EF2ED1C274DD200762053 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2EB1C274DD200762053 /* LaunchScreen.storyboard */; };
-		0E2EF2F81C274DD300762053 /* Caroling_CompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF2F71C274DD300762053 /* Caroling_CompanionTests.swift */; };
-		0E2EF3031C274DD300762053 /* Caroling_CompanionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF3021C274DD300762053 /* Caroling_CompanionUITests.swift */; };
 		0E2EF3151C2753B200762053 /* SongLyricsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF3141C2753B200762053 /* SongLyricsVC.swift */; };
 		0E5A4C8C1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */; };
-		0E5A4C8D1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */; };
-		0E5A4C8E1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */; };
 		0E8F09901CD29BB600CF771E /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F098F1CD29BB600CF771E /* SongCell.swift */; };
-		0E8F09911CD29BB600CF771E /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F098F1CD29BB600CF771E /* SongCell.swift */; };
-		0E8F09921CD29BB600CF771E /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F098F1CD29BB600CF771E /* SongCell.swift */; };
 		0E8F09941CD2B5A000CF771E /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09931CD2B5A000CF771E /* MaterialView.swift */; };
-		0E8F09951CD2B5A000CF771E /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09931CD2B5A000CF771E /* MaterialView.swift */; };
-		0E8F09961CD2B5A000CF771E /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09931CD2B5A000CF771E /* MaterialView.swift */; };
 		0E8F09981CD2B5CB00CF771E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09971CD2B5CB00CF771E /* Constants.swift */; };
-		0E8F09991CD2B5CB00CF771E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09971CD2B5CB00CF771E /* Constants.swift */; };
-		0E8F099A1CD2B5CB00CF771E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09971CD2B5CB00CF771E /* Constants.swift */; };
 		0EF4F3AD1D371D1A00FC7372 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF4F3AC1D371D1A00FC7372 /* Song.swift */; };
-		1884AC98B239FF6B40531B5F /* Pods_Caroling_CompanionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAAD88E628E3FEA0F7FDD16 /* Pods_Caroling_CompanionUITests.framework */; };
-		529ECB0E09B07D2817BB6536 /* Pods_Caroling_CompanionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5F8E4323D460A1169A2528E /* Pods_Caroling_CompanionTests.framework */; };
 		ED128F58D8670ED985D19B2F /* Pods_Caroling_Companion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F239E4E11B507DF3AE0D5AF /* Pods_Caroling_Companion.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0E2EF2F41C274DD300762053 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0E2EF2D71C274DD200762053 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0E2EF2DE1C274DD200762053;
-			remoteInfo = "Caroling Companion";
-		};
-		0E2EF2FF1C274DD300762053 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0E2EF2D71C274DD200762053 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0E2EF2DE1C274DD200762053;
-			remoteInfo = "Caroling Companion";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0E2EF2DF1C274DD200762053 /* Caroling Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Caroling Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,10 +29,8 @@
 		0E2EF2E91C274DD200762053 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E2EF2EC1C274DD200762053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E2EF2EE1C274DD200762053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E2EF2F31C274DD300762053 /* Caroling CompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Caroling CompanionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2EF2F71C274DD300762053 /* Caroling_CompanionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caroling_CompanionTests.swift; sourceTree = "<group>"; };
 		0E2EF2F91C274DD300762053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E2EF2FE1C274DD300762053 /* Caroling CompanionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Caroling CompanionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2EF3021C274DD300762053 /* Caroling_CompanionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caroling_CompanionUITests.swift; sourceTree = "<group>"; };
 		0E2EF3041C274DD300762053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E2EF3141C2753B200762053 /* SongLyricsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongLyricsVC.swift; sourceTree = "<group>"; };
@@ -90,22 +59,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0E2EF2F01C274DD300762053 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				529ECB0E09B07D2817BB6536 /* Pods_Caroling_CompanionTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0E2EF2FB1C274DD300762053 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1884AC98B239FF6B40531B5F /* Pods_Caroling_CompanionUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -125,8 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				0E2EF2DF1C274DD200762053 /* Caroling Companion.app */,
-				0E2EF2F31C274DD300762053 /* Caroling CompanionTests.xctest */,
-				0E2EF2FE1C274DD300762053 /* Caroling CompanionUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,47 +189,6 @@
 			productReference = 0E2EF2DF1C274DD200762053 /* Caroling Companion.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0E2EF2F21C274DD300762053 /* Caroling CompanionTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0E2EF30A1C274DD300762053 /* Build configuration list for PBXNativeTarget "Caroling CompanionTests" */;
-			buildPhases = (
-				5A419559461FEBCD2F20F358 /* [CP] Check Pods Manifest.lock */,
-				0E2EF2EF1C274DD300762053 /* Sources */,
-				0E2EF2F01C274DD300762053 /* Frameworks */,
-				0E2EF2F11C274DD300762053 /* Resources */,
-				5F2011AE54244DE5D32F2FEA /* [CP] Embed Pods Frameworks */,
-				7BFBA7C9AAB305D7EECC9B8C /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0E2EF2F51C274DD300762053 /* PBXTargetDependency */,
-			);
-			name = "Caroling CompanionTests";
-			productName = "Caroling CompanionTests";
-			productReference = 0E2EF2F31C274DD300762053 /* Caroling CompanionTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		0E2EF2FD1C274DD300762053 /* Caroling CompanionUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0E2EF30D1C274DD300762053 /* Build configuration list for PBXNativeTarget "Caroling CompanionUITests" */;
-			buildPhases = (
-				F1DBF848AAD1CFB4CCBBD469 /* [CP] Check Pods Manifest.lock */,
-				0E2EF2FA1C274DD300762053 /* Sources */,
-				0E2EF2FB1C274DD300762053 /* Frameworks */,
-				0E2EF2FC1C274DD300762053 /* Resources */,
-				AC01E2D4B498BAEDCBD4A01D /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0E2EF3001C274DD300762053 /* PBXTargetDependency */,
-			);
-			name = "Caroling CompanionUITests";
-			productName = "Caroling CompanionUITests";
-			productReference = 0E2EF2FE1C274DD300762053 /* Caroling CompanionUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -292,19 +202,12 @@
 					0E2EF2DE1C274DD200762053 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = J2C764CY4K;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
 							};
 						};
-					};
-					0E2EF2F21C274DD300762053 = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 0E2EF2DE1C274DD200762053;
-					};
-					0E2EF2FD1C274DD300762053 = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 0E2EF2DE1C274DD200762053;
 					};
 				};
 			};
@@ -322,8 +225,6 @@
 			projectRoot = "";
 			targets = (
 				0E2EF2DE1C274DD200762053 /* Caroling Companion */,
-				0E2EF2F21C274DD300762053 /* Caroling CompanionTests */,
-				0E2EF2FD1C274DD300762053 /* Caroling CompanionUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -337,22 +238,6 @@
 				0E5A4C8C1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */,
 				0E2EF2EA1C274DD200762053 /* Assets.xcassets in Resources */,
 				0E2EF2E81C274DD200762053 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0E2EF2F11C274DD300762053 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0E5A4C8D1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0E2EF2FC1C274DD300762053 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0E5A4C8E1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,36 +274,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caroling Companion/Pods-Caroling Companion-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5A419559461FEBCD2F20F358 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		5F2011AE54244DE5D32F2FEA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caroling CompanionTests/Pods-Caroling CompanionTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6D94B341B1AE2B307565A646 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -432,51 +287,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caroling Companion/Pods-Caroling Companion-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7BFBA7C9AAB305D7EECC9B8C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caroling CompanionTests/Pods-Caroling CompanionTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AC01E2D4B498BAEDCBD4A01D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caroling CompanionUITests/Pods-Caroling CompanionUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F1DBF848AAD1CFB4CCBBD469 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -496,42 +306,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0E2EF2EF1C274DD300762053 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0E8F09951CD2B5A000CF771E /* MaterialView.swift in Sources */,
-				0E8F09911CD29BB600CF771E /* SongCell.swift in Sources */,
-				0E2EF2F81C274DD300762053 /* Caroling_CompanionTests.swift in Sources */,
-				0E8F09991CD2B5CB00CF771E /* Constants.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0E2EF2FA1C274DD300762053 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0E8F09961CD2B5A000CF771E /* MaterialView.swift in Sources */,
-				0E8F09921CD29BB600CF771E /* SongCell.swift in Sources */,
-				0E2EF3031C274DD300762053 /* Caroling_CompanionUITests.swift in Sources */,
-				0E8F099A1CD2B5CB00CF771E /* Constants.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0E2EF2F51C274DD300762053 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0E2EF2DE1C274DD200762053 /* Caroling Companion */;
-			targetProxy = 0E2EF2F41C274DD300762053 /* PBXContainerItemProxy */;
-		};
-		0E2EF3001C274DD300762053 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0E2EF2DE1C274DD200762053 /* Caroling Companion */;
-			targetProxy = 0E2EF2FF1C274DD300762053 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0E2EF2E61C274DD200762053 /* Main.storyboard */ = {
@@ -651,6 +426,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "bio.chase.Caroling-Companion";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -667,59 +443,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "bio.chase.Caroling-Companion";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		0E2EF30B1C274DD300762053 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 139E4C9C9FF2D31426683A48 /* Pods-Caroling CompanionTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Caroling CompanionTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "lt.chase.Caroling-CompanionTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Caroling Companion.app/Caroling Companion";
-			};
-			name = Debug;
-		};
-		0E2EF30C1C274DD300762053 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F1A323237DEE42C9A5F03C7 /* Pods-Caroling CompanionTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Caroling CompanionTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "lt.chase.Caroling-CompanionTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Caroling Companion.app/Caroling Companion";
-			};
-			name = Release;
-		};
-		0E2EF30E1C274DD300762053 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44EFE6C23538FAB6AC36543C /* Pods-Caroling CompanionUITests.debug.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = "Caroling CompanionUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "lt.chase.Caroling-CompanionUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "Caroling Companion";
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		0E2EF30F1C274DD300762053 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF58722DD22BFF50DBBDAD47 /* Pods-Caroling CompanionUITests.release.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = "Caroling CompanionUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "lt.chase.Caroling-CompanionUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "Caroling Companion";
-				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
@@ -740,24 +465,6 @@
 			buildConfigurations = (
 				0E2EF3081C274DD300762053 /* Debug */,
 				0E2EF3091C274DD300762053 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0E2EF30A1C274DD300762053 /* Build configuration list for PBXNativeTarget "Caroling CompanionTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0E2EF30B1C274DD300762053 /* Debug */,
-				0E2EF30C1C274DD300762053 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0E2EF30D1C274DD300762053 /* Build configuration list for PBXNativeTarget "Caroling CompanionUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0E2EF30E1C274DD300762053 /* Debug */,
-				0E2EF30F1C274DD300762053 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

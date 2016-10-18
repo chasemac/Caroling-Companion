@@ -10,7 +10,7 @@ import Firebase
 
 class SongLyricsVC: UIViewController {
     
-    var song = [:]
+    var song = [String:String]()
     
     @IBOutlet weak var txtView: UITextView!
     @IBOutlet weak var songTitle: UILabel!
@@ -20,16 +20,16 @@ class SongLyricsVC: UIViewController {
         super.viewDidLoad()
        initText()
         
-        let title = song[Constants.SongFields.title] as! String!
-        let lyrics = song[Constants.SongFields.lyrics] as! String!
-        let video = song[Constants.SongFields.videoUrl] as! String!
+        let title = song[Constants.SongFields.title] as String!
+        let lyrics = song[Constants.SongFields.lyrics] as String!
+        let video = song[Constants.SongFields.videoUrl] as String!
         
-        let lyricsSwift = (lyrics as NSString).stringByReplacingOccurrencesOfString("<br>", withString: "\n")
+        let lyricsSwift = lyrics?.replacingOccurrences(of: "<br>", with: "\n")
         
         txtView.text = lyricsSwift
         songTitle.text = title
 
-        let youtubeURL = YOUTUBE_URL + video
+        let youtubeURL = YOUTUBE_URL + video!
         
         videoView.allowsInlineMediaPlayback = true
         
@@ -37,18 +37,18 @@ class SongLyricsVC: UIViewController {
     }
 
     func initText() {
-        txtView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        txtView.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SongLyricsVC.preferredContentSizeChanged(_:)), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SongLyricsVC.preferredContentSizeChanged(_:)), name: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil)
         
         // this bug still exists in iOS 9 --- I don't know if it's still a bug but there's a bug preventing all of this from working right now....
-        txtView.scrollEnabled = false
-        txtView.scrollEnabled = true
-        txtView.scrollRectToVisible(CGRectMake(0, 0, 1, 1), animated: false)
+        txtView.isScrollEnabled = false
+        txtView.isScrollEnabled = true
+        txtView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: false)
     }
     
-    func preferredContentSizeChanged(notification: NSNotification) {
-        txtView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+    func preferredContentSizeChanged(_ notification: Notification) {
+        txtView.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
         
     }
   

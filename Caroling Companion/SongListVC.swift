@@ -14,7 +14,7 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     @IBOutlet weak var searchBar: UISearchBar!
     
     var ref: FIRDatabaseReference!
-    private var _refHandle: FIRDatabaseHandle!
+    fileprivate var _refHandle: FIRDatabaseHandle!
     var songsF: [FIRDataSnapshot]! = []
     var songList = [Song]()
     var filteredSongs  = [Song]()
@@ -31,14 +31,14 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         ref = FIRDatabase.database().reference()
         loadSongs()
         searchBar.delegate = self
-        searchBar.returnKeyType = UIReturnKeyType.Done
+        searchBar.returnKeyType = UIReturnKeyType.done
     }
     
     func loadSongs() {
         
         self.songsF.removeAll()
         // Listen for new messages in the Firebase database
-        _refHandle = self.ref.child("songs").observeEventType(.ChildAdded, withBlock: { (snapshot) -> Void in
+        _refHandle = self.ref.child("songs").observe(.childAdded, with: { (snapshot) -> Void in
             
 
             self.songsF.append(snapshot)
@@ -61,32 +61,32 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             }
             print(self.songList)
 
-            self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: self.songsF.count-1, inSection: 0)], withRowAnimation: .Automatic)
+            self.tableView.insertRows(at: [IndexPath(row: self.songsF.count-1, section: 0)], with: .automatic)
             
         })
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        self.ref.removeObserverWithHandle(_refHandle)
+    override func viewWillDisappear(_ animated: Bool) {
+        self.ref.removeObserver(withHandle: _refHandle)
     }
     
-    func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool {
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         return true
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if inSearchMode {
             return filteredSongs.count
         }
         return self.songsF.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Dequeue cell
-        if let cell = tableView.dequeueReusableCellWithIdentifier("SongCell", forIndexPath: indexPath) as? SongCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "SongCell", for: indexPath) as? SongCell {
             // Unpack message from Firebase DataSnapshot
             
-            let songSnapshot: FIRDataSnapshot! = songsF[indexPath.row]
+            let songSnapshot: FIRDataSnapshot! = songsF[(indexPath as NSIndexPath).row]
             
 //            if inSearchMode {
 //                songSnapshot = songsF[indexPath.row]
@@ -99,7 +99,7 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
 
                 let title = song[Constants.SongFields.title] as String!
             
-            cell.configureCell(title)
+            cell.configureCell(title!)
             return cell
         } else {
             print("error")
@@ -108,22 +108,22 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
         // Unpack message from Firebase DataSnapshot
-        let songSnapshot: FIRDataSnapshot! = self.songsF[indexPath.row]
+        let songSnapshot: FIRDataSnapshot! = self.songsF[(indexPath as NSIndexPath).row]
         let song = songSnapshot.value as! Dictionary<String, String>
         
-        self.performSegueWithIdentifier("detailSegue", sender: song)
+        self.performSegue(withIdentifier: "detailSegue", sender: song)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let detailVC = segue.destinationViewController as! SongLyricsVC
-        detailVC.song = sender as! NSDictionary
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailVC = segue.destination as! SongLyricsVC
+        detailVC.song = (sender as! NSDictionary) as! [AnyHashable : Any] as! [String : String]
     }
     
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
     }
     
