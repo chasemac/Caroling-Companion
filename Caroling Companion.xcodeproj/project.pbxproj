@@ -14,6 +14,8 @@
 		0E2EF2ED1C274DD200762053 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2EB1C274DD200762053 /* LaunchScreen.storyboard */; };
 		0E2EF3151C2753B200762053 /* SongLyricsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF3141C2753B200762053 /* SongLyricsVC.swift */; };
 		0E5A4C8C1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */; };
+		0E7EAA131DB5E01300E8044A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7EAA121DB5E01300E8044A /* NavigationController.swift */; };
+		0E7EAA151DB6CF6200E8044A /* NavItemCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7EAA141DB6CF6200E8044A /* NavItemCustom.swift */; };
 		0E8F09901CD29BB600CF771E /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F098F1CD29BB600CF771E /* SongCell.swift */; };
 		0E8F09941CD2B5A000CF771E /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09931CD2B5A000CF771E /* MaterialView.swift */; };
 		0E8F09981CD2B5CB00CF771E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09971CD2B5CB00CF771E /* Constants.swift */; };
@@ -35,6 +37,8 @@
 		0E2EF3041C274DD300762053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E2EF3141C2753B200762053 /* SongLyricsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongLyricsVC.swift; sourceTree = "<group>"; };
 		0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0E7EAA121DB5E01300E8044A /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		0E7EAA141DB6CF6200E8044A /* NavItemCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavItemCustom.swift; sourceTree = "<group>"; };
 		0E8F098F1CD29BB600CF771E /* SongCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
 		0E8F09931CD2B5A000CF771E /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		0E8F09971CD2B5CB00CF771E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			children = (
 				0E2EF2E41C274DD200762053 /* SongListVC.swift */,
 				0E2EF3141C2753B200762053 /* SongLyricsVC.swift */,
+				0E7EAA121DB5E01300E8044A /* NavigationController.swift */,
+				0E7EAA141DB6CF6200E8044A /* NavItemCustom.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -297,6 +303,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EF4F3AD1D371D1A00FC7372 /* Song.swift in Sources */,
+				0E7EAA131DB5E01300E8044A /* NavigationController.swift in Sources */,
+				0E7EAA151DB6CF6200E8044A /* NavItemCustom.swift in Sources */,
 				0E2EF2E51C274DD200762053 /* SongListVC.swift in Sources */,
 				0E2EF2E31C274DD200762053 /* AppDelegate.swift in Sources */,
 				0E8F09941CD2B5A000CF771E /* MaterialView.swift in Sources */,

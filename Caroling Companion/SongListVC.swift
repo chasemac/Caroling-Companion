@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISplitViewControllerDelegate {
+class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -44,10 +44,7 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         self.ref.removeObserver(withHandle: _refHandle)
     }
     
-    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-        return true
-    }
-    
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.songsF.count
     }
@@ -60,8 +57,9 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             let song = songSnapshot.value as! Dictionary<String, String>
             
             let title = song[Constants.SongFields.title] as String!
+            let capTitle = title?.uppercased()
             
-            cell.configureCell(title!)
+            cell.configureCell(capTitle!)
             return cell
         } else {
             print("error")
