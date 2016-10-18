@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UKX-ts-NJW">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UKX-ts-NJW">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="HelveticaNeue.ttc">
+        <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <scenes>
         <!--View Controller-->
@@ -21,17 +22,16 @@
                         <viewControllerLayoutGuide type="bottom" id="8fV-2B-rfO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0O7-k6-ptu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick A Song!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0O-o4-DlQ">
-                                <rect key="frame" x="252" y="289" width="97" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="W0O-o4-DlQ" firstAttribute="centerX" secondItem="0O7-k6-ptu" secondAttribute="centerX" id="MI0-qn-JWr"/>
                             <constraint firstItem="W0O-o4-DlQ" firstAttribute="centerY" secondItem="0O7-k6-ptu" secondAttribute="centerY" id="O8N-eN-QDg"/>
@@ -53,31 +53,28 @@
                         <viewControllerLayoutGuide type="bottom" id="WHG-3e-oqF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uZM-J9-DXa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="96" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bSx-ou-hIL">
-                                <rect key="frame" x="0.0" y="114" width="600" height="486"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" rowHeight="96" id="DqN-9U-xMx" customClass="SongCell" customModule="Caroling_Companion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="96"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DqN-9U-xMx" id="LKP-F6-iiG">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="96"/>
+                                            <frame key="frameInset" width="375" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03C-pm-9fM" customClass="MaterialView" customModule="Caroling_Companion" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="96"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DO YOU HEAR WHAT I HEAR" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="xYE-UG-b63">
-                                                            <rect key="frame" x="28" y="16" width="544" height="64"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="29"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="xYE-UG-b63" firstAttribute="top" secondItem="03C-pm-9fM" secondAttribute="topMargin" constant="8" id="9Rn-9a-wEb"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="xYE-UG-b63" secondAttribute="bottom" constant="8" id="NGM-Wm-kW6"/>
@@ -109,24 +106,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="SEARCH" translatesAutoresizingMaskIntoConstraints="NO" id="ZD7-Oe-VDh">
-                                <rect key="frame" x="0.0" y="64" width="600" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="pun-Vw-bBm"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bSx-ou-hIL" firstAttribute="top" secondItem="ZD7-Oe-VDh" secondAttribute="bottom" priority="750" id="9Wh-mH-pHc"/>
                             <constraint firstItem="WHG-3e-oqF" firstAttribute="top" secondItem="bSx-ou-hIL" secondAttribute="bottom" id="BMZ-E9-wT7"/>
+                            <constraint firstItem="bSx-ou-hIL" firstAttribute="top" secondItem="0Dt-nd-Xhr" secondAttribute="bottom" id="ERl-fu-ouu"/>
                             <constraint firstAttribute="trailing" secondItem="bSx-ou-hIL" secondAttribute="trailing" id="FHE-FS-xEW"/>
-                            <constraint firstItem="ZD7-Oe-VDh" firstAttribute="top" secondItem="0Dt-nd-Xhr" secondAttribute="bottom" id="S0a-pq-MFv"/>
                             <constraint firstItem="bSx-ou-hIL" firstAttribute="leading" secondItem="uZM-J9-DXa" secondAttribute="leading" id="TsQ-jn-8jg"/>
-                            <constraint firstItem="ZD7-Oe-VDh" firstAttribute="leading" secondItem="uZM-J9-DXa" secondAttribute="leading" id="XB1-66-Jli"/>
                             <constraint firstItem="bSx-ou-hIL" firstAttribute="top" secondItem="0Dt-nd-Xhr" secondAttribute="bottom" id="gM3-cr-fQx"/>
-                            <constraint firstAttribute="trailing" secondItem="ZD7-Oe-VDh" secondAttribute="trailing" id="jdn-op-IeB"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -136,7 +123,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="PICK A SONG!" id="uC0-J6-q5y"/>
                     <connections>
-                        <outlet property="searchBar" destination="ZD7-Oe-VDh" id="Ivv-dm-0nm"/>
                         <outlet property="tableView" destination="bSx-ou-hIL" id="9X2-F5-e7R"/>
                         <segue destination="nQb-j5-nok" kind="show" identifier="detailSegue" id="fgg-vK-LoI"/>
                     </connections>
@@ -183,35 +169,32 @@
                         <viewControllerLayoutGuide type="bottom" id="eVS-hI-XLG"/>
                     </layoutGuides>
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="kQ5-iD-2pc">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Song lyrics singing singing Christmas wooo!!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dxW-RS-sep">
-                                <rect key="frame" x="20" y="99.5" width="560" height="400.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="280" placeholder="YES" id="nge-GW-ihm"/>
                                 </constraints>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j43-WJ-BUp">
-                                <rect key="frame" x="220" y="508" width="160" height="90"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.28958413004875183" green="0.31462949514389038" blue="0.32950475811958313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="j43-WJ-BUp" secondAttribute="height" multiplier="16:9" id="4Pl-x3-LnZ"/>
                                     <constraint firstAttribute="width" priority="10" constant="160" id="7R3-tx-A5n"/>
                                 </constraints>
                             </webView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PF0-h7-ih7">
-                                <rect key="frame" x="0.0" y="72" width="600" height="27.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="23"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dxW-RS-sep" firstAttribute="top" secondItem="PF0-h7-ih7" secondAttribute="bottom" id="0WJ-oX-6fm"/>
                             <constraint firstItem="j43-WJ-BUp" firstAttribute="centerX" secondItem="kQ5-iD-2pc" secondAttribute="centerX" id="0c9-fg-byP"/>
@@ -232,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwG-WW-Y6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1703" y="-1036"/>
+            <point key="canvasLocation" x="1764" y="-1037"/>
         </scene>
     </scenes>
 </document>

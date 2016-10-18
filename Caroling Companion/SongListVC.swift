@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISplitViewControllerDelegate, UISearchBarDelegate {
+class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISplitViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -16,9 +16,6 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     var ref: FIRDatabaseReference!
     fileprivate var _refHandle: FIRDatabaseHandle!
     var songsF: [FIRDataSnapshot]! = []
-    var songList = [Song]()
-    var filteredSongs  = [Song]()
-    var inSearchMode = false
     
     
     override func viewDidLoad() {
@@ -30,8 +27,6 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         
         ref = FIRDatabase.database().reference()
         loadSongs()
-        searchBar.delegate = self
-        searchBar.returnKeyType = UIReturnKeyType.done
     }
     
     func loadSongs() {
@@ -39,28 +34,7 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         self.songsF.removeAll()
         // Listen for new messages in the Firebase database
         _refHandle = self.ref.child("songs").observe(.childAdded, with: { (snapshot) -> Void in
-            
-
             self.songsF.append(snapshot)
-            let songSnapshot: FIRDataSnapshot! = songsF[Song]
-            
-            for s in self.songsF {
-                let song = songSnapshot.value as! Dictionary<String, String>
-                
-                let title = Song(title: title, lyrics: <#T##String#>, videoUrl: <#T##String#>)
-                let lyrics = song[Constants.SongFields.lyrics] as String!
-                let video = song[Constants.SongFields.videoUrl] as String!
-                self.songList.append(title)
-                self.songList.append(lyrics)
-                self.songList.append(video)
-            }
-            
-            for _ in snapshot.children{
-                let song = Song(snapshot: snapshot)
-                self.songList.append(song)
-            }
-            print(self.songList)
-
             self.tableView.insertRows(at: [IndexPath(row: self.songsF.count-1, section: 0)], with: .automatic)
             
         })
@@ -75,9 +49,6 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if inSearchMode {
-            return filteredSongs.count
-        }
         return self.songsF.count
     }
     
@@ -85,25 +56,16 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         // Dequeue cell
         if let cell = tableView.dequeueReusableCell(withIdentifier: "SongCell", for: indexPath) as? SongCell {
             // Unpack message from Firebase DataSnapshot
-            
-            let songSnapshot: FIRDataSnapshot! = songsF[(indexPath as NSIndexPath).row]
-            
-//            if inSearchMode {
-//                songSnapshot = songsF[indexPath.row]
-//            } else {
-//                songSnapshot = filteredSongs[indexPath.row]
-//            }
-
-            
+            let songSnapshot: FIRDataSnapshot! = self.songsF[(indexPath as NSIndexPath).row]
             let song = songSnapshot.value as! Dictionary<String, String>
-
-                let title = song[Constants.SongFields.title] as String!
+            
+            let title = song[Constants.SongFields.title] as String!
             
             cell.configureCell(title!)
             return cell
         } else {
             print("error")
-           return SongCell()
+            return SongCell()
             
         }
     }
@@ -123,23 +85,6 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         detailVC.song = (sender as! NSDictionary) as! [AnyHashable : Any] as! [String : String]
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        view.endEditing(true)
-    }
-    
-//    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-//        if searchBar.text == nil || searchBar.text == "" {
-//            inSearchMode = false
-//            view.endEditing(true)
-//            tableView.reloadData()
-//        } else {
-//            inSearchMode = true
-//
-//            let lower = searchBar.text!.lowercaseString
-//            filteredSongs = songsF.filter({$0..rangeOfString(lower) != nil})
-//            tableView.reloadData()
-//        }
-//    }
 }
 
 
