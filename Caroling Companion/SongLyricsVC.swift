@@ -14,7 +14,7 @@ class SongLyricsVC: UIViewController {
     
     @IBOutlet weak var txtView: UITextView!
     @IBOutlet weak var songTitle: UILabel!
-    @IBOutlet weak var videoView: UIWebView!
+//    @IBOutlet weak var videoView: UIWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,18 +22,16 @@ class SongLyricsVC: UIViewController {
         
         let title = song[Constants.SongFields.title] as String!
         let lyrics = song[Constants.SongFields.lyrics] as String!
-        let video = song[Constants.SongFields.videoUrl] as String!
         
         let lyricsSwift = lyrics?.replacingOccurrences(of: "<br>", with: "\n")
         
         txtView.text = lyricsSwift
         songTitle.text = title
-
-        let youtubeURL = YOUTUBE_URL + video!
         
-        videoView.allowsInlineMediaPlayback = true
-        
-        videoView.loadHTMLString("<iframe width=\"\(videoView.frame.width)\" height=\"\(videoView.frame.height)\" src=\"\(youtubeURL)?&playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
+//        let video = song[Constants.SongFields.videoUrl] as String!
+//        let youtubeURL = YOUTUBE_URL + video!
+//        videoView.allowsInlineMediaPlayback = true
+//        videoView.loadHTMLString("<iframe width=\"\(videoView.frame.width)\" height=\"\(videoView.frame.height)\" src=\"\(youtubeURL)?&playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
     }
 
     func initText() {
@@ -49,7 +47,6 @@ class SongLyricsVC: UIViewController {
     
     func preferredContentSizeChanged(_ notification: Notification) {
         txtView.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
-        
     }
   
     

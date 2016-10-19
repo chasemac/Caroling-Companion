@@ -26,29 +26,9 @@ class SongCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
+
     
-    func colorForIndex(count: Int, index: Int) -> UIColor {
-        
-        var specific = UIColor()
-        var colorCount = Int()
-        
-        let colorPalette = [self.softGreen, self.darkRed, self.softRed]
-        
-        while colorCount < count {
-            
-            for i in colorPalette {
-                specific = i
-                
-                colorCount += 1
-                
-            }
-            print("color \(colorCount) i = \(specific) index = \(index)")
-        }
-        
-        return specific
-    }
-    
-    func configureCell(_ title: String, indexPath: NSIndexPath, count: Int) {
+    func configureCell(_ title: String, indexPath: NSIndexPath) {
         songNameLabel.text = title
         
         if indexPath.row % 3 == 0 {

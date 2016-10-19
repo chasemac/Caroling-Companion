@@ -9,9 +9,8 @@ import UIKit
 import Firebase
 
 class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
     var ref: FIRDatabaseReference!
     fileprivate var _refHandle: FIRDatabaseHandle!
@@ -44,12 +43,11 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.ref.removeObserver(withHandle: _refHandle)
     }
     
-   
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.songsF.count
     }
     
-
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Dequeue cell
@@ -61,10 +59,8 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let title = song[Constants.SongFields.title] as String!
             let capTitle = title?.uppercased()
             
-            cell.configureCell(capTitle!, indexPath: indexPath as NSIndexPath, count: songsF.count)
+            cell.configureCell(capTitle!, indexPath: indexPath as NSIndexPath)
             
-
-
             
             return cell
         } else {
