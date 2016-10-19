@@ -35,7 +35,7 @@
                                             <frame key="frameInset" width="375" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03C-pm-9fM" customClass="MaterialView" customModule="Caroling_Companion" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03C-pm-9fM">
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DO YOU HEAR WHAT I HEAR" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="xYE-UG-b63">
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="29"/>
@@ -43,7 +43,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="xYE-UG-b63" firstAttribute="top" secondItem="03C-pm-9fM" secondAttribute="topMargin" constant="8" id="9Rn-9a-wEb"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="xYE-UG-b63" secondAttribute="bottom" constant="8" id="NGM-Wm-kW6"/>
@@ -52,6 +52,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="03C-pm-9fM" firstAttribute="leading" secondItem="LKP-F6-iiG" secondAttribute="leading" id="4PC-uF-K01"/>
                                                 <constraint firstAttribute="bottom" secondItem="03C-pm-9fM" secondAttribute="bottom" id="9p6-S4-K1O"/>
@@ -69,6 +70,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="songNameLabel" destination="xYE-UG-b63" id="7gU-pO-TBU"/>
                                         </connections>

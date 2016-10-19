@@ -49,6 +49,8 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return self.songsF.count
     }
     
+
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Dequeue cell
         if let cell = tableView.dequeueReusableCell(withIdentifier: "SongCell", for: indexPath) as? SongCell {
@@ -59,7 +61,11 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let title = song[Constants.SongFields.title] as String!
             let capTitle = title?.uppercased()
             
-            cell.configureCell(capTitle!)
+            cell.configureCell(capTitle!, indexPath: indexPath as NSIndexPath, count: songsF.count)
+            
+
+
+            
             return cell
         } else {
             print("error")
