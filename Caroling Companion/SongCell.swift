@@ -9,37 +9,36 @@
 import UIKit
 
 class SongCell: UITableViewCell {
-
+    
     @IBOutlet weak var songNameLabel: UILabel!
     
-    let blue = UIColor(red: 0.043, green: 0.863, blue: 0.973, alpha: 1.00)
-    let red = UIColor(red: 0.988, green: 0.227, blue: 0.369, alpha: 1.00)
-    let green = UIColor(red: 0.612, green: 0.976, blue: 0.596, alpha: 1.00)
-    let purple = UIColor(red: 0.773, green: 0.278, blue: 0.980, alpha: 1.00)
+    let softGreen = UIColor(red: 0.467, green: 0.600, blue: 0.424, alpha: 1.00)
+    let darkRed = UIColor(red: 0.718, green: 0.310, blue: 0.310, alpha: 1.00)
+    let softRed = UIColor(red: 0.882, green: 0.471, blue: 0.471, alpha: 1.00)
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
     func colorForIndex(count: Int, index: Int) -> UIColor {
-
+        
         var specific = UIColor()
         var colorCount = Int()
         
-        let colorPallet = [self.blue, self.red, self.green, self.purple]
+        let colorPalette = [self.softGreen, self.darkRed, self.softRed]
         
         while colorCount < count {
             
-            for i in colorPallet {
+            for i in colorPalette {
                 specific = i
-
+                
                 colorCount += 1
                 
             }
@@ -50,10 +49,18 @@ class SongCell: UITableViewCell {
     }
     
     func configureCell(_ title: String, indexPath: NSIndexPath, count: Int) {
-     songNameLabel.text = title
+        songNameLabel.text = title
         
-            self.backgroundColor = colorForIndex(count: count, index: indexPath.row)
-        
-        
+        if indexPath.row % 3 == 0 {
+            self.backgroundColor = softGreen
+        } else if
+            indexPath.row % 2 == 0 {
+            self.backgroundColor = darkRed
+        }
+        else {
+            self.backgroundColor = softRed
+        }
     }
+    
 }
+
