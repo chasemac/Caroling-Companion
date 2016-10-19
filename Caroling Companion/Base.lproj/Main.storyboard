@@ -6,11 +6,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--PICK A SONG!-->
         <scene sceneID="99w-a2-Sct">
@@ -129,16 +124,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Song lyrics singing singing Christmas wooo!!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dxW-RS-sep">
+                            <textView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dxW-RS-sep">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="280" placeholder="YES" id="nge-GW-ihm"/>
                                 </constraints>
-                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <mutableString key="content">Said the night wind to the little lamb  do you see what I see  Way up in the sky little lamb  do you see what I see  A star a star dancing in the night  With a tail as big as a kite (x2)
+ Said the little lamb to the shepherd boy  do you hear what I hear  Ringing through the sky shepherd boy  do you hear what I hear  A song a song high above the trees  With a voice as big as the sea (x2)
+ Said the shepherd boy to the mighty king  do you know what I know  In your palace warm mighty king  do you know what I know  A Child a Child shivers in the cold
+ Let us bring Him silver and gold (x2)  Said the king to the people everywhere  listen to what I say  Pray for peace people everywhere  listen to what I say  The Child the Child sleeping in the night  He will bring us goodness and light (x2)
+</mutableString>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="NSColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="20" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" minimumLineHeight="18" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                            <real key="NSStrokeWidth" value="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PF0-h7-ih7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="PF0-h7-ih7">
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="23"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -147,8 +160,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dxW-RS-sep" firstAttribute="top" secondItem="PF0-h7-ih7" secondAttribute="bottom" id="0WJ-oX-6fm"/>
-                            <constraint firstItem="PF0-h7-ih7" firstAttribute="leading" secondItem="kQ5-iD-2pc" secondAttribute="leading" id="1K7-4W-mX1"/>
-                            <constraint firstAttribute="trailing" secondItem="PF0-h7-ih7" secondAttribute="trailing" id="FS1-5y-uNf"/>
+                            <constraint firstItem="PF0-h7-ih7" firstAttribute="leading" secondItem="kQ5-iD-2pc" secondAttribute="leading" constant="5" id="1K7-4W-mX1"/>
+                            <constraint firstAttribute="trailing" secondItem="PF0-h7-ih7" secondAttribute="trailing" constant="5" id="FS1-5y-uNf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dxW-RS-sep" secondAttribute="trailing" id="OYe-de-fsW"/>
                             <constraint firstAttribute="leadingMargin" secondItem="dxW-RS-sep" secondAttribute="leading" id="tUj-1l-3yH"/>
                             <constraint firstItem="PF0-h7-ih7" firstAttribute="top" secondItem="200-WV-s29" secondAttribute="bottom" constant="8" id="uVi-x3-hLn"/>

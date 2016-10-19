@@ -35,18 +35,24 @@ class SongLyricsVC: UIViewController {
     }
 
     func initText() {
+        
         txtView.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
         
         NotificationCenter.default.addObserver(self, selector: #selector(SongLyricsVC.preferredContentSizeChanged(_:)), name: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil)
         
         // this bug still exists in iOS 9 --- I don't know if it's still a bug but there's a bug preventing all of this from working right now....
-        txtView.isScrollEnabled = false
-        txtView.isScrollEnabled = true
-        txtView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: false)
+//        txtView.isScrollEnabled = false
+//        txtView.isScrollEnabled = true
+//        txtView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: false)
     }
     
     func preferredContentSizeChanged(_ notification: Notification) {
         txtView.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        txtView.setContentOffset(CGPoint.zero, animated: false)
     }
   
     
