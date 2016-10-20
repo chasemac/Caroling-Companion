@@ -23,22 +23,8 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         tableView.delegate = self
         
-        
         ref = FIRDatabase.database().reference()
         loadSongs()
-        
-//        for family: String in UIFont.familyNames
-//        {
-//            print("\(family)")
-//            for names: String in UIFont.fontNames(forFamilyName: family)
-//            {
-//                print("== \(names)")
-//            }
-//        }
-        
- //       self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"boo", style: .plain, target:nil, action:nil)
-
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,7 +68,6 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let capTitle = title?.uppercased()
             
             cell.configureCell(capTitle!, indexPath: indexPath as NSIndexPath)
-            
             
             return cell
         } else {

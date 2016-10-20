@@ -10,6 +10,8 @@ import Firebase
 
 class SongLyricsVC: UIViewController {
     
+    @IBOutlet weak var songListBtn: UIButton!
+    
     var song = [String:String]()
     
     @IBOutlet weak var txtView: UITextView!
@@ -50,5 +52,8 @@ class SongLyricsVC: UIViewController {
         txtView.setContentOffset(CGPoint.zero, animated: false)
     }
   
-    
+    @IBAction func songListBtnPressed(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
+        songListBtn.backgroundColor = UIColor(red: 0.718, green: 0.310, blue: 0.310, alpha: 1.00)
+    }
 }
