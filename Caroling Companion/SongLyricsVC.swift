@@ -32,18 +32,13 @@ class SongLyricsVC: UIViewController {
 //        let youtubeURL = YOUTUBE_URL + video!
 //        videoView.allowsInlineMediaPlayback = true
 //        videoView.loadHTMLString("<iframe width=\"\(videoView.frame.width)\" height=\"\(videoView.frame.height)\" src=\"\(youtubeURL)?&playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
+        
     }
 
     func initText() {
-        
         txtView.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
         
         NotificationCenter.default.addObserver(self, selector: #selector(SongLyricsVC.preferredContentSizeChanged(_:)), name: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil)
-        
-        // this bug still exists in iOS 9 --- I don't know if it's still a bug but there's a bug preventing all of this from working right now....
-//        txtView.isScrollEnabled = false
-//        txtView.isScrollEnabled = true
-//        txtView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: false)
     }
     
     func preferredContentSizeChanged(_ notification: Notification) {

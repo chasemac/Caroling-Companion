@@ -26,6 +26,28 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         ref = FIRDatabase.database().reference()
         loadSongs()
+        
+//        for family: String in UIFont.familyNames
+//        {
+//            print("\(family)")
+//            for names: String in UIFont.fontNames(forFamilyName: family)
+//            {
+//                print("== \(names)")
+//            }
+//        }
+        
+ //       self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"boo", style: .plain, target:nil, action:nil)
+
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let attrs = [
+            NSForegroundColorAttributeName: UIColor.gray,
+            NSFontAttributeName: UIFont(name: "BigJohn", size: 24)!
+        ]
+        
+        UINavigationBar.appearance().titleTextAttributes = attrs
     }
     
     func loadSongs() {
@@ -84,6 +106,8 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let detailVC = segue.destination as! SongLyricsVC
         detailVC.song = (sender as! NSDictionary) as! [AnyHashable : Any] as! [String : String]
     }
+    
+    
     
 }
 

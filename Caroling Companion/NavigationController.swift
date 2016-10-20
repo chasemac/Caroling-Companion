@@ -14,10 +14,11 @@ class NavigationController: UINavigationController, UIViewControllerTransitionin
     override func viewWillAppear(_ animated: Bool) {
         let attrs = [
             NSForegroundColorAttributeName: UIColor.gray,
-            NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 24)!
+            NSFontAttributeName: UIFont(name: "BigJohn", size: 24)!
         ]
         
         UINavigationBar.appearance().titleTextAttributes = attrs
+
     }
     
 //    override func viewdidA() {
