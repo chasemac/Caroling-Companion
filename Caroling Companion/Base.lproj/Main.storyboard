@@ -93,7 +93,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="qO8-Sg-6dl" secondAttribute="trailing" id="QvT-P0-Gzq"/>
                             <constraint firstItem="bSx-ou-hIL" firstAttribute="leading" secondItem="uZM-J9-DXa" secondAttribute="leading" id="TsQ-jn-8jg"/>
                             <constraint firstItem="bSx-ou-hIL" firstAttribute="top" secondItem="0Dt-nd-Xhr" secondAttribute="bottom" id="gM3-cr-fQx"/>
-                            <constraint firstItem="qO8-Sg-6dl" firstAttribute="top" secondItem="uZM-J9-DXa" secondAttribute="topMargin" constant="10" id="goy-7K-udE"/>
+                            <constraint firstItem="qO8-Sg-6dl" firstAttribute="top" secondItem="uZM-J9-DXa" secondAttribute="topMargin" constant="16" id="goy-7K-udE"/>
                             <constraint firstItem="qO8-Sg-6dl" firstAttribute="leading" secondItem="uZM-J9-DXa" secondAttribute="leadingMargin" id="sTT-R2-9bh"/>
                         </constraints>
                         <variation key="default">
@@ -131,11 +131,11 @@
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <mutableString key="content">Said the night wind to the little lamb  do you see what I see  Way up in the sky little lamb  do you see what I see  A star a star dancing in the night  With a tail as big as a kite (x2)
+                                        <string key="content">Said the night wind to the little lamb  do you see what I see  Way up in the sky little lamb  do you see what I see  A star a star dancing in the night  With a tail as big as a kite (x2)
  Said the little lamb to the shepherd boy  do you hear what I hear  Ringing through the sky shepherd boy  do you hear what I hear  A song a song high above the trees  With a voice as big as the sea (x2)
  Said the shepherd boy to the mighty king  do you know what I know  In your palace warm mighty king  do you know what I know  A Child a Child shivers in the cold
  Let us bring Him silver and gold (x2)  Said the king to the people everywhere  listen to what I say  Pray for peace people everywhere  listen to what I say  The Child the Child sleeping in the night  He will bring us goodness and light (x2)
-</mutableString>
+</string>
                                         <attributes>
                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                             <color key="NSColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -162,7 +162,7 @@
                                     <constraint firstAttribute="height" constant="44" id="Mun-EW-ZXF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BigJohn" family="Big John" pointSize="22"/>
-                                <state key="normal" title="Song List">
+                                <state key="normal" title="BACK to Song List">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
