@@ -17,6 +17,12 @@
 		0E7EAA131DB5E01300E8044A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7EAA121DB5E01300E8044A /* NavigationController.swift */; };
 		0E8F09901CD29BB600CF771E /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F098F1CD29BB600CF771E /* SongCell.swift */; };
 		0E8F09981CD2B5CB00CF771E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09971CD2B5CB00CF771E /* Constants.swift */; };
+		0E9DD7931EA9681900745317 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD7921EA9681900745317 /* FancyView.swift */; };
+		0E9DD7951EA9682900745317 /* RoundBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD7941EA9682900745317 /* RoundBtn.swift */; };
+		0E9DD7971EA9683000745317 /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD7961EA9683000745317 /* FancyField.swift */; };
+		0E9DD7991EA9683800745317 /* FancyBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD7981EA9683800745317 /* FancyBtn.swift */; };
+		0E9DD79B1EA9684200745317 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD79A1EA9684200745317 /* CircleView.swift */; };
+		0E9DD79D1EA971BA00745317 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD79C1EA971BA00745317 /* LoginVC.swift */; };
 		0ED23D571DB82FF100DF081E /* Big_John.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0ED23D561DB82FF100DF081E /* Big_John.otf */; };
 		ED128F58D8670ED985D19B2F /* Pods_Caroling_Companion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F239E4E11B507DF3AE0D5AF /* Pods_Caroling_Companion.framework */; };
 /* End PBXBuildFile section */
@@ -38,6 +44,12 @@
 		0E7EAA121DB5E01300E8044A /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		0E8F098F1CD29BB600CF771E /* SongCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
 		0E8F09971CD2B5CB00CF771E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0E9DD7921EA9681900745317 /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
+		0E9DD7941EA9682900745317 /* RoundBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundBtn.swift; sourceTree = "<group>"; };
+		0E9DD7961EA9683000745317 /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
+		0E9DD7981EA9683800745317 /* FancyBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyBtn.swift; sourceTree = "<group>"; };
+		0E9DD79A1EA9684200745317 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		0E9DD79C1EA971BA00745317 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		0ED23D511DB81F0500DF081E /* Caroling Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Caroling Companion.entitlements"; sourceTree = "<group>"; };
 		0ED23D561DB82FF100DF081E /* Big_John.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Big_John.otf; sourceTree = "<group>"; };
 		139E4C9C9FF2D31426683A48 /* Pods-Caroling CompanionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caroling CompanionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Caroling CompanionTests/Pods-Caroling CompanionTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +135,11 @@
 			isa = PBXGroup;
 			children = (
 				0E8F098F1CD29BB600CF771E /* SongCell.swift */,
+				0E9DD7921EA9681900745317 /* FancyView.swift */,
+				0E9DD7941EA9682900745317 /* RoundBtn.swift */,
+				0E9DD7961EA9683000745317 /* FancyField.swift */,
+				0E9DD7981EA9683800745317 /* FancyBtn.swift */,
+				0E9DD79A1EA9684200745317 /* CircleView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -141,6 +158,7 @@
 				0E2EF2E41C274DD200762053 /* SongListVC.swift */,
 				0E2EF3141C2753B200762053 /* SongLyricsVC.swift */,
 				0E7EAA121DB5E01300E8044A /* NavigationController.swift */,
+				0E9DD79C1EA971BA00745317 /* LoginVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -259,7 +277,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		43B19E1589BC38E7BBE229D0 /* [CP] Copy Pods Resources */ = {
@@ -299,11 +317,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E9DD7991EA9683800745317 /* FancyBtn.swift in Sources */,
+				0E9DD7971EA9683000745317 /* FancyField.swift in Sources */,
+				0E9DD79D1EA971BA00745317 /* LoginVC.swift in Sources */,
 				0E7EAA131DB5E01300E8044A /* NavigationController.swift in Sources */,
 				0E2EF2E51C274DD200762053 /* SongListVC.swift in Sources */,
 				0E2EF2E31C274DD200762053 /* AppDelegate.swift in Sources */,
 				0E8F09981CD2B5CB00CF771E /* Constants.swift in Sources */,
+				0E9DD79B1EA9684200745317 /* CircleView.swift in Sources */,
 				0E8F09901CD29BB600CF771E /* SongCell.swift in Sources */,
+				0E9DD7951EA9682900745317 /* RoundBtn.swift in Sources */,
+				0E9DD7931EA9681900745317 /* FancyView.swift in Sources */,
 				0E2EF3151C2753B200762053 /* SongLyricsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

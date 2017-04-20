@@ -6,19 +6,10 @@ target 'Caroling Companion' do
   use_frameworks!
   pod 'Firebase'
   pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'FBSDKCoreKit'
 
   # Pods for Caroling Companion
 
-
-  target 'Caroling CompanionTests' do
-      
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'Caroling CompanionUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
 
 end
