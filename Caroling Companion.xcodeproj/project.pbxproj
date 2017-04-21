@@ -23,6 +23,8 @@
 		0E9DD7991EA9683800745317 /* FancyBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD7981EA9683800745317 /* FancyBtn.swift */; };
 		0E9DD79B1EA9684200745317 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD79A1EA9684200745317 /* CircleView.swift */; };
 		0E9DD79D1EA971BA00745317 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD79C1EA971BA00745317 /* LoginVC.swift */; };
+		0E9DD79F1EA974BF00745317 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD79E1EA974BF00745317 /* Functions.swift */; };
+		0E9DD7A31EA978E200745317 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD7A21EA978E200745317 /* DataService.swift */; };
 		0ED23D571DB82FF100DF081E /* Big_John.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0ED23D561DB82FF100DF081E /* Big_John.otf */; };
 		ED128F58D8670ED985D19B2F /* Pods_Caroling_Companion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F239E4E11B507DF3AE0D5AF /* Pods_Caroling_Companion.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +52,8 @@
 		0E9DD7981EA9683800745317 /* FancyBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyBtn.swift; sourceTree = "<group>"; };
 		0E9DD79A1EA9684200745317 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		0E9DD79C1EA971BA00745317 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		0E9DD79E1EA974BF00745317 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		0E9DD7A21EA978E200745317 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		0ED23D511DB81F0500DF081E /* Caroling Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Caroling Companion.entitlements"; sourceTree = "<group>"; };
 		0ED23D561DB82FF100DF081E /* Big_John.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Big_John.otf; sourceTree = "<group>"; };
 		139E4C9C9FF2D31426683A48 /* Pods-Caroling CompanionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caroling CompanionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Caroling CompanionTests/Pods-Caroling CompanionTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,9 +102,11 @@
 		0E2EF2E11C274DD200762053 /* Caroling Companion */ = {
 			isa = PBXGroup;
 			children = (
+				0E9DD7A11EA978DA00745317 /* DataService */,
 				0ED23D551DB82FE100DF081E /* Resources */,
 				0ED23D511DB81F0500DF081E /* Caroling Companion.entitlements */,
 				0E8F09971CD2B5CB00CF771E /* Constants.swift */,
+				0E9DD79E1EA974BF00745317 /* Functions.swift */,
 				0E8F098E1CD29B8B00CF771E /* View */,
 				0ED558311CCEEE44008C0B3E /* Controller */,
 				0E2EF2E21C274DD200762053 /* AppDelegate.swift */,
@@ -142,6 +148,14 @@
 				0E9DD79A1EA9684200745317 /* CircleView.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		0E9DD7A11EA978DA00745317 /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				0E9DD7A21EA978E200745317 /* DataService.swift */,
+			);
+			name = DataService;
 			sourceTree = "<group>";
 		};
 		0ED23D551DB82FE100DF081E /* Resources */ = {
@@ -318,10 +332,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E9DD7991EA9683800745317 /* FancyBtn.swift in Sources */,
+				0E9DD7A31EA978E200745317 /* DataService.swift in Sources */,
 				0E9DD7971EA9683000745317 /* FancyField.swift in Sources */,
 				0E9DD79D1EA971BA00745317 /* LoginVC.swift in Sources */,
 				0E7EAA131DB5E01300E8044A /* NavigationController.swift in Sources */,
 				0E2EF2E51C274DD200762053 /* SongListVC.swift in Sources */,
+				0E9DD79F1EA974BF00745317 /* Functions.swift in Sources */,
 				0E2EF2E31C274DD200762053 /* AppDelegate.swift in Sources */,
 				0E8F09981CD2B5CB00CF771E /* Constants.swift in Sources */,
 				0E9DD79B1EA9684200745317 /* CircleView.swift in Sources */,

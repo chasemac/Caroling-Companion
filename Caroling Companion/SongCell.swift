@@ -11,6 +11,7 @@ import UIKit
 class SongCell: UITableViewCell {
     
     @IBOutlet weak var songNameLabel: UILabel!
+    @IBOutlet weak var starImage: UIImageView!
     
     let softGreen = UIColor(red: 0.467, green: 0.600, blue: 0.424, alpha: 1.00)
     let darkRed = UIColor(red: 0.718, green: 0.310, blue: 0.310, alpha: 1.00)
@@ -40,6 +41,10 @@ class SongCell: UITableViewCell {
         else {
             self.backgroundColor = softRed
         }
+    }
+    
+    func favoriteSong(indexPath: NSIndexPath) {
+        starImage.image = UIImage(named: "star-filled")
     }
     
 }

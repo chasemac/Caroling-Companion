@@ -12,6 +12,7 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
+    
     var ref: FIRDatabaseReference!
     fileprivate var _refHandle: FIRDatabaseHandle!
     var songsF: [FIRDataSnapshot]! = []
@@ -25,6 +26,13 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         ref = FIRDatabase.database().reference()
         loadSongs()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        guard FIRAuth.auth()?.currentUser != nil else {
+            performSegue(withIdentifier: "LoginVC", sender: nil)
+            return
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,10 +96,69 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let detailVC = segue.destination as! SongLyricsVC
-        detailVC.song = (sender as! NSDictionary) as! [AnyHashable : Any] as! [String : String]
+        if segue.identifier == "detailSegue" {
+            let detailVC = segue.destination as! SongLyricsVC
+            detailVC.song = (sender as! NSDictionary) as! [AnyHashable : Any] as! [String : String]
+        }
+
     }
     
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+
+        
+        let favorite = UITableViewRowAction(style: .normal, title: "Favorite") { action, index in
+            print("favorite button tapped")
+            
+        
+        }
+        favorite.backgroundColor = .lightGray
+        
+//        let more = UITableViewRowAction(style: .normal, title: "More") { action, index in
+//            print("more button tapped")
+//        }
+//        more.backgroundColor = .lightGray
+//        
+//        let share = UITableViewRowAction(style: .normal, title: "Share") { action, index in
+//            print("share button tapped")
+//        }
+//        share.backgroundColor = .blue
+//        
+//        return [share, favorite, more]
+        
+        return [favorite]
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func singOut() {
+        self.performSegue(withIdentifier: "LoginVC", sender: nil)
+    }
+    
+    @IBAction func logoutTapped(_ sender: Any) {
+        do {
+           try  FIRAuth.auth()?.signOut()
+        } catch {
+        print("failed"  )
+        }
+        let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: UIAlertControllerStyle.alert)
+        let destructiveAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive) {
+            (result : UIAlertAction) -> Void in
+            print("Signed Out")
+            self.singOut()
+        }
+        let okAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
+            (result : UIAlertAction) -> Void in
+            print("Cancel")
+        }
+        alertController.addAction(destructiveAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+
+        
+    }
     
     
 }
