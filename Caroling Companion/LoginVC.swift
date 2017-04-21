@@ -17,17 +17,20 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var pwdField: FancyField!
     @IBOutlet weak var loginBtn: FancyBtn!
     
-    var fUser: FIRUser!
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.emailField.delegate = self
         self.pwdField.delegate = self
+        
+        
     }
 
     @IBAction func facebookBtnTapped(_ sender: Any) {
-let facebookLogin = FBSDKLoginManager()
+
+        let facebookLogin = FBSDKLoginManager()
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
             if error != nil {
                 print("unable to authenticate with facebook \(String(describing: error))")
@@ -43,6 +46,59 @@ let facebookLogin = FBSDKLoginManager()
     }
     
     func firebaseAuth(_ credential: FIRAuthCredential) {
+        guard FIRAuth.auth()?.currentUser?.isAnonymous == false else {
+            FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
+                if error != nil {
+                    print("CHASE: Unable to auth with Firebase - \(String(describing: error))")
+                    if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
+                        switch errCode {
+                            
+                        case .errorCodeUserNotFound:
+                            setupDefaultAlert(title: "", message: " does not exist", actionTitle: "Ok", VC: self)
+                        case .errorCodeEmailAlreadyInUse:
+                            setupDefaultAlert(title: "", message: "An account was previously created with your Facebook's email address, please click the email button and sign in using your email address and password", actionTitle: "Ok", VC: self)
+                            print("in use")
+                        case .errorCodeTooManyRequests:
+                            setupDefaultAlert(title: "", message: "Too many requests", actionTitle: "Ok", VC: self)
+                            print("too many email attemps")
+                        case .errorCodeAppNotAuthorized:
+                            print("app not authorized")
+                        case .errorCodeNetworkError:
+                            print("network error")
+                            setupDefaultAlert(title: "", message: "Unable to connect to the internet!", actionTitle: "Ok", VC: self)
+                        default:
+                            print("Create User Error: \(error!)")
+                            
+                        }
+                    }
+                    
+                    
+                } else {
+                    
+                    user?.link(with: credential, completion: { (user, error) in
+                        print("CHASE: Linked Succesffully authenticated with Firebase")
+                        if let user = user {
+                            if user.photoURL != nil {
+                                let userData = [PROVIDER_DB_STRING: credential.provider,
+                                                EMAIL_DB_STRING: user.email!,
+                                                NAME_DB_STRING: user.displayName!,
+                                                FACEBOOK_PROFILE_IMAGEURL_DB_STRING: user.photoURL!.absoluteString as String
+                                ]
+                                completeSignIn(user.uid, userData: userData, VC: self, usernameExistsSegue: "SongListVC", userNameDNESegue: "SongListVC")
+                            } else {
+                                let userData = [PROVIDER_DB_STRING: credential.provider,
+                                                EMAIL_DB_STRING: user.email!,
+                                                ]
+                                completeSignIn(user.uid, userData: userData, VC: self, usernameExistsSegue: "SongListVC", userNameDNESegue: "SongListVC")
+                            }
+                        }
+                    })
+                }
+            })
+
+            return
+        }
+        
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
             if error != nil {
                 print("CHASE: Unable to auth with Firebase - \(String(describing: error))")
@@ -90,83 +146,150 @@ let facebookLogin = FBSDKLoginManager()
         })
     }
     
-    
 
     @IBAction func loginBtnPressed(_ sender: Any) {
-        
-        
-        
-        
-        if let email = emailField.text, let pwd = pwdField.text {
-            guard FIRAuth.auth()?.currentUser != nil else {
-                let credential = FIREmailPasswordAuthProvider.credential(withEmail: email, password: pwd)
-                user.link(credential
-                return
-            }
+        if let email = emailField.text, let pass = pwdField.text, (email.characters.count > 0 && pass.characters.count > 0) {
             
-            
-            // SIGN IN USER
-            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
-                if error == nil {
-                    print("CHASE: EMAIL User authenticated with Firebase")
-                    if let user = user {
-                        
-                        
-                        
-                        let userData = [PROVIDER_DB_STRING: user.providerID,
-                                        EMAIL_DB_STRING: email]
-                        completeSignIn(user.uid, userData: userData, VC: self, usernameExistsSegue: "SongListVC", userNameDNESegue: "SongListVC")
-                    }
-                } else {
-                    if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
-                        switch errCode {
-                        case .errorCodeInvalidEmail:
-                            setupDefaultAlert(title: "", message: "\(self.emailField.text!) does not exist", actionTitle: "Ok", VC: self)
-                            print("invalid email")
-                        case .errorCodeUserNotFound:
-                            // CREATE USER
-                            let alertController = UIAlertController(title: "Create New User?", message: "\(self.emailField.text!) user account does not exist", preferredStyle: UIAlertControllerStyle.alert)
-                            let destructiveAction = UIAlertAction(title: "Create", style: UIAlertActionStyle.destructive) {
-                                (result : UIAlertAction) -> Void in
-                                
-                                FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
-                                    if error != nil {
-                                        print("CHASE: unable to authenticate with Firebase user email \(String(describing: error))!")
-                                    } else {
-                                        print("CHASE: Succesffully authentitcated with Firebase email")
-                                        print("New User Created")
-                                        if let user = user {
-                                            let userData = ["provider": user.providerID,
-                                                            EMAIL_DB_STRING: email]
-                                            completeSignIn(user.uid, userData: userData, VC: self, usernameExistsSegue: "SongListVC", userNameDNESegue: "SongListVC")
-                                        }
-                                    }
-                                })
-                            }
-                            let okAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
-                                (result : UIAlertAction) -> Void in
-                                print("Cancel")
-                            }
-                            alertController.addAction(destructiveAction)
-                            alertController.addAction(okAction)
-                            self.present(alertController, animated: true, completion: nil)
-                            
-                        case .errorCodeTooManyRequests:
-                            setupDefaultAlert(title: "", message: "Too many requests", actionTitle: "Ok", VC: self)
-                            print("too many email attemps")
-                        case .errorCodeAppNotAuthorized:
-                            print("app not authorized")
-                        case .errorCodeNetworkError:
-                            print("network error")
-                            setupDefaultAlert(title: "", message: "Unable to connect to the internet!", actionTitle: "Ok", VC: self)
-                        default:
-                            print("Create User Error: \(error!)")
-                        }
-                    }
+            // Call the login service
+            AuthService.instance.login(email: email, password: pass, onComplete: { (errMsg, user) in
+                guard errMsg == nil else {
+                    let alert = UIAlertController(title: "Error Authenticating", message: errMsg, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    return
                 }
             })
+            performSegue(withIdentifier: "SongListVC", sender: nil)
+            
+        } else {
+            setupDefaultAlert(title: "Username & Password Required", message: "You must enter both a username & password", actionTitle: "Ok", VC: self)
         }
-
+    
+//        if let email = emailField.text, let pwd = pwdField.text {
+//            guard FIRAuth.auth()?.currentUser?.isAnonymous == false else {
+//                print("merger")
+//                let credential = FIREmailPasswordAuthProvider.credential(withEmail: email, password: pwd)
+//                FIRAuth.auth()?.currentUser!.link(with: credential, completion: { (user, error) in
+//                    if error == nil {
+//                        print("CHASE: EMAIL User authenticated with Firebase")
+//                        if let user = user {
+//                            let userData = [PROVIDER_DB_STRING: user.providerID,
+//                                            EMAIL_DB_STRING: email]
+//                            completeSignIn(user.uid, userData: userData, VC: self, usernameExistsSegue: "SongListVC", userNameDNESegue: "SongListVC")
+//                        }
+//                    } else {
+//                        if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
+//                            switch errCode {
+//                            case .errorCodeInvalidEmail:
+//                                setupDefaultAlert(title: "", message: "\(self.emailField.text!) does not exist", actionTitle: "Ok", VC: self)
+//                                print("invalid email")
+//                            case .errorCodeUserNotFound:
+//                                // CREATE USER
+//                                let alertController = UIAlertController(title: "Create New User?", message: "\(self.emailField.text!) user account does not exist", preferredStyle: UIAlertControllerStyle.alert)
+//                                let destructiveAction = UIAlertAction(title: "Create", style: UIAlertActionStyle.destructive) {
+//                                    (result : UIAlertAction) -> Void in
+//                                    
+//                                    FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
+//                                        if error != nil {
+//                                            print("CHASE: unable to authenticate with Firebase user email \(String(describing: error))!")
+//                                        } else {
+//                                            print("CHASE: Succesffully authentitcated with Firebase email")
+//                                            print("New User Created")
+//                                            if let user = user {
+//                                                let userData = ["provider": user.providerID,
+//                                                                EMAIL_DB_STRING: email]
+//                                                completeSignIn(user.uid, userData: userData, VC: self, usernameExistsSegue: "SongListVC", userNameDNESegue: "SongListVC")
+//                                            }
+//                                        }
+//                                    })
+//                                }
+//                                let okAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
+//                                    (result : UIAlertAction) -> Void in
+//                                    print("Cancel")
+//                                }
+//                                alertController.addAction(destructiveAction)
+//                                alertController.addAction(okAction)
+//                                self.present(alertController, animated: true, completion: nil)
+//                                
+//                            case .errorCodeTooManyRequests:
+//                                setupDefaultAlert(title: "", message: "Too many requests", actionTitle: "Ok", VC: self)
+//                                print("too many email attemps")
+//                            case .errorCodeAppNotAuthorized:
+//                                print("app not authorized")
+//                            case .errorCodeNetworkError:
+//                                print("network error")
+//                                setupDefaultAlert(title: "", message: "Unable to connect to the internet!", actionTitle: "Ok", VC: self)
+//                            default:
+//                                print("Create User Error: \(error!)")
+//                            }
+//                        }
+//                    }
+//                })
+//                return
+//            }
+//            
+//            
+//            // SIGN IN USER
+//            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
+//                if error == nil {
+//                    print("CHASE: EMAIL User authenticated with Firebase")
+//                    if let user = user {
+//                        
+//                        
+//                        
+//                        let userData = [PROVIDER_DB_STRING: user.providerID,
+//                                        EMAIL_DB_STRING: email]
+//                        completeSignIn(user.uid, userData: userData, VC: self, usernameExistsSegue: "SongListVC", userNameDNESegue: "SongListVC")
+//                    }
+//                } else {
+//                    if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
+//                        switch errCode {
+//                        case .errorCodeInvalidEmail:
+//                            setupDefaultAlert(title: "", message: "\(self.emailField.text!) does not exist", actionTitle: "Ok", VC: self)
+//                            print("invalid email")
+//                        case .errorCodeUserNotFound:
+//                            // CREATE USER
+//                            let alertController = UIAlertController(title: "Create New User?", message: "\(self.emailField.text!) user account does not exist", preferredStyle: UIAlertControllerStyle.alert)
+//                            let destructiveAction = UIAlertAction(title: "Create", style: UIAlertActionStyle.destructive) {
+//                                (result : UIAlertAction) -> Void in
+//                                
+//                                FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
+//                                    if error != nil {
+//                                        print("CHASE: unable to authenticate with Firebase user email \(String(describing: error))!")
+//                                    } else {
+//                                        print("CHASE: Succesffully authentitcated with Firebase email")
+//                                        print("New User Created")
+//                                        if let user = user {
+//                                            let userData = ["provider": user.providerID,
+//                                                            EMAIL_DB_STRING: email]
+//                                            completeSignIn(user.uid, userData: userData, VC: self, usernameExistsSegue: "SongListVC", userNameDNESegue: "SongListVC")
+//                                        }
+//                                    }
+//                                })
+//                            }
+//                            let okAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
+//                                (result : UIAlertAction) -> Void in
+//                                print("Cancel")
+//                            }
+//                            alertController.addAction(destructiveAction)
+//                            alertController.addAction(okAction)
+//                            self.present(alertController, animated: true, completion: nil)
+//                            
+//                        case .errorCodeTooManyRequests:
+//                            setupDefaultAlert(title: "", message: "Too many requests", actionTitle: "Ok", VC: self)
+//                            print("too many email attemps")
+//                        case .errorCodeAppNotAuthorized:
+//                            print("app not authorized")
+//                        case .errorCodeNetworkError:
+//                            print("network error")
+//                            setupDefaultAlert(title: "", message: "Unable to connect to the internet!", actionTitle: "Ok", VC: self)
+//                        default:
+//                            print("Create User Error: \(error!)")
+//                        }
+//                    }
+//                }
+//            })
+//        }
     }
     
     @IBAction func forgotPwdBtnPressed(_ sender: Any) {
@@ -215,6 +338,10 @@ let facebookLogin = FBSDKLoginManager()
     }
 
     @IBAction func skipBtnPressed(_ sender: Any) {
+        guard FIRAuth.auth()?.currentUser == nil else {
+            performSegue(withIdentifier: "SongListVC", sender: nil)
+            return
+        }
         FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
             if error == nil {
                 print("CHASE: EMAIL User authenticated with Firebase")

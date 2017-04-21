@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eSf-nl-24E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QW0-YM-oci">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -115,11 +115,24 @@
                                             <action selector="logoutTapped:" destination="eSf-nl-24E" eventType="touchUpInside" id="33o-Pm-DK7"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6I-XU-2fu">
+                                        <rect key="frame" x="347" y="22" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="qls-Da-xbm"/>
+                                            <constraint firstAttribute="height" constant="20" id="yLe-49-itg"/>
+                                        </constraints>
+                                        <state key="normal" image="save-icon"/>
+                                        <connections>
+                                            <action selector="saveBtnTapped:" destination="eSf-nl-24E" eventType="touchUpInside" id="ENk-Fk-Pse"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="yvJ-Uw-i6c" firstAttribute="leading" secondItem="icG-WL-LWS" secondAttribute="leading" constant="8" id="7LA-Vv-ni9"/>
+                                    <constraint firstItem="T6I-XU-2fu" firstAttribute="centerY" secondItem="qO8-Sg-6dl" secondAttribute="centerY" id="AOa-Or-oQ4"/>
                                     <constraint firstAttribute="bottom" secondItem="qO8-Sg-6dl" secondAttribute="bottom" constant="5" id="LmJ-Pt-8ON"/>
+                                    <constraint firstAttribute="trailing" secondItem="T6I-XU-2fu" secondAttribute="trailing" constant="8" id="Tju-A3-ZaU"/>
                                     <constraint firstAttribute="trailing" secondItem="qO8-Sg-6dl" secondAttribute="trailing" constant="20" id="d88-Yy-nvC"/>
                                     <constraint firstAttribute="bottom" secondItem="yvJ-Uw-i6c" secondAttribute="bottom" constant="18" id="qro-QY-nmd"/>
                                     <constraint firstItem="qO8-Sg-6dl" firstAttribute="leading" secondItem="icG-WL-LWS" secondAttribute="leading" constant="20" id="r9Q-54-Fn0"/>
@@ -272,12 +285,8 @@
                                 <rect key="frame" x="0.0" y="592" width="375" height="75"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0s-zD-fWx">
-                                        <rect key="frame" x="112" y="22" width="150" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="ZWZ-F3-HIA"/>
-                                            <constraint firstAttribute="width" constant="150" id="pFq-AY-2GS"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                        <rect key="frame" x="8" y="8" width="359" height="59"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <state key="normal" title="Skip">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -288,9 +297,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.53758639097213745" green="0.65890771150588989" blue="0.49905574321746826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="H0s-zD-fWx" firstAttribute="centerX" secondItem="mGF-VA-gic" secondAttribute="centerX" id="XL2-fD-gM8"/>
+                                    <constraint firstAttribute="bottom" secondItem="H0s-zD-fWx" secondAttribute="bottom" constant="8" id="9H7-4l-QfE"/>
+                                    <constraint firstItem="H0s-zD-fWx" firstAttribute="top" secondItem="mGF-VA-gic" secondAttribute="top" constant="8" id="Nr9-7M-8My"/>
+                                    <constraint firstAttribute="trailing" secondItem="H0s-zD-fWx" secondAttribute="trailing" constant="8" id="OQz-2g-HcT"/>
+                                    <constraint firstItem="H0s-zD-fWx" firstAttribute="leading" secondItem="mGF-VA-gic" secondAttribute="leading" constant="8" id="Qwc-a9-O6c"/>
                                     <constraint firstAttribute="height" constant="75" id="XUZ-68-9MB"/>
-                                    <constraint firstAttribute="top" secondItem="H0s-zD-fWx" secondAttribute="bottom" constant="-52" id="eDr-Nv-Zq0"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a sign in method" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jR-qZ-ibu">
@@ -394,6 +405,7 @@
         <image name="f" width="352" height="328"/>
         <image name="header" width="6000" height="1150"/>
         <image name="logout" width="980" height="834"/>
+        <image name="save-icon" width="290" height="295"/>
         <image name="star-empty" width="512" height="512"/>
     </resources>
 </document>

@@ -116,6 +116,9 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func singOut() {
         self.performSegue(withIdentifier: "LoginVC", sender: nil)
     }
+    @IBAction func saveBtnTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "LoginVC", sender: nil)
+    }
     
     @IBAction func logoutTapped(_ sender: Any) {
         do {

@@ -33,26 +33,26 @@ func completeSignIn(_ id: String, userData: Dictionary<String, String>, VC: UIVi
     })
 }
 
-typealias Completion = (_ errMsg: String?, _ data: AnyObject?) -> Void
-
-func handleFirebaseError(error: NSError, onComplete: Completion?, VC: UIViewController?) {
-    print(error.debugDescription)
-    if let errorCode = FIRAuthErrorCode(rawValue: error._code) {
-        switch (errorCode) {
-        case .errorCodeInvalidEmail:
-            onComplete?("Invalid email address", nil)
-        case .errorCodeWrongPassword:
-            onComplete?("Invalid password", nil)
-        case .errrorCodeAccountExistsWithDifferentCredential, .errorCodeEmailAlreadyInUse:
-            onComplete?("Could not create account. Email already in use", nil)
-        case .errorCodeNetworkError:
-            print("network error")
-            
-            // WORK IN PROGRESS
-            
-            setupDefaultAlert(title: "", message: "Unable to connect to the internet!", actionTitle: "Ok", VC: VC!)
-        default:
-            onComplete?("There was a problem authenticating, Try again", nil)
-        }
-    }
-}
+//typealias Completion = (_ errMsg: String?, _ data: AnyObject?) -> Void
+//
+//func handleFirebaseError(error: NSError, onComplete: Completion?, VC: UIViewController?) {
+//    print(error.debugDescription)
+//    if let errorCode = FIRAuthErrorCode(rawValue: error._code) {
+//        switch (errorCode) {
+//        case .errorCodeInvalidEmail:
+//            onComplete?("Invalid email address", nil)
+//        case .errorCodeWrongPassword:
+//            onComplete?("Invalid password", nil)
+//        case .errrorCodeAccountExistsWithDifferentCredential, .errorCodeEmailAlreadyInUse:
+//            onComplete?("Could not create account. Email already in use", nil)
+//        case .errorCodeNetworkError:
+//            print("network error")
+//            
+//            // WORK IN PROGRESS
+//            
+//            setupDefaultAlert(title: "", message: "Unable to connect to the internet!", actionTitle: "Ok", VC: VC!)
+//        default:
+//            onComplete?("There was a problem authenticating, Try again", nil)
+//        }
+//    }
+//}
