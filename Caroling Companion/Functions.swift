@@ -19,12 +19,8 @@ func setupDefaultAlert(title: String, message: String, actionTitle: String, VC: 
     VC.present(successfulEmailSentAlertConroller, animated: true, completion: nil)
 }
 
-
 func completeSignIn(_ id: String, userData: Dictionary<String, String>, VC: UIViewController, usernameExistsSegue: String, userNameDNESegue: String) {
     DataService.ds.createFirebaseDBUser(id, userData: userData)
-    // Save Data to keychain
-//    let keychainResult = KeychainWrapper.setString(id, forKey: KEY_UID)
-//    print("CHASE: Data saved to keychaise \(keychainResult)")
     
     // Check if Username exist
     DataService.ds.REF_USERS.child(id).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -35,7 +31,6 @@ func completeSignIn(_ id: String, userData: Dictionary<String, String>, VC: UIVi
             VC.performSegue(withIdentifier: userNameDNESegue, sender: nil)
         }
     })
-    
 }
 
 typealias Completion = (_ errMsg: String?, _ data: AnyObject?) -> Void

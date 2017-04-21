@@ -17,6 +17,9 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var pwdField: FancyField!
     @IBOutlet weak var loginBtn: FancyBtn!
     
+    var fUser: FIRUser!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.emailField.delegate = self
@@ -37,8 +40,6 @@ let facebookLogin = FBSDKLoginManager()
                 self.firebaseAuth(credential)
             }
         }
-
-        
     }
     
     func firebaseAuth(_ credential: FIRAuthCredential) {
@@ -88,14 +89,30 @@ let facebookLogin = FBSDKLoginManager()
             }
         })
     }
+    
+    
 
     @IBAction func loginBtnPressed(_ sender: Any) {
+        
+        
+        
+        
         if let email = emailField.text, let pwd = pwdField.text {
+            guard FIRAuth.auth()?.currentUser != nil else {
+                let credential = FIREmailPasswordAuthProvider.credential(withEmail: email, password: pwd)
+                user.link(credential
+                return
+            }
+            
+            
             // SIGN IN USER
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
                 if error == nil {
                     print("CHASE: EMAIL User authenticated with Firebase")
                     if let user = user {
+                        
+                        
+                        
                         let userData = [PROVIDER_DB_STRING: user.providerID,
                                         EMAIL_DB_STRING: email]
                         completeSignIn(user.uid, userData: userData, VC: self, usernameExistsSegue: "SongListVC", userNameDNESegue: "SongListVC")
@@ -155,7 +172,7 @@ let facebookLogin = FBSDKLoginManager()
     @IBAction func forgotPwdBtnPressed(_ sender: Any) {
         emailField.resignFirstResponder()
         //      textFieldDidEndEditing(pwdField)
-        if emailField.text != nil {
+        if emailField.text != nil || emailField.text != "" {
             
             FIRAuth.auth()?.sendPasswordReset(withEmail: emailField.text!, completion: { (error) in
                 
@@ -163,10 +180,10 @@ let facebookLogin = FBSDKLoginManager()
                     if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
                         switch errCode {
                         case .errorCodeInvalidEmail:
-                            setupDefaultAlert(title: "", message: "\(self.emailField.text!) does not exist", actionTitle: "Ok", VC: self)
+                            setupDefaultAlert(title: "", message: "Email does not exist", actionTitle: "Ok", VC: self)
                             print("invalid email")
                         case .errorCodeUserNotFound:
-                            setupDefaultAlert(title: "", message: "\(self.emailField.text!) does not exist", actionTitle: "Ok", VC: self)
+                            setupDefaultAlert(title: "", message: "Email does not exist", actionTitle: "Ok", VC: self)
                         case .errorCodeEmailAlreadyInUse:
                             print("in use")
                         case .errorCodeTooManyRequests:
@@ -197,6 +214,28 @@ let facebookLogin = FBSDKLoginManager()
 
     }
 
+    @IBAction func skipBtnPressed(_ sender: Any) {
+        FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
+            if error == nil {
+                print("CHASE: EMAIL User authenticated with Firebase")
+                if let user = user {
+                    let userData = [PROVIDER_DB_STRING: user.providerID]
+                    completeSignIn(user.uid, userData: userData, VC: self, usernameExistsSegue: "SongListVC", userNameDNESegue: "SongListVC")
+                }
+            } else {
+                if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
+                    switch errCode {
+                        
+                    case .errorCodeNetworkError:
+                        print("network error")
+                        setupDefaultAlert(title: "", message: "Unable to connect to the internet!", actionTitle: "Ok", VC: self)
+                    default:
+                        print("Create User Error: \(error!)")
+                    }
+                }
+            }
+        })
+    }
     /*
     // MARK: - Navigation
 
@@ -222,12 +261,12 @@ let facebookLogin = FBSDKLoginManager()
     
     // Keyboard shows
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        moveTextField(textField, moveDistance: -250, up: true)
+        moveTextField(textField, moveDistance: -216, up: true)
     }
     
     // Keyboard is hidden
     func textFieldDidEndEditing(_ textField: UITextField) {
-        moveTextField(textField, moveDistance: -250, up: false)
+        moveTextField(textField, moveDistance: -216, up: false)
     }
     
     //presses return key

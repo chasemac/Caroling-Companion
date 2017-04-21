@@ -12,11 +12,7 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
-    var ref: FIRDatabaseReference!
-    fileprivate var _refHandle: FIRDatabaseHandle!
-    var songsF: [FIRDataSnapshot]! = []
-    
+    var songs = [Song]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +20,19 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         tableView.delegate = self
         
-        ref = FIRDatabase.database().reference()
-        loadSongs()
+        DataService.ds.REF_SONGS.observe(.value, with: { (snapshot) in
+            self.songs = []
+            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshot {
+                    if let songDict = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key
+                        let song = Song(songKey: key, postData: songDict)
+                        self.songs.insert(song, at: 0)
+                    }
+                }
+            }
+            self.tableView.reloadData()
+        })
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -44,53 +51,31 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         UINavigationBar.appearance().titleTextAttributes = attrs
     }
     
-    func loadSongs() {
-        
-        self.songsF.removeAll()
-        // Listen for new messages in the Firebase database
-        _refHandle = self.ref.child("songs").observe(.childAdded, with: { (snapshot) -> Void in
-            self.songsF.append(snapshot)
-            self.tableView.insertRows(at: [IndexPath(row: self.songsF.count-1, section: 0)], with: .automatic)
-            
-        })
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.ref.removeObserver(withHandle: _refHandle)
-    }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.songsF.count
+        return self.songs.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let song = songs[indexPath.row]
+        
         // Dequeue cell
         if let cell = tableView.dequeueReusableCell(withIdentifier: "SongCell", for: indexPath) as? SongCell {
-            // Unpack message from Firebase DataSnapshot
-            let songSnapshot: FIRDataSnapshot! = self.songsF[(indexPath as NSIndexPath).row]
-            let song = songSnapshot.value as! Dictionary<String, String>
             
-            let title = song[Constants.SongFields.title] as String!
-            let capTitle = title?.uppercased()
-            
-            cell.configureCell(capTitle!, indexPath: indexPath as NSIndexPath)
+            cell.configureCell(song, indexPath: indexPath as NSIndexPath)
             
             return cell
         } else {
             print("error")
             return SongCell()
-            
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        // Unpack message from Firebase DataSnapshot
-        let songSnapshot: FIRDataSnapshot! = self.songsF[(indexPath as NSIndexPath).row]
-        let song = songSnapshot.value as! Dictionary<String, String>
+        let song = songs[indexPath.row]
         
         self.performSegue(withIdentifier: "detailSegue", sender: song)
     }
@@ -98,33 +83,28 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue" {
             let detailVC = segue.destination as! SongLyricsVC
-            detailVC.song = (sender as! NSDictionary) as! [AnyHashable : Any] as! [String : String]
+            detailVC.song = sender as! Song
         }
-
     }
     
-    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-
         
         let favorite = UITableViewRowAction(style: .normal, title: "Favorite") { action, index in
             print("favorite button tapped")
-            
-        
         }
         favorite.backgroundColor = .lightGray
         
-//        let more = UITableViewRowAction(style: .normal, title: "More") { action, index in
-//            print("more button tapped")
-//        }
-//        more.backgroundColor = .lightGray
-//        
-//        let share = UITableViewRowAction(style: .normal, title: "Share") { action, index in
-//            print("share button tapped")
-//        }
-//        share.backgroundColor = .blue
-//        
-//        return [share, favorite, more]
+        //        let more = UITableViewRowAction(style: .normal, title: "More") { action, index in
+        //            print("more button tapped")
+        //        }
+        //        more.backgroundColor = .lightGray
+        //
+        //        let share = UITableViewRowAction(style: .normal, title: "Share") { action, index in
+        //            print("share button tapped")
+        //        }
+        //        share.backgroundColor = .blue
+        //
+        //        return [share, favorite, more]
         
         return [favorite]
     }
@@ -139,9 +119,9 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func logoutTapped(_ sender: Any) {
         do {
-           try  FIRAuth.auth()?.signOut()
+            try  FIRAuth.auth()?.signOut()
         } catch {
-        print("failed"  )
+            print("failed"  )
         }
         let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: UIAlertControllerStyle.alert)
         let destructiveAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive) {
@@ -156,11 +136,8 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         alertController.addAction(destructiveAction)
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
-
         
     }
-    
-    
 }
 
 

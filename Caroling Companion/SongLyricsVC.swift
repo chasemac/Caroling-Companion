@@ -12,20 +12,19 @@ class SongLyricsVC: UIViewController {
     
     @IBOutlet weak var songListBtn: UIButton!
     
-    var song = [String:String]()
+    var song = Song(lyrics: "", title: "", favorites: 0, userUID: "", postedDate: "")
     
     @IBOutlet weak var txtView: UITextView!
     @IBOutlet weak var songTitle: UILabel!
-//    @IBOutlet weak var videoView: UIWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
        initText()
         
-        let title = song[Constants.SongFields.title] as String!
-        let lyrics = song[Constants.SongFields.lyrics] as String!
+        let title = self.song.title
+        let lyrics = self.song.lyrics
         
-        let lyricsSwift = lyrics?.replacingOccurrences(of: "<br>", with: "\n")
+        let lyricsSwift = lyrics.replacingOccurrences(of: "<br>", with: "\n")
         
         txtView.text = lyricsSwift
         songTitle.text = title
