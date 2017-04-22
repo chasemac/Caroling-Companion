@@ -110,8 +110,6 @@
 				0E9DD7A41EA9B06100745317 /* Model */,
 				0ED23D551DB82FE100DF081E /* Resources */,
 				0ED23D511DB81F0500DF081E /* Caroling Companion.entitlements */,
-				0E8F09971CD2B5CB00CF771E /* Constants.swift */,
-				0E9DD79E1EA974BF00745317 /* Functions.swift */,
 				0E8F098E1CD29B8B00CF771E /* View */,
 				0ED558311CCEEE44008C0B3E /* Controller */,
 				0E2EF2E21C274DD200762053 /* AppDelegate.swift */,
@@ -176,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				0ED23D561DB82FF100DF081E /* Big_John.otf */,
+				0E8F09971CD2B5CB00CF771E /* Constants.swift */,
+				0E9DD79E1EA974BF00745317 /* Functions.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";

@@ -11,6 +11,7 @@ import UIKit
 let SHADOW_COLOR: CGFloat = 157.0 / 255.0
 let SHADOW_GRAY: CGFloat = 120.0 / 255.0
 let YOUTUBE_URL: String = "https://www.youtube.com/embed/"
+let USER_DOES_NOT_EXIST = "DNE"
 
 let KEY_UID = "uid"
 
