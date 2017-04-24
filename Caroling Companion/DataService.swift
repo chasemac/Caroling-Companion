@@ -39,12 +39,8 @@ class DataService {
     }
     
 //    var REF_USER_CURRENT: FIRDatabaseReference {
-////        let uid = KeychainWrapper.stringForKey(KEY_UID)
-////        // ------> Fix this later! don't force unwrap
-////        let user = REF_USERS.child(uid!)
-////        return user
+//        return
 //    }
-    
     
     var REF_PROFILE_IMAGES: FIRStorageReference {
         return _REF_PROFILE_IMAGES

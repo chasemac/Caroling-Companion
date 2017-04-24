@@ -28,7 +28,6 @@ class AuthService {
             } else {
                 if error != nil {
                     self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: "", password: "")
-//                    onComplete!(error as? String, nil)
                 }
             }
         })
