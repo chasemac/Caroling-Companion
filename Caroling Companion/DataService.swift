@@ -50,7 +50,7 @@ class DataService {
         return _REF_PROFILE_IMAGES
     }
     
-    func letsCreateFirebaseDBUser(provider: String, user: FIRUser?, error: Error?) {
+    func createFirebaseDBUser(provider: String, user: FIRUser?, error: Error?) {
         guard user != nil else {
             print("User does not exist, error saving user")
             return
