@@ -19,6 +19,11 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if FIRAuth.auth()?.currentUser?.uid != nil {
+            print("Logged in user UID ------> \(FIRAuth.auth()?.currentUser!.uid as Any)")
+        } else {
+            print("no current user")
+        }
         self.emailField.delegate = self
         self.pwdField.delegate = self
     }
@@ -29,6 +34,21 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
             if error != nil {
                 print("unable to authenticate with facebook \(String(describing: error))")
+                if FIRAuth.auth()?.currentUser != nil {
+                    let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                    AuthService.instance.firebaseFacebookLogin(credential, onComplete: { (errMsg, user) in
+                        if errMsg != nil {
+                            let alert = UIAlertController(title: "Error Authenticating", message: errMsg, preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                            return
+                        }
+                        if user != nil {
+                            self.performSegue(withIdentifier: "ProfileVC", sender: nil)
+                        }
+                    })
+                }
+
                 setupDefaultAlert(title: "", message: "Unable to authenticate with Facebook", actionTitle: "Ok", VC: self)
             } else if result?.isCancelled == true {
                 print("user canceled")
@@ -42,10 +62,13 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                         self.present(alert, animated: true, completion: nil)
                         return
                     }
+                    if user != nil {
+                        self.performSegue(withIdentifier: "ProfileVC", sender: nil)
+                    }
                 })
                 
             }
-            self.performSegue(withIdentifier: "SongListVC", sender: nil)
+            
         }
         
     }
@@ -56,12 +79,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             // Call the login service
             AuthService.instance.login(email: email, password: password, onComplete: { (errMsg, user) in
                 
-                if errMsg != nil && errMsg != USER_DOES_NOT_EXIST {
-                    let alert = UIAlertController(title: "Error Authenticating", message: errMsg, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                    return
-                } else if errMsg == USER_DOES_NOT_EXIST {
+                if errMsg == USER_DOES_NOT_EXIST {
                     
                     // CREATE USER
                     let alertController = UIAlertController(title: "Create New User?", message: "\(email) user account does not exist", preferredStyle: UIAlertControllerStyle.alert)
@@ -75,7 +93,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                                 self.present(alert, animated: true, completion: nil)
                                 return
                             }
-                            self.performSegue(withIdentifier: "SongListVC", sender: nil)
+                            self.performSegue(withIdentifier: "ProfileVC", sender: nil)
                         })
                     }
                     let okAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
@@ -85,9 +103,14 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                     alertController.addAction(destructiveAction)
                     alertController.addAction(okAction)
                     self.present(alertController, animated: true, completion: nil)
+                } else if errMsg != nil && errMsg != USER_DOES_NOT_EXIST {
+                    let alert = UIAlertController(title: "Error Authenticating", message: errMsg, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    return
                 }
-                else if errMsg == nil {
-                    self.performSegue(withIdentifier: "SongListVC", sender: nil)
+                else if user != nil {
+                    self.performSegue(withIdentifier: "ProfileVC", sender: nil)
                 }
             })
             
@@ -96,7 +119,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         }
         return
     }
-    
     
     @IBAction func forgotPwdBtnPressed(_ sender: Any) {
         emailField.resignFirstResponder()
@@ -145,7 +167,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func skipBtnPressed(_ sender: Any) {
         guard FIRAuth.auth()?.currentUser == nil else {
-            performSegue(withIdentifier: "SongListVC", sender: nil)
+            performSegue(withIdentifier: "ProfileVC", sender: nil)
             return
         }
         FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
@@ -153,12 +175,11 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 print("CHASE: EMAIL User authenticated with Firebase")
                 if let user = user {
                     let userData = [PROVIDER_DB_STRING: user.providerID]
-                    completeSignIn(user.uid, userData: userData, VC: self, usernameExistsSegue: "SongListVC", userNameDNESegue: "SongListVC")
+                    completeSignIn(user.uid, userData: userData, VC: self, usernameExistsSegue: "ProfileVC", userNameDNESegue: "ProfileVC")
                 }
             } else {
                 if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
                     switch errCode {
-                        
                     case .errorCodeNetworkError:
                         print("network error")
                         setupDefaultAlert(title: "", message: "Unable to connect to the internet!", actionTitle: "Ok", VC: self)
@@ -169,15 +190,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             }
         })
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
     // MARK: KEYBOARD FUNCTIONS
     // Move View
@@ -214,5 +226,25 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
+    @IBAction func UnlinkBtnTapped(_ sender: Any) {
+        print(FIRAuth.auth()?.currentUser?.providerID as Any)
+        
+        let providerID = "facebook.com"
+        //    let providerID = FIRAuth.auth()?.currentUser?.providerID
+        
+        FIRAuth.auth()?.currentUser?.unlink(fromProvider: providerID) { (user, error) in
+            if error != nil {
+                print("success")
+                print(FIRAuth.auth()?.currentUser?.providerData.count)
+            }
+        }
+    }
+    @IBAction func logoutTapped(_ sender: Any) {
+        do {
+            try  FIRAuth.auth()?.signOut()
+        } catch {
+            print("failed"  )
+        }
+    }
     
 }

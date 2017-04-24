@@ -19,6 +19,11 @@ class SongLyricsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if FIRAuth.auth()?.currentUser?.uid != nil {
+            print("Logged in user UID ------> \(FIRAuth.auth()?.currentUser!.uid as Any)")
+        } else {
+            print("no current user")
+        }
        initText()
         
         let title = self.song.title

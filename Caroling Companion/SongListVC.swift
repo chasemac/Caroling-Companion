@@ -17,6 +17,12 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if FIRAuth.auth()?.currentUser?.uid != nil {
+            print("Logged in user UID ------> \(FIRAuth.auth()?.currentUser!.uid as Any)")
+        } else {
+            print("no current user")
+        }
+        
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -126,6 +132,7 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         } catch {
             print("failed"  )
         }
+        
         let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: UIAlertControllerStyle.alert)
         let destructiveAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive) {
             (result : UIAlertAction) -> Void in
