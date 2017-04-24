@@ -18,7 +18,7 @@ func setupDefaultAlert(title: String, message: String, actionTitle: String, VC: 
     successfulEmailSentAlertConroller.addAction(alrighty)
     VC.present(successfulEmailSentAlertConroller, animated: true, completion: nil)
 }
-
+/*
 func completeSignIn(_ id: String, userData: Dictionary<String, String>, VC: UIViewController, usernameExistsSegue: String, userNameDNESegue: String) {
     DataService.ds.createFirebaseDBUser(id, userData: userData)
     
@@ -163,3 +163,4 @@ func singInTest(emailField: String?, pwd: String?, VC: UIViewController) {
     
 }
 
+*/

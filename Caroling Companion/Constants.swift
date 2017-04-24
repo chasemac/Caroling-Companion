@@ -35,5 +35,12 @@ let FACEBOOK_PROFILE_IMAGEURL_DB_STRING = "facebookProfileImageURL"
 let PROVIDER_DB_STRING = "provider"
 let EMAIL_DB_STRING = "email"
 
+let PROVIDER_ANONYMOUS_DB_STRING = "anonymous"
+let PROVIDER_EMAIL_DB_STRING = "email"
+let PROVIDER_FACEBOOK_DB_STRING = "facebook.com"
+let PROVIDER_GOOGLE_DB_STRING = "google.com"
+let PROVIDER_TWITTER_DB_STRING = "twitter.com"
+
+
 // MARK: STORAGE
 let PROFILE_PICS_STORAGE_STRING = "profile-pics"

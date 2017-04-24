@@ -59,7 +59,7 @@ class ProfileVC: UIViewController {
     print(FIRAuth.auth()?.currentUser?.providerData.count as Any)
         
         print(FIRAuth.auth()?.currentUser?.providerID as Any)
-        
+    
         let providerID = "facebook.com"
     //    let providerID = FIRAuth.auth()?.currentUser?.providerID
     

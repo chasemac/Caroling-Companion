@@ -49,10 +49,30 @@ class DataService {
     var REF_PROFILE_IMAGES: FIRStorageReference {
         return _REF_PROFILE_IMAGES
     }
-
     
-    func createFirebaseDBUser(_ uid: String, userData: Dictionary<String, String>) {
-        REF_USERS.child(uid).updateChildValues(userData)
+    func letsCreateFirebaseDBUser(provider: String, user: FIRUser?, error: Error?) {
+        guard user != nil else {
+            print("User does not exist, error saving user")
+            return
+        }
+        if user!.photoURL != nil {
+            print(user!.providerID)
+            print(provider)
+            
+            let userData = [PROVIDER_DB_STRING: provider,
+                            EMAIL_DB_STRING: user!.email!,
+                            NAME_DB_STRING: user!.displayName!,
+                            FACEBOOK_PROFILE_IMAGEURL_DB_STRING: user!.photoURL!.absoluteString as String]
+            REF_USERS.child(user!.uid).updateChildValues(userData)
+        } else if user!.email != nil {
+            let userData = [PROVIDER_DB_STRING: provider,
+                            EMAIL_DB_STRING: user!.email!]
+            REF_USERS.child(user!.uid).updateChildValues(userData)
+            
+        } else {
+            let userData = [PROVIDER_DB_STRING: provider]
+            REF_USERS.child(user!.uid).updateChildValues(userData)
+        }
     }
     
 //    func setTextFieldToDataBaseText(_ DBRef: String, textField: UITextField) {

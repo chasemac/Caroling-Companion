@@ -170,25 +170,41 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             performSegue(withIdentifier: "ProfileVC", sender: nil)
             return
         }
-        FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
-            if error == nil {
-                print("CHASE: EMAIL User authenticated with Firebase")
-                if let user = user {
-                    let userData = [PROVIDER_DB_STRING: user.providerID]
-                    completeSignIn(user.uid, userData: userData, VC: self, usernameExistsSegue: "ProfileVC", userNameDNESegue: "ProfileVC")
-                }
-            } else {
-                if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
-                    switch errCode {
-                    case .errorCodeNetworkError:
-                        print("network error")
-                        setupDefaultAlert(title: "", message: "Unable to connect to the internet!", actionTitle: "Ok", VC: self)
-                    default:
-                        print("Create User Error: \(error!)")
-                    }
-                }
+        AuthService.instance.loginAnonymous { (errMsg, user) in
+            print("are we here?")
+            self.performSegue(withIdentifier: "ProfileVC", sender: nil)
+            if errMsg != nil {
+                let alert = UIAlertController(title: "Error Authenticating", message: errMsg, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
             }
-        })
+            print("here we go")
+            if user != nil {
+                print("we got here")
+                self.performSegue(withIdentifier: "ProfileVC", sender: nil)
+            }
+
+        }
+//        FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
+//            if error == nil {
+//                print("CHASE: EMAIL User authenticated with Firebase")
+//                if let user = user {
+//                    let userData = [PROVIDER_DB_STRING: user.providerID]
+//                    completeSignIn(user.uid, userData: userData, VC: self, usernameExistsSegue: "ProfileVC", userNameDNESegue: "ProfileVC")
+//                }
+//            } else {
+//                if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
+//                    switch errCode {
+//                    case .errorCodeNetworkError:
+//                        print("network error")
+//                        setupDefaultAlert(title: "", message: "Unable to connect to the internet!", actionTitle: "Ok", VC: self)
+//                    default:
+//                        print("Create User Error: \(error!)")
+//                    }
+//                }
+//            }
+//        })
     }
     
     // MARK: KEYBOARD FUNCTIONS
