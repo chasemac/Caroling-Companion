@@ -27,7 +27,7 @@ class AuthService {
                 onComplete!(nil, user)
             } else {
                 if error != nil {
-                    self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: "", password: "")
+                    self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: "")
                 }
             }
         })
@@ -41,7 +41,7 @@ class AuthService {
                 if error != nil {
                     print("CHASE: Unable to auth with Firebase - \(String(describing: error))")
                     // Handle Errors
-                    self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: "", password: "")
+                    self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: "")
                 } else {
                     user?.link(with: credential, completion: { (user, error) in
                         print("CHASE: Attempted Link with Firebase")
@@ -64,7 +64,7 @@ class AuthService {
             if error != nil {
                 print("CHASE: Unable to auth with Firebase - \(String(describing: error))")
                 // Handle Errors
-                self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: "", password: "")
+                self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: "")
             } else if user != nil {
                 print("CHASE: Succesffully authenticated with Firebase")
                 DataService.ds.createFirebaseDBUser(provider: PROVIDER_FACEBOOK_DB_STRING, user: user, error: error)
@@ -101,7 +101,7 @@ class AuthService {
                     }
                 }
                 // Handle all other errors
-                self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: email, password: password)
+                self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: email)
                 
             } else {
                 // successfully logged in
@@ -111,8 +111,16 @@ class AuthService {
         })
     }
     
+    func resetPassword(email: String, onComplete: Completion?) {
+        FIRAuth.auth()?.sendPasswordReset(withEmail: email, completion: { (error) in
+            if error != nil {
+                self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: email)
+            }
+        })
+    }
     
-    func handleFirebaseError(error: NSError, onComplete: Completion?, email: String?, password: String?) {
+    
+    func handleFirebaseError(error: NSError, onComplete: Completion?, email: String?) {
         print(error.debugDescription)
         if let errorCode = FIRAuthErrorCode(rawValue: error._code) {
             switch (errorCode) {
@@ -124,9 +132,9 @@ class AuthService {
                 onComplete?("Could not create account. Email already in use", nil)
             case .errorCodeUserNotFound:
                 onComplete?("User does not exist", nil)
-                //            case .errorCodeEmailAlreadyInUse:
-                //                onComplete?("An account was previously created with your Facebook's email address, please click the email button and sign in using your email address and password", nil)
-            //                print("in use")
+            case .errorCodeEmailAlreadyInUse:
+                onComplete?("An account was previously created with your Facebook's email address, please click the email button and sign in using your email address and password", nil)
+                print("in use")
             case .errorCodeTooManyRequests:
                 onComplete?("Too many requests", nil)
                 print("too many email attemps")

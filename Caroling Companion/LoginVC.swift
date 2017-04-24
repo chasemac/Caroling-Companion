@@ -80,7 +80,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             AuthService.instance.login(email: email, password: password, onComplete: { (errMsg, user) in
                 
                 if errMsg == USER_DOES_NOT_EXIST {
-                    
                     // CREATE USER
                     let alertController = UIAlertController(title: "Create New User?", message: "\(email) user account does not exist", preferredStyle: UIAlertControllerStyle.alert)
                     let destructiveAction = UIAlertAction(title: "Create", style: UIAlertActionStyle.destructive) {
@@ -113,7 +112,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                     self.performSegue(withIdentifier: "ProfileVC", sender: nil)
                 }
             })
-            
         } else {
             setupDefaultAlert(title: "Username & Password Required", message: "You must enter both a username & password", actionTitle: "Ok", VC: self)
         }
@@ -122,42 +120,14 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func forgotPwdBtnPressed(_ sender: Any) {
         emailField.resignFirstResponder()
+        let email = emailField.text
         
-        if emailField.text != nil || emailField.text != "" {
-            
-            FIRAuth.auth()?.sendPasswordReset(withEmail: emailField.text!, completion: { (error) in
-                
-                if error != nil {
-                    if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
-                        switch errCode {
-                        case .errorCodeInvalidEmail:
-                            setupDefaultAlert(title: "", message: "Email does not exist", actionTitle: "Ok", VC: self)
-                            print("invalid email")
-                        case .errorCodeUserNotFound:
-                            setupDefaultAlert(title: "", message: "Email does not exist", actionTitle: "Ok", VC: self)
-                        case .errorCodeEmailAlreadyInUse:
-                            print("in use")
-                        case .errorCodeTooManyRequests:
-                            setupDefaultAlert(title: "", message: "Too many requests", actionTitle: "Ok", VC: self)
-                            print("too many email attemps")
-                        case .errorCodeAppNotAuthorized:
-                            print("app not authorized")
-                        case .errorCodeNetworkError:
-                            print("network error")
-                            setupDefaultAlert(title: "", message: "Unable to connect to the internet!", actionTitle: "Ok", VC: self)
-                        default:
-                            print("Create User Error: \(error!)")
-                            
-                        }
-                    }
-                } else {
-                    if self.emailField.text != nil {
-                        setupDefaultAlert(title: "", message: "Reset Email Sent!", actionTitle: "Ok", VC: self)
-                    }
+        if email != nil || email != "" {
+            AuthService.instance.resetPassword(email: email!, onComplete: { (errMsg, user) in
+                if errMsg != nil {
+                    setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
                 }
-                
             })
-            
         } else {
             
             setupDefaultAlert(title: "", message: "Type valid email address in email field", actionTitle: "Ok", VC: self)
@@ -184,27 +154,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 print("we got here")
                 self.performSegue(withIdentifier: "ProfileVC", sender: nil)
             }
-
         }
-//        FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
-//            if error == nil {
-//                print("CHASE: EMAIL User authenticated with Firebase")
-//                if let user = user {
-//                    let userData = [PROVIDER_DB_STRING: user.providerID]
-//                    completeSignIn(user.uid, userData: userData, VC: self, usernameExistsSegue: "ProfileVC", userNameDNESegue: "ProfileVC")
-//                }
-//            } else {
-//                if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
-//                    switch errCode {
-//                    case .errorCodeNetworkError:
-//                        print("network error")
-//                        setupDefaultAlert(title: "", message: "Unable to connect to the internet!", actionTitle: "Ok", VC: self)
-//                    default:
-//                        print("Create User Error: \(error!)")
-//                    }
-//                }
-//            }
-//        })
     }
     
     // MARK: KEYBOARD FUNCTIONS
@@ -251,7 +201,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         FIRAuth.auth()?.currentUser?.unlink(fromProvider: providerID) { (user, error) in
             if error != nil {
                 print("success")
-                print(FIRAuth.auth()?.currentUser?.providerData.count)
+                print(FIRAuth.auth()?.currentUser?.providerData.count as Any)
             }
         }
     }

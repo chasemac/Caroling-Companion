@@ -100,17 +100,12 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         favorite.backgroundColor = .lightGray
         
-        //        let more = UITableViewRowAction(style: .normal, title: "More") { action, index in
-        //            print("more button tapped")
-        //        }
-        //        more.backgroundColor = .lightGray
-        //
         //        let share = UITableViewRowAction(style: .normal, title: "Share") { action, index in
         //            print("share button tapped")
         //        }
         //        share.backgroundColor = .blue
         //
-        //        return [share, favorite, more]
+        //        return [share, favorite]
         
         return [favorite]
     }
