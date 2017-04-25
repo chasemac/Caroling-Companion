@@ -72,35 +72,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
         }
         
     }
-    @IBAction func googleBtnTapped(_ sender: Any) {
-        
-    }
     
-//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-//        if let error = error {
-//            print(error)
-//            // HANDLE THIS LATER
-//            return
-//        }
-//        
-//        guard let authentication = user.authentication else { return }
-//        let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken,
-//        accessToken: authentication.accessToken)
-//        
-//        print("user connected with google --> Credential FROM LoginVC: \(credential)")
-//        // HANDLE THIS LATER
-//        AuthService.instance.firebaseGoogleLogin(credential) { (errMsg, user) in
-//            // THIS IS REPEATED CODE... REFACTOR IT
-//            if errMsg != nil {
-//                setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
-//                return
-//            }
-//            if user != nil {
-//                self.performSegue(withIdentifier: "ProfileVC", sender: nil)
-//            }
-//        }
-//        
-//    }
     
     @IBAction func loginBtnPressed(_ sender: Any) {
         if let email = emailField.text, let password = pwdField.text, (email.characters.count > 0 && password.characters.count > 0) {
