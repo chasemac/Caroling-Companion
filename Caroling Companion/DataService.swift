@@ -58,7 +58,7 @@ class DataService {
             let userData = [PROVIDER_DB_STRING: provider,
                             EMAIL_DB_STRING: user!.email!,
                             NAME_DB_STRING: user!.displayName!,
-                            FACEBOOK_PROFILE_IMAGEURL_DB_STRING: user!.photoURL!.absoluteString as String]
+                            PROVIDER_PROFILE_IMAGEURL_DB_STRING: user!.photoURL!.absoluteString as String]
             REF_USERS.child(user!.uid).updateChildValues(userData)
         } else if user!.email != nil {
             let userData = [PROVIDER_DB_STRING: provider,

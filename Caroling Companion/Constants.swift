@@ -31,7 +31,7 @@ let POSTED_DATE = "postedDate"
 let USERNAME_DB_STRING = "username"
 let NAME_DB_STRING = "name"
 let PROFILE_IMAGEURL_DB_STRING = "profileImageURL"
-let FACEBOOK_PROFILE_IMAGEURL_DB_STRING = "facebookProfileImageURL"
+let PROVIDER_PROFILE_IMAGEURL_DB_STRING = "providerProfileImageURL"
 let PROVIDER_DB_STRING = "provider"
 let EMAIL_DB_STRING = "email"
 

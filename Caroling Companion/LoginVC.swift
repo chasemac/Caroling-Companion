@@ -10,8 +10,9 @@ import UIKit
 import Firebase
 import FBSDKCoreKit
 import FBSDKLoginKit
+import GoogleSignIn
 
-class LoginVC: UIViewController, UITextFieldDelegate {
+class LoginVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     
     @IBOutlet weak var emailField: FancyField!
     @IBOutlet weak var pwdField: FancyField!
@@ -19,6 +20,10 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signIn()
+        
         if FIRAuth.auth()?.currentUser?.uid != nil {
             print("Logged in user UID ------> \(FIRAuth.auth()?.currentUser!.uid as Any)")
         } else {
@@ -29,7 +34,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func facebookBtnTapped(_ sender: Any) {
-        
         let facebookLogin = FBSDKLoginManager()
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
             if error != nil {
@@ -38,9 +42,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                     let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                     AuthService.instance.firebaseFacebookLogin(credential, onComplete: { (errMsg, user) in
                         if errMsg != nil {
-                            let alert = UIAlertController(title: "Error Authenticating", message: errMsg, preferredStyle: .alert)
-                            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                            self.present(alert, animated: true, completion: nil)
+                            setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
                             return
                         }
                         if user != nil {
@@ -57,9 +59,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 AuthService.instance.firebaseFacebookLogin(credential, onComplete: { (errMsg, user) in
                     if errMsg != nil {
-                        let alert = UIAlertController(title: "Error Authenticating", message: errMsg, preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
+                        setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
                         return
                     }
                     if user != nil {
@@ -72,6 +72,35 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         }
         
     }
+    @IBAction func googleBtnTapped(_ sender: Any) {
+        
+    }
+    
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+//        if let error = error {
+//            print(error)
+//            // HANDLE THIS LATER
+//            return
+//        }
+//        
+//        guard let authentication = user.authentication else { return }
+//        let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken,
+//        accessToken: authentication.accessToken)
+//        
+//        print("user connected with google --> Credential FROM LoginVC: \(credential)")
+//        // HANDLE THIS LATER
+//        AuthService.instance.firebaseGoogleLogin(credential) { (errMsg, user) in
+//            // THIS IS REPEATED CODE... REFACTOR IT
+//            if errMsg != nil {
+//                setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
+//                return
+//            }
+//            if user != nil {
+//                self.performSegue(withIdentifier: "ProfileVC", sender: nil)
+//            }
+//        }
+//        
+//    }
     
     @IBAction func loginBtnPressed(_ sender: Any) {
         if let email = emailField.text, let password = pwdField.text, (email.characters.count > 0 && password.characters.count > 0) {
@@ -87,9 +116,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                         
                         AuthService.instance.createFirebaseUserWithEmail(email: email, password: password, onComplete: { (otherErrMsg, user) in
                             guard otherErrMsg == nil else {
-                                let alert = UIAlertController(title: "Error Authenticating", message: otherErrMsg, preferredStyle: .alert)
-                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                                self.present(alert, animated: true, completion: nil)
+                                setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
                                 return
                             }
                             self.performSegue(withIdentifier: "ProfileVC", sender: nil)
@@ -103,9 +130,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                     alertController.addAction(okAction)
                     self.present(alertController, animated: true, completion: nil)
                 } else if errMsg != nil && errMsg != USER_DOES_NOT_EXIST {
-                    let alert = UIAlertController(title: "Error Authenticating", message: errMsg, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
+                    setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
                     return
                 }
                 else if user != nil {
@@ -144,9 +169,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             print("are we here?")
             self.performSegue(withIdentifier: "ProfileVC", sender: nil)
             if errMsg != nil {
-                let alert = UIAlertController(title: "Error Authenticating", message: errMsg, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
                 return
             }
             print("here we go")
@@ -207,7 +230,12 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     }
     @IBAction func logoutTapped(_ sender: Any) {
         do {
+            if FIRAuth.auth()?.currentUser?.uid != nil {
+                print("attempting to log out of \(String(describing: FIRAuth.auth()?.currentUser?.uid))")
+            }
+            
             try  FIRAuth.auth()?.signOut()
+            print("logged out")
         } catch {
             print("failed"  )
         }

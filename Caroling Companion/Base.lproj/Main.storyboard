@@ -477,6 +477,19 @@
                                     <action selector="logoutTapped:" destination="QW0-YM-oci" eventType="touchUpInside" id="baP-7b-5Fc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLB-OK-Sgv" customClass="GIDS">
+                                <rect key="frame" x="291" y="250" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Google"/>
+                                <connections>
+                                    <action selector="googleBtnTapped:" destination="QW0-YM-oci" eventType="touchUpInside" id="8gm-er-ePw"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="orJ-wE-Fx8" customClass="GIDSignInButton">
+                                <rect key="frame" x="273" y="277" width="87" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

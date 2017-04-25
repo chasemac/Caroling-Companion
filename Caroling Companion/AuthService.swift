@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseAuth
 import FBSDKCoreKit
+import GoogleSignIn
 
 typealias Completion = (_ errMsg: String?, _ data: AnyObject?) -> Void
 
@@ -73,6 +74,20 @@ class AuthService {
         })
     }
     
+    func firebaseGoogleLogin(_ credential: FIRAuthCredential, onComplete: Completion?) {
+        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+            if error != nil {
+                print("CHASE: Unable to auth with Firebase - \(String(describing: error))")
+                // Handle Errors
+                self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: "")
+            } else if user != nil {
+                print("CHASE: Succesffully authenticated with Firebase")
+                DataService.ds.createFirebaseDBUser(provider: PROVIDER_GOOGLE_DB_STRING, user: user, error: error)
+                onComplete!(nil, user)
+            }
+            
+        }
+    }
     
     func createFirebaseUserWithEmail(email: String, password: String, onComplete: Completion?) {
         guard FIRAuth.auth()?.currentUser?.isAnonymous != true else {
