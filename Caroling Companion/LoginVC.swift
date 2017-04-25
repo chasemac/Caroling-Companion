@@ -22,7 +22,6 @@ class LoginVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
         super.viewDidLoad()
         
         GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().signIn()
         
         if FIRAuth.auth()?.currentUser?.uid != nil {
             print("Logged in user UID ------> \(FIRAuth.auth()?.currentUser!.uid as Any)")
@@ -152,6 +151,25 @@ class LoginVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
         }
     }
     
+//    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+//        print("CURRENT USER AUTH DESC: ----> \(signIn.currentUser.authentication.description)")
+//        
+//        
+//    }
+    
+//    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
+//        sign(<#T##signIn: GIDSignIn!##GIDSignIn!#>, present: <#T##UIViewController!#>)
+//    }
+//    
+
+    
+    @IBAction func googleBtnTapped(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    
+
+    
     // MARK: KEYBOARD FUNCTIONS
     // Move View
     func moveTextField(_ textField: UITextField, moveDistance: Int, up: Bool) {
@@ -186,31 +204,5 @@ class LoginVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-    @IBAction func UnlinkBtnTapped(_ sender: Any) {
-        print(FIRAuth.auth()?.currentUser?.providerID as Any)
-        
-        let providerID = "facebook.com"
-        //    let providerID = FIRAuth.auth()?.currentUser?.providerID
-        
-        FIRAuth.auth()?.currentUser?.unlink(fromProvider: providerID) { (user, error) in
-            if error != nil {
-                print("success")
-                print(FIRAuth.auth()?.currentUser?.providerData.count as Any)
-            }
-        }
-    }
-    @IBAction func logoutTapped(_ sender: Any) {
-        do {
-            if FIRAuth.auth()?.currentUser?.uid != nil {
-                print("attempting to log out of \(String(describing: FIRAuth.auth()?.currentUser?.uid))")
-            }
-            
-            try  FIRAuth.auth()?.signOut()
-            print("logged out")
-        } catch {
-            print("failed"  )
-        }
-    }
-    
+       
 }

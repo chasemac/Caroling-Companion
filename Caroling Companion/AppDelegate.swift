@@ -50,8 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
     }
     
-    
-    
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
         if url.absoluteString.contains("facebook") {
@@ -60,12 +58,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             return GIDSignIn.sharedInstance().handle(url,
                                                      sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
                                                      annotation: [:])
-            
         }
-        
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        guard FIRAuth.auth()?.currentUser?.isAnonymous != true else {
+            guard let authentication = user.authentication else { return }
+            let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                              accessToken: authentication.accessToken)
+            print("user connected with google --> Credential: \(credential)")
+            FIRAuth.auth()?.currentUser!.link(with: credential, completion: { (user, error) in
+                DataService.ds.createFirebaseDBUser(provider: PROVIDER_GOOGLE_DB_STRING, user: user, error: error)
+            })
+
+            return
+        }
         guard FIRAuth.auth()?.currentUser?.uid == nil else {
             print("currently logged into \(String(describing: FIRAuth.auth()?.currentUser?.uid))")
             return
@@ -85,6 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 return
             }
             if user != nil {
+            
                 print("I think things went well here in the AppDelegate")
             }
         }

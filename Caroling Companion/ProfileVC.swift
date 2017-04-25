@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 class ProfileVC: UIViewController {
 
@@ -15,8 +16,6 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var providerLabel: UILabel!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +65,7 @@ class ProfileVC: UIViewController {
         FIRAuth.auth()?.currentUser?.unlink(fromProvider: providerID) { (user, error) in
             if error != nil {
                 print("success")
-                print(FIRAuth.auth()?.currentUser?.providerData.count)
+                print(FIRAuth.auth()?.currentUser?.providerData.count as Any)
             }
         }
     }
@@ -78,5 +77,8 @@ class ProfileVC: UIViewController {
         } catch {
             print("failed"  )
         }
+    }
+    @IBAction func diconnectGoogleTapped(_ sender: Any) {
+        GIDSignIn.sharedInstance().disconnect()
     }
 }
