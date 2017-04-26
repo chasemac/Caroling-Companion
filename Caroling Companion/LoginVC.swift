@@ -34,6 +34,8 @@ class LoginVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
         self.pwdField.delegate = self
     }
     
+
+    
     @IBAction func facebookBtnTapped(_ sender: Any) {
         let facebookLogin = FBSDKLoginManager()
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
@@ -170,8 +172,8 @@ class LoginVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
             setupDefaultAlert(title: "", message: "Currently logged in with \(String(describing: userEmail!))", actionTitle: "Ok", VC: self)
         } else {
             GIDSignIn.sharedInstance().signIn()
+
         }
-        
     }
     
     

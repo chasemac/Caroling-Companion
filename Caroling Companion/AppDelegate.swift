@@ -62,15 +62,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        AuthService.instance.firebaseGoogleLogin(user: user, error: error) { (errMsg, user) in
-            if error != nil {
-                print(error)
-            } else if user != nil {
-                print("Google SUCCESS!!!!!!!!!")
-            } else {
-                print("I DON'T KNOW WHAT HAPPENED!")
+        if error == nil {
+
+            AuthService.instance.firebaseGoogleLogin(user: user, error: error) { (errMsg, user) in
+                if error != nil {
+                    print(error)
+                } else if user != nil {
+                    print("Google SUCCESS!!!!!!!!!")
+                } else {
+                    print("I DON'T KNOW WHAT HAPPENED!")
+                }
             }
         }
+        
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
