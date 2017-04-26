@@ -18,6 +18,8 @@ class LoginVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     @IBOutlet weak var pwdField: FancyField!
     @IBOutlet weak var loginBtn: FancyBtn!
     
+    let userEmail = FIRAuth.auth()?.currentUser?.email
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,7 +47,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
                             return
                         }
                         if user != nil {
-                            self.performSegue(withIdentifier: "ProfileVC", sender: nil)
+                            self.performSegue(withIdentifier: "SongListVC", sender: nil)
                         }
                     })
                 }
@@ -62,7 +64,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
                         return
                     }
                     if user != nil {
-                        self.performSegue(withIdentifier: "ProfileVC", sender: nil)
+                        self.performSegue(withIdentifier: "SongListVC", sender: nil)
                     }
                 })
                 
@@ -90,7 +92,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
                                 setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
                                 return
                             }
-                            self.performSegue(withIdentifier: "ProfileVC", sender: nil)
+                            self.performSegue(withIdentifier: "SongListVC", sender: nil)
                         })
                     }
                     let okAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
@@ -105,7 +107,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
                     return
                 }
                 else if user != nil {
-                    self.performSegue(withIdentifier: "ProfileVC", sender: nil)
+                    self.performSegue(withIdentifier: "SongListVC", sender: nil)
                 }
             })
         } else {
@@ -133,12 +135,12 @@ class LoginVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     
     @IBAction func skipBtnPressed(_ sender: Any) {
         guard FIRAuth.auth()?.currentUser == nil else {
-            performSegue(withIdentifier: "ProfileVC", sender: nil)
+            performSegue(withIdentifier: "SongListVC", sender: nil)
             return
         }
         AuthService.instance.loginAnonymous { (errMsg, user) in
             print("are we here?")
-            self.performSegue(withIdentifier: "ProfileVC", sender: nil)
+            self.performSegue(withIdentifier: "SongListVC", sender: nil)
             if errMsg != nil {
                 setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
                 return
@@ -146,7 +148,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
             print("here we go")
             if user != nil {
                 print("we got here")
-                self.performSegue(withIdentifier: "ProfileVC", sender: nil)
+                self.performSegue(withIdentifier: "SongListVC", sender: nil)
             }
         }
     }
@@ -164,7 +166,12 @@ class LoginVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
 
     
     @IBAction func googleBtnTapped(_ sender: Any) {
-        GIDSignIn.sharedInstance().signIn()
+        if userEmail != nil {
+            setupDefaultAlert(title: "", message: "Currently logged in with \(String(describing: userEmail!))", actionTitle: "Ok", VC: self)
+        } else {
+            GIDSignIn.sharedInstance().signIn()
+        }
+        
     }
     
     

@@ -51,6 +51,7 @@ class DataService {
             print("User does not exist, error saving user")
             return
         }
+        
         if user!.photoURL != nil {
             print(user!.providerID)
             print(provider)
@@ -59,6 +60,11 @@ class DataService {
                             EMAIL_DB_STRING: user!.email!,
                             NAME_DB_STRING: user!.displayName!,
                             PROVIDER_PROFILE_IMAGEURL_DB_STRING: user!.photoURL!.absoluteString as String]
+            REF_USERS.child(user!.uid).updateChildValues(userData)
+        } else if user!.email != nil, user?.displayName != nil {
+            let userData = [PROVIDER_DB_STRING: provider,
+                            NAME_DB_STRING: user!.displayName!,
+                            EMAIL_DB_STRING: user!.email!]
             REF_USERS.child(user!.uid).updateChildValues(userData)
         } else if user!.email != nil {
             let userData = [PROVIDER_DB_STRING: provider,

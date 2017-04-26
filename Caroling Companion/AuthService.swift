@@ -74,7 +74,24 @@ class AuthService {
         })
     }
     
-    func firebaseGoogleLogin(_ credential: FIRAuthCredential, onComplete: Completion?) {
+    func firebaseGoogleLogin(user: GIDGoogleUser!, error: Error!, onComplete: Completion?) {
+        guard FIRAuth.auth()?.currentUser?.isAnonymous != true else {
+            guard let authentication = user.authentication else { return }
+            let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                              accessToken: authentication.accessToken)
+            print("user connected with google --> Credential: \(credential)")
+            FIRAuth.auth()?.currentUser!.link(with: credential, completion: { (user, error) in
+                DataService.ds.createFirebaseDBUser(provider: PROVIDER_GOOGLE_DB_STRING, user: user, error: error)
+            })
+            return
+        }
+        if let error = error {
+            print(error)
+            return
+        }
+        guard let authentication = user.authentication else { return }
+        let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                          accessToken: authentication.accessToken)
         FIRAuth.auth()?.signIn(with: credential) { (user, error) in
             if error != nil {
                 print("CHASE: Unable to auth with Firebase - \(String(describing: error))")
@@ -87,7 +104,9 @@ class AuthService {
             }
             
         }
+
     }
+
     
     func createFirebaseUserWithEmail(email: String, password: String, onComplete: Completion?) {
         guard FIRAuth.auth()?.currentUser?.isAnonymous != true else {
@@ -106,7 +125,6 @@ class AuthService {
     }
     
     func login(email: String, password: String, onComplete: Completion?) {
-        
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
                 if let errorCode = FIRAuthErrorCode(rawValue: error!._code) {
@@ -115,11 +133,8 @@ class AuthService {
                         onComplete?(USER_DOES_NOT_EXIST,nil)
                     }
                 }
-                // Handle all other errors
                 self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: email)
-                
             } else {
-                // successfully logged in
                 print("successfully logged in")
                 onComplete?(nil, user)
             }
