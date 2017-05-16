@@ -38,13 +38,17 @@ class DataService {
         return _REF_USERS
     }
     
-//    var REF_USER_CURRENT: FIRDatabaseReference {
-//        return
-//    }
+    var REF_USER_CURRENT: FIRDatabaseReference {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        let user = REF_USERS.child(uid!)
+        return user
+    }
     
     var REF_PROFILE_IMAGES: FIRStorageReference {
         return _REF_PROFILE_IMAGES
     }
+    
+    
     
     func createFirebaseDBUser(provider: String, user: FIRUser?, error: Error?) {
         guard user != nil else {
@@ -56,23 +60,23 @@ class DataService {
             print(user!.providerID)
             print(provider)
             
-            let userData = [PROVIDER_DB_STRING: provider,
-                            EMAIL_DB_STRING: user!.email!,
-                            NAME_DB_STRING: user!.displayName!,
-                            PROVIDER_PROFILE_IMAGEURL_DB_STRING: user!.photoURL!.absoluteString as String]
+            let userData = [DBUserString.provider: provider,
+                            DBUserString.email: user!.email!,
+                            DBUserString.name: user!.displayName!,
+                            DBUserString.providerProfileImageURL: user!.photoURL!.absoluteString as String]
             REF_USERS.child(user!.uid).updateChildValues(userData)
         } else if user!.email != nil, user?.displayName != nil {
-            let userData = [PROVIDER_DB_STRING: provider,
-                            NAME_DB_STRING: user!.displayName!,
-                            EMAIL_DB_STRING: user!.email!]
+            let userData = [DBUserString.provider: provider,
+                            DBUserString.name: user!.displayName!,
+                            DBUserString.email: user!.email!]
             REF_USERS.child(user!.uid).updateChildValues(userData)
         } else if user!.email != nil {
-            let userData = [PROVIDER_DB_STRING: provider,
-                            EMAIL_DB_STRING: user!.email!]
+            let userData = [DBUserString.provider: provider,
+                            DBUserString.email: user!.email!]
             REF_USERS.child(user!.uid).updateChildValues(userData)
             
         } else {
-            let userData = [PROVIDER_DB_STRING: provider]
+            let userData = [DBUserString.provider: provider]
             REF_USERS.child(user!.uid).updateChildValues(userData)
         }
     }

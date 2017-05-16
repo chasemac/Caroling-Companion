@@ -49,6 +49,7 @@
                                                         </label>
                                                         <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-empty" translatesAutoresizingMaskIntoConstraints="NO" id="FvC-dZ-xnW">
                                                             <rect key="frame" x="7" y="33" width="30" height="30"/>
+                                                            <gestureRecognizers/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="CBf-72-jo8"/>
                                                                 <constraint firstAttribute="width" constant="30" id="ZVh-vK-wJa"/>
@@ -544,6 +545,7 @@
                         <outlet property="emailField" destination="ecc-Jp-d8a" id="sDe-d4-74W"/>
                         <outlet property="loginBtn" destination="ZQU-tP-jwn" id="lQZ-jA-XaX"/>
                         <outlet property="pwdField" destination="cnS-9y-Bxk" id="bkR-SE-PzG"/>
+                        <outlet property="skipBtn" destination="H0s-zD-fWx" id="Vu4-pr-he5"/>
                         <segue destination="eSf-nl-24E" kind="show" identifier="SongListVC" id="xmI-6n-3S4"/>
                         <segue destination="CaK-rT-Cyp" kind="show" identifier="ProfileVC" id="qjX-65-gBN"/>
                     </connections>
@@ -562,7 +564,7 @@
         <image name="star-empty" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sN7-Sf-oat"/>
-        <segue reference="rwF-pm-0zU"/>
+        <segue reference="cof-sJ-Xiz"/>
+        <segue reference="csn-Yi-f2Z"/>
     </inferredMetricsTieBreakers>
 </document>

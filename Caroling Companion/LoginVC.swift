@@ -17,6 +17,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     @IBOutlet weak var emailField: FancyField!
     @IBOutlet weak var pwdField: FancyField!
     @IBOutlet weak var loginBtn: FancyBtn!
+    @IBOutlet weak var skipBtn: UIButton!
     
     let userEmail = FIRAuth.auth()?.currentUser?.email
     
@@ -172,8 +173,13 @@ class LoginVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
             setupDefaultAlert(title: "", message: "Currently logged in with \(String(describing: userEmail!))", actionTitle: "Ok", VC: self)
         } else {
             GIDSignIn.sharedInstance().signIn()
+   //         changeSkipToNext()
 
         }
+    }
+    
+    func changeSkipToNext() {
+        skipBtn.setTitle("Next", for: .normal)
     }
     
     

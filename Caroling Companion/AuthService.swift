@@ -24,7 +24,7 @@ class AuthService {
         FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
             if error == nil {
                 print("CHASE: Anonymous User authenticated with Firebase")
-                DataService.ds.createFirebaseDBUser(provider: PROVIDER_ANONYMOUS_DB_STRING, user: user, error: error)
+                DataService.ds.createFirebaseDBUser(provider: DBProviderString.anonymous, user: user, error: error)
                 onComplete!(nil, user)
             } else {
                 if error != nil {
@@ -47,7 +47,7 @@ class AuthService {
                     user?.link(with: credential, completion: { (user, error) in
                         print("CHASE: Attempted Link with Firebase")
                         if user != nil {
-                            DataService.ds.createFirebaseDBUser(provider: PROVIDER_FACEBOOK_DB_STRING, user: user, error: error)
+                            DataService.ds.createFirebaseDBUser(provider: DBProviderString.facebook, user: user, error: error)
                             onComplete!(nil, user)
                         } else {
                             onComplete!(error as? String, nil)
@@ -68,7 +68,7 @@ class AuthService {
                 self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: "")
             } else if user != nil {
                 print("CHASE: Succesffully authenticated with Firebase")
-                DataService.ds.createFirebaseDBUser(provider: PROVIDER_FACEBOOK_DB_STRING, user: user, error: error)
+                DataService.ds.createFirebaseDBUser(provider: DBProviderString.facebook, user: user, error: error)
                 onComplete!(nil, user)
             }
         })
@@ -88,7 +88,7 @@ class AuthService {
                                                               accessToken: authentication.accessToken)
             print("user connected with google --> Credential: \(credential)")
             FIRAuth.auth()?.currentUser!.link(with: credential, completion: { (user, error) in
-                DataService.ds.createFirebaseDBUser(provider: PROVIDER_GOOGLE_DB_STRING, user: user, error: error)
+                DataService.ds.createFirebaseDBUser(provider: DBProviderString.google, user: user, error: error)
             })
             return
         }
@@ -106,7 +106,7 @@ class AuthService {
                 self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: "")
             } else if user != nil {
                 print("CHASE: Succesffully authenticated with Firebase")
-                DataService.ds.createFirebaseDBUser(provider: PROVIDER_GOOGLE_DB_STRING, user: user, error: error)
+                DataService.ds.createFirebaseDBUser(provider: DBProviderString.google, user: user, error: error)
                 onComplete!(nil, user)
             }
             
@@ -120,13 +120,13 @@ class AuthService {
             print("merger")
             let credential = FIREmailPasswordAuthProvider.credential(withEmail: email, password: password)
             FIRAuth.auth()?.currentUser!.link(with: credential, completion: { (user, error) in
-                DataService.ds.createFirebaseDBUser(provider: PROVIDER_EMAIL_DB_STRING, user: user, error: error)
+                DataService.ds.createFirebaseDBUser(provider: DBProviderString.email, user: user, error: error)
                 onComplete!(nil, user)
             })
             return
         }
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
-            DataService.ds.createFirebaseDBUser(provider: PROVIDER_EMAIL_DB_STRING, user: user, error: error)
+            DataService.ds.createFirebaseDBUser(provider: DBProviderString.email, user: user, error: error)
             onComplete!(nil, user)
         })
     }

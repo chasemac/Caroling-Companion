@@ -19,27 +19,33 @@ let KEY_UID = "uid"
 let SONGS_DB_STRING = "songs"
 let USERS_DB_STRING = "users"
 
-// Songs
-let TITLE_DB_STRING = "title"
-let LYRICS_DB_STRING = "lyrics"
-let VIDEO_URL_STRING = "video"
-let FAVORITES_DB_STRING = "favorites"
-let USER_DB_STRING = "user"
-let POSTED_DATE = "postedDate"
+// Data Base Song Strings
+struct DBSongString {
+    static let title = "title"
+    static let lyrics = "lyrics"
+    static let videoURL = "video"
+    static let favorites = "favorites"
+    static let user = "user"
+    static let postedDate = "postedDate"
+}
 
 // Users
-let USERNAME_DB_STRING = "username"
-let NAME_DB_STRING = "name"
-let PROFILE_IMAGEURL_DB_STRING = "profileImageURL"
-let PROVIDER_PROFILE_IMAGEURL_DB_STRING = "providerProfileImageURL"
-let PROVIDER_DB_STRING = "provider"
-let EMAIL_DB_STRING = "email"
+struct DBUserString {
+    static let username = "username"
+    static let name = "name"
+    static let profileImageURL = "profileImageURL"
+    static let providerProfileImageURL = "providerProfileImageURL"
+    static let provider = "provider"
+    static let email = "email"
+}
 
-let PROVIDER_ANONYMOUS_DB_STRING = "anonymous"
-let PROVIDER_EMAIL_DB_STRING = "email"
-let PROVIDER_FACEBOOK_DB_STRING = "facebook.com"
-let PROVIDER_GOOGLE_DB_STRING = "google.com"
-let PROVIDER_TWITTER_DB_STRING = "twitter.com"
+struct DBProviderString {
+    static let anonymous = "anonymous"
+    static let email = "email"
+    static let facebook = "facebook.com"
+    static let google = "google.com"
+    static let twitter = "twitter.com"
+}
 
 
 // MARK: STORAGE

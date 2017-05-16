@@ -55,23 +55,23 @@ class Song {
     init(songKey: String, postData: Dictionary<String, AnyObject>) {
         self._songKey = songKey
         
-        if let lyrics = postData[LYRICS_DB_STRING] as? String {
+        if let lyrics = postData[DBSongString.lyrics] as? String {
             self._lyrics = lyrics
         }
         
-        if let title = postData[TITLE_DB_STRING] as? String {
+        if let title = postData[DBSongString.title] as? String {
             self._title = title
         }
         
-        if let favorites = postData[FAVORITES_DB_STRING] as? Int {
+        if let favorites = postData[DBSongString.favorites] as? Int {
             self._favorites = favorites
         }
         
-        if let userUID = postData[USER_DB_STRING] as? String {
+        if let userUID = postData[DBSongString.user] as? String {
             self._userUID = userUID
         }
         
-        if let postedDate = postData[POSTED_DATE] as? String {
+        if let postedDate = postData[DBSongString.postedDate] as? String {
             self._postedDate = postedDate
         }
         
@@ -85,7 +85,7 @@ class Song {
         } else {
             _favorites = _favorites - 1
         }
-        _postRef.child(FAVORITES_DB_STRING).setValue(_favorites)
+        _postRef.child(DBSongString.favorites).setValue(_favorites)
         
         
     }

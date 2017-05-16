@@ -15,6 +15,7 @@ class SongCell: UITableViewCell {
     @IBOutlet weak var starImage: UIImageView!
     
     var song: Song!
+    var favoriteRef: FIRDatabaseReference!
     
     let softGreen = UIColor(red: 0.467, green: 0.600, blue: 0.424, alpha: 1.00)
     let darkRed = UIColor(red: 0.718, green: 0.310, blue: 0.310, alpha: 1.00)
@@ -35,6 +36,7 @@ class SongCell: UITableViewCell {
     func configureCell(_ song: Song, indexPath: NSIndexPath) {
         self.song = song
         
+        favoriteRef = DataService.ds.REF_USER_CURRENT.child(DBSongString.favorites).child(song.songKey)
         songNameLabel.text = song.title
         
         if indexPath.row % 3 == 0 {
@@ -46,11 +48,15 @@ class SongCell: UITableViewCell {
         else {
             self.backgroundColor = softRed
         }
+        
+
+        favoriteRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let _ = snapshot.value as? NSNull {
+                self.starImage.image = UIImage(named: "star-empty")
+            } else {
+                self.starImage.image = UIImage(named: "star-filled")
+            }
+        })
     }
-    
-    func favoriteSong(indexPath: NSIndexPath) {
-        starImage.image = UIImage(named: "star-filled")
-    }
-    
 }
 

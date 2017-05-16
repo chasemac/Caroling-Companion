@@ -95,10 +95,19 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
+        let song = songs[indexPath.row]
+        let favoriteRef = DataService.ds.REF_USER_CURRENT.child(DBSongString.favorites).child(song.songKey)
         let favorite = UITableViewRowAction(style: .normal, title: "Favorite") { action, index in
-            print("favorite button tapped")
+            favoriteRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                if let _ = snapshot.value as? NSNull {
+                   favoriteRef.setValue(true)
+                } else {
+                    favoriteRef.removeValue()
+                }
+                tableView.reloadData()
+            })
+            print("favorite button tapped: \(song.title) - \(song.title)")
         }
-        favorite.backgroundColor = .lightGray
         
         //        let share = UITableViewRowAction(style: .normal, title: "Share") { action, index in
         //            print("share button tapped")
@@ -106,7 +115,6 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //        share.backgroundColor = .blue
         //
         //        return [share, favorite]
-        
         return [favorite]
     }
     
