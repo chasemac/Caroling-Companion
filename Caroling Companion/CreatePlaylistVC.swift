@@ -7,41 +7,75 @@
 //
 
 import UIKit
+import Firebase
 
-class CreatePlaylistVC: UITableViewController {
+class CreatePlaylistVC: SongListVC {
     
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        return
     }
+    
+//    var songs = [Song]()
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        if FIRAuth.auth()?.currentUser?.uid != nil {
+//            print("Logged in user UID ------> \(FIRAuth.auth()?.currentUser!.uid as Any)")
+//        } else {
+//            print("no current user")
+//        }
+//        
+//        DataService.ds.REF_SONGS.observe(.value, with: { (snapshot) in
+//            self.songs = []
+//            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+//                for snap in snapshot {
+//                    if let songDict = snap.value as? Dictionary<String, AnyObject> {
+//                        let key = snap.key
+//                        let song = Song(songKey: key, postData: songDict)
+//                        self.songs.insert(song, at: 0)
+//                    }
+//                }
+//            }
+//            self.tableView.reloadData()
+//        })
+//    }
+//
+//
+//    // MARK: - Table view data source
+//
+//     override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 1
+//    }
+//
+//     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return self.songs.count
+//    }
+//    
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let song = songs[indexPath.row]
+//        
+//        // Dequeue cell
+//        if let cell = tableView.dequeueReusableCell(withIdentifier: "SongCell", for: indexPath) as? SongCell {
+//            
+//            cell.configureCell(song, indexPath: indexPath as NSIndexPath)
+//            
+//            return cell
+//        } else {
+//            print("error")
+//            return SongCell()
+//        }
+//    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
 
     @IBAction func cancelBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+ 
+ 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

@@ -23,20 +23,19 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("no current user")
         }
         
-        tableView.dataSource = self
-        tableView.delegate = self
-        
         DataService.ds.REF_SONGS.observe(.value, with: { (snapshot) in
             self.songs = []
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshot {
                     if let songDict = snap.value as? Dictionary<String, AnyObject> {
                         let key = snap.key
-                        let song = Song(songKey: key, postData: songDict)
+                        let song = Song(songKey: key, songData: songDict)
+                        
                         self.songs.insert(song, at: 0)
                     }
                 }
             }
+            
             self.tableView.reloadData()
         })
     }
@@ -55,6 +54,10 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         ]
         
         UINavigationBar.appearance().titleTextAttributes = attrs
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     
@@ -97,25 +100,33 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let song = songs[indexPath.row]
         let favoriteRef = DataService.ds.REF_USER_CURRENT.child(DBSongString.favorites).child(song.songKey)
-        let favorite = UITableViewRowAction(style: .normal, title: "Favorite") { action, index in
+        
+        let favorite = UITableViewRowAction(style: .normal, title: "+ \n Favorite") { action, index in
             favoriteRef.observeSingleEvent(of: .value, with: { (snapshot) in
                 if let _ = snapshot.value as? NSNull {
-                   favoriteRef.setValue(true)
+                    favoriteRef.setValue(true)
+
+                    song.adjustFavorites(true)
+               //     favoriteRef.database.persistenceEnabled = true
+                }
+                tableView.reloadRows(at: [indexPath], with: .left)
+            })
+        }
+        favorite.backgroundColor = .gray
+        
+        let removeFavorite = UITableViewRowAction(style: .normal, title: "- \n Favorite") { action, index in
+            favoriteRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                if let _ = snapshot.value as? NSNull {
+                    return
                 } else {
                     favoriteRef.removeValue()
+                    
+                    song.adjustFavorites(false)
                 }
-                tableView.reloadData()
+                tableView.reloadRows(at: [indexPath], with: .left)
             })
-            print("favorite button tapped: \(song.title) - \(song.title)")
         }
-        
-        //        let share = UITableViewRowAction(style: .normal, title: "Share") { action, index in
-        //            print("share button tapped")
-        //        }
-        //        share.backgroundColor = .blue
-        //
-        //        return [share, favorite]
-        return [favorite]
+        return [favorite, removeFavorite]
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

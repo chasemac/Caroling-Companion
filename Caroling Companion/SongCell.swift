@@ -11,15 +11,11 @@ import Firebase
 
 class SongCell: UITableViewCell {
     
-    @IBOutlet weak var songNameLabel: UILabel!
-    @IBOutlet weak var starImage: UIImageView!
+    @IBOutlet weak var songNameLabel: UILabel?
+    @IBOutlet weak var starImage: UIImageView?
     
     var song: Song!
     var favoriteRef: FIRDatabaseReference!
-    
-    let softGreen = UIColor(red: 0.467, green: 0.600, blue: 0.424, alpha: 1.00)
-    let darkRed = UIColor(red: 0.718, green: 0.310, blue: 0.310, alpha: 1.00)
-    let softRed = UIColor(red: 0.882, green: 0.471, blue: 0.471, alpha: 1.00)
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,13 +27,12 @@ class SongCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-
+    
     
     func configureCell(_ song: Song, indexPath: NSIndexPath) {
         self.song = song
-        
-        favoriteRef = DataService.ds.REF_USER_CURRENT.child(DBSongString.favorites).child(song.songKey)
-        songNameLabel.text = song.title
+
+        localSongLable().text = song.title
         
         if indexPath.row % 3 == 0 {
             self.backgroundColor = softGreen
@@ -48,15 +43,26 @@ class SongCell: UITableViewCell {
         else {
             self.backgroundColor = softRed
         }
-        
-
+        setFavorite()
+    }
+    
+    func setFavorite() {
+        favoriteRef = DataService.ds.REF_USER_CURRENT.child(DBSongString.favorites).child(song.songKey)
         favoriteRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if let _ = snapshot.value as? NSNull {
-                self.starImage.image = UIImage(named: "star-empty")
+                self.localStarImage().image = UIImage(named: "star-empty")
             } else {
-                self.starImage.image = UIImage(named: "star-filled")
+                self.localStarImage().image = UIImage(named: "star-filled")
             }
+
         })
+    }
+    
+    func localSongLable() -> UILabel {
+        return songNameLabel!
+    }
+    func localStarImage() -> UIImageView {
+        return starImage!
     }
 }
 

@@ -10,6 +10,10 @@ import UIKit
 
 let SHADOW_COLOR: CGFloat = 157.0 / 255.0
 let SHADOW_GRAY: CGFloat = 120.0 / 255.0
+let softGreen = UIColor(red: 0.467, green: 0.600, blue: 0.424, alpha: 1.00)
+let darkRed = UIColor(red: 0.718, green: 0.310, blue: 0.310, alpha: 1.00)
+let softRed = UIColor(red: 0.882, green: 0.471, blue: 0.471, alpha: 1.00)
+
 let YOUTUBE_URL: String = "https://www.youtube.com/embed/"
 let USER_DOES_NOT_EXIST = "DNE"
 

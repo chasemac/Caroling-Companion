@@ -14,7 +14,7 @@ class Song {
     fileprivate var _title: String!
     fileprivate var _favorites: Int!
     fileprivate var _songKey: String!
-    fileprivate var _postRef: FIRDatabaseReference!
+    fileprivate var _songRef: FIRDatabaseReference!
     fileprivate var _userUID: String!
     fileprivate var _postedDate: String!
     
@@ -52,31 +52,31 @@ class Song {
         self._postedDate = postedDate
     }
     
-    init(songKey: String, postData: Dictionary<String, AnyObject>) {
+    init(songKey: String, songData: Dictionary<String, AnyObject>) {
         self._songKey = songKey
         
-        if let lyrics = postData[DBSongString.lyrics] as? String {
+        if let lyrics = songData[DBSongString.lyrics] as? String {
             self._lyrics = lyrics
         }
         
-        if let title = postData[DBSongString.title] as? String {
+        if let title = songData[DBSongString.title] as? String {
             self._title = title
         }
         
-        if let favorites = postData[DBSongString.favorites] as? Int {
+        if let favorites = songData[DBSongString.favorites] as? Int {
             self._favorites = favorites
         }
         
-        if let userUID = postData[DBSongString.user] as? String {
+        if let userUID = songData[DBSongString.user] as? String {
             self._userUID = userUID
         }
         
-        if let postedDate = postData[DBSongString.postedDate] as? String {
+        if let postedDate = songData[DBSongString.postedDate] as? String {
             self._postedDate = postedDate
         }
         
         
-        _postRef = DataService.ds.REF_SONGS.child(_songKey)
+        _songRef = DataService.ds.REF_SONGS.child(_songKey)
     }
     
     func adjustFavorites(_ addFavorite: Bool) {
@@ -85,7 +85,7 @@ class Song {
         } else {
             _favorites = _favorites - 1
         }
-        _postRef.child(DBSongString.favorites).setValue(_favorites)
+        _songRef.child(DBSongString.favorites).setValue(_favorites)
         
         
     }
