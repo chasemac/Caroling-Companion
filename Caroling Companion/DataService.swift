@@ -19,8 +19,9 @@ class DataService {
     
     // DB References
     fileprivate var _REF_BASE = DB_BASE
-    fileprivate var _REF_SONGS = DB_BASE.child(SONGS_DB_STRING)
-    fileprivate var _REF_USERS = DB_BASE.child(USERS_DB_STRING)
+    fileprivate var _REF_SONGS = DB_BASE.child(DBTopLevel.songs)
+    fileprivate var _REF_USERS = DB_BASE.child(DBTopLevel.users)
+    fileprivate var _REF_PLYLISTS = DB_BASE.child(DBTopLevel.playlists)
     
     
     // Storage References
@@ -36,6 +37,10 @@ class DataService {
     
     var REF_USERS: FIRDatabaseReference {
         return _REF_USERS
+    }
+    
+    var REF_PLAYLISTS: FIRDatabaseReference {
+        return _REF_PLYLISTS
     }
     
     var REF_USER_CURRENT: FIRDatabaseReference {

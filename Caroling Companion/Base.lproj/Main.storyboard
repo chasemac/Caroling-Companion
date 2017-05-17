@@ -310,7 +310,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" rowHeight="111" id="t8E-Wq-orO" customClass="CreatePlaylistListCell" customModule="Caroling_Companion" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaylistSongCell" rowHeight="111" id="t8E-Wq-orO" customClass="PlaylistSongCell" customModule="Caroling_Companion" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="111"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t8E-Wq-orO" id="3vP-zv-AkF">
@@ -323,17 +323,6 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uq-yk-ydz">
-                                            <rect key="frame" x="337" y="40" width="30" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="Y92-mP-FEY"/>
-                                                <constraint firstAttribute="height" constant="30" id="xVw-ai-qAL"/>
-                                            </constraints>
-                                            <state key="normal" image="checkbox-filled"/>
-                                            <connections>
-                                                <action selector="playlistCheckboxTapped:" destination="t8E-Wq-orO" eventType="touchUpInside" id="gGa-AT-SfS"/>
-                                            </connections>
-                                        </button>
                                         <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-empty" translatesAutoresizingMaskIntoConstraints="NO" id="v6e-ca-rSo">
                                             <rect key="frame" x="8" y="40" width="30" height="30"/>
                                             <gestureRecognizers/>
@@ -342,22 +331,29 @@
                                                 <constraint firstAttribute="width" constant="30" id="h9S-W2-OmM"/>
                                             </constraints>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y21-zr-hXp">
+                                            <rect key="frame" x="337" y="40" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="9iF-j3-DS1"/>
+                                                <constraint firstAttribute="height" constant="30" id="hMq-4F-STr"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="v6e-ca-rSo" firstAttribute="centerY" secondItem="Zdl-Oq-75r" secondAttribute="centerY" id="0mW-OA-XZJ"/>
+                                        <constraint firstItem="y21-zr-hXp" firstAttribute="centerY" secondItem="Zdl-Oq-75r" secondAttribute="centerY" id="AcE-yI-7T9"/>
                                         <constraint firstItem="Zdl-Oq-75r" firstAttribute="leading" secondItem="v6e-ca-rSo" secondAttribute="trailing" constant="8" id="Dy9-BT-IRD"/>
-                                        <constraint firstItem="3uq-yk-ydz" firstAttribute="centerY" secondItem="Zdl-Oq-75r" secondAttribute="centerY" id="FpH-b5-sF4"/>
                                         <constraint firstItem="v6e-ca-rSo" firstAttribute="centerY" secondItem="3vP-zv-AkF" secondAttribute="centerY" id="bXd-xU-AIZ"/>
+                                        <constraint firstItem="y21-zr-hXp" firstAttribute="trailing" secondItem="3vP-zv-AkF" secondAttribute="trailingMargin" id="blZ-DW-K6v"/>
                                         <constraint firstItem="Zdl-Oq-75r" firstAttribute="top" secondItem="3vP-zv-AkF" secondAttribute="topMargin" constant="15" id="fLz-tM-4al"/>
                                         <constraint firstItem="v6e-ca-rSo" firstAttribute="leading" secondItem="3vP-zv-AkF" secondAttribute="leadingMargin" id="gbD-XY-Qcg"/>
-                                        <constraint firstItem="3uq-yk-ydz" firstAttribute="leading" secondItem="Zdl-Oq-75r" secondAttribute="trailing" constant="5" id="lpL-Yc-U7h"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="3uq-yk-ydz" secondAttribute="trailing" id="z6R-jU-wif"/>
+                                        <constraint firstItem="y21-zr-hXp" firstAttribute="leading" secondItem="Zdl-Oq-75r" secondAttribute="trailing" constant="5.5" id="tWn-iN-2l6"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="playlistCheckBox" destination="3uq-yk-ydz" id="5ed-D0-Zh1"/>
-                                    <outlet property="playlistSongNameLabel" destination="Zdl-Oq-75r" id="f6r-jC-6qx"/>
-                                    <outlet property="playlistStarImage" destination="v6e-ca-rSo" id="9em-Qm-VJq"/>
+                                    <outlet property="playlistCheckBox" destination="y21-zr-hXp" id="oEn-Eb-E2M"/>
+                                    <outlet property="songNameLabel" destination="Zdl-Oq-75r" id="iQM-yW-Yv8"/>
+                                    <outlet property="starImage" destination="v6e-ca-rSo" id="iWJ-l3-qKJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -370,6 +366,11 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="97D-Wd-vCQ">
                             <connections>
                                 <action selector="cancelBtnPressed:" destination="gv7-Nd-rSt" id="cF6-Lx-OOr"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="fNF-o9-eWJ">
+                            <connections>
+                                <action selector="saveBtnTapped:" destination="gv7-Nd-rSt" id="bxl-RF-LN1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -714,7 +715,6 @@
     </scenes>
     <resources>
         <image name="HeaderIconSinging" width="4000" height="768"/>
-        <image name="checkbox-filled" width="512" height="512"/>
         <image name="f" width="352" height="328"/>
         <image name="g-2" width="2000" height="2000"/>
         <image name="logout" width="980" height="834"/>

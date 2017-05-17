@@ -11,8 +11,8 @@ import Firebase
 
 class SongCell: UITableViewCell {
     
-    @IBOutlet weak var songNameLabel: UILabel?
-    @IBOutlet weak var starImage: UIImageView?
+    @IBOutlet weak var songNameLabel: UILabel!
+    @IBOutlet weak var starImage: UIImageView!
     
     var song: Song!
     var favoriteRef: FIRDatabaseReference!
@@ -32,7 +32,7 @@ class SongCell: UITableViewCell {
     func configureCell(_ song: Song, indexPath: NSIndexPath) {
         self.song = song
 
-        localSongLable().text = song.title
+        songNameLabel.text = song.title
         
         if indexPath.row % 3 == 0 {
             self.backgroundColor = softGreen
@@ -50,19 +50,13 @@ class SongCell: UITableViewCell {
         favoriteRef = DataService.ds.REF_USER_CURRENT.child(DBSongString.favorites).child(song.songKey)
         favoriteRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if let _ = snapshot.value as? NSNull {
-                self.localStarImage().image = UIImage(named: "star-empty")
+                self.starImage.image = UIImage(named: "star-empty")
             } else {
-                self.localStarImage().image = UIImage(named: "star-filled")
+                self.starImage.image = UIImage(named: "star-filled")
             }
 
         })
     }
-    
-    func localSongLable() -> UILabel {
-        return songNameLabel!
-    }
-    func localStarImage() -> UIImageView {
-        return starImage!
-    }
+
 }
 

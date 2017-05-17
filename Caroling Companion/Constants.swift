@@ -20,8 +20,11 @@ let USER_DOES_NOT_EXIST = "DNE"
 let KEY_UID = "uid"
 
 // MARK: DATABASE
-let SONGS_DB_STRING = "songs"
-let USERS_DB_STRING = "users"
+struct DBTopLevel {
+    static let songs = "songs"
+    static let users = "users"
+    static let playlists = "playlists"
+}
 
 // Data Base Song Strings
 struct DBSongString {
@@ -41,6 +44,14 @@ struct DBUserString {
     static let providerProfileImageURL = "providerProfileImageURL"
     static let provider = "provider"
     static let email = "email"
+}
+
+// Playlist
+struct DBPlaylistString {
+    static let user = "user"
+    static let songs = "songs"
+    static let title = "title"
+    static let postedDate = "postedDate"
 }
 
 struct DBProviderString {
