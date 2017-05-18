@@ -26,13 +26,13 @@ class PlaylistVC: UITableViewController {
                     if let playlistDict = snap.value as? Dictionary<String, AnyObject> {
                         let key = snap.key
                         let playlist = Playlist(playlistKey: key, playlistData: playlistDict)
-                        
                         self.playlists.insert(playlist, at: 0)
                     }
                 }
             }
             
             self.tableView.reloadData()
+      //      print(self.playlists[0].title)
             print(self.playlists.count)
         })
 
@@ -47,7 +47,7 @@ class PlaylistVC: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,15 +55,20 @@ class PlaylistVC: UITableViewController {
         return playlists.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let playlist = playlists[indexPath.row]
+        // Dequeue cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PlaylistNameCell", for: indexPath) as? PlaylistNameCell {
+            cell.configureCell(playlist, indexPath: indexPath as NSIndexPath)
+            return cell
+        } else {
+            print("error")
+            return PlaylistSongCell()
+        }
 
-        // Configure the cell...
-
-        return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

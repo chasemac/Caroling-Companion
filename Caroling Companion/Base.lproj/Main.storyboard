@@ -109,44 +109,16 @@
                                         <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvJ-Uw-i6c">
-                                        <rect key="frame" x="8" y="21" width="20" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="0bo-Eu-pdA"/>
-                                            <constraint firstAttribute="height" constant="20" id="fmB-Fi-Eyd"/>
-                                        </constraints>
-                                        <state key="normal" image="logout"/>
-                                        <connections>
-                                            <action selector="logoutTapped:" destination="eSf-nl-24E" eventType="touchUpInside" id="33o-Pm-DK7"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6I-XU-2fu">
-                                        <rect key="frame" x="347" y="22" width="20" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="qls-Da-xbm"/>
-                                            <constraint firstAttribute="height" constant="20" id="yLe-49-itg"/>
-                                        </constraints>
-                                        <state key="normal" image="save-icon"/>
-                                        <connections>
-                                            <action selector="saveBtnTapped:" destination="eSf-nl-24E" eventType="touchUpInside" id="ENk-Fk-Pse"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vR-7P-dWJ">
-                                        <rect key="frame" x="68" y="10" width="239" height="39"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vR-7P-dWJ">
+                                        <rect key="frame" x="277" y="15" width="30" height="34"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="1vR-7P-dWJ" firstAttribute="leading" secondItem="yvJ-Uw-i6c" secondAttribute="trailing" constant="40" id="6J4-Es-H8z"/>
-                                    <constraint firstItem="yvJ-Uw-i6c" firstAttribute="leading" secondItem="icG-WL-LWS" secondAttribute="leading" constant="8" id="7LA-Vv-ni9"/>
-                                    <constraint firstItem="T6I-XU-2fu" firstAttribute="centerY" secondItem="qO8-Sg-6dl" secondAttribute="centerY" id="AOa-Or-oQ4"/>
-                                    <constraint firstItem="1vR-7P-dWJ" firstAttribute="top" secondItem="icG-WL-LWS" secondAttribute="top" constant="10" id="B1i-ik-jVU"/>
-                                    <constraint firstItem="T6I-XU-2fu" firstAttribute="leading" secondItem="1vR-7P-dWJ" secondAttribute="trailing" constant="40" id="DYs-QS-dFp"/>
+                                    <constraint firstItem="1vR-7P-dWJ" firstAttribute="top" secondItem="icG-WL-LWS" secondAttribute="top" constant="15" id="B1i-ik-jVU"/>
                                     <constraint firstAttribute="bottom" secondItem="1vR-7P-dWJ" secondAttribute="bottom" constant="10" id="Ehk-kx-l76"/>
                                     <constraint firstAttribute="bottom" secondItem="qO8-Sg-6dl" secondAttribute="bottom" constant="5" id="LmJ-Pt-8ON"/>
-                                    <constraint firstAttribute="trailing" secondItem="T6I-XU-2fu" secondAttribute="trailing" constant="8" id="Tju-A3-ZaU"/>
                                     <constraint firstAttribute="trailing" secondItem="qO8-Sg-6dl" secondAttribute="trailing" constant="20" id="d88-Yy-nvC"/>
-                                    <constraint firstAttribute="bottom" secondItem="yvJ-Uw-i6c" secondAttribute="bottom" constant="18" id="qro-QY-nmd"/>
                                     <constraint firstItem="qO8-Sg-6dl" firstAttribute="leading" secondItem="icG-WL-LWS" secondAttribute="leading" constant="20" id="r9Q-54-Fn0"/>
                                     <constraint firstItem="qO8-Sg-6dl" firstAttribute="top" secondItem="icG-WL-LWS" secondAttribute="top" constant="10" id="vqf-aj-nzN"/>
                                 </constraints>
@@ -169,7 +141,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Songs" id="dH0-Su-3aY"/>
+                    <tabBarItem key="tabBarItem" title="I                                                                                    " id="dH0-Su-3aY"/>
                     <navigationItem key="navigationItem" title="PICK A SONG!" id="uC0-J6-q5y"/>
                     <connections>
                         <outlet property="tableView" destination="bSx-ou-hIL" id="9X2-F5-e7R"/>
@@ -179,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qnw-Qj-DQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1959" y="-1004"/>
+            <point key="canvasLocation" x="1957.5999999999999" y="-1004.3478260869566"/>
         </scene>
         <!--Song LyricsVC-->
         <scene sceneID="sfI-KS-0iC">
@@ -270,18 +242,35 @@
         <scene sceneID="lqf-yv-lMy">
             <objects>
                 <tableViewController id="kzh-K3-y7s" customClass="PlaylistVC" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lg0-cV-fin">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="132" sectionHeaderHeight="28" sectionFooterHeight="28" id="lg0-cV-fin">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aar-CA-Wl8">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaylistNameCell" rowHeight="132" id="aar-CA-Wl8" customClass="PlaylistNameCell" customModule="Caroling_Companion" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="132"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aar-CA-Wl8" id="ofy-zo-9vw">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="132"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DO YOU HEAR WHAT I HEAR" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="VRm-WY-HxD">
+                                            <rect key="frame" x="28" y="28" width="319" height="75.5"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="VRm-WY-HxD" secondAttribute="trailing" constant="20" id="Eul-cV-1ff"/>
+                                        <constraint firstItem="VRm-WY-HxD" firstAttribute="leading" secondItem="ofy-zo-9vw" secondAttribute="leadingMargin" constant="20" id="LcZ-xM-3zR"/>
+                                        <constraint firstItem="VRm-WY-HxD" firstAttribute="top" secondItem="ofy-zo-9vw" secondAttribute="topMargin" constant="20" id="d8s-cP-N6B"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="VRm-WY-HxD" secondAttribute="bottom" constant="20" id="gNe-Fl-0V6"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="playlistNameLabel" destination="VRm-WY-HxD" id="Gqn-RV-9CI"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -299,7 +288,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOb-oj-2oq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3001" y="-125"/>
+            <point key="canvasLocation" x="3000.8000000000002" y="-125.4872563718141"/>
         </scene>
         <!--Create PlaylistVC-->
         <scene sceneID="Pb8-h0-AOE">
@@ -387,7 +376,7 @@
             <objects>
                 <navigationController id="1t2-hq-4zg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Playlists" id="P1N-qG-Umk"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aDa-8k-xGI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aDa-8k-xGI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -441,6 +430,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsx-8I-bjO">
                                         <rect key="frame" x="144.5" y="82" width="34" height="30"/>
                                         <state key="normal" title="Save"/>
+                                        <connections>
+                                            <segue destination="QW0-YM-oci" kind="show" id="pqo-xp-ofS"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buB-L9-7qw">
                                         <rect key="frame" x="140" y="112" width="43" height="30"/>
@@ -488,7 +480,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="nZR-Vk-8D2" secondAttribute="trailing" constant="20" id="ygV-Ta-bTV"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="qge-5R-zTU"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile_btn" id="qge-5R-zTU"/>
                     <connections>
                         <outlet property="emailLabel" destination="ZP5-ub-MCB" id="cte-Rq-Xff"/>
                         <outlet property="nameLabel" destination="ZUc-j9-PWM" id="Rxi-Za-dWB"/>
@@ -699,7 +691,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OPu-6q-FIK" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4YQ-bj-Gh5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4YQ-bj-Gh5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -717,8 +709,10 @@
         <image name="HeaderIconSinging" width="4000" height="768"/>
         <image name="f" width="352" height="328"/>
         <image name="g-2" width="2000" height="2000"/>
-        <image name="logout" width="980" height="834"/>
-        <image name="save-icon" width="290" height="295"/>
+        <image name="profile_btn" width="28" height="28"/>
         <image name="star-empty" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="cof-sJ-Xiz"/>
+    </inferredMetricsTieBreakers>
 </document>

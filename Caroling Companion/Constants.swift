@@ -19,6 +19,12 @@ let USER_DOES_NOT_EXIST = "DNE"
 
 let KEY_UID = "uid"
 
+// MARK: ENVIRONMENT
+struct DBEnvironment {
+    static let production = "production"
+    static let staging = "staging"
+}
+
 // MARK: DATABASE
 struct DBTopLevel {
     static let songs = "songs"

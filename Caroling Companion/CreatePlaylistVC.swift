@@ -12,7 +12,7 @@ import Firebase
 class CreatePlaylistVC: UITableViewController {
     
     var songs = [Song]()
-    var playlist = Playlist(lyrics: "", user: "", title: "", userUID: "", postedDate: "")
+    var playlist = Playlist(songs: "", user: "", title: "", postedDate: "")
     var playlistKey = ""
     
     override func viewDidLoad() {
@@ -96,11 +96,12 @@ class CreatePlaylistVC: UITableViewController {
             let titleRef = DataService.ds.REF_PLAYLISTS.child(self.playlistKey).child(DBPlaylistString.title)
             let title = alert.textFields?.first?.text
             titleRef.setValue(title)
+            self.dismiss(animated: true, completion: nil)
             //self.performSegue(withIdentifier: "Add Emotion", sender: nil)
         }))
         alert.addTextField(configurationHandler: nil)
         present(alert, animated: true)
-        dismiss(animated: true, completion: nil)
+        
     }
 
     

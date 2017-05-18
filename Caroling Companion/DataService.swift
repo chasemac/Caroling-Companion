@@ -10,8 +10,17 @@ import Foundation
 import Firebase
 // import SwiftKeychainWrapper
 
-let DB_BASE = FIRDatabase.database().reference()
-let STORAGE_BASE = FIRStorage.storage().reference()
+fileprivate var production: Bool = false
+
+fileprivate var DB_BASE: FIRDatabaseReference {
+    if production == true {
+        return FIRDatabase.database().reference().child(DBEnvironment.production)
+    } else {
+        return FIRDatabase.database().reference().child(DBEnvironment.staging)
+    }
+}
+
+fileprivate let STORAGE_BASE = FIRStorage.storage().reference()
 
 class DataService {
     

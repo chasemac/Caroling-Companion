@@ -10,7 +10,7 @@ import UIKit
 import FirebaseDatabase
 
 class PlaylistSongCell: UITableViewCell {
-
+    
     var song: Song!
     var playlistRef: FIRDatabaseReference!
     var favoriteRef: FIRDatabaseReference!
@@ -18,12 +18,8 @@ class PlaylistSongCell: UITableViewCell {
     @IBOutlet weak var songNameLabel: UILabel!
     @IBOutlet weak var starImage: UIImageView!
     @IBOutlet weak var playlistCheckBox: UIImageView!
-
-
     
-
-    
-     func configurePlaylistSongCell(_ song: Song, indexPath: NSIndexPath, playlistKey: String) {
+    func configurePlaylistSongCell(_ song: Song, indexPath: NSIndexPath, playlistKey: String) {
         self.song = song
         
         songNameLabel.text = song.title
@@ -37,7 +33,6 @@ class PlaylistSongCell: UITableViewCell {
         else {
             self.backgroundColor = softRed
         }
-
         
         addedToPlaylist(playlistKey: playlistKey)
         setFavorite()
@@ -55,7 +50,6 @@ class PlaylistSongCell: UITableViewCell {
         })
     }
     
-    
     func setFavorite() {
         favoriteRef = DataService.ds.REF_USER_CURRENT.child(DBSongString.favorites).child(song.songKey)
         favoriteRef.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -64,9 +58,6 @@ class PlaylistSongCell: UITableViewCell {
             } else {
                 self.starImage.image = UIImage(named: "star-filled")
             }
-            
         })
     }
-
-
 }

@@ -31,7 +31,7 @@ class SongCell: UITableViewCell {
     
     func configureCell(_ song: Song, indexPath: NSIndexPath) {
         self.song = song
-
+        
         songNameLabel.text = song.title
         
         if indexPath.row % 3 == 0 {
@@ -54,9 +54,8 @@ class SongCell: UITableViewCell {
             } else {
                 self.starImage.image = UIImage(named: "star-filled")
             }
-
         })
     }
-
+    
 }
 

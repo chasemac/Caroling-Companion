@@ -24,10 +24,9 @@ class Playlist {
     
     fileprivate var _songs: String!
     fileprivate var _user: String!
-    fileprivate var _title: String!
+    fileprivate var _title: String?
     fileprivate var _playlistKey: String!
     fileprivate var _playlistRef: FIRDatabaseReference!
-    fileprivate var _userUID: String!
     fileprivate var _postedDate: String!
     
     
@@ -39,7 +38,7 @@ class Playlist {
         return _user
     }
     
-    var title: String {
+    var title: String? {
         return _title
     }
     
@@ -47,20 +46,17 @@ class Playlist {
         return _playlistKey
     }
     
-    var userUID: String {
-        return _userUID
-    }
     
     var postedDate: String {
         return _postedDate
     }
     
     
-    init(lyrics: String, user: String, title: String, userUID: String, postedDate: String) {
-        self._songs = lyrics
+    init(songs: String, user: String, title: String, postedDate: String) {
+        self._songs = songs
         self._user = user
         self._title = title
-        self._userUID = userUID
+        self._title = title
         self._postedDate = postedDate
     }
     
@@ -71,16 +67,12 @@ class Playlist {
             self._songs = songs
         }
         
-        if let user = playlistData[DBSongString.title] as? String {
+        if let user = playlistData[DBSongString.user] as? String {
             self._user = user
         }
         
         if let title = playlistData[DBSongString.title] as? String {
             self._title = title
-        }
-        
-        if let userUID = playlistData[DBSongString.user] as? String {
-            self._userUID = userUID
         }
         
         if let postedDate = playlistData[DBSongString.postedDate] as? String {
