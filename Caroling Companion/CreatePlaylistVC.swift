@@ -12,11 +12,8 @@ import Firebase
 class CreatePlaylistVC: UITableViewController {
     
     var songs = [Song]()
-    
     var playlist = Playlist(lyrics: "", user: "", title: "", userUID: "", postedDate: "")
     var playlistKey = ""
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +32,6 @@ class CreatePlaylistVC: UITableViewController {
             self.tableView.reloadData()
         })
         createPlaylist()
-        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -65,10 +61,6 @@ class CreatePlaylistVC: UITableViewController {
         playlistKey = firebasePlaylist.key
     }
     
-    func checkBoxTapped() {
-        
-    }
-    
     
     // MARK: - Table view data source
     
@@ -84,12 +76,9 @@ class CreatePlaylistVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let song = songs[indexPath.row]
-        
         // Dequeue cell
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PlaylistSongCell", for: indexPath) as? PlaylistSongCell {
-            
             cell.configurePlaylistSongCell(song, indexPath: indexPath as NSIndexPath, playlistKey: playlistKey)
-            
             return cell
         } else {
             print("error")
@@ -98,13 +87,36 @@ class CreatePlaylistVC: UITableViewController {
     }
     
     @IBAction func saveBtnTapped(_ sender: Any) {
-        
+        savePlaylistName()
     }
+    
+    private func savePlaylistName() {
+        let alert = UIAlertController(title: "Name the Playlist", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { action in
+            let titleRef = DataService.ds.REF_PLAYLISTS.child(self.playlistKey).child(DBPlaylistString.title)
+            let title = alert.textFields?.first?.text
+            titleRef.setValue(title)
+            //self.performSegue(withIdentifier: "Add Emotion", sender: nil)
+        }))
+        alert.addTextField(configurationHandler: nil)
+        present(alert, animated: true)
+        dismiss(animated: true, completion: nil)
+    }
+
     
     
     
     @IBAction func cancelBtnPressed(_ sender: Any) {
+        
+        let playlistRef = DataService.ds.REF_PLAYLISTS.child(playlistKey).child(DBPlaylistString.title)
+        
+        playlistRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let _ = snapshot.value as? NSNull {
+                DataService.ds.REF_PLAYLISTS.child(self.playlistKey).removeValue()
+            }
+        })
         dismiss(animated: true, completion: nil)
+        
     }
     
     
