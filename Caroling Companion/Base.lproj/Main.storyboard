@@ -141,7 +141,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="I                                                                                    " id="dH0-Su-3aY"/>
+                    <tabBarItem key="tabBarItem" title="Songs" image="musicNote" id="dH0-Su-3aY"/>
                     <navigationItem key="navigationItem" title="PICK A SONG!" id="uC0-J6-q5y"/>
                     <connections>
                         <outlet property="tableView" destination="bSx-ou-hIL" id="9X2-F5-e7R"/>
@@ -280,6 +280,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Playlists" id="ftl-9M-WQG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FbY-bx-7FH">
+                            <color key="tintColor" red="0.53758639100000005" green="0.65890771150000005" blue="0.49905574320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="OPu-6q-FIK" kind="showDetail" id="hIt-Ch-3Z9"/>
                             </connections>
@@ -353,11 +354,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="QFW-0G-6wt">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="97D-Wd-vCQ">
+                            <color key="tintColor" red="0.77416175600000003" green="0.39654183389999997" blue="0.37878888849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cancelBtnPressed:" destination="gv7-Nd-rSt" id="cF6-Lx-OOr"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="fNF-o9-eWJ">
+                            <color key="tintColor" red="0.53758639100000005" green="0.65890771150000005" blue="0.49905574320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="saveBtnTapped:" destination="gv7-Nd-rSt" id="bxl-RF-LN1"/>
                             </connections>
@@ -375,8 +378,8 @@
         <scene sceneID="eOI-9d-U6d">
             <objects>
                 <navigationController id="1t2-hq-4zg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Playlists" id="P1N-qG-Umk"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aDa-8k-xGI">
+                    <tabBarItem key="tabBarItem" title="Playlists" image="playlist" id="P1N-qG-Umk"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aDa-8k-xGI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -674,7 +677,10 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" itemPositioning="fill" id="F47-uD-Byn">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.53758639097213745" green="0.65890771150588989" blue="0.49905574321746826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="0.53758639100000005" green="0.65890771150000005" blue="0.49905574320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="eSf-nl-24E" kind="relationship" relationship="viewControllers" id="tcy-rE-Bv7"/>
@@ -691,7 +697,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OPu-6q-FIK" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4YQ-bj-Gh5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4YQ-bj-Gh5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -709,10 +715,12 @@
         <image name="HeaderIconSinging" width="4000" height="768"/>
         <image name="f" width="352" height="328"/>
         <image name="g-2" width="2000" height="2000"/>
+        <image name="musicNote" width="24" height="29"/>
+        <image name="playlist" width="30" height="29"/>
         <image name="profile_btn" width="28" height="28"/>
         <image name="star-empty" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cof-sJ-Xiz"/>
+        <segue reference="pqo-xp-ofS"/>
     </inferredMetricsTieBreakers>
 </document>
