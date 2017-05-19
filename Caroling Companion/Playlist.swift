@@ -42,7 +42,7 @@ class Playlist {
         return _title
     }
     
-    var songKey: String {
+    var playlistKey: String {
         return _playlistKey
     }
     
@@ -56,11 +56,11 @@ class Playlist {
         self._songs = songs
         self._user = user
         self._title = title
-        self._title = title
         self._postedDate = postedDate
     }
     
     init(playlistKey: String, playlistData: Dictionary<String, AnyObject>) {
+        
         self._playlistKey = playlistKey
         
         if let songs = playlistData[DBSongString.lyrics] as? String {
@@ -79,8 +79,10 @@ class Playlist {
             self._postedDate = postedDate
         }
         
-        
+
         _playlistRef = DataService.ds.REF_PLAYLISTS.child(_playlistKey)
+
+        
     }
     
 }

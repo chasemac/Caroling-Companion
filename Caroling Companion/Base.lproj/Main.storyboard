@@ -282,10 +282,14 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FbY-bx-7FH">
                             <color key="tintColor" red="0.53758639100000005" green="0.65890771150000005" blue="0.49905574320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="OPu-6q-FIK" kind="showDetail" id="hIt-Ch-3Z9"/>
+                                <action selector="createPlaylist:" destination="kzh-K3-y7s" id="EuC-4t-79D"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="OPu-6q-FIK" kind="show" identifier="showPlaylist" id="wLq-Y1-0Z8"/>
+                        <segue destination="OPu-6q-FIK" kind="show" identifier="CreatePlaylist" id="0WM-Ku-y4a"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOb-oj-2oq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -531,7 +535,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mGF-VA-gic" customClass="FancyView" customModule="Caroling_Companion" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="592" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="543" width="375" height="75"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0s-zD-fWx">
                                         <rect key="frame" x="8" y="8" width="359" height="59"/>
@@ -722,5 +726,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pqo-xp-ofS"/>
+        <segue reference="0WM-Ku-y4a"/>
     </inferredMetricsTieBreakers>
 </document>
