@@ -15,27 +15,8 @@ class CreatePlaylistVC: UITableViewController {
     var playlist: Playlist?
     var playlistExists: Bool = false
     
-//    var playlistKey: String {
-//        if playlistExists {
-//            return playlist.playlistKey
-//        } else {
-////            let playlist : Dictionary<String, Any> = [
-////                DBPlaylistString.user : FIRAuth.auth()?.currentUser?.uid as AnyObject,
-////                DBPlaylistString.postedDate : FIRServerValue.timestamp() as AnyObject
-////            ]
-////            let firebasePlaylist = DataService.ds.REF_PLAYLISTS.childByAutoId()
-////            firebasePlaylist.setValue(playlist)
-////            playlistExists = true
-////            return firebasePlaylist.key
-//            return ""
-//        }
-//    }
-    
-//    var playlistKey = playlist.playlistKey
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
         if playlistExists != true {
             createPlaylist()
@@ -46,12 +27,7 @@ class CreatePlaylistVC: UITableViewController {
                 navigationItem.title = playlist!.title
             }
         }
-        
-
-        
     }
-    
-    
     
     func loadSongs() {
         DataService.ds.REF_SONGS.observe(.value, with: { (snapshot) in
@@ -82,7 +58,6 @@ class CreatePlaylistVC: UITableViewController {
             
             tableView.reloadRows(at: [indexPath], with: .fade)
         })
-        
         return
     }
     
@@ -96,11 +71,7 @@ class CreatePlaylistVC: UITableViewController {
         let firebasePlaylist = DataService.ds.REF_PLAYLISTS.childByAutoId()
         firebasePlaylist.setValue(newPlaylist)
         self.playlist = Playlist(playlistKey: firebasePlaylist.key)
-        
-
-        
     }
-    
     
     // MARK: - Table view data source
     
@@ -145,8 +116,6 @@ class CreatePlaylistVC: UITableViewController {
     }
 
     
-    
-    
     @IBAction func cancelBtnPressed(_ sender: Any) {
         
         let playlistRef = DataService.ds.REF_PLAYLISTS.child(self.playlist!.playlistKey).child(DBPlaylistString.title)
@@ -157,7 +126,6 @@ class CreatePlaylistVC: UITableViewController {
             }
         })
         dismiss(animated: true, completion: nil)
-        
     }
     
     

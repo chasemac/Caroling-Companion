@@ -13,13 +13,10 @@ import Firebase
 class PlaylistVC: UITableViewController {
 
     var playlists = [Playlist]()
- //   var sendingPlaylist = Playlist(playlistKey: "", playlistData: [:])
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
         DataService.ds.REF_PLAYLISTS.observe(.value, with: { (snapshot) in
             self.playlists = []
@@ -32,9 +29,7 @@ class PlaylistVC: UITableViewController {
                     }
                 }
             }
-            
             self.tableView.reloadData()
-      //      print(self.playlists[0].title)
             print(self.playlists.count)
         })
 
@@ -88,42 +83,12 @@ class PlaylistVC: UITableViewController {
             let detailVC = segue.destination.contents as! CreatePlaylistVC
             detailVC.playlistExists = false
         }
-//        else if segue.identifier == "CreatePlaylist" {
-//            let playlist : Dictionary<String, Any> = [
-//                DBPlaylistString.user : FIRAuth.auth()?.currentUser?.uid as AnyObject,
-//                DBPlaylistString.postedDate : FIRServerValue.timestamp() as AnyObject
-//            ]
-//            let firebasePlaylist = DataService.ds.REF_PLAYLISTS.childByAutoId()
-//            firebasePlaylist.setValue(playlist)
-//            let playlistKey = firebasePlaylist.key
-//            
-//            
-//            DataService.ds.REF_PLAYLISTS.child(playlistKey).observeSingleEvent(of: .value, with: { (snapshot) in
-//                
-//                if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
-//                    for snap in snapshot {
-//            
-//                        if let playlistDict = snap.value as? Dictionary<String, AnyObject> {
-//                            let key = snap.key
-//                            let playlist = Playlist(playlistKey: key, playlistData: playlistDict)
-//                            let detailVC = segue.destination.contents as! CreatePlaylistVC
-//                            detailVC.playlist = playlist
-//                            self.sendingPlaylist = playlist
-//                        }
-//                    }
-//                }
-//                
-//
-//            })
-//        }
     }
     
     @IBAction func createPlaylist(_ sender: Any) {
         
         performSegue(withIdentifier: "CreatePlaylist", sender: nil)
     }
-
-    
 
     
 
