@@ -81,10 +81,12 @@ class PlaylistVC: UITableViewController {
         
         if segue.identifier == "showPlaylist" {
             let detailVC = segue.destination.contents as! CreatePlaylistVC
-            detailVC.playlist = sender as! Playlist
- //           detailVC.playlistKey =
- //           detailVC.playlistExists = true
- //           detailVC.title =
+            detailVC.playlistExists = true
+            detailVC.playlist = sender as? Playlist
+
+        } else if segue.identifier == "CreatePlaylist" {
+            let detailVC = segue.destination.contents as! CreatePlaylistVC
+            detailVC.playlistExists = false
         }
 //        else if segue.identifier == "CreatePlaylist" {
 //            let playlist : Dictionary<String, Any> = [
@@ -118,7 +120,7 @@ class PlaylistVC: UITableViewController {
     
     @IBAction func createPlaylist(_ sender: Any) {
         
-//        performSegue(withIdentifier: "CreatePlaylist", sender: sendingPlaylist)
+        performSegue(withIdentifier: "CreatePlaylist", sender: nil)
     }
 
     

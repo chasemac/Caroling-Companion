@@ -59,6 +59,10 @@ class Playlist {
         self._postedDate = postedDate
     }
     
+    init(playlistKey: String) {
+        self._playlistKey = playlistKey
+    }
+    
     init(playlistKey: String, playlistData: Dictionary<String, AnyObject>) {
         
         self._playlistKey = playlistKey

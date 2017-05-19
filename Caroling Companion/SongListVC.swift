@@ -24,7 +24,6 @@ class SongListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         
         DataService.ds.REF_SONGS.observe(.value, with: { (snapshot) in
-            self.songs = []
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshot {
                     if let songDict = snap.value as? Dictionary<String, AnyObject> {
