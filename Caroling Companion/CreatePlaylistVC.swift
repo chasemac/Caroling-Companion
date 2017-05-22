@@ -98,19 +98,31 @@ class CreatePlaylistVC: UITableViewController {
     }
     
     @IBAction func saveBtnTapped(_ sender: Any) {
-        savePlaylistName()
+        if playlist?.title != nil {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+           savePlaylistName()
+        }
     }
     
     private func savePlaylistName() {
+        
         let alert = UIAlertController(title: "Name the Playlist", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { action in
             let titleRef = DataService.ds.REF_PLAYLISTS.child(self.playlist!.playlistKey).child(DBPlaylistString.title)
+
             let title = alert.textFields?.first?.text
+            
             titleRef.setValue(title)
             self.dismiss(animated: true, completion: nil)
-            //self.performSegue(withIdentifier: "Add Emotion", sender: nil)
         }))
-        alert.addTextField(configurationHandler: nil)
+        alert.addTextField { (textField) in
+            textField.keyboardType = .default
+            textField.autocorrectionType = .default
+            textField.clearButtonMode = .whileEditing
+            textField.placeholder = "Example: Best Songs"
+            textField.autocapitalizationType = .words
+        }
         present(alert, animated: true)
         
     }
