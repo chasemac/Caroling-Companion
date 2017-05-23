@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class SongListTVC: UITableViewController {
-
+    
     
     var songs = [Song]()
     
@@ -22,7 +22,11 @@ class SongListTVC: UITableViewController {
         } else {
             print("no current user")
         }
+        loadSongs()
         
+    }
+    
+    func loadSongs() {
         DataService.ds.REF_SONGS.observe(.value, with: { (snapshot) in
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshot {
@@ -34,7 +38,6 @@ class SongListTVC: UITableViewController {
                     }
                 }
             }
-            
             self.tableView.reloadData()
         })
     }
@@ -153,5 +156,5 @@ class SongListTVC: UITableViewController {
         self.present(alertController, animated: true, completion: nil)
         
     }
-
+    
 }

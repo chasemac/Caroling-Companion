@@ -16,10 +16,7 @@ class NavigationController: UINavigationController, UIViewControllerTransitionin
             NSForegroundColorAttributeName: UIColor.gray,
             NSFontAttributeName: UIFont(name: "BigJohn", size: 24)!
         ]
-        
         UINavigationBar.appearance().titleTextAttributes = attrs
 
     }
-
-
 }

@@ -138,6 +138,7 @@ class CreatePlaylistVC: UITableViewController {
             }
         })
         dismiss(animated: true, completion: nil)
+        print("tried to dismiss")
     }
     
 }

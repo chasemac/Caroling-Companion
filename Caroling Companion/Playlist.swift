@@ -67,19 +67,19 @@ class Playlist {
         
         self._playlistKey = playlistKey
         
-        if let songs = playlistData[DBSongString.lyrics] as? String {
+        if let songs = playlistData[DBPlaylistString.songs] as? String {
             self._songs = songs
         }
         
-        if let user = playlistData[DBSongString.user] as? String {
+        if let user = playlistData[DBPlaylistString.user] as? String {
             self._user = user
         }
         
-        if let title = playlistData[DBSongString.title] as? String {
+        if let title = playlistData[DBPlaylistString.title] as? String {
             self._title = title
         }
         
-        if let postedDate = playlistData[DBSongString.postedDate] as? String {
+        if let postedDate = playlistData[DBPlaylistString.postedDate] as? String {
             self._postedDate = postedDate
         }
         

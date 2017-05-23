@@ -19,7 +19,7 @@ class PlaylistVC: UITableViewController {
 
 
         DataService.ds.REF_PLAYLISTS.observe(.value, with: { (snapshot) in
-            self.playlists = []
+
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshot {
                     if let playlistDict = snap.value as? Dictionary<String, AnyObject> {
@@ -67,25 +67,21 @@ class PlaylistVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let playlist = playlists[indexPath.row]
-        self.performSegue(withIdentifier: "showPlaylist", sender: nil
-          //  playlist
-        )
-        
+        let playlist = playlists[indexPath.row]
+        self.performSegue(withIdentifier: "showPlaylist", sender: playlist)
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        if segue.identifier == "showPlaylist" {
-//            let detailVC = segue.destination.contents as! CreatePlaylistVC
-//            detailVC.playlistExists = true
-//            detailVC.playlist = sender as? Playlist
-//
-//        } else if segue.identifier == "CreatePlaylist" {
-//            let detailVC = segue.destination.contents as! CreatePlaylistVC
-//            detailVC.playlistExists = false
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showPlaylist" {
+            let detailVC = segue.destination.contents as! ShowPlaylistVC
+            detailVC.playlist = sender as? Playlist
+
+        } else if segue.identifier == "CreatePlaylist" {
+            let detailVC = segue.destination.contents as! CreatePlaylistVC
+            detailVC.playlistExists = false
+        }
+    }
     
     @IBAction func createPlaylist(_ sender: Any) {
         
