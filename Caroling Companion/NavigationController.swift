@@ -21,6 +21,9 @@ class NavigationController: UINavigationController, UIViewControllerTransitionin
 
     }
     
+    
+    
+    
 //    override func viewdidA() {
 //        super.viewDidLoad()
 //        

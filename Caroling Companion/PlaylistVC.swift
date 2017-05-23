@@ -67,23 +67,25 @@ class PlaylistVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let playlist = playlists[indexPath.row]
-        self.performSegue(withIdentifier: "showPlaylist", sender: playlist)
+//        let playlist = playlists[indexPath.row]
+        self.performSegue(withIdentifier: "showPlaylist", sender: nil
+          //  playlist
+        )
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "showPlaylist" {
-            let detailVC = segue.destination.contents as! CreatePlaylistVC
-            detailVC.playlistExists = true
-            detailVC.playlist = sender as? Playlist
-
-        } else if segue.identifier == "CreatePlaylist" {
-            let detailVC = segue.destination.contents as! CreatePlaylistVC
-            detailVC.playlistExists = false
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        
+//        if segue.identifier == "showPlaylist" {
+//            let detailVC = segue.destination.contents as! CreatePlaylistVC
+//            detailVC.playlistExists = true
+//            detailVC.playlist = sender as? Playlist
+//
+//        } else if segue.identifier == "CreatePlaylist" {
+//            let detailVC = segue.destination.contents as! CreatePlaylistVC
+//            detailVC.playlistExists = false
+//        }
+//    }
     
     @IBAction func createPlaylist(_ sender: Any) {
         
