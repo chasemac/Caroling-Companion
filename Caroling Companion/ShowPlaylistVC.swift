@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShowPlaylistVC: SongListVC {
+class ShowPlaylistVC: SongListTVC {
 
 //    override var songs: [Song] {
 //        return [Song]()

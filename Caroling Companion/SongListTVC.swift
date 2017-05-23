@@ -46,14 +46,6 @@ class SongListTVC: UITableViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        let attrs = [
-            NSForegroundColorAttributeName: UIColor.gray,
-            NSFontAttributeName: UIFont(name: "BigJohn", size: 24)!
-        ]
-        
-        UINavigationBar.appearance().titleTextAttributes = attrs
-    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

@@ -98,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwG-WW-Y6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2140" y="-939"/>
+            <point key="canvasLocation" x="2094" y="-893"/>
         </scene>
         <!--Playlists-->
         <scene sceneID="lqf-yv-lMy">
@@ -238,7 +238,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xo1-zu-a7S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3065" y="-1002"/>
+            <point key="canvasLocation" x="3065" y="-893"/>
         </scene>
         <!--Title-->
         <scene sceneID="Ou3-VI-lg2">
@@ -318,14 +318,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LTJ-io-3ul" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2990" y="-224"/>
+            <point key="canvasLocation" x="3065" y="-53"/>
         </scene>
         <!--Playlists-->
         <scene sceneID="eOI-9d-U6d">
             <objects>
-                <navigationController id="1t2-hq-4zg" sceneMemberID="viewController">
+                <navigationController id="1t2-hq-4zg" customClass="NavigationController" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Playlists" image="playlist" id="P1N-qG-Umk"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aDa-8k-xGI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aDa-8k-xGI" customClass="NavBarDetails" customModule="Caroling_Companion" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -439,7 +439,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mc-WK-HTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-511" y="-147"/>
+            <point key="canvasLocation" x="57" y="-177"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="aga-SO-Wmt">
@@ -715,15 +715,15 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Mx-TI-3oB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2250" y="-1796"/>
+            <point key="canvasLocation" x="2094" y="-1658"/>
         </scene>
         <!--Songs-->
         <scene sceneID="jbw-Li-Yj1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wh6-6x-aNL" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wh6-6x-aNL" customClass="NavigationController" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Songs" image="musicNote" id="HY2-Hl-FU4"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0VZ-Wu-THR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0VZ-Wu-THR" customClass="NavBarDetails" customModule="Caroling_Companion" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -734,7 +734,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eua-XB-MtF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1490" y="-1797"/>
+            <point key="canvasLocation" x="1148" y="-1658"/>
         </scene>
     </scenes>
     <resources>
@@ -749,7 +749,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="pqo-xp-ofS"/>
         <segue reference="UTV-V0-aRm"/>
-        <segue reference="hrw-hQ-4Gi"/>
+        <segue reference="EV3-wj-5fI"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.53758639100000005" green="0.65890771150000005" blue="0.49905574320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
