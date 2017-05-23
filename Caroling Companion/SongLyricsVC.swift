@@ -12,7 +12,7 @@ class SongLyricsVC: UIViewController {
     
     @IBOutlet weak var songListBtn: UIButton!
     
-    var song = Song(lyrics: "", title: "", favorites: 0, userUID: "", postedDate: "")
+    var song: Song?
     
     @IBOutlet weak var txtView: UITextView!
     @IBOutlet weak var songTitle: UILabel!
@@ -26,13 +26,17 @@ class SongLyricsVC: UIViewController {
         }
        initText()
         
-        let title = self.song.title
-        let lyrics = self.song.lyrics
-        
-        let lyricsSwift = lyrics.replacingOccurrences(of: "<br>", with: "\n")
-        
-        txtView.text = lyricsSwift
-        songTitle.text = title
+        if song != nil {
+            let title = self.song!.title
+            let lyrics = self.song!.lyrics
+            let lyricsSwift = lyrics.replacingOccurrences(of: "<br>", with: "\n")
+            txtView.text = lyricsSwift
+            songTitle.text = title
+        } else {
+            txtView.text = "Unable To Load Song"
+            songTitle.text = "Song Unavailable"
+        }
+
         
 //        let video = song[Constants.SongFields.videoUrl] as String!
 //        let youtubeURL = YOUTUBE_URL + video!
@@ -58,6 +62,7 @@ class SongLyricsVC: UIViewController {
   
     @IBAction func songListBtnPressed(_ sender: AnyObject) {
         dismiss(animated: true, completion: nil)
+        
         songListBtn.backgroundColor = UIColor(red: 0.718, green: 0.310, blue: 0.310, alpha: 1.00)
     }
 }

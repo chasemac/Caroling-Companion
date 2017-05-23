@@ -723,7 +723,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wh6-6x-aNL" customClass="NavigationController" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Songs" image="musicNote" id="HY2-Hl-FU4"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0VZ-Wu-THR" customClass="NavBarDetails" customModule="Caroling_Companion" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0VZ-Wu-THR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -749,7 +749,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="pqo-xp-ofS"/>
         <segue reference="UTV-V0-aRm"/>
-        <segue reference="EV3-wj-5fI"/>
+        <segue reference="hrw-hQ-4Gi"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.53758639100000005" green="0.65890771150000005" blue="0.49905574320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

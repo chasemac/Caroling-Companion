@@ -83,7 +83,7 @@ class SongListTVC: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue" {
             let detailVC = segue.destination as! SongLyricsVC
-            detailVC.song = sender as! Song
+            detailVC.song = sender as? Song
         }
     }
     

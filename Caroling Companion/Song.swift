@@ -43,6 +43,10 @@ class Song {
         return _postedDate
     }
     
+    init(songKey: String) {
+        self._songKey = songKey
+    }
+    
     
     init(lyrics: String, title: String, favorites: Int, userUID: String, postedDate: String) {
         self._lyrics = lyrics
