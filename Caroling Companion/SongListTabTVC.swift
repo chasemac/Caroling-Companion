@@ -8,8 +8,6 @@
 
 import UIKit
 
-class SongListTabTVC: SongListTVC {
+class SongListTabTVC: SongListTVCF {
 
-
-    
 }

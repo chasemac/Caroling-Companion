@@ -10,10 +10,9 @@ import Firebase
 
 class SongLyricsVC: UIViewController {
     
+    var songF : FIRDataSnapshot!
+    
     @IBOutlet weak var songListBtn: UIButton!
-    
-    var song: Song?
-    
     @IBOutlet weak var txtView: UITextView!
     @IBOutlet weak var songTitle: UILabel!
     
@@ -24,11 +23,15 @@ class SongLyricsVC: UIViewController {
         } else {
             print("no current user")
         }
-       initText()
+        initText()
+        loadSongs(song: self.songF)
         
-        if song != nil {
-            let title = self.song!.title
-            let lyrics = self.song!.lyrics
+    }
+    
+    func loadSongs(song: FIRDataSnapshot) {
+        if let songDict = song.value as? [String : AnyObject] {
+            let title = songDict[DBSongString.title] as? String ?? "Title Unavailable"
+            let lyrics = songDict[DBSongString.lyrics] as? String ?? "Lyrics Unavailable"
             let lyricsSwift = lyrics.replacingOccurrences(of: "<br>", with: "\n")
             txtView.text = lyricsSwift
             songTitle.text = title
@@ -36,15 +39,8 @@ class SongLyricsVC: UIViewController {
             txtView.text = "Unable To Load Song"
             songTitle.text = "Song Unavailable"
         }
-
-        
-//        let video = song[Constants.SongFields.videoUrl] as String!
-//        let youtubeURL = YOUTUBE_URL + video!
-//        videoView.allowsInlineMediaPlayback = true
-//        videoView.loadHTMLString("<iframe width=\"\(videoView.frame.width)\" height=\"\(videoView.frame.height)\" src=\"\(youtubeURL)?&playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
-        
     }
-
+    
     func initText() {
         txtView.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
         
@@ -59,10 +55,19 @@ class SongLyricsVC: UIViewController {
         super.viewDidLayoutSubviews()
         txtView.setContentOffset(CGPoint.zero, animated: false)
     }
-  
+    
     @IBAction func songListBtnPressed(_ sender: AnyObject) {
         dismiss(animated: true, completion: nil)
         
         songListBtn.backgroundColor = UIColor(red: 0.718, green: 0.310, blue: 0.310, alpha: 1.00)
     }
+    
+    //    func loadVideo(song: FIRDataSnapshot) {
+    //        if let songDict = song.value as? [String : AnyObject] {
+    //            let video = songDict[DBSongString.videoURL] as! String!
+    //            let youtubeURL = YOUTUBE_URL + video!
+    //            videoView.allowsInlineMediaPlayback = true
+    //            videoView.loadHTMLString("<iframe width=\"\(videoView.frame.width)\" height=\"\(videoView.frame.height)\" src=\"\(youtubeURL)?&playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
+    //        }
+    //    }
 }

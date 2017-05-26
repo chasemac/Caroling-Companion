@@ -70,13 +70,41 @@ class ProfileVC: UIViewController {
         }
     }
     
+    func singOut() {
+        self.performSegue(withIdentifier: "LoginVC", sender: nil)
+    }
+
+    
     @IBAction func logoutTapped(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: UIAlertControllerStyle.alert)
+        let destructiveAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive) {
+            (result : UIAlertAction) -> Void in
+            print("Signed Out")
+            self.singOut()
+        }
+        let okAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
+            (result : UIAlertAction) -> Void in
+            print("Cancel")
+        }
+        alertController.addAction(destructiveAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+        
         do {
             try  FIRAuth.auth()?.signOut()
             print("Logged Out")
         } catch {
             print("failed"  )
         }
+        
+        do {
+            try  FIRAuth.auth()?.signOut()
+        } catch {
+            print("failed"  )
+        }
+        
+
     }
     @IBAction func diconnectGoogleTapped(_ sender: Any) {
         GIDSignIn.sharedInstance().disconnect()

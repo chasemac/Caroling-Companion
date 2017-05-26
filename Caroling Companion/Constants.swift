@@ -50,6 +50,7 @@ struct DBUserString {
     static let providerProfileImageURL = "providerProfileImageURL"
     static let provider = "provider"
     static let email = "email"
+    static let favorites = "favorites"
 }
 
 // Playlist

@@ -103,13 +103,13 @@
         <!--Playlists-->
         <scene sceneID="lqf-yv-lMy">
             <objects>
-                <tableViewController id="kzh-K3-y7s" customClass="PlaylistVC" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="kzh-K3-y7s" customClass="PlaylistVCF" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="139" sectionHeaderHeight="28" sectionFooterHeight="28" id="lg0-cV-fin">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaylistNameCell" rowHeight="96" id="aar-CA-Wl8" customClass="PlaylistNameCell" customModule="Caroling_Companion" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaylistNameCell" rowHeight="96" id="aar-CA-Wl8" customClass="PlaylistNameCellF" customModule="Caroling_Companion" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aar-CA-Wl8" id="ofy-zo-9vw">
@@ -117,7 +117,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DO YOU HEAR WHAT I HEAR" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="VRm-WY-HxD">
-                                            <rect key="frame" x="28" y="28" width="319" height="40"/>
+                                            <rect key="frame" x="28" y="16" width="319" height="64"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -126,8 +126,8 @@
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="VRm-WY-HxD" secondAttribute="trailing" constant="20" id="Eul-cV-1ff"/>
                                         <constraint firstItem="VRm-WY-HxD" firstAttribute="leading" secondItem="ofy-zo-9vw" secondAttribute="leadingMargin" constant="20" id="LcZ-xM-3zR"/>
-                                        <constraint firstItem="VRm-WY-HxD" firstAttribute="top" secondItem="ofy-zo-9vw" secondAttribute="topMargin" constant="20" id="d8s-cP-N6B"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="VRm-WY-HxD" secondAttribute="bottom" constant="20" id="gNe-Fl-0V6"/>
+                                        <constraint firstItem="VRm-WY-HxD" firstAttribute="top" secondItem="ofy-zo-9vw" secondAttribute="topMargin" constant="8" id="d8s-cP-N6B"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="VRm-WY-HxD" secondAttribute="bottom" constant="8" id="gNe-Fl-0V6"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -257,16 +257,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELG-Dz-by0">
-                                            <rect key="frame" x="0.0" y="25" width="375" height="46"/>
+                                            <rect key="frame" x="0.0" y="8" width="375" height="80"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DO YOU HEAR WHAT I HEAR" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Uef-tT-W8O">
-                                                    <rect key="frame" x="45" y="8" width="310" height="30.5"/>
+                                                    <rect key="frame" x="45" y="8" width="310" height="64.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-empty" translatesAutoresizingMaskIntoConstraints="NO" id="L4B-0r-iSf">
-                                                    <rect key="frame" x="7" y="8" width="30" height="30"/>
+                                                    <rect key="frame" x="7" y="25" width="30" height="30"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="fMY-GF-wcr"/>
@@ -287,7 +287,7 @@
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="ELG-Dz-by0" firstAttribute="top" secondItem="YQD-LB-DO7" secondAttribute="topMargin" constant="17" id="BUf-WM-u5W"/>
+                                        <constraint firstItem="ELG-Dz-by0" firstAttribute="top" secondItem="YQD-LB-DO7" secondAttribute="topMargin" id="BUf-WM-u5W"/>
                                         <constraint firstItem="ELG-Dz-by0" firstAttribute="leading" secondItem="YQD-LB-DO7" secondAttribute="leading" id="LJH-GE-pzu"/>
                                         <constraint firstAttribute="trailing" secondItem="ELG-Dz-by0" secondAttribute="trailing" id="qC1-ay-3be"/>
                                         <constraint firstItem="ELG-Dz-by0" firstAttribute="centerY" secondItem="YQD-LB-DO7" secondAttribute="centerY" id="xGA-k5-lnV"/>
@@ -435,6 +435,7 @@
                         <outlet property="nameLabel" destination="ZUc-j9-PWM" id="Rxi-Za-dWB"/>
                         <outlet property="providerLabel" destination="4Zg-aQ-3as" id="Vhx-m5-xCi"/>
                         <outlet property="uidLabel" destination="ZkD-NS-Ugb" id="275-md-pHg"/>
+                        <segue destination="QW0-YM-oci" kind="show" identifier="LoginVC" id="vdM-GR-27e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mc-WK-HTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -477,7 +478,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mGF-VA-gic" customClass="FancyView" customModule="Caroling_Companion" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="543" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="592" width="375" height="75"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0s-zD-fWx">
                                         <rect key="frame" x="8" y="8" width="359" height="59"/>
@@ -653,24 +654,24 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" rowHeight="97" id="6nR-HX-xYX" customClass="SongCell" customModule="Caroling_Companion" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" rowHeight="97" id="6nR-HX-xYX" customClass="SongCellF" customModule="Caroling_Companion" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6nR-HX-xYX" id="6bV-KP-Ifw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNp-SH-tq7">
-                                            <rect key="frame" x="0.0" y="25" width="375" height="48"/>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qNp-SH-tq7">
+                                            <rect key="frame" x="0.0" y="25" width="375" height="72"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DO YOU HEAR WHAT I HEAR" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="PTt-Nt-Hpw">
-                                                    <rect key="frame" x="45" y="8" width="310" height="32.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DO YOU HEAR WHAT I HEAR" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTt-Nt-Hpw">
+                                                    <rect key="frame" x="45" y="8" width="310" height="65"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-empty" translatesAutoresizingMaskIntoConstraints="NO" id="vbK-RH-n8e">
-                                                    <rect key="frame" x="7" y="9" width="30" height="30"/>
+                                                    <rect key="frame" x="7" y="25.5" width="30" height="30"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="78k-YC-of7"/>
@@ -692,7 +693,7 @@
                                     <constraints>
                                         <constraint firstItem="qNp-SH-tq7" firstAttribute="centerY" secondItem="6bV-KP-Ifw" secondAttribute="centerY" id="0b7-tU-6f9"/>
                                         <constraint firstAttribute="trailing" secondItem="qNp-SH-tq7" secondAttribute="trailing" id="FmY-UX-vH8"/>
-                                        <constraint firstItem="qNp-SH-tq7" firstAttribute="top" secondItem="6bV-KP-Ifw" secondAttribute="topMargin" constant="17" id="lI3-mE-rTr"/>
+                                        <constraint firstItem="qNp-SH-tq7" firstAttribute="top" secondItem="6bV-KP-Ifw" secondAttribute="topMargin" id="lI3-mE-rTr"/>
                                         <constraint firstItem="qNp-SH-tq7" firstAttribute="leading" secondItem="6bV-KP-Ifw" secondAttribute="leading" id="yVN-4T-Swp"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -747,9 +748,9 @@
         <image name="star-empty" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pqo-xp-ofS"/>
-        <segue reference="aJX-Tx-18r"/>
-        <segue reference="hrw-hQ-4Gi"/>
+        <segue reference="EV3-wj-5fI"/>
+        <segue reference="HH8-AG-ENV"/>
+        <segue reference="UTV-V0-aRm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.53758639100000005" green="0.65890771150000005" blue="0.49905574320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -16,6 +16,7 @@ class PlaylistVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+     
 
 
         DataService.ds.REF_PLAYLISTS.observe(.value, with: { (snapshot) in
@@ -30,10 +31,13 @@ class PlaylistVC: UITableViewController {
                 }
             }
             self.tableView.reloadData()
+            
             print(self.playlists.count)
         })
 
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -61,7 +65,7 @@ class PlaylistVC: UITableViewController {
             return cell
         } else {
             print("error")
-            return PlaylistSongCell()
+            return PlaylistNameCell()
         }
 
     }
