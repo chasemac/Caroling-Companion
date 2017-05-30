@@ -35,6 +35,7 @@ struct DBTopLevel {
 // Data Base Song Strings
 struct DBSongString {
     static let title = "title"
+    static let titleSearch = "titleSearch"
     static let lyrics = "lyrics"
     static let videoURL = "video"
     static let favorites = "favorites"

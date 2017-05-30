@@ -14,7 +14,7 @@ class SongCellF: UITableViewCell {
     @IBOutlet weak var songNameLabel: UILabel!
     @IBOutlet weak var starImage: UIImageView!
     
-    var song: FIRDataSnapshot!
+  //  var song: FIRDataSnapshot!
     var favoriteRef: FIRDatabaseReference!
     
     override func awakeFromNib() {
@@ -29,9 +29,13 @@ class SongCellF: UITableViewCell {
     }
     
     
-    func configureCell(_ song: AnyObject, indexPath: NSIndexPath) {
+    func configureCell(_ snapshot: FIRDataSnapshot, indexPath: NSIndexPath) {
+        let key = snapshot.key
         
-        songNameLabel.text = song as? String
+        let song = snapshot.value as! NSDictionary
+        let name = song[DBSongString.title] ?? "No Title" as AnyObject
+        
+        songNameLabel.text = name as? String
         
         if indexPath.row % 3 == 0 {
             self.backgroundColor = softGreen
@@ -42,11 +46,13 @@ class SongCellF: UITableViewCell {
         else {
             self.backgroundColor = softRed
         }
-        // setFavorite()
+         setFavorite(key: key)
     }
-  /*
-    func setFavorite() {
-        favoriteRef = DataService.ds.REF_USER_CURRENT.child(DBSongString.favorites).child(song.key)
+  
+    func setFavorite(key: String) {
+      
+        
+        favoriteRef = DataService.ds.REF_USER_CURRENT.child(DBSongString.favorites).child(key)
         favoriteRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if let _ = snapshot.value as? NSNull {
                 self.starImage.image = UIImage(named: "star-empty")
@@ -55,6 +61,6 @@ class SongCellF: UITableViewCell {
             }
         })
     }
-    */
+    
 }
 

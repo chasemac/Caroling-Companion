@@ -248,9 +248,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textField key="tableHeaderView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Find A Song" textAlignment="center" minimumFontSize="17" id="INv-Hp-L2B">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            <connections>
+                                <action selector="editingChanged:" destination="Md4-rR-b8t" eventType="editingDidEnd" id="Msk-rx-Zff"/>
+                            </connections>
+                        </textField>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" rowHeight="96" id="wmG-Tx-40A" customClass="SongCell" customModule="Caroling_Companion" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="96"/>
+                                <rect key="frame" x="0.0" y="58" width="375" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wmG-Tx-40A" id="YQD-LB-DO7">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
@@ -313,6 +323,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="textField" destination="INv-Hp-L2B" id="uDY-6y-IB5"/>
                         <segue destination="nQb-j5-nok" kind="presentation" identifier="detailSegue" id="hrw-hQ-4Gi"/>
                     </connections>
                 </tableViewController>
@@ -325,7 +336,7 @@
             <objects>
                 <navigationController id="1t2-hq-4zg" customClass="NavigationController" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Playlists" image="playlist-icon" id="P1N-qG-Umk"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aDa-8k-xGI" customClass="NavBarDetails" customModule="Caroling_Companion" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aDa-8k-xGI" customClass="NavBarDetails" customModule="Caroling_Companion" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -441,6 +452,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mc-WK-HTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="57" y="-177"/>
+        </scene>
+        <!--Song ListTVCFTESTSEARCH-->
+        <scene sceneID="P3v-un-FtV">
+            <objects>
+                <tableViewController id="Vwm-Oa-beJ" customClass="SongListTVCF_TEST_SEARCH" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Cp-cs-QkQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textField key="tableHeaderView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="MhK-G3-76f">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes"/>
+                        </textField>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" rowHeight="97" id="cWM-uf-Lun" customClass="SongCellF" customModule="Caroling_Companion" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="58" width="375" height="97"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cWM-uf-Lun" id="Oiu-Z7-0go">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="96.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cQu-WA-dM1">
+                                            <rect key="frame" x="0.0" y="25" width="375" height="72"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DO YOU HEAR WHAT I HEAR" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJl-On-0H7">
+                                                    <rect key="frame" x="45" y="8" width="310" height="64.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-empty" translatesAutoresizingMaskIntoConstraints="NO" id="B0b-1f-m5k">
+                                                    <rect key="frame" x="7" y="25.5" width="30" height="30"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="5QG-Ip-9NO"/>
+                                                        <constraint firstAttribute="width" constant="30" id="nTu-IL-3f9"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="kJl-On-0H7" secondAttribute="bottom" constant="8" id="0c2-gN-UWF"/>
+                                                <constraint firstAttribute="trailing" secondItem="kJl-On-0H7" secondAttribute="trailing" constant="20" id="Kjv-n6-UIa"/>
+                                                <constraint firstItem="B0b-1f-m5k" firstAttribute="leading" secondItem="cQu-WA-dM1" secondAttribute="leading" constant="7" id="REd-1w-PuB"/>
+                                                <constraint firstItem="B0b-1f-m5k" firstAttribute="centerY" secondItem="cQu-WA-dM1" secondAttribute="centerY" id="gQd-Ve-8oF"/>
+                                                <constraint firstItem="kJl-On-0H7" firstAttribute="top" secondItem="cQu-WA-dM1" secondAttribute="top" constant="8" id="po8-MM-Kwq"/>
+                                                <constraint firstItem="kJl-On-0H7" firstAttribute="leading" secondItem="B0b-1f-m5k" secondAttribute="trailing" constant="8" symbolic="YES" id="wOZ-Sv-vkZ"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="cQu-WA-dM1" firstAttribute="centerY" secondItem="Oiu-Z7-0go" secondAttribute="centerY" id="JdF-MU-Hhw"/>
+                                        <constraint firstAttribute="trailing" secondItem="cQu-WA-dM1" secondAttribute="trailing" id="YrT-Ah-2Jk"/>
+                                        <constraint firstItem="cQu-WA-dM1" firstAttribute="top" secondItem="Oiu-Z7-0go" secondAttribute="topMargin" id="dd9-Gb-i2J"/>
+                                        <constraint firstItem="cQu-WA-dM1" firstAttribute="leading" secondItem="Oiu-Z7-0go" secondAttribute="leading" id="glb-bg-ifv"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="songNameLabel" destination="kJl-On-0H7" id="0uN-iJ-Eyz"/>
+                                    <outlet property="starImage" destination="B0b-1f-m5k" id="Qgw-ec-pCr"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Vwm-Oa-beJ" id="VzU-Xx-6fv"/>
+                            <outlet property="delegate" destination="Vwm-Oa-beJ" id="c4o-Lm-3oP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="UzB-uM-mjB"/>
+                    <connections>
+                        <outlet property="textField" destination="MhK-G3-76f" id="xt5-P8-Omr"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bhK-QJ-1eq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="84" y="-1728.4857571214395"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="aga-SO-Wmt">
@@ -647,15 +737,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" id="miB-dZ-s84">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
+                        <textField key="tableHeaderView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Find A Song" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="oT5-CT-Qqn">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            <connections>
+                                <action selector="editingChange:" destination="Eb1-Hl-ufH" eventType="editingChanged" id="VtC-fx-o1K"/>
+                            </connections>
+                        </textField>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" rowHeight="97" id="6nR-HX-xYX" customClass="SongCellF" customModule="Caroling_Companion" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="97"/>
+                                <rect key="frame" x="0.0" y="58" width="375" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6nR-HX-xYX" id="6bV-KP-Ifw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
@@ -710,13 +804,14 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Pick A Song!" id="tfY-hq-pQT"/>
                     <connections>
+                        <outlet property="textField" destination="oT5-CT-Qqn" id="12C-XS-doo"/>
                         <segue destination="QW0-YM-oci" kind="presentation" identifier="LoginVC" id="HH8-AG-ENV"/>
                         <segue destination="nQb-j5-nok" kind="presentation" identifier="detailSegue" id="EV3-wj-5fI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Mx-TI-3oB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2094" y="-1658"/>
+            <point key="canvasLocation" x="3032.8000000000002" y="-1658.3208395802101"/>
         </scene>
         <!--Songs-->
         <scene sceneID="jbw-Li-Yj1">
@@ -724,7 +819,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wh6-6x-aNL" customClass="NavigationController" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Songs" image="musicNote" id="HY2-Hl-FU4"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0VZ-Wu-THR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0VZ-Wu-THR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -735,7 +830,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eua-XB-MtF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1148" y="-1658"/>
+            <point key="canvasLocation" x="2087.1999999999998" y="-1658.3208395802101"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KcE-Zt-b9P">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xGQ-KQ-ucz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TxF-40-P0o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Vwm-Oa-beJ" kind="relationship" relationship="rootViewController" id="848-dV-LHW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="taO-a8-8S1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-855.20000000000005" y="-1728.4857571214395"/>
         </scene>
     </scenes>
     <resources>
@@ -748,9 +861,9 @@
         <image name="star-empty" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EV3-wj-5fI"/>
         <segue reference="HH8-AG-ENV"/>
-        <segue reference="UTV-V0-aRm"/>
+        <segue reference="aJX-Tx-18r"/>
+        <segue reference="hrw-hQ-4Gi"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.53758639100000005" green="0.65890771150000005" blue="0.49905574320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

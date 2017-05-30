@@ -9,7 +9,9 @@
 import UIKit
 import Firebase
 
-class ShowPlaylistVC: SongListTVCF {
+class ShowPlaylistVC: SongListTVC {
+    
+    var playlistF : FIRDataSnapshot!
     
     var playlist: Playlist?
     var playListSongKeys: [String] = []
@@ -27,6 +29,11 @@ class ShowPlaylistVC: SongListTVCF {
         if playlist != nil {
             loadPlaylistSongKeys()
         }
+    }
+    
+    override func configureDatabase() {
+
+        super.configureDatabase()
     }
     
     func loadPlaylistSongKeys() {
