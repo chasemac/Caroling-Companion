@@ -16,7 +16,7 @@ class SongListTVC: UITableViewController, UITextFieldDelegate {
     var favorites: [String] = []
     
     // MARK: NEW FIREBASE STUFF
-    var ref: FIRDatabaseReference!
+    fileprivate var ref: FIRDatabaseReference!
     var favRef: FIRDatabaseReference!
     var songsF: [FIRDataSnapshot]! = []
     fileprivate var query: FIRDatabaseQuery?
@@ -97,8 +97,10 @@ class SongListTVC: UITableViewController, UITextFieldDelegate {
         // Dequeue cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "SongCell", for: indexPath) as! SongCellF
         
+        
         let snapshot = songsF[indexPath.row]
-        cell.configureCell(snapshot, indexPath: indexPath as NSIndexPath)
+        print("the snap one!! ----->>>> \(snapshot)")
+        cell.configureCell(snapshot, indexPath: indexPath as NSIndexPath, playlistKey: nil)
         return cell
     }
     
@@ -106,19 +108,21 @@ class SongListTVC: UITableViewController, UITextFieldDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let song = songsF[indexPath.row]
-        
-        self.performSegue(withIdentifier: "detailSegue", sender: song)
+        print("the 1 one!! ----->>>> \(song)")
+        performSegue(withIdentifier: "detailSegue", sender: song)
+        //      self.performSegue(withIdentifier: "detailSegue", sender: song)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue" {
+            
             let detailVC = segue.destination as! SongLyricsVC
             detailVC.songF = sender as? FIRDataSnapshot
-            print(detailVC.songF)
+            
+            print("the detail one!! ----->>>> \(detailVC.songF)")
         }
     }
     
-
     
     @IBAction func editingChange(_ sender: Any) {
         text = textField.text!

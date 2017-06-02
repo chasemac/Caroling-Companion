@@ -29,7 +29,7 @@ class SongCellF: UITableViewCell {
     }
     
     
-    func configureCell(_ snapshot: FIRDataSnapshot, indexPath: NSIndexPath) {
+    func configureCell(_ snapshot: FIRDataSnapshot, indexPath: NSIndexPath, playlistKey: String?) {
         let key = snapshot.key
         
         let song = snapshot.value as! NSDictionary

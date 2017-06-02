@@ -63,19 +63,21 @@ class PlaylistVCF: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //       let playlist = playlists[indexPath.row]
-        //       self.performSegue(withIdentifier: "showPlaylist", sender: playlist)
+               let playlist = playlistsF[indexPath.row]
+        print("playlistF ============ \(playlist)")
+               self.performSegue(withIdentifier: "showPlaylist", sender: playlist)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "showPlaylist" {
             let detailVC = segue.destination.contents as! ShowPlaylistVC
-            detailVC.playlist = sender as? Playlist
+            detailVC.playlistF = sender as? FIRDataSnapshot
+            
             
         } else if segue.identifier == "CreatePlaylist" {
-            let detailVC = segue.destination.contents as! CreatePlaylistVC
-            detailVC.playlistExists = false
+         //   let detailVC = segue.destination.contents as! CreatePlaylistVCF
+          //  detailVC.playlistExists = false
         }
     }
     
@@ -86,13 +88,13 @@ class PlaylistVCF: UITableViewController {
     
 }
 
-//extension UIViewController {
-//    var contents: UIViewController {
-//        if let navcon = self as? UINavigationController {
-//            return navcon.visibleViewController ?? self
-//        } else {
-//            return self
-//        }
-//    }
-//}
+extension UIViewController {
+    var contents: UIViewController {
+        if let navcon = self as? UINavigationController {
+            return navcon.visibleViewController ?? self
+        } else {
+            return self
+        }
+    }
+}
 

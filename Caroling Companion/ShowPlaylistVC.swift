@@ -11,53 +11,63 @@ import Firebase
 
 class ShowPlaylistVC: SongListTVC {
     
+    fileprivate var query: FIRDatabaseQuery?
+    fileprivate var ref: FIRDatabaseReference!
     var playlistF : FIRDataSnapshot!
     
-    var playlist: Playlist?
     var playListSongKeys: [String] = []
     
     override func viewDidLoad() {
+        
+        print("the first one!! ----->>>> \(playlistF)")
         super.viewDidLoad()
-        navigationItem.title = playlist!.title
-        if playlist != nil {
-            loadPlaylistSongKeys()
-      //      loadSongs()
-        }
+        let playlist = playlistF.value as! [String:Any]
+        navigationItem.title = playlist[DBPlaylistString.title] as? String ?? "No Title"
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if playlist != nil {
-            loadPlaylistSongKeys()
-        }
-    }
-    
-    override func configureDatabase() {
 
-        super.configureDatabase()
+    override func configureDatabase() {
+        let playlistDict = playlistF.value as! NSDictionary
+        if playlistDict[DBPlaylistString.songs] != nil {
+            let songKeyDict = playlistDict[DBPlaylistString.songs] as! [String:Any]
+            for (key, _) in songKeyDict {
+                self.playListSongKeys.append(key)
+                
+            }
+            for key in playListSongKeys {
+                self.loadSongs(key: key)
+            }
+        }
+
     }
     
-    func loadPlaylistSongKeys() {
-        DataService.ds.REF_PLAYLISTS.child(self.playlist!.playlistKey).child(DBPlaylistString.songs).observe(.value, with: { (snapshot) in
-            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                print(snapshot)
-                for snap in snapshot {
-                    let key = snap.key
-                    self.playListSongKeys.insert(key, at: 0)
-                }
-            }
+    func loadSongs(key: String) {
+        songsF = []
+        let songRef = DataService.ds.REF_SONGS
+        
+        songRef.child(key).observeSingleEvent(of: .value, with: { (snapshot) in
+                self.songsF.append(snapshot)
+            print("the snap building one!! ----->>>> \(snapshot)")
+                self.tableView.insertRows(at: [IndexPath(row: self.songsF.count-1, section: 0)], with: .automatic)
         })
+        tableView.reloadData()
     }
-//    
-//    override func loadSongs() {
-//        DataService.ds.REF_SONGS.observe(.value, with: { (snapshot) in
-//            for songKey in self.playListSongKeys {
-//                let snapshot = snapshot.childSnapshot(forPath: songKey)
-//                if let songDict = snapshot.value as? Dictionary<String, AnyObject> {
-//                    let song = Song(songKey: songKey, songData: songDict)
-//                    self.songs.insert(song, at: 0)
-//                }
-//            }
-//            self.tableView.reloadData()
-//        })
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("the second one!! ----->>>> \(playlistF)")
+        if segue.identifier == "EditPlaylist" {
+            let detailVC = segue.destination.contents as! CreatePlaylistVCF
+            detailVC.playlistF = sender as? FIRDataSnapshot
+        }
+        super.prepare(for: segue, sender: sender)
+    }
+    
+    @IBAction func editBtnTapped(_ sender: Any) {
+        print("the third one!! ----->>>> \(playlistF)")
+        performSegue(withIdentifier: "EditPlaylist", sender: playlistF)
+    }
+    
+    // TODO: Clicking Edit Button While Searching Crashes
+//    override func editingChange(_ sender: Any) {
+//        // Fix this
 //    }
 }

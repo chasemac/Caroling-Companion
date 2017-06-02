@@ -24,6 +24,7 @@ class SongLyricsVC: UIViewController {
             print("no current user")
         }
         initText()
+        print("the almost there one!! ----->>>> \(self.songF)")
         loadSongs(song: self.songF)
         
     }
