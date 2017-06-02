@@ -22,22 +22,17 @@ class SongListTVC: UITableViewController, UITextFieldDelegate {
     fileprivate var query: FIRDatabaseQuery?
     
     override func viewDidLoad() {
-        configureDatabase()
         guard FIRAuth.auth()?.currentUser != nil else {
             performSegue(withIdentifier: "LoginVC", sender: nil)
             return
         }
-        super.viewDidLoad()
+        configureDatabase()
         
-        if FIRAuth.auth()?.currentUser?.uid != nil {
-            print("Logged in user UID ------> \(FIRAuth.auth()?.currentUser!.uid as Any)")
-        } else {
-            print("no current user")
-        }
+        super.viewDidLoad()
+        print("Logged in user UID ------> \(FIRAuth.auth()?.currentUser!.uid as Any)")
         
         textField.delegate = self
         self.hideKeyboardWhenTappedAround()
-        
     }
     
     func configureDatabase() {

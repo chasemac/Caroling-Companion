@@ -47,7 +47,7 @@ class CreatePlaylistVCF: SongListTVC {
         let snapshot = songsF[indexPath.row]
         print("the snap one!! ----->>>> \(snapshot)")
         if playlistF != nil {
-           cell.configureCell(snapshot, indexPath: indexPath as NSIndexPath, playlistKey: playlistF!.key)
+            cell.configureCell(snapshot, indexPath: indexPath as NSIndexPath, playlistKey: playlistF!.key)
         } else {
             cell.configureCell(snapshot, indexPath: indexPath as NSIndexPath, playlistKey: createdPlaylistKey)
         }
@@ -112,5 +112,16 @@ class CreatePlaylistVCF: SongListTVC {
         
     }
     
+    @IBAction func cancelBtnTapped(_ sender: Any) {
+        
+        if playlistF != nil {
+            dismiss(animated: true, completion: nil)
+        } else {
+            DataService.ds.REF_PLAYLISTS.child(createdPlaylistKey!).removeValue()
+            dismiss(animated: true, completion: nil)
+            print("tried to dismiss")
+        }
+
+    }
     
 }
