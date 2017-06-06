@@ -12,16 +12,13 @@ import Firebase
 class CreatePlaylistVCF: SongListTVC {
     
     var playlistF: FIRDataSnapshot?
-    
-    var createdPlaylistKey: String?
-    
     var playlistRef: FIRDatabaseReference?
+    var createdPlaylistKey: String?
     
     override func viewDidLoad() {
         if playlistF != nil {
             let playlist = playlistF!.value as! [String:Any]
             navigationItem.title = playlist[DBPlaylistString.title] as? String ?? ""
-            
         } else {
             createPlaylist()
         }
@@ -51,13 +48,11 @@ class CreatePlaylistVCF: SongListTVC {
         } else {
             cell.configureCell(snapshot, indexPath: indexPath as NSIndexPath, playlistKey: createdPlaylistKey)
         }
-        
         return cell
     }
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         
         let song = songsF[indexPath.row]
         if playlistF != nil {
@@ -79,21 +74,27 @@ class CreatePlaylistVCF: SongListTVC {
     }
     
     @IBAction func saveBtnTapped(_ sender: Any) {
-        let playlist = playlistF!.value as! [String:Any]
-        let playlistTitle = playlist[DBPlaylistString.title] as? String ?? ""
-        if playlistTitle != "" {
-            self.dismiss(animated: true, completion: nil)
-        } else {
-            savePlaylistName()
+        guard createdPlaylistKey == nil else {
+            savePlaylistName(playlistKey: createdPlaylistKey!)
+            print("Tried to save name")
+            
+            return
         }
+        self.dismiss(animated: true, completion: nil)
+//        let playlist = playlistF!.value as! [String:Any]
+//        let playlistTitle = playlist[DBPlaylistString.title] as? String ?? ""
+//        if playlistTitle != "" {
+//            self.dismiss(animated: true, completion: nil)
+//        } else {
+//            savePlaylistName()
+//        }
     }
     
-    private func savePlaylistName() {
+    private func savePlaylistName(playlistKey: String) {
         
-        if playlistF != nil {
             let alert = UIAlertController(title: "Name the Playlist", message: "", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { action in
-                let titleRef = DataService.ds.REF_PLAYLISTS.child(self.playlistF!.key).child(DBPlaylistString.title)
+                let titleRef = DataService.ds.REF_PLAYLISTS.child(playlistKey).child(DBPlaylistString.title)
                 
                 let title = alert.textFields?.first?.text
                 
@@ -108,7 +109,7 @@ class CreatePlaylistVCF: SongListTVC {
                 textField.autocapitalizationType = .words
             }
             present(alert, animated: true)
-        }
+    
         
     }
     
