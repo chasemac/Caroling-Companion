@@ -12,42 +12,24 @@
 		0E2EF2E81C274DD200762053 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E61C274DD200762053 /* Main.storyboard */; };
 		0E2EF2EA1C274DD200762053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E91C274DD200762053 /* Assets.xcassets */; };
 		0E2EF2ED1C274DD200762053 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2EB1C274DD200762053 /* LaunchScreen.storyboard */; };
-		0E2EF2F81C274DD300762053 /* Caroling_CompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF2F71C274DD300762053 /* Caroling_CompanionTests.swift */; };
-		0E2EF3031C274DD300762053 /* Caroling_CompanionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF3021C274DD300762053 /* Caroling_CompanionUITests.swift */; };
 		0E2EF3151C2753B200762053 /* SongLyricsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF3141C2753B200762053 /* SongLyricsVC.swift */; };
 		0E5A4C8C1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */; };
-		0E5A4C8D1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */; };
-		0E5A4C8E1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */; };
+		0E7EAA131DB5E01300E8044A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7EAA121DB5E01300E8044A /* NavigationController.swift */; };
 		0E8F09901CD29BB600CF771E /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F098F1CD29BB600CF771E /* SongCell.swift */; };
-		0E8F09911CD29BB600CF771E /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F098F1CD29BB600CF771E /* SongCell.swift */; };
-		0E8F09921CD29BB600CF771E /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F098F1CD29BB600CF771E /* SongCell.swift */; };
-		0E8F09941CD2B5A000CF771E /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09931CD2B5A000CF771E /* MaterialView.swift */; };
-		0E8F09951CD2B5A000CF771E /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09931CD2B5A000CF771E /* MaterialView.swift */; };
-		0E8F09961CD2B5A000CF771E /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09931CD2B5A000CF771E /* MaterialView.swift */; };
 		0E8F09981CD2B5CB00CF771E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09971CD2B5CB00CF771E /* Constants.swift */; };
-		0E8F09991CD2B5CB00CF771E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09971CD2B5CB00CF771E /* Constants.swift */; };
-		0E8F099A1CD2B5CB00CF771E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09971CD2B5CB00CF771E /* Constants.swift */; };
-		1884AC98B239FF6B40531B5F /* Pods_Caroling_CompanionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAAD88E628E3FEA0F7FDD16 /* Pods_Caroling_CompanionUITests.framework */; };
-		529ECB0E09B07D2817BB6536 /* Pods_Caroling_CompanionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5F8E4323D460A1169A2528E /* Pods_Caroling_CompanionTests.framework */; };
+		0E9DD7931EA9681900745317 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD7921EA9681900745317 /* FancyView.swift */; };
+		0E9DD7951EA9682900745317 /* RoundBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD7941EA9682900745317 /* RoundBtn.swift */; };
+		0E9DD7971EA9683000745317 /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD7961EA9683000745317 /* FancyField.swift */; };
+		0E9DD7991EA9683800745317 /* FancyBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD7981EA9683800745317 /* FancyBtn.swift */; };
+		0E9DD79B1EA9684200745317 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD79A1EA9684200745317 /* CircleView.swift */; };
+		0E9DD79D1EA971BA00745317 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD79C1EA971BA00745317 /* LoginVC.swift */; };
+		0E9DD79F1EA974BF00745317 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD79E1EA974BF00745317 /* Functions.swift */; };
+		0E9DD7A31EA978E200745317 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD7A21EA978E200745317 /* DataService.swift */; };
+		0E9DD7A61EA9B07C00745317 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD7A51EA9B07C00745317 /* Song.swift */; };
+		0E9DD7A81EAA76A200745317 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD7A71EAA76A200745317 /* AuthService.swift */; };
+		0ED23D571DB82FF100DF081E /* Big_John.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0ED23D561DB82FF100DF081E /* Big_John.otf */; };
 		ED128F58D8670ED985D19B2F /* Pods_Caroling_Companion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F239E4E11B507DF3AE0D5AF /* Pods_Caroling_Companion.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0E2EF2F41C274DD300762053 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0E2EF2D71C274DD200762053 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0E2EF2DE1C274DD200762053;
-			remoteInfo = "Caroling Companion";
-		};
-		0E2EF2FF1C274DD300762053 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0E2EF2D71C274DD200762053 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0E2EF2DE1C274DD200762053;
-			remoteInfo = "Caroling Companion";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0E2EF2DF1C274DD200762053 /* Caroling Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Caroling Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,17 +39,27 @@
 		0E2EF2E91C274DD200762053 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E2EF2EC1C274DD200762053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E2EF2EE1C274DD200762053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E2EF2F31C274DD300762053 /* Caroling CompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Caroling CompanionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2EF2F71C274DD300762053 /* Caroling_CompanionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caroling_CompanionTests.swift; sourceTree = "<group>"; };
 		0E2EF2F91C274DD300762053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E2EF2FE1C274DD300762053 /* Caroling CompanionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Caroling CompanionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2EF3021C274DD300762053 /* Caroling_CompanionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caroling_CompanionUITests.swift; sourceTree = "<group>"; };
 		0E2EF3041C274DD300762053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E2EF3141C2753B200762053 /* SongLyricsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongLyricsVC.swift; sourceTree = "<group>"; };
 		0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0E7EAA121DB5E01300E8044A /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		0E8F098F1CD29BB600CF771E /* SongCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
-		0E8F09931CD2B5A000CF771E /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		0E8F09971CD2B5CB00CF771E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0E9DD7921EA9681900745317 /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
+		0E9DD7941EA9682900745317 /* RoundBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundBtn.swift; sourceTree = "<group>"; };
+		0E9DD7961EA9683000745317 /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
+		0E9DD7981EA9683800745317 /* FancyBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyBtn.swift; sourceTree = "<group>"; };
+		0E9DD79A1EA9684200745317 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		0E9DD79C1EA971BA00745317 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		0E9DD79E1EA974BF00745317 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		0E9DD7A21EA978E200745317 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		0E9DD7A51EA9B07C00745317 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		0E9DD7A71EAA76A200745317 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		0ED23D511DB81F0500DF081E /* Caroling Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Caroling Companion.entitlements"; sourceTree = "<group>"; };
+		0ED23D561DB82FF100DF081E /* Big_John.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Big_John.otf; sourceTree = "<group>"; };
 		139E4C9C9FF2D31426683A48 /* Pods-Caroling CompanionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caroling CompanionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Caroling CompanionTests/Pods-Caroling CompanionTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1FAAD88E628E3FEA0F7FDD16 /* Pods_Caroling_CompanionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Caroling_CompanionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F1A323237DEE42C9A5F03C7 /* Pods-Caroling CompanionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caroling CompanionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Caroling CompanionTests/Pods-Caroling CompanionTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,22 +77,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED128F58D8670ED985D19B2F /* Pods_Caroling_Companion.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0E2EF2F01C274DD300762053 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				529ECB0E09B07D2817BB6536 /* Pods_Caroling_CompanionTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0E2EF2FB1C274DD300762053 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1884AC98B239FF6B40531B5F /* Pods_Caroling_CompanionUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,8 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				0E2EF2DF1C274DD200762053 /* Caroling Companion.app */,
-				0E2EF2F31C274DD300762053 /* Caroling CompanionTests.xctest */,
-				0E2EF2FE1C274DD300762053 /* Caroling CompanionUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,7 +106,10 @@
 		0E2EF2E11C274DD200762053 /* Caroling Companion */ = {
 			isa = PBXGroup;
 			children = (
-				0E8F09971CD2B5CB00CF771E /* Constants.swift */,
+				0E9DD7A11EA978DA00745317 /* Services */,
+				0E9DD7A41EA9B06100745317 /* Model */,
+				0ED23D551DB82FE100DF081E /* Resources */,
+				0ED23D511DB81F0500DF081E /* Caroling Companion.entitlements */,
 				0E8F098E1CD29B8B00CF771E /* View */,
 				0ED558311CCEEE44008C0B3E /* Controller */,
 				0E2EF2E21C274DD200762053 /* AppDelegate.swift */,
@@ -167,9 +144,40 @@
 			isa = PBXGroup;
 			children = (
 				0E8F098F1CD29BB600CF771E /* SongCell.swift */,
-				0E8F09931CD2B5A000CF771E /* MaterialView.swift */,
+				0E9DD7921EA9681900745317 /* FancyView.swift */,
+				0E9DD7941EA9682900745317 /* RoundBtn.swift */,
+				0E9DD7961EA9683000745317 /* FancyField.swift */,
+				0E9DD7981EA9683800745317 /* FancyBtn.swift */,
+				0E9DD79A1EA9684200745317 /* CircleView.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		0E9DD7A11EA978DA00745317 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0E9DD7A71EAA76A200745317 /* AuthService.swift */,
+				0E9DD7A21EA978E200745317 /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		0E9DD7A41EA9B06100745317 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0E9DD7A51EA9B07C00745317 /* Song.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0ED23D551DB82FE100DF081E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0ED23D561DB82FF100DF081E /* Big_John.otf */,
+				0E8F09971CD2B5CB00CF771E /* Constants.swift */,
+				0E9DD79E1EA974BF00745317 /* Functions.swift */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		0ED558311CCEEE44008C0B3E /* Controller */ = {
@@ -177,6 +185,8 @@
 			children = (
 				0E2EF2E41C274DD200762053 /* SongListVC.swift */,
 				0E2EF3141C2753B200762053 /* SongLyricsVC.swift */,
+				0E7EAA121DB5E01300E8044A /* NavigationController.swift */,
+				0E9DD79C1EA971BA00745317 /* LoginVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -227,47 +237,6 @@
 			productReference = 0E2EF2DF1C274DD200762053 /* Caroling Companion.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0E2EF2F21C274DD300762053 /* Caroling CompanionTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0E2EF30A1C274DD300762053 /* Build configuration list for PBXNativeTarget "Caroling CompanionTests" */;
-			buildPhases = (
-				5A419559461FEBCD2F20F358 /* [CP] Check Pods Manifest.lock */,
-				0E2EF2EF1C274DD300762053 /* Sources */,
-				0E2EF2F01C274DD300762053 /* Frameworks */,
-				0E2EF2F11C274DD300762053 /* Resources */,
-				5F2011AE54244DE5D32F2FEA /* [CP] Embed Pods Frameworks */,
-				7BFBA7C9AAB305D7EECC9B8C /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0E2EF2F51C274DD300762053 /* PBXTargetDependency */,
-			);
-			name = "Caroling CompanionTests";
-			productName = "Caroling CompanionTests";
-			productReference = 0E2EF2F31C274DD300762053 /* Caroling CompanionTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		0E2EF2FD1C274DD300762053 /* Caroling CompanionUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0E2EF30D1C274DD300762053 /* Build configuration list for PBXNativeTarget "Caroling CompanionUITests" */;
-			buildPhases = (
-				F1DBF848AAD1CFB4CCBBD469 /* [CP] Check Pods Manifest.lock */,
-				0E2EF2FA1C274DD300762053 /* Sources */,
-				0E2EF2FB1C274DD300762053 /* Frameworks */,
-				0E2EF2FC1C274DD300762053 /* Resources */,
-				AC01E2D4B498BAEDCBD4A01D /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0E2EF3001C274DD300762053 /* PBXTargetDependency */,
-			);
-			name = "Caroling CompanionUITests";
-			productName = "Caroling CompanionUITests";
-			productReference = 0E2EF2FE1C274DD300762053 /* Caroling CompanionUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -275,20 +244,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Chase McElroy";
 				TargetAttributes = {
 					0E2EF2DE1C274DD200762053 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = J2C764CY4K;
-					};
-					0E2EF2F21C274DD300762053 = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 0E2EF2DE1C274DD200762053;
-					};
-					0E2EF2FD1C274DD300762053 = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 0E2EF2DE1C274DD200762053;
+						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -306,8 +273,6 @@
 			projectRoot = "";
 			targets = (
 				0E2EF2DE1C274DD200762053 /* Caroling Companion */,
-				0E2EF2F21C274DD300762053 /* Caroling CompanionTests */,
-				0E2EF2FD1C274DD300762053 /* Caroling CompanionUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -321,22 +286,7 @@
 				0E5A4C8C1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */,
 				0E2EF2EA1C274DD200762053 /* Assets.xcassets in Resources */,
 				0E2EF2E81C274DD200762053 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0E2EF2F11C274DD300762053 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0E5A4C8D1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0E2EF2FC1C274DD300762053 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0E5A4C8E1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */,
+				0ED23D571DB82FF100DF081E /* Big_John.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +305,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		43B19E1589BC38E7BBE229D0 /* [CP] Copy Pods Resources */ = {
@@ -373,36 +323,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caroling Companion/Pods-Caroling Companion-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5A419559461FEBCD2F20F358 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		5F2011AE54244DE5D32F2FEA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caroling CompanionTests/Pods-Caroling CompanionTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6D94B341B1AE2B307565A646 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -418,51 +338,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caroling Companion/Pods-Caroling Companion-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7BFBA7C9AAB305D7EECC9B8C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caroling CompanionTests/Pods-Caroling CompanionTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AC01E2D4B498BAEDCBD4A01D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caroling CompanionUITests/Pods-Caroling CompanionUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F1DBF848AAD1CFB4CCBBD469 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -470,51 +345,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E9DD7991EA9683800745317 /* FancyBtn.swift in Sources */,
+				0E9DD7A31EA978E200745317 /* DataService.swift in Sources */,
+				0E9DD7971EA9683000745317 /* FancyField.swift in Sources */,
+				0E9DD79D1EA971BA00745317 /* LoginVC.swift in Sources */,
+				0E7EAA131DB5E01300E8044A /* NavigationController.swift in Sources */,
 				0E2EF2E51C274DD200762053 /* SongListVC.swift in Sources */,
+				0E9DD79F1EA974BF00745317 /* Functions.swift in Sources */,
 				0E2EF2E31C274DD200762053 /* AppDelegate.swift in Sources */,
-				0E8F09941CD2B5A000CF771E /* MaterialView.swift in Sources */,
 				0E8F09981CD2B5CB00CF771E /* Constants.swift in Sources */,
+				0E9DD7A61EA9B07C00745317 /* Song.swift in Sources */,
+				0E9DD79B1EA9684200745317 /* CircleView.swift in Sources */,
 				0E8F09901CD29BB600CF771E /* SongCell.swift in Sources */,
+				0E9DD7951EA9682900745317 /* RoundBtn.swift in Sources */,
+				0E9DD7931EA9681900745317 /* FancyView.swift in Sources */,
 				0E2EF3151C2753B200762053 /* SongLyricsVC.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0E2EF2EF1C274DD300762053 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0E8F09951CD2B5A000CF771E /* MaterialView.swift in Sources */,
-				0E8F09911CD29BB600CF771E /* SongCell.swift in Sources */,
-				0E2EF2F81C274DD300762053 /* Caroling_CompanionTests.swift in Sources */,
-				0E8F09991CD2B5CB00CF771E /* Constants.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0E2EF2FA1C274DD300762053 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0E8F09961CD2B5A000CF771E /* MaterialView.swift in Sources */,
-				0E8F09921CD29BB600CF771E /* SongCell.swift in Sources */,
-				0E2EF3031C274DD300762053 /* Caroling_CompanionUITests.swift in Sources */,
-				0E8F099A1CD2B5CB00CF771E /* Constants.swift in Sources */,
+				0E9DD7A81EAA76A200745317 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0E2EF2F51C274DD300762053 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0E2EF2DE1C274DD200762053 /* Caroling Companion */;
-			targetProxy = 0E2EF2F41C274DD300762053 /* PBXContainerItemProxy */;
-		};
-		0E2EF3001C274DD300762053 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0E2EF2DE1C274DD200762053 /* Caroling Companion */;
-			targetProxy = 0E2EF2FF1C274DD300762053 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0E2EF2E61C274DD200762053 /* Main.storyboard */ = {
@@ -549,8 +399,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -595,8 +447,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Chase McElroy (J2C764CY4K)";
@@ -617,6 +471,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "564d020e-fdf4-49fb-ab5a-bf79dd849668";
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -627,13 +482,15 @@
 			baseConfigurationReference = 8CC439CFE3E7102455F3E8DB /* Pods-Caroling Companion.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chase McElroy (BPJRK55M23)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chase McElroy (BPJRK55M23)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = J2C764CY4K;
 				INFOPLIST_FILE = "Caroling Companion/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "bio.chase.Caroling-Companion";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -643,66 +500,16 @@
 			baseConfigurationReference = 4A90FF3EB68EE7626C211FB7 /* Pods-Caroling Companion.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Chase McElroy (J2C764CY4K)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chase McElroy (J2C764CY4K)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = J2C764CY4K;
 				INFOPLIST_FILE = "Caroling Companion/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "bio.chase.Caroling-Companion";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		0E2EF30B1C274DD300762053 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 139E4C9C9FF2D31426683A48 /* Pods-Caroling CompanionTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Caroling CompanionTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "lt.chase.Caroling-CompanionTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Caroling Companion.app/Caroling Companion";
-			};
-			name = Debug;
-		};
-		0E2EF30C1C274DD300762053 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F1A323237DEE42C9A5F03C7 /* Pods-Caroling CompanionTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Caroling CompanionTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "lt.chase.Caroling-CompanionTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Caroling Companion.app/Caroling Companion";
-			};
-			name = Release;
-		};
-		0E2EF30E1C274DD300762053 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44EFE6C23538FAB6AC36543C /* Pods-Caroling CompanionUITests.debug.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = "Caroling CompanionUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "lt.chase.Caroling-CompanionUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "Caroling Companion";
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		0E2EF30F1C274DD300762053 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF58722DD22BFF50DBBDAD47 /* Pods-Caroling CompanionUITests.release.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = "Caroling CompanionUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "lt.chase.Caroling-CompanionUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "Caroling Companion";
-				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
@@ -723,24 +530,6 @@
 			buildConfigurations = (
 				0E2EF3081C274DD300762053 /* Debug */,
 				0E2EF3091C274DD300762053 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0E2EF30A1C274DD300762053 /* Build configuration list for PBXNativeTarget "Caroling CompanionTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0E2EF30B1C274DD300762053 /* Debug */,
-				0E2EF30C1C274DD300762053 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0E2EF30D1C274DD300762053 /* Build configuration list for PBXNativeTarget "Caroling CompanionUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0E2EF30E1C274DD300762053 /* Debug */,
-				0E2EF30F1C274DD300762053 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

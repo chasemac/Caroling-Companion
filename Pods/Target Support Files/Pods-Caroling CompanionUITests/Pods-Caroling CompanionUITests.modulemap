@@ -1,6 +1,0 @@
-framework module Pods_Caroling_CompanionUITests {
-  umbrella header "Pods-Caroling CompanionUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
