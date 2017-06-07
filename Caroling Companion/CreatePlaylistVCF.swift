@@ -11,8 +11,8 @@ import Firebase
 
 class CreatePlaylistVCF: SongListTVC {
     
-    var playlistF: FIRDataSnapshot?
-    var playlistRef: FIRDatabaseReference?
+    var playlistF: DataSnapshot?
+    var playlistRef: DatabaseReference?
     var createdPlaylistKey: String?
     
     override func viewDidLoad() {
@@ -27,8 +27,8 @@ class CreatePlaylistVCF: SongListTVC {
     
     func createPlaylist() {
         let newPlaylist : Dictionary<String, Any> = [
-            DBPlaylistString.user : FIRAuth.auth()?.currentUser?.uid as AnyObject,
-            DBPlaylistString.postedDate : FIRServerValue.timestamp() as AnyObject
+            DBPlaylistString.user : Auth.auth().currentUser?.uid as AnyObject,
+            DBPlaylistString.postedDate : ServerValue.timestamp() as AnyObject
         ]
         let firebasePlaylist = DataService.ds.REF_PLAYLISTS.childByAutoId()
         createdPlaylistKey = firebasePlaylist.key

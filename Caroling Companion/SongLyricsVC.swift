@@ -10,7 +10,7 @@ import Firebase
 
 class SongLyricsVC: UIViewController {
     
-    var songF : FIRDataSnapshot!
+    var songF : DataSnapshot!
     
     @IBOutlet weak var songListBtn: UIButton!
     @IBOutlet weak var txtView: UITextView!
@@ -18,8 +18,8 @@ class SongLyricsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if FIRAuth.auth()?.currentUser?.uid != nil {
-            print("Logged in user UID ------> \(FIRAuth.auth()?.currentUser!.uid as Any)")
+        if Auth.auth().currentUser?.uid != nil {
+            print("Logged in user UID ------> \(Auth.auth().currentUser!.uid as Any)")
         } else {
             print("no current user")
         }
@@ -29,7 +29,7 @@ class SongLyricsVC: UIViewController {
         
     }
     
-    func loadSongs(song: FIRDataSnapshot) {
+    func loadSongs(song: DataSnapshot) {
         if let songDict = song.value as? [String : AnyObject] {
             let title = songDict[DBSongString.title] as? String ?? "Title Unavailable"
             let lyrics = songDict[DBSongString.lyrics] as? String ?? "Lyrics Unavailable"

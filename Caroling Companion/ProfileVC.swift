@@ -8,7 +8,8 @@
 
 import UIKit
 import Firebase
-import GoogleSignIn
+import GoogleToolboxForMac
+//import GoogleSignIn
 
 class ProfileVC: UIViewController {
 
@@ -20,30 +21,30 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if FIRAuth.auth()?.currentUser?.uid != nil {
-            print("Logged in user UID ------> \(String(describing: FIRAuth.auth()?.currentUser!.uid))")
-            uidLabel.text = FIRAuth.auth()?.currentUser!.uid
+        if Auth.auth().currentUser?.uid != nil {
+            print("Logged in user UID ------> \(String(describing: Auth.auth().currentUser!.uid))")
+            uidLabel.text = Auth.auth().currentUser!.uid
         } else {
             print("no current user")
         }
         
-        if FIRAuth.auth()?.currentUser?.displayName != nil {
-            print("displayName ------> \(String(describing: FIRAuth.auth()?.currentUser!.displayName!))")
-            nameLabel.text = FIRAuth.auth()?.currentUser!.displayName!
+        if Auth.auth().currentUser?.displayName != nil {
+            print("displayName ------> \(String(describing: Auth.auth().currentUser!.displayName!))")
+            nameLabel.text = Auth.auth().currentUser!.displayName!
         } else {
             print("no current name")
         }
         
-        if FIRAuth.auth()?.currentUser?.email != nil {
-            print("email ------> \(String(describing: FIRAuth.auth()?.currentUser!.email!))")
-            emailLabel.text = FIRAuth.auth()?.currentUser!.email!
+        if Auth.auth().currentUser?.email != nil {
+            print("email ------> \(String(describing: Auth.auth().currentUser!.email!))")
+            emailLabel.text = Auth.auth().currentUser!.email!
         } else {
             print("no current email")
         }
         
-        if FIRAuth.auth()?.currentUser?.providerID != nil {
-            print("providerID ------> \(String(describing: FIRAuth.auth()?.currentUser!.providerID))")
-            providerLabel.text = FIRAuth.auth()?.currentUser!.providerID
+        if Auth.auth().currentUser?.providerID != nil {
+            print("providerID ------> \(String(describing: Auth.auth().currentUser!.providerID))")
+            providerLabel.text = Auth.auth().currentUser!.providerID
         } else {
             print("no current email")
         }
@@ -55,17 +56,17 @@ class ProfileVC: UIViewController {
     
     @IBAction func unlinkBtnTapped(_ sender: Any) {
         
-    print(FIRAuth.auth()?.currentUser?.providerData.count as Any)
+    print(Auth.auth().currentUser?.providerData.count as Any)
         
-        print(FIRAuth.auth()?.currentUser?.providerID as Any)
+        print(Auth.auth().currentUser?.providerID as Any)
     
         let providerID = "facebook.com"
     //    let providerID = FIRAuth.auth()?.currentUser?.providerID
     
-        FIRAuth.auth()?.currentUser?.unlink(fromProvider: providerID) { (user, error) in
+        Auth.auth().currentUser?.unlink(fromProvider: providerID) { (user, error) in
             if error != nil {
                 print("success")
-                print(FIRAuth.auth()?.currentUser?.providerData.count as Any)
+                print(Auth.auth().currentUser?.providerData.count as Any)
             }
         }
     }
@@ -92,21 +93,21 @@ class ProfileVC: UIViewController {
         self.present(alertController, animated: true, completion: nil)
         
         do {
-            try  FIRAuth.auth()?.signOut()
+            try  Auth.auth().signOut()
             print("Logged Out")
         } catch {
             print("failed"  )
         }
         
         do {
-            try  FIRAuth.auth()?.signOut()
+            try  Auth.auth().signOut()
         } catch {
             print("failed"  )
         }
         
 
     }
-    @IBAction func diconnectGoogleTapped(_ sender: Any) {
-        GIDSignIn.sharedInstance().disconnect()
-    }
+//    @IBAction func diconnectGoogleTapped(_ sender: Any) {
+//        GIDSignIn.sharedInstance().disconnect()
+//    }
 }

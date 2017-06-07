@@ -14,7 +14,7 @@ class Song {
     fileprivate var _title: String!
     fileprivate var _favorites: Int!
     fileprivate var _songKey: String!
-    fileprivate var _songRef: FIRDatabaseReference!
+    fileprivate var _songRef: DatabaseReference!
     fileprivate var _userUID: String!
     fileprivate var _postedDate: String!
     

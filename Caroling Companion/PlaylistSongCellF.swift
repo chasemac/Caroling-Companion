@@ -13,12 +13,12 @@ class PlaylistSongCellF: SongCellF {
     
     @IBOutlet weak var playlistCheckBox: UIImageView!
     
-    override func configureCell(_ snapshot: FIRDataSnapshot, indexPath: NSIndexPath, playlistKey: String?) {
+    override func configureCell(_ snapshot: DataSnapshot, indexPath: NSIndexPath, playlistKey: String?) {
         super.configureCell(snapshot, indexPath: indexPath, playlistKey: playlistKey)
         addedToPlaylist(playlistKey: playlistKey, snapshot: snapshot)
     }
     
-    func addedToPlaylist(playlistKey: String?, snapshot: FIRDataSnapshot) {
+    func addedToPlaylist(playlistKey: String?, snapshot: DataSnapshot) {
         if playlistKey != nil {
             let playlistRef = DataService.ds.REF_PLAYLISTS.child(playlistKey!).child(DBPlaylistString.songs).child(snapshot.key)
             playlistRef.observeSingleEvent(of: .value, with: { (snapshot) in

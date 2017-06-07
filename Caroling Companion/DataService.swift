@@ -12,15 +12,15 @@ import Firebase
 
 fileprivate var production: Bool = false
 
-fileprivate var DB_BASE: FIRDatabaseReference {
+fileprivate var DB_BASE: DatabaseReference {
     if production == true {
-        return FIRDatabase.database().reference().child(DBEnvironment.production)
+        return Database.database().reference().child(DBEnvironment.production)
     } else {
-        return FIRDatabase.database().reference().child(DBEnvironment.staging)
+        return Database.database().reference().child(DBEnvironment.staging)
     }
 }
 
-fileprivate let STORAGE_BASE = FIRStorage.storage().reference()
+fileprivate let STORAGE_BASE = Storage.storage().reference()
 
 class DataService {
     
@@ -36,35 +36,35 @@ class DataService {
     // Storage References
     fileprivate var _REF_PROFILE_IMAGES = STORAGE_BASE.child(PROFILE_PICS_STORAGE_STRING)
     
-    var REF_BASE: FIRDatabaseReference {
+    var REF_BASE: DatabaseReference {
         return _REF_BASE
     }
     
-    var REF_SONGS: FIRDatabaseReference {
+    var REF_SONGS: DatabaseReference {
         return _REF_SONGS
     }
     
-    var REF_USERS: FIRDatabaseReference {
+    var REF_USERS: DatabaseReference {
         return _REF_USERS
     }
     
-    var REF_PLAYLISTS: FIRDatabaseReference {
+    var REF_PLAYLISTS: DatabaseReference {
         return _REF_PLYLISTS
     }
     
-    var REF_USER_CURRENT: FIRDatabaseReference {
-        let uid = FIRAuth.auth()?.currentUser?.uid
+    var REF_USER_CURRENT: DatabaseReference {
+        let uid = Auth.auth().currentUser?.uid
         let user = REF_USERS.child(uid!)
         return user
     }
     
-    var REF_PROFILE_IMAGES: FIRStorageReference {
+    var REF_PROFILE_IMAGES: StorageReference {
         return _REF_PROFILE_IMAGES
     }
     
     
     
-    func createFirebaseDBUser(provider: String, user: FIRUser?, error: Error?) {
+    func createFirebaseDBUser(provider: String, user: User?, error: Error?) {
         guard user != nil else {
             print("User does not exist, error saving user")
             return

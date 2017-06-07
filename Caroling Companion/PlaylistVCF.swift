@@ -13,10 +13,10 @@ import Firebase
 class PlaylistVCF: UITableViewController {
     
     // MARK: NEW FIREBASE STUFF
-    var ref: FIRDatabaseReference!
-    var playlistsF: [FIRDataSnapshot]! = []
-    fileprivate var playlistF : FIRDataSnapshot!
-    fileprivate var _refHandle: FIRDatabaseHandle!
+    var ref: DatabaseReference!
+    var playlistsF: [DataSnapshot]! = []
+    fileprivate var playlistF : DataSnapshot!
+    fileprivate var _refHandle: DatabaseHandle!
     
     
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class PlaylistVCF: UITableViewController {
     func configureDatabase() {
         ref = DataService.ds.REF_PLAYLISTS
         // listen for new messages in the firebase database
-        _refHandle = ref.observe(.childAdded) { (snapshot: FIRDataSnapshot)in
+        _refHandle = ref.observe(.childAdded) { (snapshot: DataSnapshot)in
             self.playlistsF.append(snapshot)
             self.tableView.insertRows(at: [IndexPath(row: self.playlistsF.count-1, section: 0)], with: .automatic)
         }
@@ -72,7 +72,7 @@ class PlaylistVCF: UITableViewController {
         
         if segue.identifier == "showPlaylist" {
             let detailVC = segue.destination.contents as! ShowPlaylistVC
-            detailVC.playlistF = sender as? FIRDataSnapshot
+            detailVC.playlistF = sender as? DataSnapshot
             
             
         } else if segue.identifier == "CreatePlaylist" {

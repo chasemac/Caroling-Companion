@@ -9,22 +9,24 @@
 import UIKit
 import Firebase
 import FBSDKCoreKit
-import GoogleSignIn
+//import GoogleToolboxForMac
+import Google
+//import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
-    
+class AppDelegate: UIResponder, UIApplicationDelegate  {
+ //   GIDSignInDelegate
     var window: UIWindow?
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        FIRApp.configure()
+        FirebaseApp.configure()
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self
+//        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+//        GIDSignIn.sharedInstance().delegate = self
         return true
     }
     
@@ -62,25 +64,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
     }
     
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if error == nil {
-
-            AuthService.instance.firebaseGoogleLogin(user: user, error: error) { (errMsg, user) in
-                if error != nil {
-                    print(error)
-                } else if user != nil {
-                    print("Google SUCCESS!!!!!!!!!")
-                } else {
-                    print("I DON'T KNOW WHAT HAPPENED!")
-                }
-            }
-        }
-        
-    }
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+//        if error == nil {
+//
+//            AuthService.instance.firebaseGoogleLogin(user: user, error: error) { (errMsg, user) in
+//                if error != nil {
+//                    print(error)
+//                } else if user != nil {
+//                    print("Google SUCCESS!!!!!!!!!")
+//                } else {
+//                    print("I DON'T KNOW WHAT HAPPENED!")
+//                }
+//            }
+//        }
+//        
+//    }
     
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        print("user disconnected from Google")
-    }
+//    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+//        print("user disconnected from Google")
+//    }
     
     
 }

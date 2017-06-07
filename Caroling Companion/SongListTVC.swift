@@ -16,20 +16,20 @@ class SongListTVC: UITableViewController, UITextFieldDelegate {
     var favorites: [String] = []
     
     // MARK: NEW FIREBASE STUFF
-    fileprivate var ref: FIRDatabaseReference!
-    var favRef: FIRDatabaseReference!
-    var songsF: [FIRDataSnapshot]! = []
-    fileprivate var query: FIRDatabaseQuery?
+    fileprivate var ref: DatabaseReference!
+    var favRef: DatabaseReference!
+    var songsF: [DataSnapshot]! = []
+    fileprivate var query: DatabaseQuery?
     
     override func viewDidLoad() {
-        guard FIRAuth.auth()?.currentUser != nil else {
+        guard Auth.auth().currentUser != nil else {
             performSegue(withIdentifier: "LoginVC", sender: nil)
             return
         }
         configureDatabase()
         
         super.viewDidLoad()
-        print("Logged in user UID ------> \(FIRAuth.auth()?.currentUser!.uid as Any)")
+        print("Logged in user UID ------> \(Auth.auth().currentUser!.uid as Any)")
         
         textField.delegate = self
         self.hideKeyboardWhenTappedAround()
@@ -52,7 +52,7 @@ class SongListTVC: UITableViewController, UITextFieldDelegate {
         self.query?.observe(.value, with: { (snapshot) in
             
             for snap in snapshot.children {
-                let song = snap as! FIRDataSnapshot
+                let song = snap as! DataSnapshot
                 self.songsF.append(song)
                 self.tableView.insertRows(at: [IndexPath(row: self.songsF.count-1, section: 0)], with: .automatic)
             }
@@ -66,7 +66,7 @@ class SongListTVC: UITableViewController, UITextFieldDelegate {
     func loadFavoriteSongKeys() {
         favRef = DataService.ds.REF_USER_CURRENT.child(DBUserString.favorites)
         favRef.observe(.value, with: { (snapshot) in
-            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot {
                     let key = snap.key
                     self.favorites.append(key)
@@ -112,7 +112,7 @@ class SongListTVC: UITableViewController, UITextFieldDelegate {
         if segue.identifier == "detailSegue" {
             
             let detailVC = segue.destination as! SongLyricsVC
-            detailVC.songF = sender as? FIRDataSnapshot
+            detailVC.songF = sender as? DataSnapshot
             
             print("the detail one!! ----->>>> \(detailVC.songF)")
         }

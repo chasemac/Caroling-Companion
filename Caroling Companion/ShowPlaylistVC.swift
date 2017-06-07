@@ -11,9 +11,9 @@ import Firebase
 
 class ShowPlaylistVC: SongListTVC {
     
-    fileprivate var query: FIRDatabaseQuery?
-    fileprivate var ref: FIRDatabaseReference!
-    var playlistF : FIRDataSnapshot!
+    fileprivate var query: DatabaseQuery?
+    fileprivate var ref: DatabaseReference!
+    var playlistF : DataSnapshot!
     
     var playListSongKeys: [String] = []
     
@@ -56,7 +56,7 @@ class ShowPlaylistVC: SongListTVC {
         print("the second one!! ----->>>> \(playlistF)")
         if segue.identifier == "EditPlaylist" {
             let detailVC = segue.destination.contents as! CreatePlaylistVCF
-            detailVC.playlistF = sender as? FIRDataSnapshot
+            detailVC.playlistF = sender as? DataSnapshot
         }
         super.prepare(for: segue, sender: sender)
     }

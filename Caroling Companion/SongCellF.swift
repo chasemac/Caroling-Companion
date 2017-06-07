@@ -15,7 +15,7 @@ class SongCellF: UITableViewCell {
     @IBOutlet weak var starImage: UIImageView!
     
   //  var song: FIRDataSnapshot!
-    var favoriteRef: FIRDatabaseReference!
+    var favoriteRef: DatabaseReference!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,7 +29,7 @@ class SongCellF: UITableViewCell {
     }
     
     
-    func configureCell(_ snapshot: FIRDataSnapshot, indexPath: NSIndexPath, playlistKey: String?) {
+    func configureCell(_ snapshot: DataSnapshot, indexPath: NSIndexPath, playlistKey: String?) {
         let key = snapshot.key
         
         let song = snapshot.value as! NSDictionary
