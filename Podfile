@@ -10,6 +10,7 @@ target 'Caroling Companion' do
   pod 'Firebase/Auth'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
+  pod 'Google/SignIn'
   
 
   # Pods for Caroling Companion
