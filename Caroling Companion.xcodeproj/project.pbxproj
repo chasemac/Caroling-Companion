@@ -138,7 +138,7 @@
 		0E2EF2E11C274DD200762053 /* Caroling Companion */ = {
 			isa = PBXGroup;
 			children = (
-				0EFB8DFE1EE7C28000D5F793 /* New Group */,
+				0E84B8091EE87FE400A9B6D2 /* Depricated */,
 				0E9DD7A11EA978DA00745317 /* Services */,
 				0E9DD7A41EA9B06100745317 /* Model */,
 				0ED23D551DB82FE100DF081E /* Resources */,
@@ -173,10 +173,27 @@
 			path = "Caroling CompanionUITests";
 			sourceTree = "<group>";
 		};
+		0E84B8091EE87FE400A9B6D2 /* Depricated */ = {
+			isa = PBXGroup;
+			children = (
+				0EFB8E1D1EE7C33500D5F793 /* DepricatedSongListVC.swift */,
+				0EFB8E111EE7C30800D5F793 /* PlaylistNameCell.swift */,
+				0EFB8E121EE7C30800D5F793 /* PlaylistVC.swift */,
+				0EFB8E131EE7C30800D5F793 /* SongListTVCF_TEST_SEARCH.swift */,
+				0EFB8E141EE7C30800D5F793 /* SongListTVCF.swift */,
+				0E8F098F1CD29BB600CF771E /* SongCell.swift */,
+				0EFB8E071EE7C2FF00D5F793 /* CreatePlaylistVC.swift */,
+				0EFB8E081EE7C2FF00D5F793 /* PlaylistSongCell.swift */,
+			);
+			name = Depricated;
+			sourceTree = "<group>";
+		};
 		0E8F098E1CD29B8B00CF771E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0E8F098F1CD29BB600CF771E /* SongCell.swift */,
+				0EFB8E051EE7C2FF00D5F793 /* SongCellF.swift */,
+				0EFB8E041EE7C2FF00D5F793 /* PlaylistSongCellF.swift */,
+				0EFB8E1B1EE7C33500D5F793 /* PlaylistNameCellF.swift */,
 				0E9DD7921EA9681900745317 /* FancyView.swift */,
 				0E9DD7941EA9682900745317 /* RoundBtn.swift */,
 				0E9DD7961EA9683000745317 /* FancyField.swift */,
@@ -199,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				0E9DD7A51EA9B07C00745317 /* Song.swift */,
+				0EFB8DFF1EE7C2F300D5F793 /* Playlist.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -216,35 +234,17 @@
 		0ED558311CCEEE44008C0B3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0EFB8E151EE7C30800D5F793 /* SongListTabTVC.swift */,
+				0EFB8E001EE7C2F300D5F793 /* CreatePlaylistVCF.swift */,
+				0EFB8E091EE7C2FF00D5F793 /* ShowPlaylistVC.swift */,
+				0EFB8E061EE7C2FF00D5F793 /* PlaylistVCF.swift */,
+				0EFB8E031EE7C2FF00D5F793 /* SongListTVC.swift */,
+				0EFB8E1C1EE7C33500D5F793 /* ProfileVC.swift */,
 				0E2EF3141C2753B200762053 /* SongLyricsVC.swift */,
 				0E7EAA121DB5E01300E8044A /* NavigationController.swift */,
 				0E9DD79C1EA971BA00745317 /* LoginVC.swift */,
 			);
 			name = Controller;
-			sourceTree = "<group>";
-		};
-		0EFB8DFE1EE7C28000D5F793 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-				0EFB8E1B1EE7C33500D5F793 /* PlaylistNameCellF.swift */,
-				0EFB8E1C1EE7C33500D5F793 /* ProfileVC.swift */,
-				0EFB8E1D1EE7C33500D5F793 /* DepricatedSongListVC.swift */,
-				0EFB8E111EE7C30800D5F793 /* PlaylistNameCell.swift */,
-				0EFB8E121EE7C30800D5F793 /* PlaylistVC.swift */,
-				0EFB8E131EE7C30800D5F793 /* SongListTVCF_TEST_SEARCH.swift */,
-				0EFB8E141EE7C30800D5F793 /* SongListTVCF.swift */,
-				0EFB8E151EE7C30800D5F793 /* SongListTabTVC.swift */,
-				0EFB8E031EE7C2FF00D5F793 /* SongListTVC.swift */,
-				0EFB8E041EE7C2FF00D5F793 /* PlaylistSongCellF.swift */,
-				0EFB8E051EE7C2FF00D5F793 /* SongCellF.swift */,
-				0EFB8E061EE7C2FF00D5F793 /* PlaylistVCF.swift */,
-				0EFB8E071EE7C2FF00D5F793 /* CreatePlaylistVC.swift */,
-				0EFB8E081EE7C2FF00D5F793 /* PlaylistSongCell.swift */,
-				0EFB8E091EE7C2FF00D5F793 /* ShowPlaylistVC.swift */,
-				0EFB8DFF1EE7C2F300D5F793 /* Playlist.swift */,
-				0EFB8E001EE7C2F300D5F793 /* CreatePlaylistVCF.swift */,
-			);
-			name = "New Group";
 			sourceTree = "<group>";
 		};
 		1094CDB9BD9E31BC23C76C64 /* Frameworks */ = {
