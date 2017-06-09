@@ -8,8 +8,8 @@
 
 import UIKit
 import Firebase
-import GoogleToolboxForMac
-//import GoogleSignIn
+
+import GoogleSignIn
 
 class ProfileVC: UIViewController {
 
@@ -107,7 +107,7 @@ class ProfileVC: UIViewController {
         
 
     }
-//    @IBAction func diconnectGoogleTapped(_ sender: Any) {
-//        GIDSignIn.sharedInstance().disconnect()
-//    }
+    @IBAction func diconnectGoogleTapped(_ sender: Any) {
+        GIDSignIn.sharedInstance().disconnect()
+    }
 }

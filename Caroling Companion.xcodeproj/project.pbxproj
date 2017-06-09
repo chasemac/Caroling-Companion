@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E0707D21EE8F0D10033C185 /* OutlineBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0707D11EE8F0D10033C185 /* OutlineBtn.swift */; };
 		0E2EF2E31C274DD200762053 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E21C274DD200762053 /* AppDelegate.swift */; };
 		0E2EF2E81C274DD200762053 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E61C274DD200762053 /* Main.storyboard */; };
 		0E2EF2EA1C274DD200762053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E91C274DD200762053 /* Assets.xcassets */; };
@@ -26,6 +27,10 @@
 		0E9DD7A31EA978E200745317 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD7A21EA978E200745317 /* DataService.swift */; };
 		0E9DD7A61EA9B07C00745317 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD7A51EA9B07C00745317 /* Song.swift */; };
 		0E9DD7A81EAA76A200745317 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD7A71EAA76A200745317 /* AuthService.swift */; };
+		0EB8961E1EE9C28F0050021B /* Brandon_bld.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0EB8961B1EE9C28F0050021B /* Brandon_bld.otf */; };
+		0EB8961F1EE9C28F0050021B /* Brandon_blk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0EB8961C1EE9C28F0050021B /* Brandon_blk.otf */; };
+		0EB896201EE9C28F0050021B /* Brandon_reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0EB8961D1EE9C28F0050021B /* Brandon_reg.otf */; };
+		0EB896221EEA27AC0050021B /* LandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB896211EEA27AC0050021B /* LandingVC.swift */; };
 		0ED23D571DB82FF100DF081E /* Big_John.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0ED23D561DB82FF100DF081E /* Big_John.otf */; };
 		0EFB8E011EE7C2F300D5F793 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFB8DFF1EE7C2F300D5F793 /* Playlist.swift */; };
 		0EFB8E021EE7C2F300D5F793 /* CreatePlaylistVCF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFB8E001EE7C2F300D5F793 /* CreatePlaylistVCF.swift */; };
@@ -48,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E0707D11EE8F0D10033C185 /* OutlineBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineBtn.swift; sourceTree = "<group>"; };
 		0E2EF2DF1C274DD200762053 /* Caroling Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Caroling Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2EF2E21C274DD200762053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E2EF2E71C274DD200762053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +79,10 @@
 		0E9DD7A21EA978E200745317 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		0E9DD7A51EA9B07C00745317 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		0E9DD7A71EAA76A200745317 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		0EB8961B1EE9C28F0050021B /* Brandon_bld.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_bld.otf; sourceTree = "<group>"; };
+		0EB8961C1EE9C28F0050021B /* Brandon_blk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_blk.otf; sourceTree = "<group>"; };
+		0EB8961D1EE9C28F0050021B /* Brandon_reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_reg.otf; sourceTree = "<group>"; };
+		0EB896211EEA27AC0050021B /* LandingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
 		0ED23D511DB81F0500DF081E /* Caroling Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Caroling Companion.entitlements"; sourceTree = "<group>"; };
 		0ED23D561DB82FF100DF081E /* Big_John.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Big_John.otf; sourceTree = "<group>"; };
 		0EFB8DFF1EE7C2F300D5F793 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
@@ -148,9 +158,6 @@
 				0E2EF2E21C274DD200762053 /* AppDelegate.swift */,
 				0E2EF2E61C274DD200762053 /* Main.storyboard */,
 				0E2EF2E91C274DD200762053 /* Assets.xcassets */,
-				0E2EF2EB1C274DD200762053 /* LaunchScreen.storyboard */,
-				0E2EF2EE1C274DD200762053 /* Info.plist */,
-				0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */,
 			);
 			path = "Caroling Companion";
 			sourceTree = "<group>";
@@ -199,6 +206,7 @@
 				0E9DD7961EA9683000745317 /* FancyField.swift */,
 				0E9DD7981EA9683800745317 /* FancyBtn.swift */,
 				0E9DD79A1EA9684200745317 /* CircleView.swift */,
+				0E0707D11EE8F0D10033C185 /* OutlineBtn.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -224,9 +232,15 @@
 		0ED23D551DB82FE100DF081E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0EB8961B1EE9C28F0050021B /* Brandon_bld.otf */,
+				0EB8961C1EE9C28F0050021B /* Brandon_blk.otf */,
+				0EB8961D1EE9C28F0050021B /* Brandon_reg.otf */,
 				0ED23D561DB82FF100DF081E /* Big_John.otf */,
 				0E8F09971CD2B5CB00CF771E /* Constants.swift */,
 				0E9DD79E1EA974BF00745317 /* Functions.swift */,
+				0E2EF2EB1C274DD200762053 /* LaunchScreen.storyboard */,
+				0E2EF2EE1C274DD200762053 /* Info.plist */,
+				0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -243,6 +257,7 @@
 				0E2EF3141C2753B200762053 /* SongLyricsVC.swift */,
 				0E7EAA121DB5E01300E8044A /* NavigationController.swift */,
 				0E9DD79C1EA971BA00745317 /* LoginVC.swift */,
+				0EB896211EEA27AC0050021B /* LandingVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -340,9 +355,12 @@
 			files = (
 				0E2EF2ED1C274DD200762053 /* LaunchScreen.storyboard in Resources */,
 				0E5A4C8C1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */,
+				0EB8961F1EE9C28F0050021B /* Brandon_blk.otf in Resources */,
 				0E2EF2EA1C274DD200762053 /* Assets.xcassets in Resources */,
 				0E2EF2E81C274DD200762053 /* Main.storyboard in Resources */,
 				0ED23D571DB82FF100DF081E /* Big_John.otf in Resources */,
+				0EB8961E1EE9C28F0050021B /* Brandon_bld.otf in Resources */,
+				0EB896201EE9C28F0050021B /* Brandon_reg.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +421,7 @@
 			files = (
 				0E9DD7991EA9683800745317 /* FancyBtn.swift in Sources */,
 				0EFB8E0D1EE7C2FF00D5F793 /* PlaylistVCF.swift in Sources */,
+				0E0707D21EE8F0D10033C185 /* OutlineBtn.swift in Sources */,
 				0EFB8E171EE7C30800D5F793 /* PlaylistVC.swift in Sources */,
 				0EFB8E181EE7C30800D5F793 /* SongListTVCF_TEST_SEARCH.swift in Sources */,
 				0EFB8E011EE7C2F300D5F793 /* Playlist.swift in Sources */,
@@ -430,6 +449,7 @@
 				0E9DD7931EA9681900745317 /* FancyView.swift in Sources */,
 				0EFB8E0E1EE7C2FF00D5F793 /* CreatePlaylistVC.swift in Sources */,
 				0EFB8E101EE7C2FF00D5F793 /* ShowPlaylistVC.swift in Sources */,
+				0EB896221EEA27AC0050021B /* LandingVC.swift in Sources */,
 				0EFB8E0B1EE7C2FF00D5F793 /* PlaylistSongCellF.swift in Sources */,
 				0E2EF3151C2753B200762053 /* SongLyricsVC.swift in Sources */,
 				0E9DD7A81EAA76A200745317 /* AuthService.swift in Sources */,
@@ -558,6 +578,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = J2C764CY4K;
 				INFOPLIST_FILE = "Caroling Companion/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "bio.chase.Caroling-Companion";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -576,6 +597,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = J2C764CY4K;
 				INFOPLIST_FILE = "Caroling Companion/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "bio.chase.Caroling-Companion";
 				PRODUCT_NAME = "$(TARGET_NAME)";

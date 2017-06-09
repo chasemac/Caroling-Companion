@@ -22,10 +22,10 @@ class SongListTVC: UITableViewController, UITextFieldDelegate {
     fileprivate var query: DatabaseQuery?
     
     override func viewDidLoad() {
-        guard Auth.auth().currentUser != nil else {
-            performSegue(withIdentifier: "LoginVC", sender: nil)
-            return
-        }
+//        guard Auth.auth().currentUser != nil else {
+//            performSegue(withIdentifier: "LoginVC", sender: nil)
+//            return
+//        }
         configureDatabase()
         
         super.viewDidLoad()

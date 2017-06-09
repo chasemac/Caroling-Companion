@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,26 +22,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CarolingIcon" translatesAutoresizingMaskIntoConstraints="NO" id="AOS-ev-Y45">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Snowmen" translatesAutoresizingMaskIntoConstraints="NO" id="AOS-ev-Y45">
                                 <rect key="frame" x="0.0" y="146" width="375" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AOS-ev-Y45" secondAttribute="height" multiplier="1:1" id="hrJ-qV-DcB"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caroling Companion" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qu4-jo-aOa">
-                                <rect key="frame" x="40.5" y="102" width="294" height="36"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99215686274509807" green="0.9882352941176471" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="AOS-ev-Y45" secondAttribute="trailing" id="0a1-1L-3fh"/>
                             <constraint firstItem="AOS-ev-Y45" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="7uG-ch-nuo"/>
                             <constraint firstItem="AOS-ev-Y45" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ImF-5J-Ys0"/>
-                            <constraint firstItem="AOS-ev-Y45" firstAttribute="top" secondItem="qu4-jo-aOa" secondAttribute="bottom" constant="8" id="PbP-ck-UlQ"/>
-                            <constraint firstItem="qu4-jo-aOa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bDf-Nm-DaF"/>
                             <constraint firstItem="AOS-ev-Y45" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="u2X-sr-fGj"/>
                         </constraints>
                     </view>
@@ -52,6 +44,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CarolingIcon" width="1242" height="1308"/>
+        <image name="Snowmen" width="225" height="279"/>
     </resources>
 </document>

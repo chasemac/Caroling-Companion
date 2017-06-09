@@ -36,7 +36,11 @@
 		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>
-			<string>None</string>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>bio.chase.Caroling-Companion</string>
+			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
@@ -57,6 +61,9 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Big_John.otf</string>
+		<string>Brandon_blk.otf</string>
+		<string>Brandon_reg.otf</string>
+		<string>Brandon_bld.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

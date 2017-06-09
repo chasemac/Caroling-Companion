@@ -1,40 +1,40 @@
-////
-////  AuthService.swift
-////  Caroling Companion
-////
-////  Created by Chase McElroy on 4/13/17.
-////  Copyright © 2017 Chase McElroy. All rights reserved.
-////
 //
-//import Foundation
-//import FirebaseAuth
+//  AuthService.swift
+//  Caroling Companion
+//
+//  Created by Chase McElroy on 4/13/17.
+//  Copyright © 2017 Chase McElroy. All rights reserved.
+//
+
+import Foundation
+import FirebaseAuth
 //import FBSDKCoreKit
 //import Google
-////import GoogleSignIn
-//
-//typealias Completion = (_ errMsg: String?, _ data: AnyObject?) -> Void
-//
-//class AuthService {
-//    private static let _instance = AuthService()
-//    
-//    static var instance: AuthService {
-//        return _instance
-//    }
-//    
-//    func loginAnonymous(onComplete: Completion?) {
-//        Auth.auth().signInAnonymously(completion: { (user, error) in
-//            if error == nil {
-//                print("CHASE: Anonymous User authenticated with Firebase")
-//                DataService.ds.createFirebaseDBUser(provider: DBProviderString.anonymous, user: user, error: error)
-//                onComplete!(nil, user)
-//            } else {
-//                if error != nil {
-//                    self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: "")
-//                }
-//            }
-//        })
-//    }
-//    
+//import GoogleSignIn
+
+typealias Completion = (_ errMsg: String?, _ data: AnyObject?) -> Void
+
+class AuthService {
+    private static let _instance = AuthService()
+    
+    static var instance: AuthService {
+        return _instance
+    }
+    
+    func loginAnonymous(onComplete: Completion?) {
+        Auth.auth().signInAnonymously(completion: { (user, error) in
+            if error == nil {
+                print("CHASE: Anonymous User authenticated with Firebase")
+                DataService.ds.createFirebaseDBUser(provider: DBProviderString.anonymous, user: user, error: error)
+                onComplete!(nil, user)
+            } else {
+                if error != nil {
+                    self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: "")
+                }
+            }
+        })
+    }
+    
 //    func firebaseFacebookLogin(_ credential: AuthCredential, onComplete: Completion?) {
 //        guard Auth.auth().currentUser?.isAnonymous != true else {
 //            let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
@@ -114,8 +114,8 @@
 //        }
 //
 //    }
-//
-//    
+
+    
 //    func createFirebaseUserWithEmail(email: String, password: String, onComplete: Completion?) {
 //        guard Auth.auth().currentUser?.isAnonymous != true else {
 //            print("merger")
@@ -131,60 +131,63 @@
 //            onComplete!(nil, user)
 //        })
 //    }
-//    
-//    func login(email: String, password: String, onComplete: Completion?) {
-//        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
-//            if error != nil {
-//                if let errorCode = FIRAuthErrorCode(rawValue: error!._code) {
-//                    if errorCode == .errorCodeUserNotFound {
-//                        // Alerts user to create new user on LoginVC
-//                        onComplete?(USER_DOES_NOT_EXIST,nil)
-//                    }
-//                }
-//                self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: email)
-//            } else {
-//                print("successfully logged in")
-//                onComplete?(nil, user)
-//            }
-//        })
-//    }
-//    
-//    func resetPassword(email: String, onComplete: Completion?) {
-//        Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
-//            if error != nil {
-//                self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: email)
-//            }
-//        })
-//    }
-//    
-//    
-//    func handleFirebaseError(error: NSError, onComplete: Completion?, email: String?) {
-//        print(error.debugDescription)
-//        if let errorCode = AuthErrorCode(rawValue: error._code) {
-//            switch (errorCode) {
-//            case .errorCodeInvalidEmail:
-//                onComplete?("Invalid email address", nil)
-//            case .errorCodeWrongPassword:
-//                onComplete?("Invalid password", nil)
-//            case .errrorCodeAccountExistsWithDifferentCredential:
-//                onComplete?("Could not create account. Email already in use", nil)
-//            case .errorCodeUserNotFound:
-//                onComplete?("User does not exist", nil)
-//            case .errorCodeEmailAlreadyInUse:
-//                onComplete?("An account was previously created with your Facebook's email address, please click the email button and sign in using your email address and password", nil)
-//                print("in use")
-//            case .errorCodeTooManyRequests:
-//                onComplete?("Too many requests", nil)
-//                print("too many email attemps")
-//            case .errorCodeAppNotAuthorized:
-//                onComplete?("Account not Authorized", nil)
-//                print("app not authorized")
-//            case .errorCodeNetworkError:
-//                onComplete?("Unable to connect to the internet!", nil)
-//                print("network error")
-//            default:
-//                onComplete?("There was a problem authenticating, Try again", nil)
-//            }
-//        }
-//    }
-//}
+    
+    func login(email: String, password: String, onComplete: Completion?) {
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+            if error != nil {
+                if let errorCode = AuthErrorCode(rawValue: error!._code) {
+                    switch(errorCode) {
+                    case .userNotFound:
+                        onComplete?(USER_DOES_NOT_EXIST,nil)
+                    default:
+                        onComplete?("There was a problem authenticating, Try again", nil)
+                    }
+                }
+                self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: email)
+            } else {
+                print("successfully logged in")
+                onComplete?(nil, user)
+            }
+        })
+    }
+    
+    func resetPassword(email: String, onComplete: Completion?) {
+        Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
+            if error != nil {
+                self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: email)
+            }
+        })
+    }
+    
+    
+    func handleFirebaseError(error: NSError, onComplete: Completion?, email: String?) {
+        print(error.debugDescription)
+        if let errorCode = AuthErrorCode(rawValue: error._code) {
+            switch (errorCode) {
+        
+            case .invalidEmail:
+                onComplete?("Invalid email address", nil)
+            case .wrongPassword:
+                onComplete?("Invalid password", nil)
+            case .accountExistsWithDifferentCredential:
+                onComplete?("Could not create account. Email already in use", nil)
+            case .userNotFound:
+                onComplete?("User does not exist", nil)
+            case .emailAlreadyInUse:
+                onComplete?("An account was previously created with your Facebook's email address, please click the email button and sign in using your email address and password", nil)
+                print("in use")
+            case .tooManyRequests:
+                onComplete?("Too many requests", nil)
+                print("too many email attemps")
+            case .appNotAuthorized:
+                onComplete?("Account not Authorized", nil)
+                print("app not authorized")
+            case .networkError:
+                onComplete?("Unable to connect to the internet!", nil)
+                print("network error")
+            default:
+                onComplete?("There was a problem authenticating, Try again", nil)
+            }
+        }
+    }
+}
