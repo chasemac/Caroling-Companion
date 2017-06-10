@@ -18,6 +18,13 @@ class EmailLoginVC: LoginFlow {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var text = ""
+        if signup == true {
+            text = "SIGN UP"
+        } else {
+            text = "LOG IN"
+        }
+        loginBtn.titleLabel?.text = text
 
         
     }
