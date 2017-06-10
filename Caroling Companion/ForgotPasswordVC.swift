@@ -16,9 +16,14 @@ class ForgotPasswordVC: LoginFlow {
     }
     
     @IBAction func createOneBtnPressed(_ sender: Any) {
+        
     }
 
     @IBAction func ForgotPasswordBtnPressed(_ sender: Any) {
+        
     }
    
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

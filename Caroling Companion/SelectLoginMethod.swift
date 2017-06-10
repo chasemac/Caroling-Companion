@@ -21,7 +21,7 @@ class SelectLoginMethod: UIViewController {
         } else {
             text = "Log In"
         }
-        instructionLbl.text = "Please select your \(text) method"
+        instructionLbl.text = "Select \(text) Method"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
