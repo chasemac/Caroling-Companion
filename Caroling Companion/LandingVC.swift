@@ -17,6 +17,8 @@ class LandingVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+
+    
     func loginAnonymously() {
         guard Auth.auth().currentUser == nil else {
             performSegue(withIdentifier: "SongListVC", sender: nil)
@@ -37,6 +39,31 @@ class LandingVC: UIViewController {
         }
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "logIn" {
+            let detailVC = segue.destination.contents as! SelectLoginMethod
+        //    detailVC.signup = false
+            detailVC.signup = sender as! Bool
+        } else if segue.identifier == "signUp" {
+            let detailVC = segue.destination.contents as! SelectLoginMethod
+        //    detailVC.signup = true
+            detailVC.signup = sender as! Bool
+        }
+    }
+    
+    @IBAction func signUpBtnPressed(_ sender: Any) {
+        let signup = true
+        performSegue(withIdentifier: "logIn", sender: signup)
+    }
+    
+    @IBAction func logInBtnPressed(_ sender: Any) {
+        let signup = false
+        performSegue(withIdentifier: "signUp", sender: signup)
+    }
+    
+    
+
     @IBAction func skipBtnPressed(_ sender: Any) {
         loginAnonymously()
     }

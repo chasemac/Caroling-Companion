@@ -31,6 +31,12 @@
 		0EB8961F1EE9C28F0050021B /* Brandon_blk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0EB8961C1EE9C28F0050021B /* Brandon_blk.otf */; };
 		0EB896201EE9C28F0050021B /* Brandon_reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0EB8961D1EE9C28F0050021B /* Brandon_reg.otf */; };
 		0EB896221EEA27AC0050021B /* LandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB896211EEA27AC0050021B /* LandingVC.swift */; };
+		0EB896241EEB47D70050021B /* EmailLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB896231EEB47D70050021B /* EmailLoginVC.swift */; };
+		0EB896261EEB574A0050021B /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB896251EEB574A0050021B /* TitleLabel.swift */; };
+		0EB896281EEB72DF0050021B /* SelectLoginMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB896271EEB72DF0050021B /* SelectLoginMethod.swift */; };
+		0EB8962A1EEB7CCC0050021B /* PhoneLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB896291EEB7CCC0050021B /* PhoneLoginVC.swift */; };
+		0EB8962C1EEB7FEA0050021B /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8962B1EEB7FEA0050021B /* LoginFlow.swift */; };
+		0EB8962E1EEB81590050021B /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8962D1EEB81590050021B /* ForgotPasswordVC.swift */; };
 		0ED23D571DB82FF100DF081E /* Big_John.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0ED23D561DB82FF100DF081E /* Big_John.otf */; };
 		0EFB8E011EE7C2F300D5F793 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFB8DFF1EE7C2F300D5F793 /* Playlist.swift */; };
 		0EFB8E021EE7C2F300D5F793 /* CreatePlaylistVCF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFB8E001EE7C2F300D5F793 /* CreatePlaylistVCF.swift */; };
@@ -83,6 +89,12 @@
 		0EB8961C1EE9C28F0050021B /* Brandon_blk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_blk.otf; sourceTree = "<group>"; };
 		0EB8961D1EE9C28F0050021B /* Brandon_reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_reg.otf; sourceTree = "<group>"; };
 		0EB896211EEA27AC0050021B /* LandingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
+		0EB896231EEB47D70050021B /* EmailLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLoginVC.swift; sourceTree = "<group>"; };
+		0EB896251EEB574A0050021B /* TitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		0EB896271EEB72DF0050021B /* SelectLoginMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectLoginMethod.swift; sourceTree = "<group>"; };
+		0EB896291EEB7CCC0050021B /* PhoneLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneLoginVC.swift; sourceTree = "<group>"; };
+		0EB8962B1EEB7FEA0050021B /* LoginFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
+		0EB8962D1EEB81590050021B /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		0ED23D511DB81F0500DF081E /* Caroling Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Caroling Companion.entitlements"; sourceTree = "<group>"; };
 		0ED23D561DB82FF100DF081E /* Big_John.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Big_John.otf; sourceTree = "<group>"; };
 		0EFB8DFF1EE7C2F300D5F793 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
@@ -207,6 +219,7 @@
 				0E9DD7981EA9683800745317 /* FancyBtn.swift */,
 				0E9DD79A1EA9684200745317 /* CircleView.swift */,
 				0E0707D11EE8F0D10033C185 /* OutlineBtn.swift */,
+				0EB896251EEB574A0050021B /* TitleLabel.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -248,6 +261,7 @@
 		0ED558311CCEEE44008C0B3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0EB8962B1EEB7FEA0050021B /* LoginFlow.swift */,
 				0EFB8E151EE7C30800D5F793 /* SongListTabTVC.swift */,
 				0EFB8E001EE7C2F300D5F793 /* CreatePlaylistVCF.swift */,
 				0EFB8E091EE7C2FF00D5F793 /* ShowPlaylistVC.swift */,
@@ -258,6 +272,10 @@
 				0E7EAA121DB5E01300E8044A /* NavigationController.swift */,
 				0E9DD79C1EA971BA00745317 /* LoginVC.swift */,
 				0EB896211EEA27AC0050021B /* LandingVC.swift */,
+				0EB896231EEB47D70050021B /* EmailLoginVC.swift */,
+				0EB896271EEB72DF0050021B /* SelectLoginMethod.swift */,
+				0EB896291EEB7CCC0050021B /* PhoneLoginVC.swift */,
+				0EB8962D1EEB81590050021B /* ForgotPasswordVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -420,18 +438,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E9DD7991EA9683800745317 /* FancyBtn.swift in Sources */,
+				0EB896241EEB47D70050021B /* EmailLoginVC.swift in Sources */,
 				0EFB8E0D1EE7C2FF00D5F793 /* PlaylistVCF.swift in Sources */,
 				0E0707D21EE8F0D10033C185 /* OutlineBtn.swift in Sources */,
 				0EFB8E171EE7C30800D5F793 /* PlaylistVC.swift in Sources */,
 				0EFB8E181EE7C30800D5F793 /* SongListTVCF_TEST_SEARCH.swift in Sources */,
 				0EFB8E011EE7C2F300D5F793 /* Playlist.swift in Sources */,
+				0EB8962A1EEB7CCC0050021B /* PhoneLoginVC.swift in Sources */,
 				0E9DD7A31EA978E200745317 /* DataService.swift in Sources */,
 				0EFB8E1A1EE7C30800D5F793 /* SongListTabTVC.swift in Sources */,
 				0EFB8E0C1EE7C2FF00D5F793 /* SongCellF.swift in Sources */,
 				0E9DD7971EA9683000745317 /* FancyField.swift in Sources */,
 				0E9DD79D1EA971BA00745317 /* LoginVC.swift in Sources */,
 				0E7EAA131DB5E01300E8044A /* NavigationController.swift in Sources */,
+				0EB8962E1EEB81590050021B /* ForgotPasswordVC.swift in Sources */,
 				0EFB8E021EE7C2F300D5F793 /* CreatePlaylistVCF.swift in Sources */,
+				0EB896281EEB72DF0050021B /* SelectLoginMethod.swift in Sources */,
 				0EFB8E0F1EE7C2FF00D5F793 /* PlaylistSongCell.swift in Sources */,
 				0E9DD79F1EA974BF00745317 /* Functions.swift in Sources */,
 				0E2EF2E31C274DD200762053 /* AppDelegate.swift in Sources */,
@@ -439,6 +461,7 @@
 				0E8F09981CD2B5CB00CF771E /* Constants.swift in Sources */,
 				0E9DD7A61EA9B07C00745317 /* Song.swift in Sources */,
 				0E9DD79B1EA9684200745317 /* CircleView.swift in Sources */,
+				0EB8962C1EEB7FEA0050021B /* LoginFlow.swift in Sources */,
 				0EFB8E1F1EE7C33500D5F793 /* ProfileVC.swift in Sources */,
 				0EFB8E161EE7C30800D5F793 /* PlaylistNameCell.swift in Sources */,
 				0E8F09901CD29BB600CF771E /* SongCell.swift in Sources */,
@@ -451,6 +474,7 @@
 				0EFB8E101EE7C2FF00D5F793 /* ShowPlaylistVC.swift in Sources */,
 				0EB896221EEA27AC0050021B /* LandingVC.swift in Sources */,
 				0EFB8E0B1EE7C2FF00D5F793 /* PlaylistSongCellF.swift in Sources */,
+				0EB896261EEB574A0050021B /* TitleLabel.swift in Sources */,
 				0E2EF3151C2753B200762053 /* SongLyricsVC.swift in Sources */,
 				0E9DD7A81EAA76A200745317 /* AuthService.swift in Sources */,
 			);
