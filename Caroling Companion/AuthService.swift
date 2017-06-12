@@ -116,21 +116,22 @@ class AuthService {
 //    }
 
     
-//    func createFirebaseUserWithEmail(email: String, password: String, onComplete: Completion?) {
-//        guard Auth.auth().currentUser?.isAnonymous != true else {
-//            print("merger")
-//            let credential = FIREmailPasswordAuthProvider.credential(withEmail: email, password: password)
-//            Auth.auth()?.currentUser!.link(with: credential, completion: { (user, error) in
-//                DataService.ds.createFirebaseDBUser(provider: DBProviderString.email, user: user, error: error)
-//                onComplete!(nil, user)
-//            })
-//            return
-//        }
-//        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-//            DataService.ds.createFirebaseDBUser(provider: DBProviderString.email, user: user, error: error)
-//            onComplete!(nil, user)
-//        })
-//    }
+    func createFirebaseUserWithEmail(email: String, password: String, onComplete: Completion?) {
+        guard Auth.auth().currentUser?.isAnonymous != true else {
+            print("merger")
+            let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+            Auth.auth().currentUser!.link(with: credential, completion: { (user, error) in
+                DataService.ds.createFirebaseDBUser(provider: DBProviderString.email, user: user, error: error)
+                onComplete!(nil, user)
+            })
+            return
+        }
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+            DataService.ds.createFirebaseDBUser(provider: DBProviderString.email, user: user, error: error)
+            onComplete!(nil, user)
+        })
+
+    }
     
     func login(email: String, password: String, onComplete: Completion?) {
         Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
