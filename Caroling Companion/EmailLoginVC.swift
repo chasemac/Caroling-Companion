@@ -22,16 +22,10 @@ class EmailLoginVC: LoginFlow {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        
-        if Auth.auth().currentUser?.uid != nil {
-            print("Logged in user UID ------> \(Auth.auth().currentUser!.uid as Any)")
-        } else {
-            print("no current user")
-        }
-        
+        printCurrentUser()
     }
     
-    func setupView() {
+    private func setupView() {
         var text = ""
         if signup == true {
             text = "SIGN UP"
@@ -42,33 +36,20 @@ class EmailLoginVC: LoginFlow {
         loginBtn.titleLabel?.text = text
     }
     
-    func emailLogin() {
+    private func emailLogin() {
         if let email = emailField.text, let password = pwdField.text, (email.characters.count > 0 && password.characters.count > 0) {
-            
             // Call the login service
             AuthService.instance.login(email: email, password: password, onComplete: { (errMsg, user) in
-                
-                if errMsg == USER_DOES_NOT_EXIST {
+                if errMsg == USER_DOES_NOT_EXIST && self.signup == true {
                     // CREATE USER
-                    let alertController = UIAlertController(title: "Create New User?", message: "\(email) user account does not exist", preferredStyle: UIAlertControllerStyle.alert)
-                    let destructiveAction = UIAlertAction(title: "Create", style: UIAlertActionStyle.destructive) {
-                        (result : UIAlertAction) -> Void in
-                        
-                        AuthService.instance.createFirebaseUserWithEmail(email: email, password: password, onComplete: { (otherErrMsg, user) in
-                            guard otherErrMsg == nil else {
-                                setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
-                                return
-                            }
-                            self.performSegue(withIdentifier: "SongListVC", sender: nil)
-                        })
-                    }
-                    let okAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
-                        (result : UIAlertAction) -> Void in
-                        print("Cancel")
-                    }
-                    alertController.addAction(destructiveAction)
-                    alertController.addAction(okAction)
-                    self.present(alertController, animated: true, completion: nil)
+                    AuthService.instance.createFirebaseUserWithEmail(email: email, password: password, onComplete: { (otherErrMsg, user) in
+                        guard otherErrMsg == nil else {
+                            setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
+                            return
+                        }
+                        self.performSegue(withIdentifier: "SongListVC", sender: nil)
+                    })
+
                 } else if errMsg != nil && errMsg != USER_DOES_NOT_EXIST {
                     setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
                     return
@@ -85,12 +66,11 @@ class EmailLoginVC: LoginFlow {
     }
     
     @IBAction func loginBtnPressed(_ sender: Any) {
+        emailLogin()
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
-    
     
 }

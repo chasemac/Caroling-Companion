@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseAuth
 //import FBSDKCoreKit
+import FBSDKLoginKit
 //import Google
 //import GoogleSignIn
 
@@ -35,46 +36,46 @@ class AuthService {
         })
     }
     
-//    func firebaseFacebookLogin(_ credential: AuthCredential, onComplete: Completion?) {
-//        guard Auth.auth().currentUser?.isAnonymous != true else {
-//            let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-//            print("attenpting to merge \(String(describing: Auth.auth().currentUser?.uid)) with Facebook")
-//            Auth.auth().signIn(with: credential, completion: { (user, error) in
-//                if error != nil {
-//                    print("CHASE: Unable to auth with Firebase - \(String(describing: error))")
-//                    // Handle Errors
-//                    self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: "")
-//                } else {
-//                    user?.link(with: credential, completion: { (user, error) in
-//                        print("CHASE: Attempted Link with Firebase")
-//                        if user != nil {
-//                            DataService.ds.createFirebaseDBUser(provider: DBProviderString.facebook, user: user, error: error)
-//                            onComplete!(nil, user)
-//                        } else {
-//                            onComplete!(error as? String, nil)
-//                            print("error saving user")
-//                            print(error!)
-//                        }
-//                        
-//                    })
-//                }
-//            })
-//            return
-//        }
-//        
-//        Auth.auth().signIn(with: credential, completion: { (user, error) in
-//            if error != nil {
-//                print("CHASE: Unable to auth with Firebase - \(String(describing: error))")
-//                // Handle Errors
-//                self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: "")
-//            } else if user != nil {
-//                print("CHASE: Succesffully authenticated with Firebase")
-//                DataService.ds.createFirebaseDBUser(provider: DBProviderString.facebook, user: user, error: error)
-//                onComplete!(nil, user)
-//            }
-//        })
-//    }
-//    
+    func firebaseFacebookLogin(_ credential: AuthCredential, onComplete: Completion?) {
+        guard Auth.auth().currentUser?.isAnonymous != true else {
+            let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+            print("attenpting to merge \(String(describing: Auth.auth().currentUser?.uid)) with Facebook")
+            Auth.auth().signIn(with: credential, completion: { (user, error) in
+                if error != nil {
+                    print("CHASE: Unable to auth with Firebase - \(String(describing: error))")
+                    // Handle Errors
+                    self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: "")
+                } else {
+                    user?.link(with: credential, completion: { (user, error) in
+                        print("CHASE: Attempted Link with Firebase")
+                        if user != nil {
+                            DataService.ds.createFirebaseDBUser(provider: DBProviderString.facebook, user: user, error: error)
+                            onComplete!(nil, user)
+                        } else {
+                            onComplete!(error as? String, nil)
+                            print("error saving user")
+                            print(error!)
+                        }
+                        
+                    })
+                }
+            })
+            return
+        }
+        
+        Auth.auth().signIn(with: credential, completion: { (user, error) in
+            if error != nil {
+                print("CHASE: Unable to auth with Firebase - \(String(describing: error))")
+                // Handle Errors
+                self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: "")
+            } else if user != nil {
+                print("CHASE: Succesffully authenticated with Firebase")
+                DataService.ds.createFirebaseDBUser(provider: DBProviderString.facebook, user: user, error: error)
+                onComplete!(nil, user)
+            }
+        })
+    }
+
 //    func firebaseGoogleLogin(user: GIDGoogleUser!, error: Error!, onComplete: Completion?) {
 ////        let userId = user.userID                  // For client-side use only!
 ////        let idToken = user.authentication.idToken // Safe to send to the server
@@ -136,14 +137,6 @@ class AuthService {
     func login(email: String, password: String, onComplete: Completion?) {
         Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
-                if let errorCode = AuthErrorCode(rawValue: error!._code) {
-                    switch(errorCode) {
-                    case .userNotFound:
-                        onComplete?(USER_DOES_NOT_EXIST,nil)
-                    default:
-                        onComplete?("There was a problem authenticating, Try again", nil)
-                    }
-                }
                 self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: email)
             } else {
                 print("successfully logged in")
@@ -165,7 +158,6 @@ class AuthService {
         print(error.debugDescription)
         if let errorCode = AuthErrorCode(rawValue: error._code) {
             switch (errorCode) {
-        
             case .invalidEmail:
                 onComplete?("Invalid email address", nil)
             case .wrongPassword:
@@ -173,7 +165,7 @@ class AuthService {
             case .accountExistsWithDifferentCredential:
                 onComplete?("Could not create account. Email already in use", nil)
             case .userNotFound:
-                onComplete?("User does not exist", nil)
+                onComplete?(USER_DOES_NOT_EXIST, nil)
             case .emailAlreadyInUse:
                 onComplete?("An account was previously created with your Facebook's email address, please click the email button and sign in using your email address and password", nil)
                 print("in use")

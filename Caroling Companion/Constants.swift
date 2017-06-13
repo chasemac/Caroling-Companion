@@ -15,7 +15,7 @@ let darkRed = UIColor(red: 0.718, green: 0.310, blue: 0.310, alpha: 1.00)
 let softRed = UIColor(red: 0.882, green: 0.471, blue: 0.471, alpha: 1.00)
 
 let YOUTUBE_URL: String = "https://www.youtube.com/embed/"
-let USER_DOES_NOT_EXIST = "DNE"
+let USER_DOES_NOT_EXIST = "User Does Not Exist"
 
 let KEY_UID = "uid"
 

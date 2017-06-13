@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
 
 import GoogleSignIn
 
@@ -109,5 +109,16 @@ class ProfileVC: UIViewController {
     }
     @IBAction func diconnectGoogleTapped(_ sender: Any) {
         GIDSignIn.sharedInstance().disconnect()
+    }
+    @IBAction func deleteUser(_ sender: Any) {
+        let user = Auth.auth().currentUser
+        
+        user?.delete { error in
+            if let error = error {
+                print(error)
+            } else {
+                print("account deleted")
+            }
+        }
     }
 }
