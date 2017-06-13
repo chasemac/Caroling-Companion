@@ -12,7 +12,7 @@ import FirebaseAuth
 import GoogleSignIn
 
 class ProfileVC: UIViewController {
-
+    
     @IBOutlet weak var uidLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -48,21 +48,21 @@ class ProfileVC: UIViewController {
         } else {
             print("no current email")
         }
-
+        
         
     }
-
-
+    
+    
     
     @IBAction func unlinkBtnTapped(_ sender: Any) {
         
-    print(Auth.auth().currentUser?.providerData.count as Any)
+        print(Auth.auth().currentUser?.providerData.count as Any)
         
         print(Auth.auth().currentUser?.providerID as Any)
-    
+        
         let providerID = "facebook.com"
-    //    let providerID = FIRAuth.auth()?.currentUser?.providerID
-    
+        //    let providerID = FIRAuth.auth()?.currentUser?.providerID
+        
         Auth.auth().currentUser?.unlink(fromProvider: providerID) { (user, error) in
             if error != nil {
                 print("success")
@@ -71,18 +71,11 @@ class ProfileVC: UIViewController {
         }
     }
     
-    func singOut() {
-        self.performSegue(withIdentifier: "LoginVC", sender: nil)
-    }
-
-    
-    @IBAction func logoutTapped(_ sender: Any) {
-        
+    func signOut() {
         let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: UIAlertControllerStyle.alert)
         let destructiveAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive) {
             (result : UIAlertAction) -> Void in
             print("Signed Out")
-            self.singOut()
         }
         let okAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
             (result : UIAlertAction) -> Void in
@@ -98,14 +91,11 @@ class ProfileVC: UIViewController {
         } catch {
             print("failed"  )
         }
-        
-        do {
-            try  Auth.auth().signOut()
-        } catch {
-            print("failed"  )
-        }
-        
-
+    }
+    
+    
+    @IBAction func logoutTapped(_ sender: Any) {
+        signOut()
     }
     @IBAction func diconnectGoogleTapped(_ sender: Any) {
         GIDSignIn.sharedInstance().disconnect()

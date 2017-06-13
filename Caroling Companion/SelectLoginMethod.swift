@@ -60,7 +60,7 @@ class SelectLoginMethod: UIViewController {
                             return
                         }
                         if user != nil {
-                            self.performSegue(withIdentifier: "SongListVC", sender: nil)
+                            self.performSegue(withIdentifier: SongListVC, sender: nil)
                         }
                     })
                 }
@@ -77,7 +77,7 @@ class SelectLoginMethod: UIViewController {
                         return
                     }
                     if user != nil {
-                        self.performSegue(withIdentifier: "SongListVC", sender: nil)
+                        self.performSegue(withIdentifier: SongListVC, sender: nil)
                     }
                 })
             }

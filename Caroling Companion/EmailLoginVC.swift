@@ -47,7 +47,7 @@ class EmailLoginVC: LoginFlow {
                             setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
                             return
                         }
-                        self.performSegue(withIdentifier: "SongListVC", sender: nil)
+                        self.performSegue(withIdentifier: SongListVC, sender: nil)
                     })
 
                 } else if errMsg != nil && errMsg != USER_DOES_NOT_EXIST {
@@ -55,7 +55,7 @@ class EmailLoginVC: LoginFlow {
                     return
                 }
                 else if user != nil {
-                    self.performSegue(withIdentifier: "SongListVC", sender: nil)
+                    self.performSegue(withIdentifier: SongListVC, sender: nil)
                 }
             })
         } else {
