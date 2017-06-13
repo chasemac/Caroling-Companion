@@ -10,13 +10,21 @@ import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
 
-class SelectLoginMethod: UIViewController {
+class SelectLoginMethodVC: UIViewController {
     
     @IBOutlet weak var instructionLbl: UILabel!
     var signup: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setupView()
+    }
+    
+    func setupView() {
         var text = ""
         if signup == true {
             text = "Sign Up"
@@ -84,6 +92,17 @@ class SelectLoginMethod: UIViewController {
         }
         
     }
+    
+    
+    
+    @IBAction func unwindToSelectMethodVC(unwindSegue: UIStoryboardSegue) {
+        self.signup = true
+//        if let sourceViewController = unwindSegue.source as? ForgotPasswordVC {
+//            self.signup = sourceViewController.signup
+//        }
+    }
+    
+
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

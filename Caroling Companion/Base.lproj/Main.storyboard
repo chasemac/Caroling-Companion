@@ -901,10 +901,10 @@
             </objects>
             <point key="canvasLocation" x="2087.1999999999998" y="-1658.3208395802101"/>
         </scene>
-        <!--Select Login Method-->
+        <!--Select Login MethodVC-->
         <scene sceneID="WMj-QK-CKp">
             <objects>
-                <viewController id="sf1-zH-sqo" customClass="SelectLoginMethod" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sf1-zH-sqo" customClass="SelectLoginMethodVC" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Yx0-YR-MxO"/>
                         <viewControllerLayoutGuide type="bottom" id="qEo-l6-BvH"/>
@@ -1198,7 +1198,7 @@
                     <connections>
                         <outlet property="emailField" destination="CwA-Xc-eKo" id="Oxc-Kp-aoz"/>
                         <outlet property="iForgotBtn" destination="ACS-du-BH4" id="dja-Km-d1d"/>
-                        <outlet property="loginBtn" destination="9Et-2C-G5l" id="HsD-az-bPv"/>
+                        <outlet property="loginBtn" destination="9Et-2C-G5l" id="HHe-9b-j49"/>
                         <outlet property="loginBtnToBottom" destination="Zs2-AR-8qw" id="x5b-Qa-cK7"/>
                         <outlet property="pwdField" destination="rp0-KE-PMe" id="2EH-6l-uYW"/>
                         <segue destination="GES-gZ-Igc" kind="show" identifier="SongListVC" id="z3A-xM-QVg"/>
@@ -1422,7 +1422,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="use-ZT-lwO">
-                                <rect key="frame" x="65" y="256" width="190" height="18"/>
+                                <rect key="frame" x="65.5" y="256" width="190" height="18"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6uW-2a-vNh">
                                         <rect key="frame" x="0.0" y="0.0" width="127" height="18"/>
@@ -1478,11 +1478,13 @@
                     <connections>
                         <outlet property="emailField" destination="McK-in-KDR" id="dub-kv-1kB"/>
                         <outlet property="loginBtnToBottom" destination="gUo-mo-lMw" id="Qnh-6v-6wc"/>
+                        <segue destination="dGi-2W-w9w" kind="unwind" identifier="SelectLoginMethodVC" unwindAction="unwindToSelectMethodVCWithUnwindSegue:" id="9LE-8S-Zsl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7T-eH-hQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="dGi-2W-w9w" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1854" y="636"/>
+            <point key="canvasLocation" x="2087" y="636"/>
         </scene>
     </scenes>
     <resources>
@@ -1497,10 +1499,10 @@
         <image name="star-empty" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vdM-GR-27e"/>
-        <segue reference="jdN-dS-HXf"/>
-        <segue reference="lec-MS-iCn"/>
         <segue reference="UTV-V0-aRm"/>
+        <segue reference="z3A-xM-QVg"/>
+        <segue reference="lec-MS-iCn"/>
+        <segue reference="vdM-GR-27e"/>
         <segue reference="hrw-hQ-4Gi"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.53758639100000005" green="0.65890771150000005" blue="0.49905574320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -33,7 +33,7 @@
 		0EB896221EEA27AC0050021B /* LandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB896211EEA27AC0050021B /* LandingVC.swift */; };
 		0EB896241EEB47D70050021B /* EmailLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB896231EEB47D70050021B /* EmailLoginVC.swift */; };
 		0EB896261EEB574A0050021B /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB896251EEB574A0050021B /* TitleLabel.swift */; };
-		0EB896281EEB72DF0050021B /* SelectLoginMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB896271EEB72DF0050021B /* SelectLoginMethod.swift */; };
+		0EB896281EEB72DF0050021B /* SelectLoginMethodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB896271EEB72DF0050021B /* SelectLoginMethodVC.swift */; };
 		0EB8962A1EEB7CCC0050021B /* PhoneLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB896291EEB7CCC0050021B /* PhoneLoginVC.swift */; };
 		0EB8962C1EEB7FEA0050021B /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8962B1EEB7FEA0050021B /* LoginFlow.swift */; };
 		0EB8962E1EEB81590050021B /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8962D1EEB81590050021B /* ForgotPasswordVC.swift */; };
@@ -91,7 +91,7 @@
 		0EB896211EEA27AC0050021B /* LandingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
 		0EB896231EEB47D70050021B /* EmailLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLoginVC.swift; sourceTree = "<group>"; };
 		0EB896251EEB574A0050021B /* TitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
-		0EB896271EEB72DF0050021B /* SelectLoginMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectLoginMethod.swift; sourceTree = "<group>"; };
+		0EB896271EEB72DF0050021B /* SelectLoginMethodVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectLoginMethodVC.swift; sourceTree = "<group>"; };
 		0EB896291EEB7CCC0050021B /* PhoneLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneLoginVC.swift; sourceTree = "<group>"; };
 		0EB8962B1EEB7FEA0050021B /* LoginFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		0EB8962D1EEB81590050021B /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
@@ -273,7 +273,7 @@
 				0E9DD79C1EA971BA00745317 /* LoginVC.swift */,
 				0EB896211EEA27AC0050021B /* LandingVC.swift */,
 				0EB896231EEB47D70050021B /* EmailLoginVC.swift */,
-				0EB896271EEB72DF0050021B /* SelectLoginMethod.swift */,
+				0EB896271EEB72DF0050021B /* SelectLoginMethodVC.swift */,
 				0EB896291EEB7CCC0050021B /* PhoneLoginVC.swift */,
 				0EB8962D1EEB81590050021B /* ForgotPasswordVC.swift */,
 			);
@@ -453,7 +453,7 @@
 				0E7EAA131DB5E01300E8044A /* NavigationController.swift in Sources */,
 				0EB8962E1EEB81590050021B /* ForgotPasswordVC.swift in Sources */,
 				0EFB8E021EE7C2F300D5F793 /* CreatePlaylistVCF.swift in Sources */,
-				0EB896281EEB72DF0050021B /* SelectLoginMethod.swift in Sources */,
+				0EB896281EEB72DF0050021B /* SelectLoginMethodVC.swift in Sources */,
 				0EFB8E0F1EE7C2FF00D5F793 /* PlaylistSongCell.swift in Sources */,
 				0E9DD79F1EA974BF00745317 /* Functions.swift in Sources */,
 				0E2EF2E31C274DD200762053 /* AppDelegate.swift in Sources */,

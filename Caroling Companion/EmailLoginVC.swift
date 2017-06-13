@@ -21,8 +21,12 @@ class EmailLoginVC: LoginFlow {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
         printCurrentUser()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setupView()
     }
     
     private func setupView() {
@@ -33,7 +37,7 @@ class EmailLoginVC: LoginFlow {
         } else {
             text = "LOG IN"
         }
-        loginBtn.titleLabel?.text = text
+        loginBtn.setTitle(text, for: UIControlState.normal)
     }
     
     private func emailLogin() {
