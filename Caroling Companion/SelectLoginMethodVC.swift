@@ -55,6 +55,7 @@ class SelectLoginMethodVC: UIViewController {
     @IBAction func facebookBtnTapped(_ sender: Any) {
         loginWithFacebook()
     }
+    
     func loginWithFacebook() {
         let facebookLogin = FBSDKLoginManager()
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
@@ -93,15 +94,12 @@ class SelectLoginMethodVC: UIViewController {
         
     }
     
-    
-    
+
     @IBAction func unwindToSelectMethodVC(unwindSegue: UIStoryboardSegue) {
-        self.signup = true
-//        if let sourceViewController = unwindSegue.source as? ForgotPasswordVC {
-//            self.signup = sourceViewController.signup
-//        }
+        if let sourceViewController = unwindSegue.source as? ForgotPasswordVC {
+            self.signup = sourceViewController.signup
+        }
     }
-    
 
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)

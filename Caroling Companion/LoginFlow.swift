@@ -40,3 +40,23 @@ class LoginFlow: UIViewController {
     }
 
 }
+
+extension UIViewController {
+    var contents: UIViewController {
+        if let navcon = self as? UINavigationController {
+            return navcon.visibleViewController ?? self
+        } else {
+            return self
+        }
+    }
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+

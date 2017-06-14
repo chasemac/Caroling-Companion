@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class EmailLoginVC: LoginFlow {
+class EmailLoginVC: LoginFlow, UITextFieldDelegate {
     var signup: Bool = true
     
     @IBOutlet weak var emailField: UITextField!
@@ -21,6 +21,8 @@ class EmailLoginVC: LoginFlow {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailField.delegate = self
+        pwdField.delegate = self
         printCurrentUser()
     }
     
@@ -75,6 +77,20 @@ class EmailLoginVC: LoginFlow {
     
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: KEYBOARD FUNCTIONS
+    
+    //presses return key
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
+    
+    // Hide keyboard when user touches outside keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 }

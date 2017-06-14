@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0E0707D21EE8F0D10033C185 /* OutlineBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0707D11EE8F0D10033C185 /* OutlineBtn.swift */; };
+		0E1AA5221EF1DA0E00EB3B65 /* ProfileTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AA5211EF1DA0E00EB3B65 /* ProfileTabVC.swift */; };
+		0E1AA5241EF1DD6000EB3B65 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AA5231EF1DD6000EB3B65 /* AboutVC.swift */; };
 		0E2EF2E31C274DD200762053 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E21C274DD200762053 /* AppDelegate.swift */; };
 		0E2EF2E81C274DD200762053 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E61C274DD200762053 /* Main.storyboard */; };
 		0E2EF2EA1C274DD200762053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E91C274DD200762053 /* Assets.xcassets */; };
@@ -60,6 +62,8 @@
 
 /* Begin PBXFileReference section */
 		0E0707D11EE8F0D10033C185 /* OutlineBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineBtn.swift; sourceTree = "<group>"; };
+		0E1AA5211EF1DA0E00EB3B65 /* ProfileTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTabVC.swift; sourceTree = "<group>"; };
+		0E1AA5231EF1DD6000EB3B65 /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		0E2EF2DF1C274DD200762053 /* Caroling Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Caroling Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2EF2E21C274DD200762053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E2EF2E71C274DD200762053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -276,6 +280,8 @@
 				0EB896271EEB72DF0050021B /* SelectLoginMethodVC.swift */,
 				0EB896291EEB7CCC0050021B /* PhoneLoginVC.swift */,
 				0EB8962D1EEB81590050021B /* ForgotPasswordVC.swift */,
+				0E1AA5211EF1DA0E00EB3B65 /* ProfileTabVC.swift */,
+				0E1AA5231EF1DD6000EB3B65 /* AboutVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -451,6 +457,7 @@
 				0E9DD7971EA9683000745317 /* FancyField.swift in Sources */,
 				0E9DD79D1EA971BA00745317 /* LoginVC.swift in Sources */,
 				0E7EAA131DB5E01300E8044A /* NavigationController.swift in Sources */,
+				0E1AA5241EF1DD6000EB3B65 /* AboutVC.swift in Sources */,
 				0EB8962E1EEB81590050021B /* ForgotPasswordVC.swift in Sources */,
 				0EFB8E021EE7C2F300D5F793 /* CreatePlaylistVCF.swift in Sources */,
 				0EB896281EEB72DF0050021B /* SelectLoginMethodVC.swift in Sources */,
@@ -476,6 +483,7 @@
 				0EFB8E0B1EE7C2FF00D5F793 /* PlaylistSongCellF.swift in Sources */,
 				0EB896261EEB574A0050021B /* TitleLabel.swift in Sources */,
 				0E2EF3151C2753B200762053 /* SongLyricsVC.swift in Sources */,
+				0E1AA5221EF1DA0E00EB3B65 /* ProfileTabVC.swift in Sources */,
 				0E9DD7A81EAA76A200745317 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

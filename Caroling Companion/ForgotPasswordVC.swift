@@ -26,6 +26,7 @@ class ForgotPasswordVC: LoginFlow {
     }
     
     @IBAction func createOneBtnPressed(_ sender: Any) {
+        signup = true
         performSegue(withIdentifier: "SelectLoginMethodVC", sender: signup)
         print("tried to unwind")
     }
@@ -41,7 +42,8 @@ class ForgotPasswordVC: LoginFlow {
             AuthService.instance.resetPassword(email: email!, onComplete: { (errMsg, user) in
                 if errMsg != nil {
                     setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
-                }
+                }              
+
             })
         } else {
             setupDefaultAlert(title: "", message: "Type valid email address in email field", actionTitle: "Ok", VC: self)

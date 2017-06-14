@@ -8,6 +8,8 @@
 
 import UIKit
 
+@IBDesignable
+
 class CircleView: UIImageView {
     
     override func layoutSubviews() {
