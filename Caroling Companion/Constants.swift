@@ -20,7 +20,7 @@ let christmasWhite = UIColor(red:0.99, green:0.99, blue:0.96, alpha:1.0)
 
 let YOUTUBE_URL: String = "https://www.youtube.com/embed/"
 let USER_DOES_NOT_EXIST = "User Does Not Exist"
-let SongListVC = "SongListVC"
+let SegueToSongListVC = "SongListVC"
 
 let KEY_UID = "uid"
 

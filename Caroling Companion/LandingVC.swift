@@ -13,6 +13,11 @@ class LandingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//                guard Auth.auth().currentUser == nil else {
+//                    self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
+//                    return
+//                }
+        
         
         // Do any additional setup after loading the view.
     }
@@ -21,12 +26,12 @@ class LandingVC: UIViewController {
     
     func loginAnonymously() {
         guard Auth.auth().currentUser == nil else {
-            performSegue(withIdentifier: SongListVC, sender: nil)
+            performSegue(withIdentifier: SegueToSongListVC, sender: nil)
             return
         }
         AuthService.instance.loginAnonymous { (errMsg, user) in
             print("are we here?")
-            self.performSegue(withIdentifier: SongListVC, sender: nil)
+            self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
             if errMsg != nil {
                 setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
                 return
@@ -34,7 +39,7 @@ class LandingVC: UIViewController {
             print("here we go")
             if user != nil {
                 print("we got here")
-                self.performSegue(withIdentifier: SongListVC, sender: nil)
+                self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
             }
         }
         
