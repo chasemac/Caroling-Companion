@@ -93,14 +93,8 @@ class ProfileVC: UIViewController {
         }
     }
     
-    
-    @IBAction func logoutTapped(_ sender: Any) {
-        signOut()
-    }
-    @IBAction func diconnectGoogleTapped(_ sender: Any) {
-        GIDSignIn.sharedInstance().disconnect()
-    }
-    @IBAction func deleteUser(_ sender: Any) {
+    func deleteUser() {
+        //MARK: TODO Delete Data From Users and Playlists
         let user = Auth.auth().currentUser
         
         user?.delete { error in
@@ -110,5 +104,17 @@ class ProfileVC: UIViewController {
                 print("account deleted")
             }
         }
+    }
+    
+    
+    @IBAction func logoutTapped(_ sender: Any) {
+        signOut()
+    }
+    @IBAction func diconnectGoogleTapped(_ sender: Any) {
+        GIDSignIn.sharedInstance().disconnect()
+    }
+    @IBAction func deleteUser(_ sender: Any) {
+        deleteUser()
+
     }
 }

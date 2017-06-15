@@ -13,19 +13,38 @@ class LandingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 //                guard Auth.auth().currentUser == nil else {
 //                    self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
 //                    return
 //                }
-        
-        
-        // Do any additional setup after loading the view.
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        checkUserSignedInStatus()
+    }
+    
+    func checkUserSignedInStatus() {
+        if let user = Auth.auth().currentUser {
+            if user.email == nil && user.phoneNumber == nil {
+                print("Anonymous")
+            } else {
+                print("Account Exists")
+                self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
+            }
+        } else {
+            print("need to create account")
+        }
     }
     
 
     
     func loginAnonymously() {
         guard Auth.auth().currentUser == nil else {
+            print("A current user exists")
             performSegue(withIdentifier: SegueToSongListVC, sender: nil)
             return
         }

@@ -36,11 +36,11 @@
                                 <color key="backgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <mutableString key="content">Said the night wind to the little lamb  do you see what I see  Way up in the sky little lamb  do you see what I see  A star a star dancing in the night  With a tail as big as a kite (x2)
+                                        <string key="content">Said the night wind to the little lamb  do you see what I see  Way up in the sky little lamb  do you see what I see  A star a star dancing in the night  With a tail as big as a kite (x2)
  Said the little lamb to the shepherd boy  do you hear what I hear  Ringing through the sky shepherd boy  do you hear what I hear  A song a song high above the trees  With a voice as big as the sea (x2)
  Said the shepherd boy to the mighty king  do you know what I know  In your palace warm mighty king  do you know what I know  A Child a Child shivers in the cold
  Let us bring Him silver and gold (x2)  Said the king to the people everywhere  listen to what I say  Pray for peace people everywhere  listen to what I say  The Child the Child sleeping in the night  He will bring us goodness and light (x2)
-</mutableString>
+</string>
                                         <attributes>
                                             <color key="NSBackgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -407,7 +407,7 @@ Thanks to Jesus.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Of9-8X-SWf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-377" y="941"/>
+            <point key="canvasLocation" x="-658" y="1222"/>
         </scene>
         <!--LandingVC-->
         <scene sceneID="09f-Iv-ODo">
@@ -422,29 +422,8 @@ Thanks to Jesus.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Snowmen" translatesAutoresizingMaskIntoConstraints="NO" id="G3G-2X-hef">
-                                <rect key="frame" x="46" y="155" width="228" height="225.5"/>
+                                <rect key="frame" x="46" y="155" width="228" height="234"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMv-8Q-Y8A" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                <rect key="frame" x="38" y="410.5" width="244" height="52.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="jMv-8Q-Y8A" secondAttribute="height" multiplier="299:64" id="J0m-21-jgI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="20"/>
-                                <state key="normal" title="SIGN UP">
-                                    <color key="titleColor" red="0.46666666666666667" green="0.59999999999999998" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.46666666670000001" green="0.59999999999999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="signUpBtnPressed:" destination="l9E-Ne-nnU" eventType="touchUpInside" id="rMa-FT-ept"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z5u-Hy-fbI">
                                 <rect key="frame" x="66.5" y="533" width="187" height="20"/>
                                 <constraints>
@@ -467,24 +446,6 @@ Thanks to Jesus.</string>
                                     <action selector="skipBtnPressed:" destination="l9E-Ne-nnU" eventType="touchUpInside" id="ltb-6o-Yua"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyi-nR-eFh" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                <rect key="frame" x="38" y="471" width="244" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Dyi-nR-eFh" secondAttribute="height" multiplier="299:64" id="ora-nX-T6j"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="20"/>
-                                <state key="normal" title="LOG IN">
-                                    <color key="titleColor" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="logInBtnPressed:" destination="l9E-Ne-nnU" eventType="touchUpInside" id="ilv-qr-d7L"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xiG-PX-nM0">
                                 <rect key="frame" x="40" y="50" width="240" height="98"/>
                                 <constraints>
@@ -501,24 +462,65 @@ Thanks to Jesus.</string>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gii-C5-Ssd">
+                                <rect key="frame" x="36" y="409" width="248" height="116"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMv-8Q-Y8A" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="248" height="53"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="jMv-8Q-Y8A" secondAttribute="height" multiplier="299:64" id="J0m-21-jgI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="20"/>
+                                        <state key="normal" title="CREATE ACCOUNT">
+                                            <color key="titleColor" red="0.46666666666666667" green="0.59999999999999998" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.46666666670000001" green="0.59999999999999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signUpBtnPressed:" destination="l9E-Ne-nnU" eventType="touchUpInside" id="rMa-FT-ept"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyi-nR-eFh" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="63" width="248" height="53"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Dyi-nR-eFh" secondAttribute="height" multiplier="299:64" id="ora-nX-T6j"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="20"/>
+                                        <state key="normal" title="SIGN IN">
+                                            <color key="titleColor" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="logInBtnPressed:" destination="l9E-Ne-nnU" eventType="touchUpInside" id="ilv-qr-d7L"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.99215686274509807" green="0.9882352941176471" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="jMv-8Q-Y8A" secondAttribute="trailing" constant="22" id="0rp-tT-rtG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xiG-PX-nM0" secondAttribute="trailing" constant="24" id="3w0-Xc-Lae"/>
                             <constraint firstItem="z5u-Hy-fbI" firstAttribute="centerX" secondItem="Ea3-dq-sct" secondAttribute="centerX" id="6a7-vm-5bc"/>
-                            <constraint firstItem="Dyi-nR-eFh" firstAttribute="top" secondItem="jMv-8Q-Y8A" secondAttribute="bottom" constant="8" id="AKU-8v-kSi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Dyi-nR-eFh" secondAttribute="trailing" constant="22" id="HXh-1Y-S5u"/>
+                            <constraint firstItem="gii-C5-Ssd" firstAttribute="leading" secondItem="Ea3-dq-sct" secondAttribute="leadingMargin" constant="20" id="99a-i9-thj"/>
+                            <constraint firstItem="z5u-Hy-fbI" firstAttribute="top" secondItem="gii-C5-Ssd" secondAttribute="bottom" constant="8" id="A6z-CR-Z4M"/>
+                            <constraint firstItem="gii-C5-Ssd" firstAttribute="top" secondItem="G3G-2X-hef" secondAttribute="bottom" constant="20" id="Qr8-4B-hkg"/>
                             <constraint firstItem="G3G-2X-hef" firstAttribute="leading" secondItem="Ea3-dq-sct" secondAttribute="leadingMargin" constant="30" id="SsH-zC-bnM"/>
                             <constraint firstItem="xiG-PX-nM0" firstAttribute="leading" secondItem="Ea3-dq-sct" secondAttribute="leadingMargin" constant="24" id="Tnr-pp-eRT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="G3G-2X-hef" secondAttribute="trailing" constant="30" id="WXK-jP-cPZ"/>
                             <constraint firstItem="DNX-fy-IOK" firstAttribute="top" secondItem="z5u-Hy-fbI" secondAttribute="bottom" constant="15" id="h20-5J-eTn"/>
                             <constraint firstItem="G3G-2X-hef" firstAttribute="top" secondItem="xiG-PX-nM0" secondAttribute="bottom" constant="7" id="hLh-jT-2Pj"/>
-                            <constraint firstItem="Dyi-nR-eFh" firstAttribute="leading" secondItem="Ea3-dq-sct" secondAttribute="leadingMargin" constant="22" id="jMK-Ln-HRn"/>
                             <constraint firstItem="xiG-PX-nM0" firstAttribute="top" secondItem="NLp-IL-4Jr" secondAttribute="bottom" constant="30" id="kek-GG-INP"/>
-                            <constraint firstItem="jMv-8Q-Y8A" firstAttribute="top" secondItem="G3G-2X-hef" secondAttribute="bottom" constant="30" id="la7-d3-dne"/>
-                            <constraint firstItem="z5u-Hy-fbI" firstAttribute="top" secondItem="Dyi-nR-eFh" secondAttribute="bottom" constant="10" id="uAT-fN-Oe6"/>
-                            <constraint firstItem="jMv-8Q-Y8A" firstAttribute="leading" secondItem="Ea3-dq-sct" secondAttribute="leadingMargin" constant="22" id="z2M-pO-BWC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gii-C5-Ssd" secondAttribute="trailing" constant="20" id="tQB-ZI-ObP"/>
                         </constraints>
                     </view>
                     <connections>
@@ -529,7 +531,7 @@ Thanks to Jesus.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Th9-bp-KP7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="563" y="455"/>
+            <point key="canvasLocation" x="562.5" y="454.22535211267603"/>
         </scene>
         <!--Profile-->
         <scene sceneID="S07-1q-gwi">
@@ -547,74 +549,74 @@ Thanks to Jesus.</string>
                                 <rect key="frame" x="16" y="20" width="268" height="415"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkD-NS-Ugb">
-                                        <rect key="frame" x="120" y="0.0" width="28.5" height="20"/>
+                                        <rect key="frame" x="120" y="0.0" width="28.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUc-j9-PWM">
-                                        <rect key="frame" x="111.5" y="20" width="45" height="19.5"/>
+                                        <rect key="frame" x="111.5" y="20.5" width="45" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZP5-ub-MCB">
-                                        <rect key="frame" x="113" y="39.5" width="42" height="20"/>
+                                        <rect key="frame" x="113" y="41" width="42" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Zg-aQ-3as">
-                                        <rect key="frame" x="113" y="59.5" width="42" height="19.5"/>
+                                        <rect key="frame" x="113" y="61.5" width="42" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsx-8I-bjO">
-                                        <rect key="frame" x="117" y="79" width="34" height="29"/>
+                                        <rect key="frame" x="117" y="81.5" width="34" height="30"/>
                                         <state key="normal" title="Save"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buB-L9-7qw">
-                                        <rect key="frame" x="112.5" y="108" width="43" height="29"/>
+                                        <rect key="frame" x="112.5" y="111.5" width="43" height="30"/>
                                         <state key="normal" title="Unlink"/>
                                         <connections>
                                             <action selector="unlinkBtnTapped:" destination="CaK-rT-Cyp" eventType="touchUpInside" id="Vso-Dw-nnQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jx-oI-PWb">
-                                        <rect key="frame" x="110" y="137" width="48" height="29"/>
+                                        <rect key="frame" x="110" y="141.5" width="48" height="30"/>
                                         <state key="normal" title="Logout"/>
                                         <connections>
                                             <action selector="logoutTapped:" destination="CaK-rT-Cyp" eventType="touchUpInside" id="Zbj-7h-7oW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Scb-sF-KDY">
-                                        <rect key="frame" x="93.5" y="166" width="81" height="29"/>
+                                        <rect key="frame" x="93.5" y="171.5" width="81" height="30"/>
                                         <state key="normal" title="Delete User"/>
                                         <connections>
                                             <action selector="deleteUser:" destination="CaK-rT-Cyp" eventType="touchUpInside" id="HoR-rb-3D9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92E-9V-ajM">
-                                        <rect key="frame" x="68.5" y="195" width="131" height="29"/>
+                                        <rect key="frame" x="68.5" y="201.5" width="131" height="29.5"/>
                                         <state key="normal" title="Disconnect Google"/>
                                         <connections>
                                             <action selector="diconnectGoogleTapped:" destination="CaK-rT-Cyp" eventType="touchUpInside" id="HON-wf-gF9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30m-70-feC">
-                                        <rect key="frame" x="77.5" y="224" width="113" height="29"/>
+                                        <rect key="frame" x="77.5" y="231" width="113" height="30"/>
                                         <state key="normal" title="Sign Out Google"/>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4t-vu-JNf" customClass="GIDSignInButton">
-                                        <rect key="frame" x="90" y="253" width="88" height="48.5"/>
+                                        <rect key="frame" x="90" y="261" width="88" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="87.5" id="bwy-5K-MT0"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYp-Kc-EWU" customClass="FBSDKLoginButton">
-                                        <rect key="frame" x="81.5" y="301.5" width="105" height="113.5"/>
+                                        <rect key="frame" x="81.5" y="311" width="105" height="104"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="105.5" id="M4r-yF-RWm"/>
@@ -641,7 +643,92 @@ Thanks to Jesus.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mc-WK-HTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-377" y="125"/>
+            <point key="canvasLocation" x="-1412" y="1221"/>
+        </scene>
+        <!--Need AccountVC-->
+        <scene sceneID="gnj-G3-AOY">
+            <objects>
+                <viewController id="kJT-k9-y7V" customClass="NeedAccountVC" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vnn-Dy-Rmi"/>
+                        <viewControllerLayoutGuide type="bottom" id="NjU-IS-V6R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z0w-Gy-Z2u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rYR-hK-NbL">
+                                <rect key="frame" x="36" y="276" width="248" height="116"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6N-YA-kBw" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="248" height="53"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Z6N-YA-kBw" secondAttribute="height" multiplier="299:64" id="INw-P1-lbV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="20"/>
+                                        <state key="normal" title="CREATE ACCOUNT">
+                                            <color key="titleColor" red="0.46666666670000001" green="0.59999999999999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.46666666670000001" green="0.59999999999999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signUpBtnPressed:" destination="l9E-Ne-nnU" eventType="touchUpInside" id="mdt-UJ-HMt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0O-gF-dCr" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="63" width="248" height="53"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="I0O-gF-dCr" secondAttribute="height" multiplier="299:64" id="ghD-AV-0DM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="20"/>
+                                        <state key="normal" title="SIGN IN">
+                                            <color key="titleColor" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="logInBtnPressed:" destination="l9E-Ne-nnU" eventType="touchUpInside" id="0J2-wQ-q5T"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whoops." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00J-JK-tj5">
+                                <rect key="frame" x="129" y="129" width="62" height="26"/>
+                                <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have an account." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBW-Dc-5EX">
+                                <rect key="frame" x="68" y="190" width="184.5" height="26"/>
+                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rYR-hK-NbL" firstAttribute="top" secondItem="TBW-Dc-5EX" secondAttribute="bottom" constant="60" id="5Zi-vE-D0G"/>
+                            <constraint firstItem="rYR-hK-NbL" firstAttribute="leading" secondItem="Z0w-Gy-Z2u" secondAttribute="leadingMargin" constant="20" id="Gc0-67-pdV"/>
+                            <constraint firstItem="TBW-Dc-5EX" firstAttribute="centerX" secondItem="Z0w-Gy-Z2u" secondAttribute="centerX" id="M1i-cC-fHd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rYR-hK-NbL" secondAttribute="trailing" constant="20" id="kvY-aa-WeE"/>
+                            <constraint firstItem="00J-JK-tj5" firstAttribute="centerX" secondItem="Z0w-Gy-Z2u" secondAttribute="centerX" id="lBk-Bu-WGz"/>
+                            <constraint firstItem="rYR-hK-NbL" firstAttribute="centerY" secondItem="Z0w-Gy-Z2u" secondAttribute="centerY" constant="50" id="lu8-Ui-Svk"/>
+                            <constraint firstItem="TBW-Dc-5EX" firstAttribute="top" secondItem="00J-JK-tj5" secondAttribute="bottom" constant="35" id="v3R-r9-SVK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IZh-0E-t1j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-979" y="397"/>
         </scene>
         <!--PROFILE-->
         <scene sceneID="q0U-w3-CNH">
@@ -823,7 +910,7 @@ Thanks to Jesus.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fj6-sY-Anc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="170" y="386"/>
+            <point key="canvasLocation" x="-101" y="398"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="CLp-ku-iHx">
@@ -846,7 +933,7 @@ Thanks to Jesus.</string>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Kx-Wj-QUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1358" y="-1083"/>
+            <point key="canvasLocation" x="986" y="-1364"/>
         </scene>
         <!--SONG LIST-->
         <scene sceneID="ao7-4G-gTr">
@@ -948,7 +1035,7 @@ Thanks to Jesus.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eua-XB-MtF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1926" y="-1515"/>
+            <point key="canvasLocation" x="1733" y="-1541"/>
         </scene>
         <!--Select Login MethodVC-->
         <scene sceneID="WMj-QK-CKp">
@@ -1377,7 +1464,7 @@ Thanks to Jesus.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZt-K5-aaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="278" y="1388"/>
+            <point key="canvasLocation" x="338" y="1421"/>
         </scene>
         <!--Forgot PasswordVC-->
         <scene sceneID="vaB-Gb-Xjf">
@@ -1471,7 +1558,7 @@ Thanks to Jesus.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="use-ZT-lwO">
-                                <rect key="frame" x="65.5" y="256" width="190" height="18"/>
+                                <rect key="frame" x="65" y="256" width="190" height="18"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6uW-2a-vNh">
                                         <rect key="frame" x="0.0" y="0.0" width="127" height="18"/>
@@ -1568,9 +1655,9 @@ Thanks to Jesus.</string>
         <image name="star-empty" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Wbt-Gs-Kp5"/>
         <segue reference="nPK-h2-N5v"/>
-        <segue reference="hrw-hQ-4Gi"/>
+        <segue reference="lec-MS-iCn"/>
+        <segue reference="EV3-wj-5fI"/>
         <segue reference="Bbm-R5-zzA"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.53758639100000005" green="0.65890771150000005" blue="0.49905574320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

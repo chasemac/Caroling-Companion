@@ -41,6 +41,8 @@
 		0EB8962A1EEB7CCC0050021B /* PhoneLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB896291EEB7CCC0050021B /* PhoneLoginVC.swift */; };
 		0EB8962C1EEB7FEA0050021B /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8962B1EEB7FEA0050021B /* LoginFlow.swift */; };
 		0EB8962E1EEB81590050021B /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8962D1EEB81590050021B /* ForgotPasswordVC.swift */; };
+		0EC724071EF328340003407F /* SignInIdea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC724061EF328340003407F /* SignInIdea.swift */; };
+		0EC7240A1EF32D200003407F /* NeedAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC724091EF32D200003407F /* NeedAccountVC.swift */; };
 		0ED23D571DB82FF100DF081E /* Big_John.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0ED23D561DB82FF100DF081E /* Big_John.otf */; };
 		0EFB8E011EE7C2F300D5F793 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFB8DFF1EE7C2F300D5F793 /* Playlist.swift */; };
 		0EFB8E021EE7C2F300D5F793 /* CreatePlaylistVCF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFB8E001EE7C2F300D5F793 /* CreatePlaylistVCF.swift */; };
@@ -103,6 +105,8 @@
 		0EB896291EEB7CCC0050021B /* PhoneLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneLoginVC.swift; sourceTree = "<group>"; };
 		0EB8962B1EEB7FEA0050021B /* LoginFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
 		0EB8962D1EEB81590050021B /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		0EC724061EF328340003407F /* SignInIdea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInIdea.swift; sourceTree = "<group>"; };
+		0EC724091EF32D200003407F /* NeedAccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedAccountVC.swift; sourceTree = "<group>"; };
 		0ED23D511DB81F0500DF081E /* Caroling Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Caroling Companion.entitlements"; sourceTree = "<group>"; };
 		0ED23D561DB82FF100DF081E /* Big_John.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Big_John.otf; sourceTree = "<group>"; };
 		0EFB8DFF1EE7C2F300D5F793 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
@@ -175,8 +179,8 @@
 				0ED23D511DB81F0500DF081E /* Caroling Companion.entitlements */,
 				0E8F098E1CD29B8B00CF771E /* View */,
 				0ED558311CCEEE44008C0B3E /* Controller */,
-				0E2EF2E21C274DD200762053 /* AppDelegate.swift */,
 				0E2EF2E61C274DD200762053 /* Main.storyboard */,
+				0E2EF2E21C274DD200762053 /* AppDelegate.swift */,
 				0E2EF2E91C274DD200762053 /* Assets.xcassets */,
 			);
 			path = "Caroling Companion";
@@ -250,13 +254,21 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		0ED23D551DB82FE100DF081E /* Resources */ = {
+		0EC724081EF32C2E0003407F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				0EB8961B1EE9C28F0050021B /* Brandon_bld.otf */,
 				0EB8961C1EE9C28F0050021B /* Brandon_blk.otf */,
 				0EB8961D1EE9C28F0050021B /* Brandon_reg.otf */,
 				0ED23D561DB82FF100DF081E /* Big_John.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		0ED23D551DB82FE100DF081E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0EC724081EF32C2E0003407F /* Fonts */,
 				0E8F09971CD2B5CB00CF771E /* Constants.swift */,
 				0E9DD79E1EA974BF00745317 /* Functions.swift */,
 				0E2EF2EB1C274DD200762053 /* LaunchScreen.storyboard */,
@@ -264,6 +276,7 @@
 				0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */,
 				0E1AA5251EF2197800EB3B65 /* SlideAnimationTransition.swift */,
 				0E1AA5271EF219C200EB3B65 /* SwipeRightToDismissVC.swift */,
+				0EC724061EF328340003407F /* SignInIdea.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -288,6 +301,7 @@
 				0EB8962D1EEB81590050021B /* ForgotPasswordVC.swift */,
 				0E1AA5211EF1DA0E00EB3B65 /* ProfileTabVC.swift */,
 				0E1AA5231EF1DD6000EB3B65 /* AboutVC.swift */,
+				0EC724091EF32D200003407F /* NeedAccountVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -473,6 +487,7 @@
 				0EFB8E1E1EE7C33500D5F793 /* PlaylistNameCellF.swift in Sources */,
 				0E8F09981CD2B5CB00CF771E /* Constants.swift in Sources */,
 				0E9DD7A61EA9B07C00745317 /* Song.swift in Sources */,
+				0EC7240A1EF32D200003407F /* NeedAccountVC.swift in Sources */,
 				0E9DD79B1EA9684200745317 /* CircleView.swift in Sources */,
 				0EB8962C1EEB7FEA0050021B /* LoginFlow.swift in Sources */,
 				0EFB8E1F1EE7C33500D5F793 /* ProfileVC.swift in Sources */,
@@ -491,6 +506,7 @@
 				0EFB8E0B1EE7C2FF00D5F793 /* PlaylistSongCellF.swift in Sources */,
 				0EB896261EEB574A0050021B /* TitleLabel.swift in Sources */,
 				0E2EF3151C2753B200762053 /* SongLyricsVC.swift in Sources */,
+				0EC724071EF328340003407F /* SignInIdea.swift in Sources */,
 				0E1AA5221EF1DA0E00EB3B65 /* ProfileTabVC.swift in Sources */,
 				0E9DD7A81EAA76A200745317 /* AuthService.swift in Sources */,
 			);
