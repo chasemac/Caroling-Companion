@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="l9E-Ne-nnU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GES-gZ-Igc">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,9 +11,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Big_John.otf">
-            <string>BigJohn</string>
-        </array>
         <array key="Brandon_bld.otf">
             <string>BrandonGrotesque-Bold</string>
         </array>
@@ -22,7 +19,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Song LyricsVC-->
+        <!--SONG LYRICS-->
         <scene sceneID="sfI-KS-0iC">
             <objects>
                 <viewController id="nQb-j5-nok" customClass="SongLyricsVC" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,26 +28,23 @@
                         <viewControllerLayoutGuide type="bottom" id="eVS-hI-XLG"/>
                     </layoutGuides>
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="kQ5-iD-2pc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dxW-RS-sep">
-                                <rect key="frame" x="16" y="53.5" width="288" height="464.5"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="280" placeholder="YES" id="nge-GW-ihm"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="8" width="288" height="439"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">Said the night wind to the little lamb  do you see what I see  Way up in the sky little lamb  do you see what I see  A star a star dancing in the night  With a tail as big as a kite (x2)
+                                        <mutableString key="content">Said the night wind to the little lamb  do you see what I see  Way up in the sky little lamb  do you see what I see  A star a star dancing in the night  With a tail as big as a kite (x2)
  Said the little lamb to the shepherd boy  do you hear what I hear  Ringing through the sky shepherd boy  do you hear what I hear  A song a song high above the trees  With a voice as big as the sea (x2)
  Said the shepherd boy to the mighty king  do you know what I know  In your palace warm mighty king  do you know what I know  A Child a Child shivers in the cold
  Let us bring Him silver and gold (x2)  Said the king to the people everywhere  listen to what I say  Pray for peace people everywhere  listen to what I say  The Child the Child sleeping in the night  He will bring us goodness and light (x2)
-</string>
+</mutableString>
                                         <attributes>
-                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                                            <color key="NSColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="20" name="HelveticaNeue"/>
+                                            <color key="NSBackgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="24" name="BrandonGrotesque-Regular"/>
                                             <real key="NSKern" value="0.0"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" minimumLineHeight="18" tighteningFactorForTruncation="0.0">
                                                 <tabStops/>
@@ -62,57 +56,34 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="PF0-h7-ih7">
-                                <rect key="frame" x="5" y="26" width="310" height="27.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="23"/>
-                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdS-lV-oeK">
-                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
-                                <color key="backgroundColor" red="0.46666666666666667" green="0.59999999999999998" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Mun-EW-ZXF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="BigJohn" family="Big John" pointSize="22"/>
-                                <state key="normal" title="BACK to Song List">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="songListBtnPressed:" destination="nQb-j5-nok" eventType="touchUpInside" id="XN6-qA-CKM"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="dxW-RS-sep" firstAttribute="top" secondItem="PF0-h7-ih7" secondAttribute="bottom" id="0WJ-oX-6fm"/>
-                            <constraint firstItem="PF0-h7-ih7" firstAttribute="leading" secondItem="kQ5-iD-2pc" secondAttribute="leading" constant="5" id="1K7-4W-mX1"/>
-                            <constraint firstItem="fdS-lV-oeK" firstAttribute="top" secondItem="dxW-RS-sep" secondAttribute="bottom" id="1vA-d9-d11"/>
-                            <constraint firstItem="fdS-lV-oeK" firstAttribute="leading" secondItem="kQ5-iD-2pc" secondAttribute="leading" id="9kR-Hz-bAf"/>
-                            <constraint firstAttribute="trailing" secondItem="PF0-h7-ih7" secondAttribute="trailing" constant="5" id="FS1-5y-uNf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dxW-RS-sep" secondAttribute="trailing" id="OYe-de-fsW"/>
-                            <constraint firstItem="PF0-h7-ih7" firstAttribute="top" secondItem="200-WV-s29" secondAttribute="bottom" constant="6" id="PUw-kY-S4v"/>
-                            <constraint firstItem="eVS-hI-XLG" firstAttribute="top" secondItem="fdS-lV-oeK" secondAttribute="bottom" id="SfT-9b-Vem"/>
-                            <constraint firstAttribute="trailing" secondItem="fdS-lV-oeK" secondAttribute="trailing" id="UxC-6p-G6N"/>
+                            <constraint firstItem="eVS-hI-XLG" firstAttribute="top" secondItem="dxW-RS-sep" secondAttribute="bottom" constant="8" symbolic="YES" id="Ppb-1Z-uxd"/>
+                            <constraint firstItem="dxW-RS-sep" firstAttribute="top" secondItem="200-WV-s29" secondAttribute="bottom" constant="8" symbolic="YES" id="QOZ-AM-5pj"/>
                             <constraint firstAttribute="leadingMargin" secondItem="dxW-RS-sep" secondAttribute="leading" id="tUj-1l-3yH"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="SONG LYRICS" id="MuV-YH-BJr">
+                        <barButtonItem key="leftBarButtonItem" image="backArrowCreamColor" id="cdP-XU-ho2">
+                            <color key="tintColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="songListBtn" destination="fdS-lV-oeK" id="xGF-WO-x6S"/>
-                        <outlet property="songTitle" destination="PF0-h7-ih7" id="AoB-2O-mEt"/>
                         <outlet property="txtView" destination="dxW-RS-sep" id="nA8-rr-RX4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwG-WW-Y6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2094" y="-893"/>
+            <point key="canvasLocation" x="2199" y="-843"/>
         </scene>
-        <!--Playlists-->
+        <!--PLAYLISTS-->
         <scene sceneID="lqf-yv-lMy">
             <objects>
                 <tableViewController id="kzh-K3-y7s" customClass="PlaylistVCF" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="139" sectionHeaderHeight="28" sectionFooterHeight="28" id="lg0-cV-fin">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -123,10 +94,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DO YOU HEAR WHAT I HEAR" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="VRm-WY-HxD">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEST SONGS" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="VRm-WY-HxD">
                                             <rect key="frame" x="28" y="16" width="264" height="64"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -147,9 +117,9 @@
                             <outlet property="delegate" destination="kzh-K3-y7s" id="KCc-9P-kw5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Playlists" id="ftl-9M-WQG">
+                    <navigationItem key="navigationItem" title="PLAYLISTS" id="ftl-9M-WQG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FbY-bx-7FH">
-                            <color key="tintColor" red="0.53758639100000005" green="0.65890771150000005" blue="0.49905574320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="createPlaylist:" destination="kzh-K3-y7s" id="EuC-4t-79D"/>
                                 <segue destination="gv7-Nd-rSt" kind="show" identifier="CreatePlaylist" id="UTV-V0-aRm"/>
@@ -168,8 +138,8 @@
         <scene sceneID="Pb8-h0-AOE">
             <objects>
                 <tableViewController id="gv7-Nd-rSt" customClass="CreatePlaylistVCF" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="111" sectionHeaderHeight="28" sectionFooterHeight="28" id="REE-ZK-ViJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="111" sectionHeaderHeight="28" sectionFooterHeight="28" id="REE-ZK-ViJ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textField key="tableHeaderView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Find A Song" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="gB6-U8-1H3">
@@ -184,13 +154,12 @@
                                 <rect key="frame" x="0.0" y="58" width="320" height="111"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t8E-Wq-orO" id="3vP-zv-AkF">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="110.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DO YOU HEAR WHAT I HEAR" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Zdl-Oq-75r">
                                             <rect key="frame" x="46" y="23" width="230.5" height="64"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-empty" translatesAutoresizingMaskIntoConstraints="NO" id="v6e-ca-rSo">
@@ -234,13 +203,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="QFW-0G-6wt">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="97D-Wd-vCQ">
-                            <color key="tintColor" red="0.77416175600000003" green="0.39654183389999997" blue="0.37878888849999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cancelBtnTapped:" destination="gv7-Nd-rSt" id="XTK-hG-gPe"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="fNF-o9-eWJ">
-                            <color key="tintColor" red="0.53758639100000005" green="0.65890771150000005" blue="0.49905574320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.99215686274509807" green="0.9882352941176471" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="saveBtnTapped:" destination="gv7-Nd-rSt" id="a2l-QU-qb6"/>
                             </connections>
@@ -252,14 +221,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xo1-zu-a7S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3118" y="-894"/>
+            <point key="canvasLocation" x="4011" y="-844"/>
         </scene>
         <!--Title-->
         <scene sceneID="Ou3-VI-lg2">
             <objects>
                 <tableViewController id="Md4-rR-b8t" customClass="ShowPlaylistVC" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="93" sectionHeaderHeight="28" sectionFooterHeight="28" id="TNr-jY-WOA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textField key="tableHeaderView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Find A Song" textAlignment="center" minimumFontSize="17" clearButtonMode="always" id="INv-Hp-L2B">
@@ -286,7 +255,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DO YOU HEAR WHAT I HEAR" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Uef-tT-W8O">
                                                     <rect key="frame" x="45" y="8" width="255" height="64.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-empty" translatesAutoresizingMaskIntoConstraints="NO" id="L4B-0r-iSf">
@@ -344,16 +312,17 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LTJ-io-3ul" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4113.75" y="48.591549295774648"/>
+            <point key="canvasLocation" x="4011" y="-83"/>
         </scene>
         <!--Playlists-->
         <scene sceneID="eOI-9d-U6d">
             <objects>
                 <navigationController id="1t2-hq-4zg" customClass="NavigationController" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Playlists" image="playlist-icon" id="P1N-qG-Umk"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aDa-8k-xGI" customClass="NavBarDetails" customModule="Caroling_Companion" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="aDa-8k-xGI" customClass="NavBarDetails" customModule="Caroling_Companion" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="kzh-K3-y7s" kind="relationship" relationship="rootViewController" id="3Ew-z6-uUp"/>
@@ -363,7 +332,7 @@
             </objects>
             <point key="canvasLocation" x="2145" y="-83.450704225352112"/>
         </scene>
-        <!--AboutVC-->
+        <!--CAROLING COMPANION-->
         <scene sceneID="vVP-jl-1aS">
             <objects>
                 <viewController id="tbR-of-5iZ" customClass="AboutVC" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
@@ -372,17 +341,17 @@
                         <viewControllerLayoutGuide type="bottom" id="oWl-rF-QWX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Nl-Yj-h30">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJh-e4-zLO">
-                                <rect key="frame" x="130" y="86" width="60" height="35"/>
+                                <rect key="frame" x="130.5" y="22" width="59.5" height="34.5"/>
                                 <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEU-NA-YCB">
-                                <rect key="frame" x="36" y="127" width="248" height="135"/>
+                                <rect key="frame" x="36" y="62.5" width="248" height="135"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="135" id="KcU-na-GZA"/>
                                 </constraints>
@@ -396,7 +365,7 @@ Thanks to Jesus.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Any feedback or questions,  please email: feedback@carolingcompanion.com." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOO-m4-Wcq">
-                                <rect key="frame" x="36" y="320" width="248" height="85"/>
+                                <rect key="frame" x="36" y="255" width="248" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="Ord-GR-w8A"/>
                                 </constraints>
@@ -405,7 +374,7 @@ Thanks to Jesus.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21G-hp-e1Q">
-                                <rect key="frame" x="115" y="279" width="91" height="35"/>
+                                <rect key="frame" x="115.5" y="214.5" width="90.5" height="34.5"/>
                                 <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -425,6 +394,17 @@ Thanks to Jesus.</string>
                             <constraint firstItem="NEU-NA-YCB" firstAttribute="top" secondItem="JJh-e4-zLO" secondAttribute="bottom" constant="6" id="yOG-Wu-AJF"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="CAROLING COMPANION" id="vLd-Pa-22N">
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="erV-5Y-riH">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DVi-YI-BdN">
+                                <rect key="frame" x="16" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="backArrowCreamColor"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Of9-8X-SWf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -439,14 +419,14 @@ Thanks to Jesus.</string>
                         <viewControllerLayoutGuide type="bottom" id="DNX-fy-IOK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ea3-dq-sct">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Snowmen" translatesAutoresizingMaskIntoConstraints="NO" id="G3G-2X-hef">
-                                <rect key="frame" x="46" y="155" width="228" height="225.5"/>
+                                <rect key="frame" x="46" y="135" width="228" height="132.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMv-8Q-Y8A" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                <rect key="frame" x="38" y="410.5" width="244" height="52.5"/>
+                                <rect key="frame" x="38" y="297.5" width="244" height="52.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jMv-8Q-Y8A" secondAttribute="height" multiplier="299:64" id="J0m-21-jgI"/>
                                 </constraints>
@@ -467,7 +447,7 @@ Thanks to Jesus.</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z5u-Hy-fbI">
-                                <rect key="frame" x="66.5" y="533" width="187" height="20"/>
+                                <rect key="frame" x="66.5" y="420" width="187" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Hhw-Ja-gCQ"/>
                                     <constraint firstAttribute="width" constant="187" id="f1o-e3-tB4"/>
@@ -489,7 +469,7 @@ Thanks to Jesus.</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyi-nR-eFh" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                <rect key="frame" x="38" y="471" width="244" height="52"/>
+                                <rect key="frame" x="38" y="358" width="244" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Dyi-nR-eFh" secondAttribute="height" multiplier="299:64" id="ora-nX-T6j"/>
                                 </constraints>
@@ -507,7 +487,7 @@ Thanks to Jesus.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xiG-PX-nM0">
-                                <rect key="frame" x="40" y="50" width="240" height="98"/>
+                                <rect key="frame" x="40" y="30" width="240" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="98" id="mBx-w4-2sG"/>
                                 </constraints>
@@ -561,84 +541,84 @@ Thanks to Jesus.</string>
                         <viewControllerLayoutGuide type="bottom" id="ZoT-5m-Ien"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nDZ-yi-dj5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nZR-Vk-8D2">
-                                <rect key="frame" x="16" y="40" width="268" height="508"/>
+                                <rect key="frame" x="16" y="20" width="268" height="415"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkD-NS-Ugb">
-                                        <rect key="frame" x="120" y="0.0" width="28.5" height="20.5"/>
+                                        <rect key="frame" x="120" y="0.0" width="28.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUc-j9-PWM">
-                                        <rect key="frame" x="111.5" y="20.5" width="45" height="20.5"/>
+                                        <rect key="frame" x="111.5" y="17" width="45" height="16.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZP5-ub-MCB">
-                                        <rect key="frame" x="113" y="41" width="42" height="20.5"/>
+                                        <rect key="frame" x="113" y="33.5" width="42" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Zg-aQ-3as">
-                                        <rect key="frame" x="113" y="61.5" width="42" height="20.5"/>
+                                        <rect key="frame" x="113" y="50.5" width="42" height="16.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsx-8I-bjO">
-                                        <rect key="frame" x="117" y="82" width="34" height="30"/>
+                                        <rect key="frame" x="117" y="67" width="34" height="24.5"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
                                             <segue destination="l9E-Ne-nnU" kind="show" id="t0a-rO-D7U"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buB-L9-7qw">
-                                        <rect key="frame" x="112.5" y="112" width="43" height="30"/>
+                                        <rect key="frame" x="112.5" y="91.5" width="43" height="24.5"/>
                                         <state key="normal" title="Unlink"/>
                                         <connections>
                                             <action selector="unlinkBtnTapped:" destination="CaK-rT-Cyp" eventType="touchUpInside" id="Vso-Dw-nnQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jx-oI-PWb">
-                                        <rect key="frame" x="110" y="142" width="48" height="30"/>
+                                        <rect key="frame" x="110" y="116" width="48" height="24.5"/>
                                         <state key="normal" title="Logout"/>
                                         <connections>
                                             <action selector="logoutTapped:" destination="CaK-rT-Cyp" eventType="touchUpInside" id="Zbj-7h-7oW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Scb-sF-KDY">
-                                        <rect key="frame" x="93.5" y="172" width="81" height="30"/>
+                                        <rect key="frame" x="93.5" y="140.5" width="81" height="24.5"/>
                                         <state key="normal" title="Delete User"/>
                                         <connections>
                                             <action selector="deleteUser:" destination="CaK-rT-Cyp" eventType="touchUpInside" id="HoR-rb-3D9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92E-9V-ajM">
-                                        <rect key="frame" x="68.5" y="202" width="131" height="30"/>
+                                        <rect key="frame" x="68.5" y="165" width="131" height="24.5"/>
                                         <state key="normal" title="Disconnect Google"/>
                                         <connections>
                                             <action selector="diconnectGoogleTapped:" destination="CaK-rT-Cyp" eventType="touchUpInside" id="HON-wf-gF9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30m-70-feC">
-                                        <rect key="frame" x="77.5" y="232" width="113" height="30.5"/>
+                                        <rect key="frame" x="77.5" y="189.5" width="113" height="24.5"/>
                                         <state key="normal" title="Sign Out Google"/>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4t-vu-JNf" customClass="GIDSignInButton">
-                                        <rect key="frame" x="90" y="262.5" width="88" height="65"/>
+                                        <rect key="frame" x="90" y="214" width="88" height="53.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="87.5" id="bwy-5K-MT0"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYp-Kc-EWU" customClass="FBSDKLoginButton">
-                                        <rect key="frame" x="81.5" y="327.5" width="105" height="180.5"/>
+                                        <rect key="frame" x="81.5" y="267.5" width="105" height="147.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="105.5" id="M4r-yF-RWm"/>
@@ -666,7 +646,7 @@ Thanks to Jesus.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mc-WK-HTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-84" y="-206"/>
+            <point key="canvasLocation" x="-458" y="-134"/>
         </scene>
         <!--PROFILE-->
         <scene sceneID="q0U-w3-CNH">
@@ -677,11 +657,11 @@ Thanks to Jesus.</string>
                         <viewControllerLayoutGuide type="bottom" id="pc3-iP-zad"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Axt-Gm-Fkg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_btn" translatesAutoresizingMaskIntoConstraints="NO" id="b6G-Cy-5bv" customClass="CircleView" customModule="Caroling_Companion" customModuleProvider="target">
-                                <rect key="frame" x="96.5" y="94" width="127" height="127"/>
+                                <rect key="frame" x="96.5" y="30" width="127" height="127"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="b6G-Cy-5bv" secondAttribute="height" multiplier="1:1" id="ORW-Ec-GwL"/>
                                     <constraint firstAttribute="width" constant="127" id="k1y-30-G8F"/>
@@ -689,16 +669,16 @@ Thanks to Jesus.</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theodore Duggleby-Chen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ctJ-ao-zRq">
-                                <rect key="frame" x="36" y="241" width="248" height="34.5"/>
+                                <rect key="frame" x="36" y="177" width="248" height="34.5"/>
                                 <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zt8-Tx-kEY">
-                                <rect key="frame" x="120.5" y="437" width="79" height="49"/>
+                                <rect key="frame" x="115" y="366" width="90" height="49"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="U8Y-t6-RxD">
-                                        <rect key="frame" x="10" y="0.0" width="59" height="22"/>
+                                        <rect key="frame" x="15.5" y="0.0" width="59" height="22"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ch-Lu-2LK">
                                                 <rect key="frame" x="0.0" y="0.0" width="59" height="20"/>
@@ -726,10 +706,10 @@ Thanks to Jesus.</string>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yXK-hC-9Vh">
-                                        <rect key="frame" x="0.0" y="27" width="79" height="22"/>
+                                        <rect key="frame" x="0.0" y="27" width="90" height="22"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSP-cB-QyG">
-                                                <rect key="frame" x="0.0" y="0.0" width="79" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="a4v-go-Cqr"/>
                                                 </constraints>
@@ -742,7 +722,7 @@ Thanks to Jesus.</string>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xoY-Kx-cjd">
-                                                <rect key="frame" x="0.0" y="20" width="79" height="2"/>
+                                                <rect key="frame" x="0.0" y="20" width="90" height="2"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="gRJ-vF-dAn"/>
@@ -756,7 +736,7 @@ Thanks to Jesus.</string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="3Bp-x2-cq2">
-                                <rect key="frame" x="36" y="356" width="248" height="54"/>
+                                <rect key="frame" x="36" y="272" width="248" height="54"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jd3-eG-xB1">
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="54"/>
@@ -810,17 +790,27 @@ Thanks to Jesus.</string>
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oea-Rh-4rk">
+                                <rect key="frame" x="113" y="219" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Secret Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="CaK-rT-Cyp" kind="show" id="pOW-Kz-ZcM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="3ch-Lu-2LK" firstAttribute="top" secondItem="3Bp-x2-cq2" secondAttribute="bottom" constant="27" id="74m-yr-oON"/>
+                            <constraint firstItem="3ch-Lu-2LK" firstAttribute="top" secondItem="3Bp-x2-cq2" secondAttribute="bottom" constant="40" id="74m-yr-oON"/>
                             <constraint firstItem="ctJ-ao-zRq" firstAttribute="leading" secondItem="Axt-Gm-Fkg" secondAttribute="leadingMargin" constant="20" id="Dmt-q1-vmB"/>
                             <constraint firstItem="zt8-Tx-kEY" firstAttribute="centerX" secondItem="Axt-Gm-Fkg" secondAttribute="centerX" id="KMX-9V-ZTm"/>
                             <constraint firstItem="b6G-Cy-5bv" firstAttribute="centerX" secondItem="Axt-Gm-Fkg" secondAttribute="centerX" id="Kyl-dg-jGR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ctJ-ao-zRq" secondAttribute="trailing" constant="20" id="Md3-Zd-WcE"/>
                             <constraint firstItem="b6G-Cy-5bv" firstAttribute="top" secondItem="pDb-Hf-9BR" secondAttribute="bottom" constant="30" id="QCB-1G-egm"/>
                             <constraint firstItem="ctJ-ao-zRq" firstAttribute="top" secondItem="b6G-Cy-5bv" secondAttribute="bottom" constant="20" id="Z4G-XT-H55"/>
-                            <constraint firstItem="pc3-iP-zad" firstAttribute="top" secondItem="zt8-Tx-kEY" secondAttribute="bottom" constant="33" id="luu-QN-jOz"/>
+                            <constraint firstItem="pc3-iP-zad" firstAttribute="top" secondItem="zt8-Tx-kEY" secondAttribute="bottom" constant="40" id="luu-QN-jOz"/>
                             <constraint firstItem="3Bp-x2-cq2" firstAttribute="leading" secondItem="Axt-Gm-Fkg" secondAttribute="leadingMargin" constant="20" id="sx3-qu-mbt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3Bp-x2-cq2" secondAttribute="trailing" constant="20" id="uxH-R8-rpM"/>
                         </constraints>
@@ -838,7 +828,7 @@ Thanks to Jesus.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fj6-sY-Anc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1269" y="-5"/>
+            <point key="canvasLocation" x="-1256" y="-83"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="aga-SO-Wmt">
@@ -849,7 +839,7 @@ Thanks to Jesus.</string>
                         <viewControllerLayoutGuide type="bottom" id="fep-uO-9tL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uUr-Bn-h5I">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zJx-lR-NzC" customClass="FancyView" customModule="Caroling_Companion">
@@ -876,7 +866,7 @@ Thanks to Jesus.</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mGF-VA-gic" customClass="FancyView" customModule="Caroling_Companion" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="493" width="320" height="75"/>
+                                <rect key="frame" x="0.0" y="380" width="320" height="75"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0s-zD-fWx">
                                         <rect key="frame" x="8" y="8" width="304" height="59"/>
@@ -1037,12 +1027,12 @@ Thanks to Jesus.</string>
             </objects>
             <point key="canvasLocation" x="1148" y="-892"/>
         </scene>
-        <!--Pick A Song!-->
+        <!--SONG LIST-->
         <scene sceneID="ao7-4G-gTr">
             <objects>
                 <tableViewController id="Eb1-Hl-ufH" customClass="SongListTabTVC" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="93" sectionHeaderHeight="28" sectionFooterHeight="28" id="RSZ-Rb-7Bo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="93" sectionHeaderHeight="28" sectionFooterHeight="28" id="RSZ-Rb-7Bo">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textField key="tableHeaderView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Find A Song" textAlignment="center" minimumFontSize="17" clearButtonMode="always" id="oT5-CT-Qqn">
@@ -1060,7 +1050,7 @@ Thanks to Jesus.</string>
                                 <rect key="frame" x="0.0" y="58" width="320" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6nR-HX-xYX" id="6bV-KP-Ifw">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="97"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="96.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNp-SH-tq7">
@@ -1069,7 +1059,6 @@ Thanks to Jesus.</string>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DO YOU HEAR WHAT I HEAR" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTt-Nt-Hpw">
                                                     <rect key="frame" x="45" y="8" width="255" height="65"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-empty" translatesAutoresizingMaskIntoConstraints="NO" id="vbK-RH-n8e">
@@ -1110,11 +1099,11 @@ Thanks to Jesus.</string>
                             <outlet property="delegate" destination="Eb1-Hl-ufH" id="Qnb-L3-QVO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Pick A Song!" id="tfY-hq-pQT"/>
+                    <navigationItem key="navigationItem" title="SONG LIST" id="tfY-hq-pQT"/>
                     <connections>
                         <outlet property="textField" destination="oT5-CT-Qqn" id="12C-XS-doo"/>
                         <segue destination="QW0-YM-oci" kind="presentation" identifier="LoginVC" id="HH8-AG-ENV"/>
-                        <segue destination="nQb-j5-nok" kind="presentation" identifier="detailSegue" id="EV3-wj-5fI"/>
+                        <segue destination="nQb-j5-nok" kind="show" identifier="detailSegue" id="EV3-wj-5fI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Mx-TI-3oB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1127,9 +1116,10 @@ Thanks to Jesus.</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wh6-6x-aNL" customClass="NavigationController" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Songs" image="musicNote" id="HY2-Hl-FU4"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0VZ-Wu-THR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="0VZ-Wu-THR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1149,11 +1139,11 @@ Thanks to Jesus.</string>
                         <viewControllerLayoutGuide type="bottom" id="qEo-l6-BvH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nTk-8O-oEU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kRC-We-keg">
-                                <rect key="frame" x="38" y="211" width="244" height="233.5"/>
+                                <rect key="frame" x="38" y="191" width="244" height="233.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgk-EU-jDe" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="244" height="51"/>
@@ -1224,7 +1214,7 @@ Thanks to Jesus.</string>
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Kax-HY-jLr">
-                                <rect key="frame" x="40" y="50" width="240" height="98"/>
+                                <rect key="frame" x="40" y="30" width="240" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="98" id="jKB-jh-w6c"/>
                                 </constraints>
@@ -1240,7 +1230,7 @@ Thanks to Jesus.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAx-Rk-bPw">
-                                <rect key="frame" x="21" y="20" width="22" height="22"/>
+                                <rect key="frame" x="21" y="0.0" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="PyU-zL-kZw"/>
                                     <constraint firstAttribute="height" constant="22" id="o3u-I4-1CH"/>
@@ -1251,7 +1241,7 @@ Thanks to Jesus.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Log In Method" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54F-vZ-gVo">
-                                <rect key="frame" x="92.5" y="168" width="135" height="23"/>
+                                <rect key="frame" x="92.5" y="148" width="135" height="23"/>
                                 <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1291,11 +1281,11 @@ Thanks to Jesus.</string>
                         <viewControllerLayoutGuide type="bottom" id="ORX-aV-SRy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Sv1-Kf-LpD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Et-2C-G5l" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                <rect key="frame" x="38" y="292" width="244" height="52"/>
+                                <rect key="frame" x="38" y="179" width="244" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9Et-2C-G5l" secondAttribute="height" multiplier="299:64" id="Mql-xX-gDI"/>
                                 </constraints>
@@ -1316,7 +1306,7 @@ Thanks to Jesus.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="azK-aw-yHf">
-                                <rect key="frame" x="40" y="50" width="240" height="98"/>
+                                <rect key="frame" x="40" y="30" width="240" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="98" id="dlB-oi-SgN"/>
                                 </constraints>
@@ -1332,7 +1322,7 @@ Thanks to Jesus.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2Po-xX-bc8">
-                                <rect key="frame" x="38" y="170" width="244" height="65"/>
+                                <rect key="frame" x="38" y="80" width="244" height="65"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oyq-fl-Zfv">
                                         <rect key="frame" x="0.0" y="0.0" width="244" height="27"/>
@@ -1382,7 +1372,7 @@ Thanks to Jesus.</string>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZv-ba-34T">
-                                <rect key="frame" x="21" y="20" width="22" height="22"/>
+                                <rect key="frame" x="21" y="0.0" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="9ec-os-5xo"/>
                                     <constraint firstAttribute="width" constant="22" id="qgx-ty-OSF"/>
@@ -1393,7 +1383,7 @@ Thanks to Jesus.</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ACS-du-BH4">
-                                <rect key="frame" x="66.5" y="243" width="187" height="18"/>
+                                <rect key="frame" x="66.5" y="153" width="187" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="cb7-yl-vXl"/>
                                     <constraint firstAttribute="width" constant="187" id="izr-oL-UJW"/>
@@ -1456,11 +1446,11 @@ Thanks to Jesus.</string>
                         <viewControllerLayoutGuide type="bottom" id="qvy-PH-GSf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="esX-TP-KAq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNw-pg-LdP" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                <rect key="frame" x="38" y="292" width="244" height="52"/>
+                                <rect key="frame" x="38" y="179" width="244" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DNw-pg-LdP" secondAttribute="height" multiplier="299:64" id="e8C-6O-okm"/>
                                 </constraints>
@@ -1478,7 +1468,7 @@ Thanks to Jesus.</string>
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5xG-cA-itD">
-                                <rect key="frame" x="40" y="50" width="240" height="98"/>
+                                <rect key="frame" x="40" y="30" width="240" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="98" id="nZJ-0N-B0E"/>
                                 </constraints>
@@ -1494,7 +1484,7 @@ Thanks to Jesus.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zM0-9t-Fgt">
-                                <rect key="frame" x="38" y="170" width="244" height="25"/>
+                                <rect key="frame" x="38" y="150" width="244" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="CMT-c5-S9Z"/>
                                 </constraints>
@@ -1503,14 +1493,14 @@ Thanks to Jesus.</string>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2lo-yQ-JwZ">
-                                <rect key="frame" x="38" y="203" width="244" height="2"/>
+                                <rect key="frame" x="38" y="183" width="244" height="2"/>
                                 <color key="backgroundColor" red="0.46666666670000001" green="0.59999999999999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="10Y-C7-BdW"/>
                                 </constraints>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Activation Code" textAlignment="natural" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RJJ-1h-qF0">
-                                <rect key="frame" x="38" y="225" width="244" height="25"/>
+                                <rect key="frame" x="38" y="205" width="244" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="rBE-rE-gYW"/>
                                 </constraints>
@@ -1519,14 +1509,14 @@ Thanks to Jesus.</string>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPd-8w-7Ll">
-                                <rect key="frame" x="38" y="258" width="244" height="2"/>
+                                <rect key="frame" x="38" y="238" width="244" height="2"/>
                                 <color key="backgroundColor" red="0.46666666670000001" green="0.59999999999999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="Ec5-K7-gTw"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgY-Oq-K4A">
-                                <rect key="frame" x="21" y="20" width="22" height="22"/>
+                                <rect key="frame" x="21" y="0.0" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="5iA-xd-hhV"/>
                                     <constraint firstAttribute="height" constant="22" id="RXH-iL-tKs"/>
@@ -1578,11 +1568,11 @@ Thanks to Jesus.</string>
                         <viewControllerLayoutGuide type="bottom" id="XgH-oI-ehI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CoD-Du-bJI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdH-ry-agz" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                <rect key="frame" x="38" y="292" width="244" height="52"/>
+                                <rect key="frame" x="38" y="219" width="56" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DdH-ry-agz" secondAttribute="height" multiplier="299:64" id="XRK-Je-qnj"/>
                                 </constraints>
@@ -1603,7 +1593,7 @@ Thanks to Jesus.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6V3-01-9OU">
-                                <rect key="frame" x="40" y="50" width="240" height="98"/>
+                                <rect key="frame" x="40" y="30" width="240" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="98" id="RR8-xd-tIV"/>
                                 </constraints>
@@ -1619,7 +1609,7 @@ Thanks to Jesus.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zeh-Jc-7FJ">
-                                <rect key="frame" x="21" y="20" width="22" height="22"/>
+                                <rect key="frame" x="21" y="0.0" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="d8Y-yu-dIQ"/>
                                     <constraint firstAttribute="height" constant="22" id="jjR-0R-0vb"/>
@@ -1630,10 +1620,10 @@ Thanks to Jesus.</string>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dSt-tv-nNM">
-                                <rect key="frame" x="38" y="221" width="244" height="27"/>
+                                <rect key="frame" x="38" y="201" width="244" height="2"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="natural" minimumFontSize="13" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="McK-in-KDR">
-                                        <rect key="frame" x="0.0" y="0.0" width="244" height="25"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="244" height="0.0"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="Vn2-uk-yEe"/>
                                         </constraints>
@@ -1642,7 +1632,7 @@ Thanks to Jesus.</string>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpX-fJ-dLo">
-                                        <rect key="frame" x="0.0" y="25" width="244" height="2"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="244" height="2"/>
                                         <color key="backgroundColor" red="0.46666666670000001" green="0.59999999999999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="oMa-B6-R5g"/>
@@ -1651,7 +1641,7 @@ Thanks to Jesus.</string>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your email address and we’ll send you an email to reset your password." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gzf-MK-Dqv">
-                                <rect key="frame" x="60" y="129" width="200" height="80"/>
+                                <rect key="frame" x="60" y="109" width="200" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="4wr-yp-t8M"/>
                                     <constraint firstAttribute="height" constant="80" id="bEp-aS-Eqa"/>
@@ -1661,16 +1651,16 @@ Thanks to Jesus.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="use-ZT-lwO">
-                                <rect key="frame" x="65" y="256" width="190" height="18"/>
+                                <rect key="frame" x="65.5" y="211" width="190" height="0.0"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6uW-2a-vNh">
-                                        <rect key="frame" x="0.0" y="0.0" width="127" height="18"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="127" height="0.0"/>
                                         <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NEa-hy-5ce">
-                                        <rect key="frame" x="135" y="0.0" width="55" height="18"/>
+                                        <rect key="frame" x="135" y="0.0" width="55" height="0.0"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="3D5-JU-lfU"/>
                                         </constraints>
@@ -1728,12 +1718,13 @@ Thanks to Jesus.</string>
         <!--Profile-->
         <scene sceneID="DRD-uc-eWu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c3w-Rn-U2o" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c3w-Rn-U2o" customClass="NavigationController" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="profile_btn" id="ebI-L5-1jD"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nHF-mP-YlB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="nHF-mP-YlB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1741,6 +1732,7 @@ Thanks to Jesus.</string>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0aA-09-GqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationItem title="PROFILE" id="597-HL-Mhs"/>
             </objects>
             <point key="canvasLocation" x="-1269" y="-761"/>
         </scene>
@@ -1749,6 +1741,7 @@ Thanks to Jesus.</string>
         <image name="HeaderIconSinging" width="4000" height="768"/>
         <image name="Snowmen" width="225" height="279"/>
         <image name="backArrow" width="18" height="20"/>
+        <image name="backArrowCreamColor" width="18" height="20"/>
         <image name="f" width="352" height="328"/>
         <image name="g-2" width="2000" height="2000"/>
         <image name="musicNote" width="24" height="29"/>
@@ -1758,11 +1751,11 @@ Thanks to Jesus.</string>
         <image name="star-empty" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hrw-hQ-4Gi"/>
-        <segue reference="z3A-xM-QVg"/>
         <segue reference="lec-MS-iCn"/>
+        <segue reference="xmI-6n-3S4"/>
         <segue reference="vdM-GR-27e"/>
         <segue reference="UTV-V0-aRm"/>
+        <segue reference="EV3-wj-5fI"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.53758639100000005" green="0.65890771150000005" blue="0.49905574320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

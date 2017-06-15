@@ -19,7 +19,7 @@ class ProfileTabVC: UIViewController {
     @IBOutlet weak var passwordLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.backBarButtonItem?.title = ""
         // Do any additional setup after loading the view.
     }
     

@@ -18,7 +18,8 @@ class CreatePlaylistVCF: SongListTVC {
     override func viewDidLoad() {
         if playlistF != nil {
             let playlist = playlistF!.value as! [String:Any]
-            navigationItem.title = playlist[DBPlaylistString.title] as? String ?? ""
+            let navTitle = playlist[DBPlaylistString.title] as? String ?? ""
+            navigationItem.title = navTitle.uppercased()
         } else {
             createPlaylist()
         }

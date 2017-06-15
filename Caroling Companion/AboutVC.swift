@@ -8,10 +8,11 @@
 
 import UIKit
 
-class AboutVC: UIViewController {
+class AboutVC: SwipeRightToDismissVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backBarButtonItem?.title = ""
     }
 
 }

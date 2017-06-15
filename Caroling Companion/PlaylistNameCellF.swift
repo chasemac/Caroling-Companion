@@ -28,15 +28,7 @@ class PlaylistNameCellF: UITableViewCell {
     
         playlistNameLabel.text = playlistName as? String
         
-        if indexPath.row % 3 == 0 {
-            self.backgroundColor = softGreen
-        } else if
-            indexPath.row % 2 == 0 {
-            self.backgroundColor = darkRed
-        }
-        else {
-            self.backgroundColor = softRed
-        }
+        self.backgroundColor = christmasWhite
     }
     
 }

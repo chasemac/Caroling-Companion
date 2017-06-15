@@ -37,15 +37,7 @@ class SongCellF: UITableViewCell {
         
         songNameLabel.text = name as? String
         
-        if indexPath.row % 3 == 0 {
-            self.backgroundColor = softGreen
-        } else if
-            indexPath.row % 2 == 0 {
-            self.backgroundColor = darkRed
-        }
-        else {
-            self.backgroundColor = softRed
-        }
+        self.backgroundColor = christmasWhite
          setFavorite(key: key)
     }
   

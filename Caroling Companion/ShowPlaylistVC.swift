@@ -22,7 +22,8 @@ class ShowPlaylistVC: SongListTVC {
         print("the first one!! ----->>>> \(playlistF)")
         super.viewDidLoad()
         let playlist = playlistF.value as! [String:Any]
-        navigationItem.title = playlist[DBPlaylistString.title] as? String ?? "No Title"
+        let navTitle =  playlist[DBPlaylistString.title] as? String ?? "No Title"
+        navigationItem.title = navTitle.uppercased()
     }
 
     override func configureDatabase() {

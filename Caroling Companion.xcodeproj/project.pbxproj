@@ -10,6 +10,8 @@
 		0E0707D21EE8F0D10033C185 /* OutlineBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0707D11EE8F0D10033C185 /* OutlineBtn.swift */; };
 		0E1AA5221EF1DA0E00EB3B65 /* ProfileTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AA5211EF1DA0E00EB3B65 /* ProfileTabVC.swift */; };
 		0E1AA5241EF1DD6000EB3B65 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AA5231EF1DD6000EB3B65 /* AboutVC.swift */; };
+		0E1AA5261EF2197800EB3B65 /* SlideAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AA5251EF2197800EB3B65 /* SlideAnimationTransition.swift */; };
+		0E1AA5281EF219C200EB3B65 /* SwipeRightToDismissVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AA5271EF219C200EB3B65 /* SwipeRightToDismissVC.swift */; };
 		0E2EF2E31C274DD200762053 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E21C274DD200762053 /* AppDelegate.swift */; };
 		0E2EF2E81C274DD200762053 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E61C274DD200762053 /* Main.storyboard */; };
 		0E2EF2EA1C274DD200762053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E91C274DD200762053 /* Assets.xcassets */; };
@@ -64,6 +66,8 @@
 		0E0707D11EE8F0D10033C185 /* OutlineBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineBtn.swift; sourceTree = "<group>"; };
 		0E1AA5211EF1DA0E00EB3B65 /* ProfileTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTabVC.swift; sourceTree = "<group>"; };
 		0E1AA5231EF1DD6000EB3B65 /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
+		0E1AA5251EF2197800EB3B65 /* SlideAnimationTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideAnimationTransition.swift; sourceTree = "<group>"; };
+		0E1AA5271EF219C200EB3B65 /* SwipeRightToDismissVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeRightToDismissVC.swift; sourceTree = "<group>"; };
 		0E2EF2DF1C274DD200762053 /* Caroling Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Caroling Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2EF2E21C274DD200762053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E2EF2E71C274DD200762053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -258,6 +262,8 @@
 				0E2EF2EB1C274DD200762053 /* LaunchScreen.storyboard */,
 				0E2EF2EE1C274DD200762053 /* Info.plist */,
 				0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */,
+				0E1AA5251EF2197800EB3B65 /* SlideAnimationTransition.swift */,
+				0E1AA5271EF219C200EB3B65 /* SwipeRightToDismissVC.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -471,10 +477,12 @@
 				0EB8962C1EEB7FEA0050021B /* LoginFlow.swift in Sources */,
 				0EFB8E1F1EE7C33500D5F793 /* ProfileVC.swift in Sources */,
 				0EFB8E161EE7C30800D5F793 /* PlaylistNameCell.swift in Sources */,
+				0E1AA5281EF219C200EB3B65 /* SwipeRightToDismissVC.swift in Sources */,
 				0E8F09901CD29BB600CF771E /* SongCell.swift in Sources */,
 				0EFB8E201EE7C33500D5F793 /* DepricatedSongListVC.swift in Sources */,
 				0E9DD7951EA9682900745317 /* RoundBtn.swift in Sources */,
 				0EFB8E191EE7C30800D5F793 /* SongListTVCF.swift in Sources */,
+				0E1AA5261EF2197800EB3B65 /* SlideAnimationTransition.swift in Sources */,
 				0EFB8E0A1EE7C2FF00D5F793 /* SongListTVC.swift in Sources */,
 				0E9DD7931EA9681900745317 /* FancyView.swift in Sources */,
 				0EFB8E0E1EE7C2FF00D5F793 /* CreatePlaylistVC.swift in Sources */,
