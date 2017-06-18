@@ -47,9 +47,9 @@ class SongCellF: UITableViewCell {
         favoriteRef = DataService.ds.REF_USER_CURRENT.child(DBSongString.favorites).child(key)
         favoriteRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if let _ = snapshot.value as? NSNull {
-                self.starImage.image = UIImage(named: "star-empty")
+                self.starImage.image = UIImage(named: "heartEmpty")
             } else {
-                self.starImage.image = UIImage(named: "star-filled")
+                self.starImage.image = UIImage(named: "heartFilled")
             }
         })
     }

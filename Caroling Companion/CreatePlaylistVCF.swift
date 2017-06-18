@@ -81,7 +81,7 @@ class CreatePlaylistVCF: SongListTVC {
             
             return
         }
-        self.dismiss(animated: true, completion: nil)
+     //   self.dismiss(animated: true, completion: nil)
 //        let playlist = playlistF!.value as! [String:Any]
 //        let playlistTitle = playlist[DBPlaylistString.title] as? String ?? ""
 //        if playlistTitle != "" {

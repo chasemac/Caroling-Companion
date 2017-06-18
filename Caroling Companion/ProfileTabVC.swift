@@ -23,10 +23,34 @@ class ProfileTabVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        checkUserSignedInStatus()
+    }
+    
+    
+    func checkUserSignedInStatus() {
+        if let user = Auth.auth().currentUser {
+            if user.email == nil && user.phoneNumber == nil {
+                print("Anonymous")
+                self.performSegue(withIdentifier: "NeedAccountVC", sender: nil)
+            } else {
+                print("Account Exists")
+                
+            }
+        } else {
+            print("need to create account")
+            self.performSegue(withIdentifier: "NeedAccountVC", sender: nil)
+        }
+    }
+    
     func signOut() {
         let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: UIAlertControllerStyle.alert)
         let destructiveAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive) {
             (result : UIAlertAction) -> Void in
+            //MARK: TODO FIX THIS 
+            self.dismiss(animated: true, completion: nil)
+        //    self.performSegue(withIdentifier: "LandingVC", sender: nil)
             print("Signed Out")
         }
         let okAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
@@ -35,11 +59,16 @@ class ProfileTabVC: UIViewController {
         }
         alertController.addAction(destructiveAction)
         alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true) { 
+//            DispatchQueue.main.sync {
+//                self.performSegue(withIdentifier: "NeedAccountVC", sender: nil)
+//            }
+        }
         
         do {
             try  Auth.auth().signOut()
             print("Logged Out")
+            
         } catch {
             print("failed"  )
         }
