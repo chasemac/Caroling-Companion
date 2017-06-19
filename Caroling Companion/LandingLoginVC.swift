@@ -12,8 +12,6 @@ import FBSDKLoginKit
 
 class LandingLoginVC: UIViewController {
     
-    
-    // Do any additional setup after loading the view.
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         checkUserSignedInStatus()
@@ -71,7 +69,6 @@ class LandingLoginVC: UIViewController {
     }
 
     
-    
     func loginAnonymously() {
         guard Auth.auth().currentUser == nil else {
             print("A current user exists")
@@ -91,10 +88,7 @@ class LandingLoginVC: UIViewController {
                 self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
             }
         }
-        
     }
-    
-    
     
     @IBAction func skipBtnPressed(_ sender: Any) {
         loginAnonymously()
@@ -104,12 +98,8 @@ class LandingLoginVC: UIViewController {
         performSegue(withIdentifier: "PhoneLoginVC", sender: nil)
     }
     
-    
     @IBAction func facebookBtnPressed(_ sender: Any) {
         loginWithFacebook()
     }
-    
-    
-    
     
 }

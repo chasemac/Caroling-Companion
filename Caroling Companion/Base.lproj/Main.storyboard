@@ -407,7 +407,7 @@ Thanks to Jesus.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Of9-8X-SWf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-658" y="1222"/>
+            <point key="canvasLocation" x="50" y="599"/>
         </scene>
         <!--Landing LoginVC-->
         <scene sceneID="09f-Iv-ODo">
@@ -574,14 +574,12 @@ Thanks to Jesus.</string>
                     </view>
                     <connections>
                         <segue destination="GES-gZ-Igc" kind="show" identifier="SongListVC" id="nPK-h2-N5v"/>
-                        <segue destination="sf1-zH-sqo" kind="show" identifier="logIn" id="Wbt-Gs-Kp5"/>
-                        <segue destination="sf1-zH-sqo" kind="show" identifier="signUp" id="lec-MS-iCn"/>
                         <segue destination="eM2-Lh-Qvw" kind="show" identifier="PhoneLoginVC" id="4zy-ZS-gYo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Th9-bp-KP7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="186" y="589"/>
+            <point key="canvasLocation" x="985" y="486"/>
         </scene>
         <!--Profile-->
         <scene sceneID="S07-1q-gwi">
@@ -693,7 +691,7 @@ Thanks to Jesus.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mc-WK-HTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1412" y="1221"/>
+            <point key="canvasLocation" x="-711" y="599"/>
         </scene>
         <!--Need AccountVC-->
         <scene sceneID="gnj-G3-AOY">
@@ -707,52 +705,6 @@ Thanks to Jesus.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rYR-hK-NbL">
-                                <rect key="frame" x="36" y="313.5" width="303" height="140"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6N-YA-kBw" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="303" height="65"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Z6N-YA-kBw" secondAttribute="height" multiplier="299:64" id="INw-P1-lbV"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="20"/>
-                                        <state key="normal" title="CREATE ACCOUNT">
-                                            <color key="titleColor" red="0.46666666670000001" green="0.59999999999999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.46666666670000001" green="0.59999999999999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="signUpBtnPressed:" destination="kJT-k9-y7V" eventType="touchUpInside" id="Ntn-Oz-5BK"/>
-                                            <action selector="signUpBtnPressed:" destination="l9E-Ne-nnU" eventType="touchUpInside" id="mdt-UJ-HMt"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0O-gF-dCr" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="75" width="303" height="65"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="I0O-gF-dCr" secondAttribute="height" multiplier="299:64" id="ghD-AV-0DM"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="20"/>
-                                        <state key="normal" title="SIGN IN">
-                                            <color key="titleColor" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="logInBtnPressed:" destination="l9E-Ne-nnU" eventType="touchUpInside" id="0J2-wQ-q5T"/>
-                                            <action selector="logInBtnPressed:" destination="kJT-k9-y7V" eventType="touchUpInside" id="5yu-NF-Abd"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whoops." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00J-JK-tj5">
                                 <rect key="frame" x="156.5" y="166.5" width="62" height="26"/>
                                 <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="18"/>
@@ -765,33 +717,11 @@ Thanks to Jesus.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z8d-7v-jYh">
-                                <rect key="frame" x="95" y="497" width="196" height="92"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z8d-7v-jYh">
+                                <rect key="frame" x="38" y="316" width="299" height="135"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQq-kW-5R9" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="244" height="71"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="QQq-kW-5R9" secondAttribute="height" multiplier="244:51" id="5Dn-5b-PZY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="20"/>
-                                        <state key="normal" title="EMAIL">
-                                            <color key="titleColor" red="0.46666666670000001" green="0.59999999999999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.46666666670000001" green="0.59999999999999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="emailBtnPressed:" destination="sf1-zH-sqo" eventType="touchUpInside" id="6mk-Df-AqE"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jka-m4-VFD" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="196" height="41"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jka-m4-VFD" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="299" height="62.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="jka-m4-VFD" secondAttribute="height" multiplier="244:51" id="JG6-wR-ptz"/>
                                         </constraints>
@@ -809,13 +739,11 @@ Thanks to Jesus.</string>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="phoneBtnPressed:" destination="sf1-zH-sqo" eventType="touchUpInside" id="E2E-Nj-uYC"/>
+                                            <action selector="phoneBtnPressed:" destination="kJT-k9-y7V" eventType="touchUpInside" id="LCM-Wl-qfl"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1i-gx-WOW" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="51" width="196" height="41"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="H1i-gx-WOW" secondAttribute="height" multiplier="122:25" id="7TK-qu-2LJ"/>
-                                        </constraints>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1i-gx-WOW" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72.5" width="299" height="62.5"/>
                                         <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="20"/>
                                         <state key="normal" title="FACEBOOK">
                                             <color key="titleColor" red="0.23529411759999999" green="0.35294117650000001" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -826,47 +754,34 @@ Thanks to Jesus.</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="facebookBtnPressed:" destination="kJT-k9-y7V" eventType="touchUpInside" id="sbj-lI-NT4"/>
                                             <action selector="facebookBtnTapped:" destination="sf1-zH-sqo" eventType="touchUpInside" id="uRN-yb-J7G"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zro-C6-6Yu" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="182.5" width="244" height="51"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Zro-C6-6Yu" secondAttribute="height" multiplier="244:51" id="vwd-UJ-Mdy"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="20"/>
-                                        <state key="normal" title="GOOGLE">
-                                            <color key="titleColor" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
                                 </subviews>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="QQq-kW-5R9"/>
-                                        <exclude reference="Zro-C6-6Yu"/>
-                                    </mask>
-                                </variation>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continue with:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJJ-wK-ULj">
+                                <rect key="frame" x="141" y="285" width="93" height="23"/>
+                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rYR-hK-NbL" firstAttribute="top" secondItem="TBW-Dc-5EX" secondAttribute="bottom" constant="60" id="5Zi-vE-D0G"/>
-                            <constraint firstItem="rYR-hK-NbL" firstAttribute="leading" secondItem="Z0w-Gy-Z2u" secondAttribute="leadingMargin" constant="20" id="Gc0-67-pdV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z8d-7v-jYh" secondAttribute="trailing" constant="22" id="4Is-TA-lpN"/>
+                            <constraint firstItem="zJJ-wK-ULj" firstAttribute="top" secondItem="TBW-Dc-5EX" secondAttribute="bottom" constant="31.5" id="93d-vn-hIt"/>
                             <constraint firstItem="TBW-Dc-5EX" firstAttribute="centerX" secondItem="Z0w-Gy-Z2u" secondAttribute="centerX" id="M1i-cC-fHd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rYR-hK-NbL" secondAttribute="trailing" constant="20" id="kvY-aa-WeE"/>
+                            <constraint firstItem="Z8d-7v-jYh" firstAttribute="centerY" secondItem="Z0w-Gy-Z2u" secondAttribute="centerY" constant="50" id="SLR-7g-WEI"/>
+                            <constraint firstItem="Z8d-7v-jYh" firstAttribute="leading" secondItem="Z0w-Gy-Z2u" secondAttribute="leadingMargin" constant="22" id="b8j-w5-F9H"/>
                             <constraint firstItem="00J-JK-tj5" firstAttribute="centerX" secondItem="Z0w-Gy-Z2u" secondAttribute="centerX" id="lBk-Bu-WGz"/>
-                            <constraint firstItem="rYR-hK-NbL" firstAttribute="centerY" secondItem="Z0w-Gy-Z2u" secondAttribute="centerY" constant="50" id="lu8-Ui-Svk"/>
+                            <constraint firstItem="Z8d-7v-jYh" firstAttribute="top" secondItem="zJJ-wK-ULj" secondAttribute="bottom" constant="8" id="noe-s2-znM"/>
+                            <constraint firstItem="zJJ-wK-ULj" firstAttribute="centerX" secondItem="Z0w-Gy-Z2u" secondAttribute="centerX" id="p1a-WH-nKp"/>
                             <constraint firstItem="TBW-Dc-5EX" firstAttribute="top" secondItem="00J-JK-tj5" secondAttribute="bottom" constant="35" id="v3R-r9-SVK"/>
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="sf1-zH-sqo" kind="show" identifier="logIn" id="voQ-ft-Xhg"/>
-                        <segue destination="sf1-zH-sqo" kind="show" identifier="signUp" id="5Sv-Op-9E6"/>
+                        <segue destination="eM2-Lh-Qvw" kind="show" identifier="PhoneLoginVC" id="L9M-kO-NPH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZh-0E-t1j" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -893,12 +808,27 @@ Thanks to Jesus.</string>
                                     <constraint firstAttribute="height" constant="127" id="qe6-0X-hB4"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theodore Duggleby-Chen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ctJ-ao-zRq">
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vd0-OJ-ExO">
                                 <rect key="frame" x="36" y="177" width="303" height="34.5"/>
-                                <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theodore Duggleby-Chen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ctJ-ao-zRq">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="34.5"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uK6-jD-ujR">
+                                        <rect key="frame" x="275" y="0.0" width="28" height="34.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="28" id="dEY-0z-cKv"/>
+                                        </constraints>
+                                        <state key="normal" image="pencilEditIcon"/>
+                                        <connections>
+                                            <action selector="editEmailBtnTapped:" destination="96H-yd-xXX" eventType="touchUpInside" id="W1X-uX-frs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zt8-Tx-kEY">
                                 <rect key="frame" x="142.5" y="465" width="90" height="49"/>
                                 <subviews>
@@ -960,63 +890,8 @@ Thanks to Jesus.</string>
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="3Bp-x2-cq2">
-                                <rect key="frame" x="36" y="371" width="303" height="54"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jd3-eG-xB1">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="54"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="ichasem@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="bEX-5g-kiq">
-                                                <rect key="frame" x="0.0" y="0.0" width="275" height="23.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pass*******" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHg-He-X4H">
-                                                <rect key="frame" x="0.0" y="33.5" width="275" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="bEX-5g-kiq" firstAttribute="leading" secondItem="Jd3-eG-xB1" secondAttribute="leading" id="1R9-w6-mWY"/>
-                                            <constraint firstAttribute="trailing" secondItem="vHg-He-X4H" secondAttribute="trailing" id="9Zj-ab-bD8"/>
-                                            <constraint firstAttribute="trailing" secondItem="bEX-5g-kiq" secondAttribute="trailing" id="hMl-vT-fWL"/>
-                                            <constraint firstItem="vHg-He-X4H" firstAttribute="leading" secondItem="Jd3-eG-xB1" secondAttribute="leading" id="nE0-nV-QiI"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="A9V-2v-KkM">
-                                        <rect key="frame" x="277" y="0.0" width="26" height="54"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7k-01-1Zj">
-                                                <rect key="frame" x="0.0" y="0.0" width="26" height="22"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="26" id="ibU-1F-cEs"/>
-                                                    <constraint firstAttribute="height" constant="22" id="mME-pi-WIc"/>
-                                                </constraints>
-                                                <state key="normal" image="pencilEditIcon"/>
-                                                <connections>
-                                                    <action selector="editEmailBtnTapped:" destination="96H-yd-xXX" eventType="touchUpInside" id="XbK-n4-3Jk"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7x-1E-Xn7">
-                                                <rect key="frame" x="0.0" y="32" width="26" height="22"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="22" id="ANE-C9-hC2"/>
-                                                    <constraint firstAttribute="width" constant="26" id="cX0-LU-6qo"/>
-                                                </constraints>
-                                                <state key="normal" image="pencilEditIcon"/>
-                                                <connections>
-                                                    <action selector="editPasswordBtnTapped:" destination="96H-yd-xXX" eventType="touchUpInside" id="CKS-L7-uTm"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oea-Rh-4rk">
-                                <rect key="frame" x="113" y="219" width="95" height="30"/>
+                                <rect key="frame" x="140" y="226" width="95" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Secret Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1025,28 +900,37 @@ Thanks to Jesus.</string>
                                     <segue destination="CaK-rT-Cyp" kind="show" id="pOW-Kz-ZcM"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="t07-o7-s5B">
+                                <rect key="frame" x="50" y="372" width="275" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login Method" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Or0-pd-IyO">
+                                <rect key="frame" x="50" y="342" width="275" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="3ch-Lu-2LK" firstAttribute="top" secondItem="3Bp-x2-cq2" secondAttribute="bottom" constant="40" id="74m-yr-oON"/>
-                            <constraint firstItem="ctJ-ao-zRq" firstAttribute="leading" secondItem="Axt-Gm-Fkg" secondAttribute="leadingMargin" constant="20" id="Dmt-q1-vmB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vd0-OJ-ExO" secondAttribute="trailing" constant="20" id="0oi-af-gyE"/>
                             <constraint firstItem="zt8-Tx-kEY" firstAttribute="centerX" secondItem="Axt-Gm-Fkg" secondAttribute="centerX" id="KMX-9V-ZTm"/>
                             <constraint firstItem="b6G-Cy-5bv" firstAttribute="centerX" secondItem="Axt-Gm-Fkg" secondAttribute="centerX" id="Kyl-dg-jGR"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ctJ-ao-zRq" secondAttribute="trailing" constant="20" id="Md3-Zd-WcE"/>
                             <constraint firstItem="b6G-Cy-5bv" firstAttribute="top" secondItem="pDb-Hf-9BR" secondAttribute="bottom" constant="30" id="QCB-1G-egm"/>
-                            <constraint firstItem="ctJ-ao-zRq" firstAttribute="top" secondItem="b6G-Cy-5bv" secondAttribute="bottom" constant="20" id="Z4G-XT-H55"/>
+                            <constraint firstItem="vd0-OJ-ExO" firstAttribute="top" secondItem="b6G-Cy-5bv" secondAttribute="bottom" constant="20" id="ekN-H9-3by"/>
                             <constraint firstItem="pc3-iP-zad" firstAttribute="top" secondItem="zt8-Tx-kEY" secondAttribute="bottom" constant="40" id="luu-QN-jOz"/>
-                            <constraint firstItem="3Bp-x2-cq2" firstAttribute="leading" secondItem="Axt-Gm-Fkg" secondAttribute="leadingMargin" constant="20" id="sx3-qu-mbt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="3Bp-x2-cq2" secondAttribute="trailing" constant="20" id="uxH-R8-rpM"/>
+                            <constraint firstItem="vd0-OJ-ExO" firstAttribute="leading" secondItem="Axt-Gm-Fkg" secondAttribute="leadingMargin" constant="20" id="t1Q-Sk-AwT"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="profile_btn" id="gRJ-25-Zn6"/>
                     <navigationItem key="navigationItem" title="PROFILE" id="cWM-4u-00K"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="emailLabel" destination="bEX-5g-kiq" id="7cd-Ya-dWa"/>
                         <outlet property="nameLabel" destination="ctJ-ao-zRq" id="tjd-wZ-97K"/>
-                        <outlet property="passwordLabel" destination="vHg-He-X4H" id="0u3-RH-bTq"/>
                         <outlet property="profileImg" destination="b6G-Cy-5bv" id="dwu-JG-10v"/>
                         <segue destination="tbR-of-5iZ" kind="show" identifier="AboutVC" id="wYf-BK-4iU"/>
                         <segue destination="kJT-k9-y7V" kind="presentation" identifier="NeedAccountVC" id="ZbO-np-mDf"/>
@@ -1195,7 +1079,7 @@ Thanks to Jesus.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kRC-We-keg">
-                                <rect key="frame" x="38" y="211" width="299" height="135"/>
+                                <rect key="frame" x="38" y="211" width="299" height="92"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgk-EU-jDe" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="244" height="71"/>
@@ -1219,10 +1103,7 @@ Thanks to Jesus.</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lx-MB-UTK" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="299" height="62.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="4lx-MB-UTK" secondAttribute="height" multiplier="244:51" id="aHw-9R-aKY"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="299" height="41"/>
                                         <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="20"/>
                                         <state key="normal" title="PHONE">
                                             <color key="titleColor" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -1240,10 +1121,7 @@ Thanks to Jesus.</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gdj-6e-dg0" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72.5" width="299" height="62.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Gdj-6e-dg0" secondAttribute="height" multiplier="122:25" id="LaE-Wp-M2f"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="51" width="299" height="41"/>
                                         <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="20"/>
                                         <state key="normal" title="FACEBOOK">
                                             <color key="titleColor" red="0.23529411759999999" green="0.35294117650000001" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1331,12 +1209,11 @@ Thanks to Jesus.</string>
                     <connections>
                         <outlet property="instructionLbl" destination="54F-vZ-gVo" id="TS6-xs-ITq"/>
                         <segue destination="cLy-AB-cuY" kind="show" identifier="EmailLoginVC" id="9At-X0-x1p"/>
-                        <segue destination="GES-gZ-Igc" kind="show" identifier="SongListVC" id="jdN-dS-HXf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKv-8h-5bh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1358" y="652"/>
+            <point key="canvasLocation" x="-1410" y="2385"/>
         </scene>
         <!--Email LoginVC-->
         <scene sceneID="2o6-lP-CSy">
@@ -1496,12 +1373,11 @@ Thanks to Jesus.</string>
                         <outlet property="loginBtn" destination="9Et-2C-G5l" id="HHe-9b-j49"/>
                         <outlet property="loginBtnToBottom" destination="Zs2-AR-8qw" id="x5b-Qa-cK7"/>
                         <outlet property="pwdField" destination="rp0-KE-PMe" id="2EH-6l-uYW"/>
-                        <segue destination="GES-gZ-Igc" kind="show" identifier="SongListVC" id="z3A-xM-QVg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sGz-hM-01n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2145" y="652"/>
+            <point key="canvasLocation" x="-623" y="2385"/>
         </scene>
         <!--Phone LoginVC-->
         <scene sceneID="yBN-r7-sST">
@@ -1532,6 +1408,9 @@ Thanks to Jesus.</string>
                                         <color key="value" red="0.46666666670000001" green="0.59999999999999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextBtnPressed:" destination="eM2-Lh-Qvw" eventType="touchUpInside" id="C8m-Nw-vXf"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5xG-cA-itD">
                                 <rect key="frame" x="40" y="50" width="295" height="98"/>
@@ -1608,11 +1487,13 @@ Thanks to Jesus.</string>
                     </view>
                     <connections>
                         <outlet property="loginBtnToBottom" destination="aA0-fi-cih" id="NHm-lx-Vd4"/>
+                        <outlet property="phoneNumberField" destination="tbi-AX-jC4" id="zXs-9W-B9e"/>
+                        <segue destination="6j2-Ri-hVh" kind="show" identifier="PhoneLoginCodeVC" id="e5s-rW-PEt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZt-K5-aaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="336.80000000000001" y="1420.8395802098951"/>
+            <point key="canvasLocation" x="2098" y="668"/>
         </scene>
         <!--Forgot PasswordVC-->
         <scene sceneID="vaB-Gb-Xjf">
@@ -1768,7 +1649,7 @@ Thanks to Jesus.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7T-eH-hQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="dGi-2W-w9w" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2953" y="636"/>
+            <point key="canvasLocation" x="185" y="2369"/>
         </scene>
         <!--Profile-->
         <scene sceneID="DRD-uc-eWu">
@@ -1789,12 +1670,12 @@ Thanks to Jesus.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0aA-09-GqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationItem title="PROFILE" id="597-HL-Mhs"/>
             </objects>
-            <point key="canvasLocation" x="563" y="-373"/>
+            <point key="canvasLocation" x="985" y="-458"/>
         </scene>
-        <!--Phone LoginVC-->
+        <!--Phone Login CodeVC-->
         <scene sceneID="dPb-sn-J1T">
             <objects>
-                <viewController id="6j2-Ri-hVh" customClass="PhoneLoginVC" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6j2-Ri-hVh" customClass="PhoneLoginCodeVC" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8yL-wS-FsD"/>
                         <viewControllerLayoutGuide type="bottom" id="K0J-1l-NUV"/>
@@ -1820,6 +1701,9 @@ Thanks to Jesus.</string>
                                         <color key="value" red="0.46666666670000001" green="0.59999999999999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createAccountBtnPressed:" destination="6j2-Ri-hVh" eventType="touchUpInside" id="o44-ep-1UQ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="38I-1Z-Ip2">
                                 <rect key="frame" x="40" y="50" width="295" height="98"/>
@@ -1895,12 +1779,13 @@ Thanks to Jesus.</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activationCodeField" destination="eRy-JN-ekj" id="uP8-go-skw"/>
                         <outlet property="loginBtnToBottom" destination="OjJ-XM-ZXu" id="YQT-Ea-B7z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3b3-Kt-chT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="1420.8395802098951"/>
+            <point key="canvasLocation" x="2910" y="668"/>
         </scene>
     </scenes>
     <resources>
@@ -1915,8 +1800,7 @@ Thanks to Jesus.</string>
         <image name="star-empty" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="z3A-xM-QVg"/>
-        <segue reference="voQ-ft-Xhg"/>
+        <segue reference="4zy-ZS-gYo"/>
         <segue reference="UTV-V0-aRm"/>
         <segue reference="hrw-hQ-4Gi"/>
     </inferredMetricsTieBreakers>

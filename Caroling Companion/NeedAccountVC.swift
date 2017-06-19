@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import FirebaseAuth
 
 class NeedAccountVC: UIViewController {
 
@@ -16,27 +18,49 @@ class NeedAccountVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "logIn" {
-//            let detailVC = segue.destination.contents as! SelectLoginMethodVC
-//            //    detailVC.signup = false
-//            detailVC.signup = sender as! Bool
-//        } else if segue.identifier == "signUp" {
-//            let detailVC = segue.destination.contents as! SelectLoginMethodVC
-//            //    detailVC.signup = true
-//            detailVC.signup = sender as! Bool
-//        }
-//    }
-    
-    @IBAction func signUpBtnPressed(_ sender: Any) {
-        let signup = true
-        performSegue(withIdentifier: "logIn", sender: signup)
-    }
-    
-    @IBAction func logInBtnPressed(_ sender: Any) {
-        let signup = false
-        performSegue(withIdentifier: "signUp", sender: signup)
+    func loginWithFacebook() {
+        let facebookLogin = FBSDKLoginManager()
+        facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+            if error != nil {
+                print("unable to authenticate with facebook \(String(describing: error))")
+                if Auth.auth().currentUser != nil {
+                    let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                    AuthService.instance.firebaseFacebookLogin(credential, onComplete: { (errMsg, user) in
+                        if errMsg != nil {
+                            setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
+                            return
+                        }
+                        if user != nil {
+                            self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
+                        }
+                    })
+                }
+                
+                setupDefaultAlert(title: "", message: "Unable to authenticate with Facebook", actionTitle: "Ok", VC: self)
+            } else if result?.isCancelled == true {
+                print("user canceled")
+            } else {
+                print("successfully auth with facebook")
+                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                AuthService.instance.firebaseFacebookLogin(credential, onComplete: { (errMsg, user) in
+                    if errMsg != nil {
+                        setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
+                        return
+                    }
+                    if user != nil {
+                        self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
+                    }
+                })
+            }
+        }
     }
 
+    @IBAction func phoneBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "PhoneLoginVC", sender: nil)
+    }
+    
+    @IBAction func facebookBtnPressed(_ sender: Any) {
+        loginWithFacebook()
+    }
 
 }

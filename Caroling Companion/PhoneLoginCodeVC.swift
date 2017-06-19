@@ -8,22 +8,22 @@
 
 import UIKit
 
-class PhoneLoginVC: LoginFlow {
+class PhoneLoginCodeVC: LoginFlow {
     var signup: Bool = true
 
-    @IBOutlet weak var phoneNumberField: UITextField!
-    
+    @IBOutlet weak var activationCodeField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    @IBAction func nextBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "PhoneLoginCodeVC", sender: nil)
+
+    @IBAction func createAccountBtnPressed(_ sender: Any) {
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+
     }
 
 }
