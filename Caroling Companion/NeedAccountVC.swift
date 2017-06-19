@@ -16,17 +16,17 @@ class NeedAccountVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "logIn" {
-            let detailVC = segue.destination.contents as! SelectLoginMethodVC
-            //    detailVC.signup = false
-            detailVC.signup = sender as! Bool
-        } else if segue.identifier == "signUp" {
-            let detailVC = segue.destination.contents as! SelectLoginMethodVC
-            //    detailVC.signup = true
-            detailVC.signup = sender as! Bool
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "logIn" {
+//            let detailVC = segue.destination.contents as! SelectLoginMethodVC
+//            //    detailVC.signup = false
+//            detailVC.signup = sender as! Bool
+//        } else if segue.identifier == "signUp" {
+//            let detailVC = segue.destination.contents as! SelectLoginMethodVC
+//            //    detailVC.signup = true
+//            detailVC.signup = sender as! Bool
+//        }
+//    }
     
     @IBAction func signUpBtnPressed(_ sender: Any) {
         let signup = true

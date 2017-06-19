@@ -12,6 +12,7 @@
 		0E1AA5241EF1DD6000EB3B65 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AA5231EF1DD6000EB3B65 /* AboutVC.swift */; };
 		0E1AA5261EF2197800EB3B65 /* SlideAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AA5251EF2197800EB3B65 /* SlideAnimationTransition.swift */; };
 		0E1AA5281EF219C200EB3B65 /* SwipeRightToDismissVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1AA5271EF219C200EB3B65 /* SwipeRightToDismissVC.swift */; };
+		0E1C27B41EF701D300680CFF /* LandingLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C27B31EF701D300680CFF /* LandingLoginVC.swift */; };
 		0E2EF2E31C274DD200762053 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E21C274DD200762053 /* AppDelegate.swift */; };
 		0E2EF2E81C274DD200762053 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E61C274DD200762053 /* Main.storyboard */; };
 		0E2EF2EA1C274DD200762053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2E91C274DD200762053 /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		0E1AA5231EF1DD6000EB3B65 /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		0E1AA5251EF2197800EB3B65 /* SlideAnimationTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideAnimationTransition.swift; sourceTree = "<group>"; };
 		0E1AA5271EF219C200EB3B65 /* SwipeRightToDismissVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeRightToDismissVC.swift; sourceTree = "<group>"; };
+		0E1C27B31EF701D300680CFF /* LandingLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingLoginVC.swift; sourceTree = "<group>"; };
 		0E2EF2DF1C274DD200762053 /* Caroling Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Caroling Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2EF2E21C274DD200762053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E2EF2E71C274DD200762053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -207,6 +209,9 @@
 		0E84B8091EE87FE400A9B6D2 /* Depricated */ = {
 			isa = PBXGroup;
 			children = (
+				0E9DD79C1EA971BA00745317 /* LoginVC.swift */,
+				0EB896211EEA27AC0050021B /* LandingVC.swift */,
+				0EB896231EEB47D70050021B /* EmailLoginVC.swift */,
 				0EFB8E1D1EE7C33500D5F793 /* DepricatedSongListVC.swift */,
 				0EFB8E111EE7C30800D5F793 /* PlaylistNameCell.swift */,
 				0EFB8E121EE7C30800D5F793 /* PlaylistVC.swift */,
@@ -215,6 +220,7 @@
 				0E8F098F1CD29BB600CF771E /* SongCell.swift */,
 				0EFB8E071EE7C2FF00D5F793 /* CreatePlaylistVC.swift */,
 				0EFB8E081EE7C2FF00D5F793 /* PlaylistSongCell.swift */,
+				0EB8962D1EEB81590050021B /* ForgotPasswordVC.swift */,
 			);
 			name = Depricated;
 			sourceTree = "<group>";
@@ -293,15 +299,12 @@
 				0EFB8E1C1EE7C33500D5F793 /* ProfileVC.swift */,
 				0E2EF3141C2753B200762053 /* SongLyricsVC.swift */,
 				0E7EAA121DB5E01300E8044A /* NavigationController.swift */,
-				0E9DD79C1EA971BA00745317 /* LoginVC.swift */,
-				0EB896211EEA27AC0050021B /* LandingVC.swift */,
-				0EB896231EEB47D70050021B /* EmailLoginVC.swift */,
 				0EB896271EEB72DF0050021B /* SelectLoginMethodVC.swift */,
 				0EB896291EEB7CCC0050021B /* PhoneLoginVC.swift */,
-				0EB8962D1EEB81590050021B /* ForgotPasswordVC.swift */,
 				0E1AA5211EF1DA0E00EB3B65 /* ProfileTabVC.swift */,
 				0E1AA5231EF1DD6000EB3B65 /* AboutVC.swift */,
 				0EC724091EF32D200003407F /* NeedAccountVC.swift */,
+				0E1C27B31EF701D300680CFF /* LandingLoginVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				0EFB8E1F1EE7C33500D5F793 /* ProfileVC.swift in Sources */,
 				0EFB8E161EE7C30800D5F793 /* PlaylistNameCell.swift in Sources */,
 				0E1AA5281EF219C200EB3B65 /* SwipeRightToDismissVC.swift in Sources */,
+				0E1C27B41EF701D300680CFF /* LandingLoginVC.swift in Sources */,
 				0E8F09901CD29BB600CF771E /* SongCell.swift in Sources */,
 				0EFB8E201EE7C33500D5F793 /* DepricatedSongListVC.swift in Sources */,
 				0E9DD7951EA9682900745317 /* RoundBtn.swift in Sources */,
