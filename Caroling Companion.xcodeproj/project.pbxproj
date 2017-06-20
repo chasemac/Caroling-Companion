@@ -46,6 +46,7 @@
 		0EC7240A1EF32D200003407F /* NeedAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC724091EF32D200003407F /* NeedAccountVC.swift */; };
 		0ED23D571DB82FF100DF081E /* Big_John.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0ED23D561DB82FF100DF081E /* Big_John.otf */; };
 		0EDB2B201EF8458300131241 /* PhoneLoginCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB2B1F1EF8458300131241 /* PhoneLoginCodeVC.swift */; };
+		0EDB2B221EF87FB000131241 /* CustomTabBarConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB2B211EF87FB000131241 /* CustomTabBarConroller.swift */; };
 		0EFB8E011EE7C2F300D5F793 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFB8DFF1EE7C2F300D5F793 /* Playlist.swift */; };
 		0EFB8E021EE7C2F300D5F793 /* CreatePlaylistVCF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFB8E001EE7C2F300D5F793 /* CreatePlaylistVCF.swift */; };
 		0EFB8E0A1EE7C2FF00D5F793 /* SongListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFB8E031EE7C2FF00D5F793 /* SongListTVC.swift */; };
@@ -113,6 +114,7 @@
 		0ED23D511DB81F0500DF081E /* Caroling Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Caroling Companion.entitlements"; sourceTree = "<group>"; };
 		0ED23D561DB82FF100DF081E /* Big_John.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Big_John.otf; sourceTree = "<group>"; };
 		0EDB2B1F1EF8458300131241 /* PhoneLoginCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneLoginCodeVC.swift; sourceTree = "<group>"; };
+		0EDB2B211EF87FB000131241 /* CustomTabBarConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarConroller.swift; sourceTree = "<group>"; };
 		0EFB8DFF1EE7C2F300D5F793 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		0EFB8E001EE7C2F300D5F793 /* CreatePlaylistVCF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePlaylistVCF.swift; sourceTree = "<group>"; };
 		0EFB8E031EE7C2FF00D5F793 /* SongListTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongListTVC.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				0EFB8E1C1EE7C33500D5F793 /* ProfileVC.swift */,
 				0E2EF3141C2753B200762053 /* SongLyricsVC.swift */,
 				0E7EAA121DB5E01300E8044A /* NavigationController.swift */,
+				0EDB2B211EF87FB000131241 /* CustomTabBarConroller.swift */,
 				0EB896271EEB72DF0050021B /* SelectLoginMethodVC.swift */,
 				0EB896291EEB7CCC0050021B /* PhoneLoginVC.swift */,
 				0EDB2B1F1EF8458300131241 /* PhoneLoginCodeVC.swift */,
@@ -505,6 +508,7 @@
 				0EFB8E201EE7C33500D5F793 /* DepricatedSongListVC.swift in Sources */,
 				0E9DD7951EA9682900745317 /* RoundBtn.swift in Sources */,
 				0EFB8E191EE7C30800D5F793 /* SongListTVCF.swift in Sources */,
+				0EDB2B221EF87FB000131241 /* CustomTabBarConroller.swift in Sources */,
 				0E1AA5261EF2197800EB3B65 /* SlideAnimationTransition.swift in Sources */,
 				0EFB8E0A1EE7C2FF00D5F793 /* SongListTVC.swift in Sources */,
 				0E9DD7931EA9681900745317 /* FancyView.swift in Sources */,
