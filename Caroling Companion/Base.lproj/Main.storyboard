@@ -1455,6 +1455,9 @@ Thanks to Jesus.</string>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad"/>
+                                        <connections>
+                                            <action selector="numberPressed:" destination="eM2-Lh-Qvw" eventType="editingChanged" id="tGj-P1-ivk"/>
+                                        </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSH-IK-Z9D">
                                         <rect key="frame" x="0.0" y="25" width="299" height="2"/>
