@@ -82,20 +82,20 @@
         <scene sceneID="lqf-yv-lMy">
             <objects>
                 <tableViewController id="kzh-K3-y7s" customClass="PlaylistVCF" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="139" sectionHeaderHeight="28" sectionFooterHeight="28" id="lg0-cV-fin">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="lg0-cV-fin">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaylistNameCell" rowHeight="96" id="aar-CA-Wl8" customClass="PlaylistNameCellF" customModule="Caroling_Companion" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="96"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaylistNameCell" rowHeight="90" id="aar-CA-Wl8" customClass="PlaylistNameCellF" customModule="Caroling_Companion" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aar-CA-Wl8" id="ofy-zo-9vw">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEST SONGS" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="VRm-WY-HxD">
-                                            <rect key="frame" x="28" y="16" width="319" height="64"/>
+                                            <rect key="frame" x="28" y="16" width="319" height="57.5"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -107,6 +107,7 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="VRm-WY-HxD" secondAttribute="bottom" constant="8" id="gNe-Fl-0V6"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="playlistNameLabel" destination="VRm-WY-HxD" id="Gqn-RV-9CI"/>
                                 </connections>
@@ -189,6 +190,7 @@
                                         <constraint firstItem="y21-zr-hXp" firstAttribute="leading" secondItem="Zdl-Oq-75r" secondAttribute="trailing" constant="5.5" id="tWn-iN-2l6"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="playlistCheckBox" destination="y21-zr-hXp" id="oEn-Eb-E2M"/>
                                     <outlet property="songNameLabel" destination="Zdl-Oq-75r" id="vgQ-gq-WH6"/>
@@ -285,6 +287,7 @@
                                         <constraint firstItem="ELG-Dz-by0" firstAttribute="centerY" secondItem="YQD-LB-DO7" secondAttribute="centerY" id="xGA-k5-lnV"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="songNameLabel" destination="Uef-tT-W8O" id="AQW-yu-9ba"/>
                                     <outlet property="starImage" destination="L4B-0r-iSf" id="wJ2-iG-MZv"/>
@@ -983,9 +986,9 @@ Thanks to Jesus.</string>
                             </connections>
                         </textField>
                         <view key="tableFooterView" contentMode="scaleToFill" id="jsF-ky-8hI">
-                            <rect key="frame" x="0.0" y="155" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="155" width="375" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" rowHeight="97" id="6nR-HX-xYX" customClass="SongCellF" customModule="Caroling_Companion" customModuleProvider="target">
@@ -1049,7 +1052,7 @@ Thanks to Jesus.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Mx-TI-3oB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2496" y="-1541"/>
+            <point key="canvasLocation" x="2495.1999999999998" y="-1541.3793103448277"/>
         </scene>
         <!--Songs-->
         <scene sceneID="jbw-Li-Yj1">
@@ -1595,7 +1598,7 @@ Thanks to Jesus.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="use-ZT-lwO">
-                                <rect key="frame" x="89.5" y="256" width="196" height="18"/>
+                                <rect key="frame" x="90" y="256" width="196" height="18"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6uW-2a-vNh">
                                         <rect key="frame" x="0.0" y="0.0" width="127" height="18"/>
@@ -1814,7 +1817,7 @@ Thanks to Jesus.</string>
     <inferredMetricsTieBreakers>
         <segue reference="4zy-ZS-gYo"/>
         <segue reference="UTV-V0-aRm"/>
-        <segue reference="EV3-wj-5fI"/>
+        <segue reference="hrw-hQ-4Gi"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.53758639100000005" green="0.65890771150000005" blue="0.49905574320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
