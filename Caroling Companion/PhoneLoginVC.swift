@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class PhoneLoginVC: LoginFlow {
     var signup: Bool = true
+    var phoneNumber: String?
 
     @IBOutlet weak var phoneNumberField: UITextField!
 
@@ -19,11 +21,28 @@ class PhoneLoginVC: LoginFlow {
         // Do any additional setup after loading the view.
     }
     @IBAction func numberPressed(_ sender: UITextField) {
-        let text = sender.text!
-        phoneNumberField.text = format(phoneNumber: text) ?? text
+        phoneNumber = sender.text!
+   //     phoneNumberField.text = format(phoneNumber: phoneNumber!) ?? phoneNumber
     }
     @IBAction func nextBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "PhoneLoginCodeVC", sender: nil)
+        if phoneNumber != nil {
+            
+            PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber!) { (verificationID, error) in
+                if let error = error {
+                    print("tried to verify and got this error --------> \(error.localizedDescription)")
+                    setupDefaultAlert(title: "", message: error.localizedDescription, actionTitle: "OK", VC: self)
+           //         self.showMessagePrompt(error.localizedDescription)
+                    return
+                }
+                // Sign in using the verificationID and the code sent to the user
+                // ...
+                UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+                
+                self.performSegue(withIdentifier: "PhoneLoginCodeVC", sender: nil)
+            }
+            
+        }
+
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {

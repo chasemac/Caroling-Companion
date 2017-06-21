@@ -9,12 +9,11 @@
 import UIKit
 import Firebase
 import FBSDKCoreKit
-
-import GoogleSignIn
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate  {
- //   GIDSignInDelegate
+
     var window: UIWindow?
     
     
@@ -24,8 +23,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         FirebaseApp.configure()
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-//        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-//        GIDSignIn.sharedInstance().delegate = self
+        
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .alert, .sound]) { (granted, error) in
+                
+            }
+        } else {
+            // Fallback on earlier versions
+            let notificationSettings = UIUserNotificationSettings(types: [.badge, .alert, .sound], categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(notificationSettings)
+            UIApplication.shared.registerForRemoteNotifications()
+        }
+
         return true
     }
     
@@ -57,31 +66,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         if url.absoluteString.contains("facebook") {
             return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
         } else {
-            return GIDSignIn.sharedInstance().handle(url,
-                                                     sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
-                                                     annotation: [:])
+            return true
         }
     }
     
-//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-//        if error == nil {
-//
-//            AuthService.instance.firebaseGoogleLogin(user: user, error: error) { (errMsg, user) in
-//                if error != nil {
-//                    print(error)
-//                } else if user != nil {
-//                    print("Google SUCCESS!!!!!!!!!")
-//                } else {
-//                    print("I DON'T KNOW WHAT HAPPENED!")
-//                }
-//            }
-//        }
-//        
-//    }
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        // Pass device token to auth
+        Auth.auth().setAPNSToken(deviceToken, type: AuthAPNSTokenType.prod)
+        
+        // Further handling of the device token if needed by the app
+        // ...
+    }
     
-//    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-//        print("user disconnected from Google")
-//    }
+    func application(_ application: UIApplication,
+                     didReceiveRemoteNotification notification: [AnyHashable : Any],
+                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        if Auth.auth().canHandleNotification(notification) {
+            completionHandler(UIBackgroundFetchResult.noData)
+            
+            return
+        }
+        // This notification is not auth related, developer should handle it.
+    }
     
     
 }
