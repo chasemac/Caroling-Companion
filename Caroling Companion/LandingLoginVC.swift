@@ -18,13 +18,17 @@ class LandingLoginVC: UIViewController {
     }
     
     func checkUserSignedInStatus() {
-
-        guard Auth.auth().currentUser?.isAnonymous == true else {
-            print("need to CREATE ACCOUNT!!!!!!!!!")
+        guard Auth.auth().currentUser != nil else {
+            print("NO USER: Need to CREATE ACCOUNT!!!!!!!!!")
+            return
+        }
+        guard Auth.auth().currentUser?.isAnonymous != true else {
+            print("USER ANONYMOUS: Need to CREATE ACCOUNT!!!!!!!!!")
             return
         }
         
         print("Account Exists")
+        print(Auth.auth().currentUser!.uid)
         self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
         
     }

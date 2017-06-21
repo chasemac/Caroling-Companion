@@ -213,6 +213,7 @@
 		0E84B8091EE87FE400A9B6D2 /* Depricated */ = {
 			isa = PBXGroup;
 			children = (
+				0EB896271EEB72DF0050021B /* SelectLoginMethodVC.swift */,
 				0E9DD79C1EA971BA00745317 /* LoginVC.swift */,
 				0EB896211EEA27AC0050021B /* LandingVC.swift */,
 				0EB896231EEB47D70050021B /* EmailLoginVC.swift */,
@@ -305,7 +306,6 @@
 				0E2EF3141C2753B200762053 /* SongLyricsVC.swift */,
 				0E7EAA121DB5E01300E8044A /* NavigationController.swift */,
 				0EDB2B211EF87FB000131241 /* CustomTabBarConroller.swift */,
-				0EB896271EEB72DF0050021B /* SelectLoginMethodVC.swift */,
 				0EB896291EEB7CCC0050021B /* PhoneLoginVC.swift */,
 				0EDB2B1F1EF8458300131241 /* PhoneLoginCodeVC.swift */,
 				0E1AA5211EF1DA0E00EB3B65 /* ProfileTabVC.swift */,

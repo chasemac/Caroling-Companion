@@ -57,6 +57,7 @@ struct DBUserString {
     static let provider = "provider"
     static let email = "email"
     static let favorites = "favorites"
+    static let phoneNumber = "phoneNumber"
 }
 
 // Playlist

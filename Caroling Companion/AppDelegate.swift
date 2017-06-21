@@ -24,16 +24,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .alert, .sound]) { (granted, error) in
-                
-            }
-        } else {
-            // Fallback on earlier versions
-            let notificationSettings = UIUserNotificationSettings(types: [.badge, .alert, .sound], categories: nil)
-            UIApplication.shared.registerUserNotificationSettings(notificationSettings)
-            UIApplication.shared.registerForRemoteNotifications()
-        }
+//        if #available(iOS 10.0, *) {
+//            UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .alert, .sound]) { (granted, error) in
+//                
+//            }
+//        } else {
+//            // Fallback on earlier versions
+//            let notificationSettings = UIUserNotificationSettings(types: [.badge, .alert, .sound], categories: nil)
+//            UIApplication.shared.registerUserNotificationSettings(notificationSettings)
+//            UIApplication.shared.registerForRemoteNotifications()
+//        }
 
         return true
     }
@@ -72,21 +72,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         // Pass device token to auth
+        print(AuthAPNSTokenType.prod)
         Auth.auth().setAPNSToken(deviceToken, type: AuthAPNSTokenType.prod)
+        print(Auth.auth().apnsToken)
         
         // Further handling of the device token if needed by the app
         // ...
     }
     
+    
+    
     func application(_ application: UIApplication,
                      didReceiveRemoteNotification notification: [AnyHashable : Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print("We got to the didReceiveRemoteNotif")
         if Auth.auth().canHandleNotification(notification) {
+            print("We're inside the notification")
             completionHandler(UIBackgroundFetchResult.noData)
             
             return
         }
         // This notification is not auth related, developer should handle it.
+        
     }
     
     
