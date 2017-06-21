@@ -295,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				0EB8962B1EEB7FEA0050021B /* LoginFlow.swift */,
+				0E1C27B31EF701D300680CFF /* LandingLoginVC.swift */,
 				0EFB8E151EE7C30800D5F793 /* SongListTabTVC.swift */,
 				0EFB8E001EE7C2F300D5F793 /* CreatePlaylistVCF.swift */,
 				0EFB8E091EE7C2FF00D5F793 /* ShowPlaylistVC.swift */,
@@ -310,7 +311,6 @@
 				0E1AA5211EF1DA0E00EB3B65 /* ProfileTabVC.swift */,
 				0E1AA5231EF1DD6000EB3B65 /* AboutVC.swift */,
 				0EC724091EF32D200003407F /* NeedAccountVC.swift */,
-				0E1C27B31EF701D300680CFF /* LandingLoginVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

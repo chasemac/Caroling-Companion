@@ -29,18 +29,11 @@ class ProfileTabVC: UIViewController {
     
     
     func checkUserSignedInStatus() {
-        if let user = Auth.auth().currentUser {
-            if user.email == nil && user.phoneNumber == nil {
-                print("Anonymous")
-                self.performSegue(withIdentifier: "NeedAccountVC", sender: nil)
-            } else {
-                print("Account Exists")
-                
-            }
-        } else {
-            print("need to create account")
-            self.performSegue(withIdentifier: "NeedAccountVC", sender: nil)
+        guard Auth.auth().currentUser?.isAnonymous != true else {
+            performSegue(withIdentifier: "NeedAccountVC", sender: nil)
+            return
         }
+        print("Account Exists")
     }
     
     func signOut() {

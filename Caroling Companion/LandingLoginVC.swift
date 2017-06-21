@@ -18,16 +18,15 @@ class LandingLoginVC: UIViewController {
     }
     
     func checkUserSignedInStatus() {
-        if let user = Auth.auth().currentUser {
-            if user.email == nil && user.phoneNumber == nil {
-                print("Anonymous")
-            } else {
-                print("Account Exists")
-                self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
-            }
-        } else {
-            print("need to create account")
+
+        guard Auth.auth().currentUser?.isAnonymous == true else {
+            print("need to CREATE ACCOUNT!!!!!!!!!")
+            return
         }
+        
+        print("Account Exists")
+        self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
+        
     }
     
     func loginWithFacebook() {
@@ -67,7 +66,7 @@ class LandingLoginVC: UIViewController {
         }
         
     }
-
+    
     
     func loginAnonymously() {
         guard Auth.auth().currentUser == nil else {

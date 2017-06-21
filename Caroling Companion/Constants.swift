@@ -69,10 +69,8 @@ struct DBPlaylistString {
 
 struct DBProviderString {
     static let anonymous = "anonymous"
-    static let email = "email"
     static let facebook = "facebook.com"
-    static let google = "google.com"
-    static let twitter = "twitter.com"
+    static let phoneNumber = "phoneNumber"
 }
 
 

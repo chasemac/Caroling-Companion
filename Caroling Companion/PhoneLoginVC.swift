@@ -27,15 +27,13 @@ class PhoneLoginVC: LoginFlow {
     @IBAction func nextBtnPressed(_ sender: Any) {
         if phoneNumber != nil {
             
-            PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber!) { (verificationID, error) in
+            PhoneAuthProvider.provider().verifyPhoneNumber("+1\(phoneNumber!)") { (verificationID, error) in
                 if let error = error {
                     print("tried to verify and got this error --------> \(error.localizedDescription)")
                     setupDefaultAlert(title: "", message: error.localizedDescription, actionTitle: "OK", VC: self)
-           //         self.showMessagePrompt(error.localizedDescription)
                     return
                 }
                 // Sign in using the verificationID and the code sent to the user
-                // ...
                 UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
                 
                 self.performSegue(withIdentifier: "PhoneLoginCodeVC", sender: nil)
