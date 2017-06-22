@@ -23,9 +23,9 @@ class PlaylistSongCellF: SongCellF {
             let playlistRef = DataService.ds.REF_PLAYLISTS.child(playlistKey!).child(DBPlaylistString.songs).child(snapshot.key)
             playlistRef.observeSingleEvent(of: .value, with: { (snapshot) in
                 if let _ = snapshot.value as? NSNull {
-                    self.playlistCheckBox.image = UIImage(named: "checkbox-empty")
+                    self.playlistCheckBox.image = UIImage(named: "addPlusBtn")
                 } else {
-                    self.playlistCheckBox.image = UIImage(named: "checkbox-filled")
+                    self.playlistCheckBox.image = UIImage(named: "deleteCellBtn")
                 }
                 
             })
