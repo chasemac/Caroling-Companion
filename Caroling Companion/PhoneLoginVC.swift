@@ -17,9 +17,12 @@ class PhoneLoginVC: LoginFlow {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        super.viewWillAppear(true)
+    }
+    
     @IBAction func numberPressed(_ sender: UITextField) {
         phoneNumber = sender.text!
    //     phoneNumberField.text = format(phoneNumber: phoneNumber!) ?? phoneNumber
@@ -44,10 +47,12 @@ class PhoneLoginVC: LoginFlow {
 
     }
     
-    @IBAction func backBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
     
+    @IBAction func backBtnPressed(_ sender: Any) {
+    print("back pressed")
+        self.navigationController?.popViewController(animated: true)
+
+    }
     
 
 }

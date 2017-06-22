@@ -13,8 +13,14 @@ import FBSDKLoginKit
 class LandingLoginVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
+        
         super.viewDidAppear(true)
         checkUserSignedInStatus()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        super.viewWillAppear(true)
     }
     
     func checkUserSignedInStatus() {

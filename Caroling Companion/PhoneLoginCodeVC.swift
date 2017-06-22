@@ -17,6 +17,10 @@ class PhoneLoginCodeVC: LoginFlow {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        super.viewWillAppear(true)
+    }
 
     @IBAction func createAccountBtnPressed(_ sender: Any) {
         guard activationCodeField.text != nil else {
@@ -35,7 +39,7 @@ class PhoneLoginCodeVC: LoginFlow {
     
     
     @IBAction func backBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
 
     }
 
