@@ -146,10 +146,16 @@ class ProfileTabVC: UIViewController {
         alertController.addAction(cancelAction)
         alertController.addAction(saveAction)
         alertController.addTextField { (textField) in
-            textField.keyboardType = .default
+            if DBUserStringLocal == DBUserString.name {
+                textField.keyboardType = .default
+            } else if DBUserStringLocal == DBUserString.email {
+                textField.keyboardType = .emailAddress
+            } else if DBUserStringLocal == DBUserString.phoneNumber {
+                textField.keyboardType = .phonePad
+            }
             textField.autocorrectionType = .default
             textField.clearButtonMode = .whileEditing
-            textField.placeholder = "Example: Best Songs"
+            textField.placeholder = textToEdit
             textField.autocapitalizationType = .words
         }
         present(alertController, animated: true, completion: nil)
