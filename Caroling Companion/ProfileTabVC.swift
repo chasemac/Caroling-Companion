@@ -35,8 +35,8 @@ class ProfileTabVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
         checkUserSignedInStatus()
+        super.viewDidAppear(true)
         loadUserInfo()
     }
     

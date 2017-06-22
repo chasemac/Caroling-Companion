@@ -63,4 +63,8 @@ class NeedAccountVC: UIViewController {
         loginWithFacebook()
     }
 
+    @IBAction func backBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "unwindToSongListTab", sender: self)
+    }
+    
 }
