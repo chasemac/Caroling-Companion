@@ -40,6 +40,8 @@ class ProfileTabVC: UIViewController {
         loadUserInfo()
     }
     
+
+    
     func loadUserInfo() {
         let user = Auth.auth().currentUser!
         nameLabel.text = user.displayName ?? "No Name"
