@@ -77,18 +77,12 @@ class CreatePlaylistVCF: SongListTVC {
     @IBAction func saveBtnTapped(_ sender: Any) {
         guard createdPlaylistKey == nil else {
             savePlaylistName(playlistKey: createdPlaylistKey!)
+        
             print("Tried to save name")
             
             return
         }
-     //   self.dismiss(animated: true, completion: nil)
-//        let playlist = playlistF!.value as! [String:Any]
-//        let playlistTitle = playlist[DBPlaylistString.title] as? String ?? ""
-//        if playlistTitle != "" {
-//            self.dismiss(animated: true, completion: nil)
-//        } else {
-//            savePlaylistName()
-//        }
+        self.navigationController?.popViewController(animated: true)
     }
     
     private func savePlaylistName(playlistKey: String) {
@@ -100,6 +94,7 @@ class CreatePlaylistVCF: SongListTVC {
                 let title = alert.textFields?.first?.text
                 
                 titleRef.setValue(title)
+                self.navigationController?.popViewController(animated: true)
                
             }))
             alert.addTextField { (textField) in
@@ -117,10 +112,10 @@ class CreatePlaylistVCF: SongListTVC {
     @IBAction func cancelBtnTapped(_ sender: Any) {
         
         if playlistF != nil {
-            dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         } else {
             DataService.ds.REF_PLAYLISTS.child(createdPlaylistKey!).removeValue()
-            dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
             print("tried to dismiss")
         }
 

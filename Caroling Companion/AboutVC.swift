@@ -14,5 +14,8 @@ class AboutVC: SwipeRightToDismissVC {
         super.viewDidLoad()
         navigationItem.backBarButtonItem?.title = ""
     }
+    @IBAction func backBtnPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 
 }

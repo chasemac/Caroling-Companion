@@ -68,6 +68,9 @@ class SongLyricsVC: SwipeRightToDismissVC {
         txtView.setContentOffset(CGPoint.zero, animated: false)
     }
     
+    @IBAction func backBtnPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 //    @IBAction func songListBtnPressed(_ sender: AnyObject) {
 //        dismiss(animated: true, completion: nil)
 //        

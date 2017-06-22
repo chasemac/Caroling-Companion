@@ -67,6 +67,9 @@ class ShowPlaylistVC: SongListTVC {
         performSegue(withIdentifier: "EditPlaylist", sender: playlistF)
     }
     
+    @IBAction func backBtnPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     // TODO: Clicking Edit Button While Searching Crashes
 //    override func editingChange(_ sender: Any) {
 //        // Fix this

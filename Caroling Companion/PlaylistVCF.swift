@@ -24,8 +24,10 @@ class PlaylistVCF: UITableViewController {
         super.viewDidLoad()
 
     }
+
     
     func configureDatabase() {
+ //   playlistsF = []
         ref = DataService.ds.REF_PLAYLISTS
         // listen for new messages in the firebase database
         _refHandle = ref.observe(.childAdded) { (snapshot: DataSnapshot)in
@@ -43,7 +45,6 @@ class PlaylistVCF: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return playlistsF.count
     }
     
@@ -59,6 +60,7 @@ class PlaylistVCF: UITableViewController {
         cell.configureCell(name as AnyObject, indexPath: indexPath as NSIndexPath)
         
         return cell
+        
         
     }
     
