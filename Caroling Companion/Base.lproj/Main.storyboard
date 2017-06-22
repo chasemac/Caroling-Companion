@@ -812,7 +812,7 @@ Thanks to Jesus.</string>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vd0-OJ-ExO">
-                                <rect key="frame" x="36" y="177" width="303" height="34.5"/>
+                                <rect key="frame" x="36" y="165" width="303" height="34.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theodore Duggleby-Chen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ctJ-ao-zRq">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="34.5"/>
@@ -833,7 +833,7 @@ Thanks to Jesus.</string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zt8-Tx-kEY">
-                                <rect key="frame" x="142.5" y="465" width="90" height="49"/>
+                                <rect key="frame" x="142.5" y="497" width="90" height="49"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="U8Y-t6-RxD">
                                         <rect key="frame" x="15.5" y="0.0" width="59" height="22"/>
@@ -904,7 +904,7 @@ Thanks to Jesus.</string>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Wwh-RP-uVW">
-                                <rect key="frame" x="122" y="264" width="130" height="150"/>
+                                <rect key="frame" x="122" y="296" width="130" height="150"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3rT-j6-LGu">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="46"/>
@@ -1002,7 +1002,7 @@ Thanks to Jesus.</string>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkR-X9-ePz">
-                                <rect key="frame" x="177" y="428" width="21" height="28"/>
+                                <rect key="frame" x="177" y="460" width="21" height="28"/>
                                 <state key="normal" image="ShareButton"/>
                                 <connections>
                                     <action selector="shareBtnTapped:" destination="96H-yd-xXX" eventType="touchUpInside" id="4oM-L8-346"/>
@@ -1019,8 +1019,8 @@ Thanks to Jesus.</string>
                             <constraint firstItem="b6G-Cy-5bv" firstAttribute="centerX" secondItem="Axt-Gm-Fkg" secondAttribute="centerX" id="Kyl-dg-jGR"/>
                             <constraint firstItem="b6G-Cy-5bv" firstAttribute="top" secondItem="pDb-Hf-9BR" secondAttribute="bottom" constant="30" id="QCB-1G-egm"/>
                             <constraint firstItem="SkR-X9-ePz" firstAttribute="top" secondItem="Wwh-RP-uVW" secondAttribute="bottom" constant="14" id="VrD-vh-vsX"/>
-                            <constraint firstItem="vd0-OJ-ExO" firstAttribute="top" secondItem="b6G-Cy-5bv" secondAttribute="bottom" constant="20" id="ekN-H9-3by"/>
-                            <constraint firstItem="pc3-iP-zad" firstAttribute="top" secondItem="zt8-Tx-kEY" secondAttribute="bottom" constant="40" id="luu-QN-jOz"/>
+                            <constraint firstItem="vd0-OJ-ExO" firstAttribute="top" secondItem="b6G-Cy-5bv" secondAttribute="bottom" constant="8" id="ekN-H9-3by"/>
+                            <constraint firstItem="pc3-iP-zad" firstAttribute="top" secondItem="zt8-Tx-kEY" secondAttribute="bottom" constant="8" id="luu-QN-jOz"/>
                             <constraint firstItem="vd0-OJ-ExO" firstAttribute="leading" secondItem="Axt-Gm-Fkg" secondAttribute="leadingMargin" constant="20" id="t1Q-Sk-AwT"/>
                         </constraints>
                     </view>
