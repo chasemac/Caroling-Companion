@@ -116,7 +116,6 @@ class SongListTVC: UITableViewController, UITextFieldDelegate {
     
     
     @IBAction func editingChange(_ sender: Any) {
-        text = textField.text!
         print(text)
         configureDatabase()
     }

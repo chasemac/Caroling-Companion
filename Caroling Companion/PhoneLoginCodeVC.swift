@@ -26,10 +26,8 @@ class PhoneLoginCodeVC: LoginFlow {
         AuthService.instance.loginwithPhoneNumber(verificationCode: activationCodeField.text!) { (errMsg, user) in
             if user != nil {
                 self.performSegue(withIdentifier: "SongListVC", sender: nil)
-                if let user = Auth.auth().currentUser {
-                    print("PHONE NUMBER: -----> \(user.phoneNumber!)")
-                    
-                }
+             
+
             }
         }
     

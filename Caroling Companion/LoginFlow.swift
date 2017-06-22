@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginFlow: UIViewController {
+class LoginFlow: SwipeRightToDismissVC {
     
     @IBOutlet weak var loginBtnToBottom: NSLayoutConstraint!
 

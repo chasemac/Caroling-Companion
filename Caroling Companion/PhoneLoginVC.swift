@@ -37,6 +37,7 @@ class PhoneLoginVC: LoginFlow {
                 UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
                 
                 self.performSegue(withIdentifier: "PhoneLoginCodeVC", sender: nil)
+                
             }
             
         }
