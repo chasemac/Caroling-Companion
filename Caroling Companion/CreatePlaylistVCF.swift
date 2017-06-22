@@ -100,7 +100,7 @@ class CreatePlaylistVCF: SongListTVC {
                 let title = alert.textFields?.first?.text
                 
                 titleRef.setValue(title)
-                self.dismiss(animated: true, completion: nil)
+               
             }))
             alert.addTextField { (textField) in
                 textField.keyboardType = .default

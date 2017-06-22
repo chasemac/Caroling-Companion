@@ -74,33 +74,17 @@ class ProfileTabVC: UIViewController {
         
     }
     
-    enum profileEditables {
-        case name
-        case email
-        case phoneNumber
-    }
-    
-    func saveEditedText(editable: profileEditables, text: String) {
-        let newName = text
-        switch editable {
-        case .name:
-            changeRequest?.displayName = newName
-            changeRequest?.commitChanges(completion: { (error) in
-                if error != nil {
-                    print(error!)
-                    setupDefaultAlert(title: "", message: error as! String, actionTitle: "Ok", VC: self)
-                }
-                print("New Name: \(Auth.auth().currentUser!.displayName!)")
-                DataService.ds.REF_USER_CURRENT.child(DBUserString.name).setValue(newName)
-                self.loadUserInfo()
-            })
-        case .phoneNumber:
-            DataService.ds.REF_USER_CURRENT.child(DBUserString.phoneNumber).setValue(newName)
-        case .email:
-            DataService.ds.REF_USER_CURRENT.child(DBUserString.email).setValue(newName)
-        }
-        self.loadUserInfo()
-
+    func createNameChangeRequest(name: String) {
+        changeRequest?.displayName = name
+        changeRequest?.commitChanges(completion: { (error) in
+            if error != nil {
+                print(error!)
+                setupDefaultAlert(title: "", message: error as! String, actionTitle: "Ok", VC: self)
+            }
+            print("New Name: \(Auth.auth().currentUser!.displayName!)")
+            DataService.ds.REF_USER_CURRENT.child(DBUserString.name).setValue(name)
+            self.loadUserInfo()
+    })
     }
     
     func checkUserSignedInStatus() {
@@ -111,14 +95,14 @@ class ProfileTabVC: UIViewController {
         print("Account Exists")
     }
     
-    func signOut() {
+    func logOut() {
         let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: UIAlertControllerStyle.alert)
         let destructiveAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive) {
             (result : UIAlertAction) -> Void in
             //MARK: TODO FIX THIS
             self.dismiss(animated: true, completion: nil)
             //    self.performSegue(withIdentifier: "LandingVC", sender: nil)
-            print("Signed Out")
+            print("Logged Out")
         }
         let okAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
             (result : UIAlertAction) -> Void in
@@ -142,18 +126,46 @@ class ProfileTabVC: UIViewController {
     @IBAction func shareBtnTapped(_ sender: Any) {
     }
     @IBAction func editNameTapped(_ sender: Any) {
-        saveEditedText(editable: .name, text: "Hello MYLOVE")
+        saveEdits(textToEdit: "Name", DBUserStringLocal: DBUserString.name)
     }
+    
+    func saveEdits(textToEdit: String, DBUserStringLocal: String) {
+
+        let alertController = UIAlertController(title: "What is your \(textToEdit)", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.default) { (result: UIAlertAction) in
+            let title = alertController.textFields?.first?.text
+            if DBUserStringLocal == DBUserString.name {
+                self.createNameChangeRequest(name: title!)
+            } else {
+               DataService.ds.REF_USER_CURRENT.child(DBUserStringLocal).setValue(title)
+            }
+            self.loadUserInfo()
+            
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(saveAction)
+        alertController.addTextField { (textField) in
+            textField.keyboardType = .default
+            textField.autocorrectionType = .default
+            textField.clearButtonMode = .whileEditing
+            textField.placeholder = "Example: Best Songs"
+            textField.autocapitalizationType = .words
+        }
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func editEmailBtnTapped(_ sender: Any) {
-        saveEditedText(editable: .email, text: "email@whatup.com")
+        saveEdits(textToEdit: "Email", DBUserStringLocal: DBUserString.email)
     }
     
     @IBAction func editPhoneNumberTapped(_ sender: Any) {
-        saveEditedText(editable: .phoneNumber, text: "779-845-1235")
+       saveEdits(textToEdit: "Phone Number", DBUserStringLocal: DBUserString.phoneNumber)
     }
     
     @IBAction func logOutBtnTapped(_ sender: Any) {
-        signOut()
+        logOut()
     }
     @IBAction func AboutBtnTapped(_ sender: Any) {
         performSegue(withIdentifier: "AboutVC", sender: nil)
