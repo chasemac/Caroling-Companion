@@ -16,15 +16,19 @@ class LandingLoginVC: UIViewController {
     @IBOutlet weak var skipBtn: UIButton!
     @IBOutlet weak var phoneBtn: OutlineBtn!
     var darkShade: CGFloat = 0.8
-    var screenView: UIImageView!
+    var labelView: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        screenView = UIImageView(frame: self.view.frame)
-        screenView.backgroundColor = UIColor.black
-        screenView.alpha = 0.0
-        navigationController?.view.addSubview(screenView)
+        labelView = UILabel(frame: self.view.frame)
+        labelView.text = "Loading..."
+        labelView.textAlignment = .center
+        labelView.font = UIFont(name: "BrandonGrotesque-Black", size: 40)
+        labelView.textColor = christmasWhite
+        labelView.backgroundColor = UIColor.black
+        labelView.alpha = 0
+        navigationController?.view.addSubview(labelView)
         
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -67,7 +71,7 @@ class LandingLoginVC: UIViewController {
                     AuthService.instance.firebaseFacebookLogin(credential, onComplete: { (errMsg, user) in
                         if errMsg != nil {
                             self.facebookBtn.isEnabled = true
-                            self.screenView.alpha = 0
+                            self.labelView.alpha = 0
                             setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
 
                             return
@@ -75,17 +79,17 @@ class LandingLoginVC: UIViewController {
                         if user != nil {
                             self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
                             self.facebookBtn.isEnabled = true
-                            self.screenView.alpha = 0
+                            self.labelView.alpha = 0
                         }
                     })
                 }
                 self.facebookBtn.isEnabled = true
-                self.screenView.alpha = 0
+                self.labelView.alpha = 0
                 setupDefaultAlert(title: "", message: "Unable to authenticate with Facebook", actionTitle: "Ok", VC: self)
             } else if result?.isCancelled == true {
                 print("user canceled")
                 self.facebookBtn.isEnabled = true
-                self.screenView.alpha = 0
+                self.labelView.alpha = 0
             } else {
                 print("successfully auth with facebook")
                 let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
@@ -93,13 +97,13 @@ class LandingLoginVC: UIViewController {
                     if errMsg != nil {
                         setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
                         self.facebookBtn.isEnabled = true
-                        self.screenView.alpha = 0
+                        self.labelView.alpha = 0
                         return
                     }
                     if user != nil {
                         self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
                         self.facebookBtn.isEnabled = true
-                        self.screenView.alpha = 0
+                        self.labelView.alpha = 0
                     }
                 })
             }
@@ -113,18 +117,18 @@ class LandingLoginVC: UIViewController {
             print("A current user exists")
             performSegue(withIdentifier: SegueToSongListVC, sender: nil)
             skipBtn.isEnabled = true
-            screenView.alpha = 0.0
+            labelView.alpha = 0.0
             return
         }
         AuthService.instance.loginAnonymous { (errMsg, user) in
             print("are we here?")
             self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
             self.skipBtn.isEnabled = true
-            self.screenView.alpha = 0.0
+            self.labelView.alpha = 0.0
             if errMsg != nil {
                 setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
                 self.skipBtn.isEnabled = true
-                self.screenView.alpha = 0.0
+                self.labelView.alpha = 0.0
                 return
             }
             print("here we go")
@@ -132,7 +136,7 @@ class LandingLoginVC: UIViewController {
                 print("we got here")
                 self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
                 self.skipBtn.isEnabled = true
-                self.screenView.alpha = 0.0
+                self.labelView.alpha = 0.0
             }
         }
     }
@@ -140,7 +144,7 @@ class LandingLoginVC: UIViewController {
     
     @IBAction func skipBtnPressed(_ sender: Any) {
         skipBtn.isEnabled = false
-        screenView.alpha = darkShade
+        labelView.alpha = darkShade
         loginAnonymously()
     }
     
@@ -150,7 +154,7 @@ class LandingLoginVC: UIViewController {
     
     @IBAction func facebookBtnPressed(_ sender: Any) {
         facebookBtn.isEnabled = false
-        screenView.alpha = darkShade
+        labelView.alpha = darkShade
 
         loginWithFacebook()
     }

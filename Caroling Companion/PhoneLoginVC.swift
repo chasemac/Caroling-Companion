@@ -12,11 +12,23 @@ import FirebaseAuth
 class PhoneLoginVC: LoginFlow {
     var signup: Bool = true
     var phoneNumber: String?
+    var darkShade: CGFloat = 0.8
+    var labelView: UILabel!
 
+    @IBOutlet weak var nextBtn: OutlineBtn!
     @IBOutlet weak var phoneNumberField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        labelView = UILabel(frame: self.view.frame)
+        labelView.text = "Loading..."
+        labelView.textAlignment = .center
+        labelView.font = UIFont(name: "BrandonGrotesque-Black", size: 40)
+        labelView.textColor = christmasWhite
+        labelView.backgroundColor = UIColor.black
+        labelView.alpha = 0
+
+        navigationController?.view.addSubview(labelView)
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
@@ -28,22 +40,29 @@ class PhoneLoginVC: LoginFlow {
    //     phoneNumberField.text = format(phoneNumber: phoneNumber!) ?? phoneNumber
     }
     @IBAction func nextBtnPressed(_ sender: Any) {
+        nextBtn.isEnabled = false
+        labelView.alpha = darkShade
         if phoneNumber != nil {
             
             PhoneAuthProvider.provider().verifyPhoneNumber("+1\(phoneNumber!)") { (verificationID, error) in
                 if let error = error {
                     print("tried to verify and got this error --------> \(error.localizedDescription)")
+                    self.nextBtn.isEnabled = true
+                    self.labelView.alpha = 0
                     setupDefaultAlert(title: "", message: error.localizedDescription, actionTitle: "OK", VC: self)
+                    
                     return
                 }
                 // Sign in using the verificationID and the code sent to the user
                 UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
                 
                 self.performSegue(withIdentifier: "PhoneLoginCodeVC", sender: nil)
-                
+                self.nextBtn.isEnabled = true
+                self.labelView.alpha = 0
             }
             
         }
+
 
     }
     
