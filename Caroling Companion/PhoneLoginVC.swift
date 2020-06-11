@@ -42,26 +42,26 @@ class PhoneLoginVC: LoginFlow {
     @IBAction func nextBtnPressed(_ sender: Any) {
         nextBtn.isEnabled = false
         labelView.alpha = darkShade
-        if phoneNumber != nil {
-            
-            PhoneAuthProvider.provider().verifyPhoneNumber("+1\(phoneNumber!)") { (verificationID, error) in
-                if let error = error {
-                    print("tried to verify and got this error --------> \(error.localizedDescription)")
-                    self.nextBtn.isEnabled = true
-                    self.labelView.alpha = 0
-                    setupDefaultAlert(title: "", message: error.localizedDescription, actionTitle: "OK", VC: self)
-                    
-                    return
-                }
-                // Sign in using the verificationID and the code sent to the user
-                UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
-                
-                self.performSegue(withIdentifier: "PhoneLoginCodeVC", sender: nil)
-                self.nextBtn.isEnabled = true
-                self.labelView.alpha = 0
-            }
-            
-        }
+//        if phoneNumber != nil {
+//
+//            PhoneAuthProvider.provider().verifyPhoneNumber("+1\(phoneNumber!)", uiDelegate: ) { (verificationID, error) in
+//                if let error = error {
+//                    print("tried to verify and got this error --------> \(error.localizedDescription)")
+//                    self.nextBtn.isEnabled = true
+//                    self.labelView.alpha = 0
+//                    setupDefaultAlert(title: "", message: error.localizedDescription, actionTitle: "OK", VC: self)
+//
+//                    return
+//                }
+//                // Sign in using the verificationID and the code sent to the user
+//                UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+//
+//                self.performSegue(withIdentifier: "PhoneLoginCodeVC", sender: nil)
+//                self.nextBtn.isEnabled = true
+//                self.labelView.alpha = 0
+//            }
+//
+//        }
 
 
     }

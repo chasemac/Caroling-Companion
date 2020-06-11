@@ -50,14 +50,16 @@ class ProfileTabVC: UIViewController {
         
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             print(snapshot)
-            let userDict = snapshot.value as! NSDictionary
-            let email = userDict[DBUserString.email]
-            self.emailLabel.text = email as? String ?? "No Email"
-            let provider = userDict[DBUserString.provider]
-            self.loginMethod.text = provider as? String ?? "No Provider"
-            let phone = userDict[DBUserString.phoneNumber]
-            self.phoneNumberLabel.text = phone as? String ?? "No Phone #"
-            self.hideLabelsAndButtons(provider: provider as! String)
+            if let userDict = snapshot.value as? NSDictionary {
+                let email = userDict[DBUserString.email]
+                self.emailLabel.text = email as? String ?? "No Email"
+                let provider = userDict[DBUserString.provider]
+                self.loginMethod.text = provider as? String ?? "No Provider"
+                let phone = userDict[DBUserString.phoneNumber]
+                self.phoneNumberLabel.text = phone as? String ?? "No Phone #"
+                self.hideLabelsAndButtons(provider: provider as! String)
+            }
+
         })
     }
     

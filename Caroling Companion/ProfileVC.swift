@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-import GoogleSignIn
+//import GoogleSignIn
 
 class ProfileVC: UIViewController {
     
@@ -112,7 +112,7 @@ class ProfileVC: UIViewController {
         signOut()
     }
     @IBAction func diconnectGoogleTapped(_ sender: Any) {
-        GIDSignIn.sharedInstance().disconnect()
+//        GIDSignIn.sharedInstance().disconnect()
     }
     @IBAction func deleteUser(_ sender: Any) {
         deleteUser()

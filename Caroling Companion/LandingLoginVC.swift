@@ -8,7 +8,7 @@
 
 import UIKit
 import FirebaseAuth
-import FBSDKLoginKit
+//import FBSDKLoginKit
 
 class LandingLoginVC: UIViewController {
     
@@ -62,52 +62,52 @@ class LandingLoginVC: UIViewController {
     }
     
     func loginWithFacebook() {
-        let facebookLogin = FBSDKLoginManager()
-        facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
-            if error != nil {
-                print("unable to authenticate with facebook \(String(describing: error))")
-                if Auth.auth().currentUser != nil {
-                    let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-                    AuthService.instance.firebaseFacebookLogin(credential, onComplete: { (errMsg, user) in
-                        if errMsg != nil {
-                            self.facebookBtn.isEnabled = true
-                            self.labelView.alpha = 0
-                            setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
-
-                            return
-                        }
-                        if user != nil {
-                            self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
-                            self.facebookBtn.isEnabled = true
-                            self.labelView.alpha = 0
-                        }
-                    })
-                }
-                self.facebookBtn.isEnabled = true
-                self.labelView.alpha = 0
-                setupDefaultAlert(title: "", message: "Unable to authenticate with Facebook", actionTitle: "Ok", VC: self)
-            } else if result?.isCancelled == true {
-                print("user canceled")
-                self.facebookBtn.isEnabled = true
-                self.labelView.alpha = 0
-            } else {
-                print("successfully auth with facebook")
-                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-                AuthService.instance.firebaseFacebookLogin(credential, onComplete: { (errMsg, user) in
-                    if errMsg != nil {
-                        setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
-                        self.facebookBtn.isEnabled = true
-                        self.labelView.alpha = 0
-                        return
-                    }
-                    if user != nil {
-                        self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
-                        self.facebookBtn.isEnabled = true
-                        self.labelView.alpha = 0
-                    }
-                })
-            }
-        }
+//        let facebookLogin = FBSDKLoginManager()
+//        facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+//            if error != nil {
+//                print("unable to authenticate with facebook \(String(describing: error))")
+//                if Auth.auth().currentUser != nil {
+//                    let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+//                    AuthService.instance.firebaseFacebookLogin(credential, onComplete: { (errMsg, user) in
+//                        if errMsg != nil {
+//                            self.facebookBtn.isEnabled = true
+//                            self.labelView.alpha = 0
+//                            setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
+//
+//                            return
+//                        }
+//                        if user != nil {
+//                            self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
+//                            self.facebookBtn.isEnabled = true
+//                            self.labelView.alpha = 0
+//                        }
+//                    })
+//                }
+//                self.facebookBtn.isEnabled = true
+//                self.labelView.alpha = 0
+//                setupDefaultAlert(title: "", message: "Unable to authenticate with Facebook", actionTitle: "Ok", VC: self)
+//            } else if result?.isCancelled == true {
+//                print("user canceled")
+//                self.facebookBtn.isEnabled = true
+//                self.labelView.alpha = 0
+//            } else {
+//                print("successfully auth with facebook")
+//                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+//                AuthService.instance.firebaseFacebookLogin(credential, onComplete: { (errMsg, user) in
+//                    if errMsg != nil {
+//                        setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
+//                        self.facebookBtn.isEnabled = true
+//                        self.labelView.alpha = 0
+//                        return
+//                    }
+//                    if user != nil {
+//                        self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
+//                        self.facebookBtn.isEnabled = true
+//                        self.labelView.alpha = 0
+//                    }
+//                })
+//            }
+//        }
         
     }
     
