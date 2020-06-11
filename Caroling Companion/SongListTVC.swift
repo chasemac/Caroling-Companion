@@ -12,7 +12,7 @@ import Firebase
 class SongListTVC: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textField: UITextField!
-    var text = ""
+    fileprivate var text = ""
     var favorites: [String] = []
     
     // MARK: NEW FIREBASE STUFF

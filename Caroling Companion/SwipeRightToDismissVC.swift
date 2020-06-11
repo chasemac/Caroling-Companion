@@ -52,7 +52,7 @@ class SwipeRightToDismissVC: UIViewController {
         self.view.addGestureRecognizer(panGestureRecognizer)
     }
     
-    func handlePanGesture(_ panGesture: UIPanGestureRecognizer) {
+    @objc func handlePanGesture(_ panGesture: UIPanGestureRecognizer) {
         
         let percent = max(panGesture.translation(in: view).x, 0) / view.frame.width
         
@@ -90,7 +90,7 @@ class SwipeRightToDismissVC: UIViewController {
 
 extension SwipeRightToDismissVC: UINavigationControllerDelegate {
     
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         return SlideAnimationTransition()
     }

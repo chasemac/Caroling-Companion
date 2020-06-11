@@ -98,15 +98,15 @@ class ProfileTabVC: UIViewController {
     }
     
     func logOut() {
-        let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: UIAlertControllerStyle.alert)
-        let destructiveAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive) {
+        let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: UIAlertController.Style.alert)
+        let destructiveAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive) {
             (result : UIAlertAction) -> Void in
             //MARK: TODO FIX THIS
             self.dismiss(animated: true, completion: nil)
             //    self.performSegue(withIdentifier: "LandingVC", sender: nil)
             print("Logged Out")
         }
-        let okAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
+        let okAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default) {
             (result : UIAlertAction) -> Void in
             print("Cancel")
         }
@@ -133,9 +133,9 @@ class ProfileTabVC: UIViewController {
     
     func saveEdits(textToEdit: String, DBUserStringLocal: String) {
 
-        let alertController = UIAlertController(title: "What is your \(textToEdit)", message: "", preferredStyle: UIAlertControllerStyle.alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
-        let saveAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.default) { (result: UIAlertAction) in
+        let alertController = UIAlertController(title: "What is your \(textToEdit)", message: "", preferredStyle: UIAlertController.Style.alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default) { (result: UIAlertAction) in
             let title = alertController.textFields?.first?.text
             if DBUserStringLocal == DBUserString.name {
                 self.createNameChangeRequest(name: title!)

@@ -54,13 +54,13 @@ class SongLyricsVC: SwipeRightToDismissVC {
     }
     
     func initText() {
-        txtView.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
+        txtView.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(SongLyricsVC.preferredContentSizeChanged(_:)), name: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SongLyricsVC.preferredContentSizeChanged(_:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
     }
     
-    func preferredContentSizeChanged(_ notification: Notification) {
-        txtView.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
+    @objc func preferredContentSizeChanged(_ notification: Notification) {
+        txtView.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
     }
     
     override func viewDidLayoutSubviews() {

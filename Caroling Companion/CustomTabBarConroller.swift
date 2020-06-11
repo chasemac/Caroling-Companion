@@ -13,9 +13,9 @@ class CustomTabBarConroller: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red:0.72, green:0.31, blue:0.31, alpha:1.0)], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes(convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): UIColor(red:0.72, green:0.31, blue:0.31, alpha:1.0)]), for: .selected)
         
-         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red:0.72, green:0.31, blue:0.31, alpha:0.5)], for: .normal)
+         UITabBarItem.appearance().setTitleTextAttributes(convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): UIColor(red:0.72, green:0.31, blue:0.31, alpha:0.5)]), for: .normal)
         
         // The tabBar top border is done using the `shadowImage` and `backgroundImage` properties.
         // We need to override those properties to set the custom top border.
@@ -42,4 +42,15 @@ class CustomTabBarConroller: UITabBarController {
         tabBar.shadowImage = getImageWithColor(color: UIColor(red:0.72, green:0.31, blue:0.31, alpha:1.0), size: CGSize(width: 1.0, height: 2.0))
     }
 
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
 }

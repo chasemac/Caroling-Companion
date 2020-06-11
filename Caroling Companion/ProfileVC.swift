@@ -72,12 +72,13 @@ class ProfileVC: UIViewController {
     }
     
     func signOut() {
-        let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: UIAlertControllerStyle.alert)
-        let destructiveAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive) {
+        let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: UIAlertController.Style.alert)
+        let destructiveAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive) {
             (result : UIAlertAction) -> Void in
             print("Signed Out")
+            
         }
-        let okAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
+        let okAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default) {
             (result : UIAlertAction) -> Void in
             print("Cancel")
         }

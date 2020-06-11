@@ -17,8 +17,8 @@ func printCurrentUser() {
     }
 }
 func setupDefaultAlert(title: String, message: String, actionTitle: String, VC: UIViewController) {
-    let successfulEmailSentAlertConroller = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-    let alrighty = UIAlertAction(title: actionTitle, style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
+    let successfulEmailSentAlertConroller = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+    let alrighty = UIAlertAction(title: actionTitle, style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
         
     })
     successfulEmailSentAlertConroller.addAction(alrighty)
