@@ -62,37 +62,21 @@ class DataService {
         return _REF_PROFILE_IMAGES
     }
     
-    
-    
     func createFirebaseDBUser(provider: String, user: User?, error: Error?) {
         guard user != nil else {
             print("User does not exist, error saving user")
             return
         }
-        
-        if user!.photoURL != nil {
             print(user!.providerID)
             print(provider)
             
             let userData = [DBUserString.provider: provider,
-                            DBUserString.email: user!.email!,
-                            DBUserString.name: user!.displayName!,
-                            DBUserString.providerProfileImageURL: user!.photoURL!.absoluteString as String]
-            REF_USERS.child(user!.uid).updateChildValues(userData)
-        } else if user!.email != nil, user?.displayName != nil {
-            let userData = [DBUserString.provider: provider,
-                            DBUserString.name: user!.displayName!,
-                            DBUserString.email: user!.email!]
-            REF_USERS.child(user!.uid).updateChildValues(userData)
-        } else if user!.email != nil {
-            let userData = [DBUserString.provider: provider,
-                            DBUserString.email: user!.email!]
-            REF_USERS.child(user!.uid).updateChildValues(userData)
-            
-        } else {
-            let userData = [DBUserString.provider: provider]
-            REF_USERS.child(user!.uid).updateChildValues(userData)
-        }
+                            DBUserString.email: user!.email ?? nil,
+                            DBUserString.phoneNumber: user!.phoneNumber ?? nil,
+                            DBUserString.name: user!.displayName ?? nil,
+                            DBUserString.providerProfileImageURL: user!.photoURL?.absoluteString ?? nil]
+            REF_USERS.child(user!.uid).updateChildValues(userData as Any as! [AnyHashable : Any])
+        
     }
     
 //    func setTextFieldToDataBaseText(_ DBRef: String, textField: UITextField) {

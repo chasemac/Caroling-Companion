@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
 
-import GoogleSignIn
+//import GoogleSignIn
 
 class ProfileVC: UIViewController {
-
+    
     @IBOutlet weak var uidLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -48,21 +48,21 @@ class ProfileVC: UIViewController {
         } else {
             print("no current email")
         }
-
+        
         
     }
-
-
+    
+    
     
     @IBAction func unlinkBtnTapped(_ sender: Any) {
         
-    print(Auth.auth().currentUser?.providerData.count as Any)
+        print(Auth.auth().currentUser?.providerData.count as Any)
         
         print(Auth.auth().currentUser?.providerID as Any)
-    
+        
         let providerID = "facebook.com"
-    //    let providerID = FIRAuth.auth()?.currentUser?.providerID
-    
+        //    let providerID = FIRAuth.auth()?.currentUser?.providerID
+        
         Auth.auth().currentUser?.unlink(fromProvider: providerID) { (user, error) in
             if error != nil {
                 print("success")
@@ -71,20 +71,14 @@ class ProfileVC: UIViewController {
         }
     }
     
-    func singOut() {
-        self.performSegue(withIdentifier: "LoginVC", sender: nil)
-    }
-
-    
-    @IBAction func logoutTapped(_ sender: Any) {
-        
-        let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: UIAlertControllerStyle.alert)
-        let destructiveAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive) {
+    func signOut() {
+        let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: UIAlertController.Style.alert)
+        let destructiveAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive) {
             (result : UIAlertAction) -> Void in
             print("Signed Out")
-            self.singOut()
+            
         }
-        let okAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
+        let okAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default) {
             (result : UIAlertAction) -> Void in
             print("Cancel")
         }
@@ -98,16 +92,30 @@ class ProfileVC: UIViewController {
         } catch {
             print("failed"  )
         }
+    }
+    
+    func deleteUser() {
+        //MARK: TODO Delete Data From Users and Playlists
+        let user = Auth.auth().currentUser
         
-        do {
-            try  Auth.auth().signOut()
-        } catch {
-            print("failed"  )
+        user?.delete { error in
+            if let error = error {
+                print(error)
+            } else {
+                print("account deleted")
+            }
         }
-        
-
+    }
+    
+    
+    @IBAction func logoutTapped(_ sender: Any) {
+        signOut()
     }
     @IBAction func diconnectGoogleTapped(_ sender: Any) {
-        GIDSignIn.sharedInstance().disconnect()
+//        GIDSignIn.sharedInstance().disconnect()
+    }
+    @IBAction func deleteUser(_ sender: Any) {
+        deleteUser()
+
     }
 }

@@ -23,9 +23,6 @@ class OutlineBtn: UIButton {
     
 
     
-    
-    
-    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         layer.borderWidth = borderWidth

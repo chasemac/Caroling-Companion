@@ -12,7 +12,7 @@ import Firebase
 class SongListTVC: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textField: UITextField!
-    var text = ""
+    fileprivate var text = ""
     var favorites: [String] = []
     
     // MARK: NEW FIREBASE STUFF
@@ -22,10 +22,6 @@ class SongListTVC: UITableViewController, UITextFieldDelegate {
     fileprivate var query: DatabaseQuery?
     
     override func viewDidLoad() {
-//        guard Auth.auth().currentUser != nil else {
-//            performSegue(withIdentifier: "LoginVC", sender: nil)
-//            return
-//        }
         configureDatabase()
         
         super.viewDidLoad()
@@ -120,7 +116,6 @@ class SongListTVC: UITableViewController, UITextFieldDelegate {
     
     
     @IBAction func editingChange(_ sender: Any) {
-        text = textField.text!
         print(text)
         configureDatabase()
     }
@@ -202,14 +197,4 @@ class SongListTVC: UITableViewController, UITextFieldDelegate {
     
 }
 
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
+

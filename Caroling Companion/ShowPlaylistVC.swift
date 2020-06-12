@@ -22,7 +22,8 @@ class ShowPlaylistVC: SongListTVC {
         print("the first one!! ----->>>> \(playlistF)")
         super.viewDidLoad()
         let playlist = playlistF.value as! [String:Any]
-        navigationItem.title = playlist[DBPlaylistString.title] as? String ?? "No Title"
+        let navTitle =  playlist[DBPlaylistString.title] as? String ?? "No Title"
+        navigationItem.title = navTitle.uppercased()
     }
 
     override func configureDatabase() {
@@ -66,6 +67,9 @@ class ShowPlaylistVC: SongListTVC {
         performSegue(withIdentifier: "EditPlaylist", sender: playlistF)
     }
     
+    @IBAction func backBtnPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     // TODO: Clicking Edit Button While Searching Crashes
 //    override func editingChange(_ sender: Any) {
 //        // Fix this

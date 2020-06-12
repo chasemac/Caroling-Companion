@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import FirebaseAuth
 
-import Firebase
-
+func printCurrentUser() {
+    if Auth.auth().currentUser?.uid != nil {
+        print("Logged in user UID ------> \(Auth.auth().currentUser!.uid as Any)")
+    } else {
+        print("no current user")
+    }
+}
 func setupDefaultAlert(title: String, message: String, actionTitle: String, VC: UIViewController) {
-    let successfulEmailSentAlertConroller = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-    let alrighty = UIAlertAction(title: actionTitle, style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
+    let successfulEmailSentAlertConroller = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+    let alrighty = UIAlertAction(title: actionTitle, style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
         
     })
     successfulEmailSentAlertConroller.addAction(alrighty)

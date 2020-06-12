@@ -8,11 +8,7 @@ target 'Caroling Companion' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'Firebase/Auth'
-  pod 'FBSDKCoreKit'
-  pod 'FBSDKLoginKit'
-  #  pod 'Google/SignIn'
-  pod 'GoogleSignIn'
-  
+
 
   # Pods for Caroling Companion
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginFlow: UIViewController {
+class LoginFlow: SwipeRightToDismissVC {
     
     @IBOutlet weak var loginBtnToBottom: NSLayoutConstraint!
 
@@ -22,6 +22,7 @@ class LoginFlow: UIViewController {
         return UIScreen.main.bounds.height
     }
     
+
     
     func keyboardHeightConstraintConstant() -> CGFloat {
         switch(self.screenHeight()) {
@@ -40,3 +41,23 @@ class LoginFlow: UIViewController {
     }
 
 }
+
+extension UIViewController {
+    var contents: UIViewController {
+        if let navcon = self as? UINavigationController {
+            return navcon.visibleViewController ?? self
+        } else {
+            return self
+        }
+    }
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+

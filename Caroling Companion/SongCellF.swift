@@ -37,15 +37,7 @@ class SongCellF: UITableViewCell {
         
         songNameLabel.text = name as? String
         
-        if indexPath.row % 3 == 0 {
-            self.backgroundColor = softGreen
-        } else if
-            indexPath.row % 2 == 0 {
-            self.backgroundColor = darkRed
-        }
-        else {
-            self.backgroundColor = softRed
-        }
+        self.backgroundColor = christmasWhite
          setFavorite(key: key)
     }
   
@@ -55,9 +47,9 @@ class SongCellF: UITableViewCell {
         favoriteRef = DataService.ds.REF_USER_CURRENT.child(DBSongString.favorites).child(key)
         favoriteRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if let _ = snapshot.value as? NSNull {
-                self.starImage.image = UIImage(named: "star-empty")
+                self.starImage.image = UIImage(named: "heartEmpty")
             } else {
-                self.starImage.image = UIImage(named: "star-filled")
+                self.starImage.image = UIImage(named: "heartFilled")
             }
         })
     }

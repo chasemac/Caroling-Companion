@@ -14,8 +14,13 @@ let softGreen = UIColor(red: 0.467, green: 0.600, blue: 0.424, alpha: 1.00)
 let darkRed = UIColor(red: 0.718, green: 0.310, blue: 0.310, alpha: 1.00)
 let softRed = UIColor(red: 0.882, green: 0.471, blue: 0.471, alpha: 1.00)
 
+let christmasRed = UIColor(red:0.72, green:0.31, blue:0.31, alpha:1.0)
+let christmasGreen = UIColor(red:0.47, green:0.60, blue:0.42, alpha:1.0)
+let christmasWhite = UIColor(red:0.99, green:0.99, blue:0.96, alpha:1.0)
+
 let YOUTUBE_URL: String = "https://www.youtube.com/embed/"
-let USER_DOES_NOT_EXIST = "DNE"
+let USER_DOES_NOT_EXIST = "User Does Not Exist"
+let SegueToSongListVC = "SongListVC"
 
 let KEY_UID = "uid"
 
@@ -52,6 +57,7 @@ struct DBUserString {
     static let provider = "provider"
     static let email = "email"
     static let favorites = "favorites"
+    static let phoneNumber = "phoneNumber"
 }
 
 // Playlist
@@ -63,11 +69,9 @@ struct DBPlaylistString {
 }
 
 struct DBProviderString {
-    static let anonymous = "anonymous"
-    static let email = "email"
-    static let facebook = "facebook.com"
-    static let google = "google.com"
-    static let twitter = "twitter.com"
+    static let anonymous = "Anonymous"
+    static let facebook = "Facebook"
+    static let phoneNumber = "Phone Number"
 }
 
 

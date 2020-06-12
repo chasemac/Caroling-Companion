@@ -8,9 +8,8 @@
 
 import Foundation
 import FirebaseAuth
-//import FBSDKCoreKit
-//import Google
-//import GoogleSignIn
+//import FBSDKLoginKit
+
 
 typealias Completion = (_ errMsg: String?, _ data: AnyObject?) -> Void
 
@@ -25,7 +24,7 @@ class AuthService {
         Auth.auth().signInAnonymously(completion: { (user, error) in
             if error == nil {
                 print("CHASE: Anonymous User authenticated with Firebase")
-                DataService.ds.createFirebaseDBUser(provider: DBProviderString.anonymous, user: user, error: error)
+//                DataService.ds.createFirebaseDBUser(provider: DBProviderString.anonymous, user: user, error: error)
                 onComplete!(nil, user)
             } else {
                 if error != nil {
@@ -35,7 +34,25 @@ class AuthService {
         })
     }
     
-//    func firebaseFacebookLogin(_ credential: AuthCredential, onComplete: Completion?) {
+    func loginwithPhoneNumber(verificationCode: String, onComplete: Completion?) {
+        let verificationID = UserDefaults.standard.string(forKey: "authVerificationID")
+        let credential = PhoneAuthProvider.provider().credential(
+            withVerificationID: verificationID!,
+            verificationCode: verificationCode)
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if let error = error {
+                self.handleFirebaseError(error: error as NSError, onComplete: onComplete, email: "")
+                print(error)
+                return
+            }
+            // User is signed in
+//            DataService.ds.createFirebaseDBUser(provider: DBProviderString.phoneNumber, user: user, error: error)
+//            print("We signed in!!!! ----> UID: \(user!.uid)")
+            onComplete!(nil, user)
+        }
+    }
+    
+    func firebaseFacebookLogin(_ credential: AuthCredential, onComplete: Completion?) {
 //        guard Auth.auth().currentUser?.isAnonymous != true else {
 //            let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
 //            print("attenpting to merge \(String(describing: Auth.auth().currentUser?.uid)) with Facebook")
@@ -55,13 +72,13 @@ class AuthService {
 //                            print("error saving user")
 //                            print(error!)
 //                        }
-//                        
+//
 //                    })
 //                }
 //            })
 //            return
 //        }
-//        
+//
 //        Auth.auth().signIn(with: credential, completion: { (user, error) in
 //            if error != nil {
 //                print("CHASE: Unable to auth with Firebase - \(String(describing: error))")
@@ -73,54 +90,13 @@ class AuthService {
 //                onComplete!(nil, user)
 //            }
 //        })
-//    }
-//    
-//    func firebaseGoogleLogin(user: GIDGoogleUser!, error: Error!, onComplete: Completion?) {
-////        let userId = user.userID                  // For client-side use only!
-////        let idToken = user.authentication.idToken // Safe to send to the server
-////        let fullName = user.profile.name
-////        let givenName = user.profile.givenName
-////        let familyName = user.profile.familyName
-////        let email = user.profile.email
-//        
-//        guard Auth.auth().currentUser?.isAnonymous != true else {
-//            guard let authentication = user.authentication else { return }
-//            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-//                                                              accessToken: authentication.accessToken)
-//            print("user connected with google --> Credential: \(credential)")
-//            Auth.auth().currentUser!.link(with: credential, completion: { (user, error) in
-//                DataService.ds.createFirebaseDBUser(provider: DBProviderString.google, user: user, error: error)
-//            })
-//            return
-//        }
-//        if let error = error {
-//            print(error)
-//            return
-//        }
-//        guard let authentication = user.authentication else { return }
-//        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-//                                                          accessToken: authentication.accessToken)
-//        Auth.auth().signIn(with: credential) { (user, error) in
-//            if error != nil {
-//                print("CHASE: Unable to auth with Firebase - \(String(describing: error))")
-//                // Handle Errors
-//                self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: "")
-//            } else if user != nil {
-//                print("CHASE: Succesffully authenticated with Firebase")
-//                DataService.ds.createFirebaseDBUser(provider: DBProviderString.google, user: user, error: error)
-//                onComplete!(nil, user)
-//            }
-//            
-//        }
-//
-//    }
-
+    }
     
 //    func createFirebaseUserWithEmail(email: String, password: String, onComplete: Completion?) {
 //        guard Auth.auth().currentUser?.isAnonymous != true else {
 //            print("merger")
-//            let credential = FIREmailPasswordAuthProvider.credential(withEmail: email, password: password)
-//            Auth.auth()?.currentUser!.link(with: credential, completion: { (user, error) in
+//            let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+//            Auth.auth().currentUser!.link(with: credential, completion: { (user, error) in
 //                DataService.ds.createFirebaseDBUser(provider: DBProviderString.email, user: user, error: error)
 //                onComplete!(nil, user)
 //            })
@@ -130,41 +106,14 @@ class AuthService {
 //            DataService.ds.createFirebaseDBUser(provider: DBProviderString.email, user: user, error: error)
 //            onComplete!(nil, user)
 //        })
+//
 //    }
-    
-    func login(email: String, password: String, onComplete: Completion?) {
-        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
-            if error != nil {
-                if let errorCode = AuthErrorCode(rawValue: error!._code) {
-                    switch(errorCode) {
-                    case .userNotFound:
-                        onComplete?(USER_DOES_NOT_EXIST,nil)
-                    default:
-                        onComplete?("There was a problem authenticating, Try again", nil)
-                    }
-                }
-                self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: email)
-            } else {
-                print("successfully logged in")
-                onComplete?(nil, user)
-            }
-        })
-    }
-    
-    func resetPassword(email: String, onComplete: Completion?) {
-        Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
-            if error != nil {
-                self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: email)
-            }
-        })
-    }
     
     
     func handleFirebaseError(error: NSError, onComplete: Completion?, email: String?) {
         print(error.debugDescription)
         if let errorCode = AuthErrorCode(rawValue: error._code) {
             switch (errorCode) {
-        
             case .invalidEmail:
                 onComplete?("Invalid email address", nil)
             case .wrongPassword:
@@ -172,7 +121,7 @@ class AuthService {
             case .accountExistsWithDifferentCredential:
                 onComplete?("Could not create account. Email already in use", nil)
             case .userNotFound:
-                onComplete?("User does not exist", nil)
+                onComplete?(USER_DOES_NOT_EXIST, nil)
             case .emailAlreadyInUse:
                 onComplete?("An account was previously created with your Facebook's email address, please click the email button and sign in using your email address and password", nil)
                 print("in use")
@@ -185,6 +134,25 @@ class AuthService {
             case .networkError:
                 onComplete?("Unable to connect to the internet!", nil)
                 print("network error")
+            case .missingPhoneNumber:
+                onComplete?("Please enter your phone number", nil)
+                print("Please enter your phone number")
+            case .invalidPhoneNumber:
+                onComplete?("Please enter a valid phone number", nil)
+                print("Please enter a valid phone number")
+            case .quotaExceeded:
+                onComplete?("Unable to sign in at this time, please try again later", nil)
+                print("Thrown if the SMS quota for the Firebase project has been exceeded.")
+            case .userDisabled:
+                onComplete?("Your user account has been disabled", nil)
+                print("Thrown if the user corresponding to the given phone number has been disabled.")
+            case .missingVerificationCode:
+                onComplete?("Error: Please close app and try the login process again.", nil)
+                print("Thrown if the verification code is missing.")
+            case .missingVerificationID:
+                onComplete?("Error: Please close app and try the login process again.", nil)
+                print("Thrown if the verification ID is missing.")
+                
             default:
                 onComplete?("There was a problem authenticating, Try again", nil)
             }
