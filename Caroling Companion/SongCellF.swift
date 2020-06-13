@@ -12,10 +12,7 @@ import Firebase
 class SongCellF: UITableViewCell {
     
     @IBOutlet weak var songNameLabel: UILabel!
-    @IBOutlet weak var starImage: UIImageView!
-    
-  //  var song: FIRDataSnapshot!
-    var favoriteRef: DatabaseReference!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,29 +27,16 @@ class SongCellF: UITableViewCell {
     
     
     func configureCell(_ snapshot: DataSnapshot, indexPath: NSIndexPath, playlistKey: String?) {
-        let key = snapshot.key
         
         let song = snapshot.value as! NSDictionary
         let name = song[DBSongString.title] ?? "No Title" as AnyObject
         
         songNameLabel.text = name as? String
+        songNameLabel.textColor = .darkGray
         
         self.backgroundColor = christmasWhite
-         setFavorite(key: key)
     }
   
-    func setFavorite(key: String) {
-      
-        
-        favoriteRef = DataService.ds.REF_USER_CURRENT.child(DBSongString.favorites).child(key)
-        favoriteRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            if let _ = snapshot.value as? NSNull {
-                self.starImage.image = UIImage(named: "heartEmpty")
-            } else {
-                self.starImage.image = UIImage(named: "heartFilled")
-            }
-        })
-    }
     
 }
 

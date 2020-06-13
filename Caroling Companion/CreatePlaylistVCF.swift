@@ -49,6 +49,9 @@ class CreatePlaylistVCF: SongListTVC {
         } else {
             cell.configureCell(snapshot, indexPath: indexPath as NSIndexPath, playlistKey: createdPlaylistKey)
         }
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = .clear
+        cell.selectedBackgroundView = backgroundView
         return cell
     }
     

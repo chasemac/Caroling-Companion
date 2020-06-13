@@ -25,7 +25,7 @@ class SongLyricsVC: SwipeRightToDismissVC {
             print("no current user")
         }
         initText()
-        print("the almost there one!! ----->>>> \(self.songF)")
+        print("the almost there one!! ----->>>> \(String(describing: self.songF))")
         loadSongs(song: self.songF)
         
     }
@@ -55,8 +55,8 @@ class SongLyricsVC: SwipeRightToDismissVC {
     
     func initText() {
         txtView.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(SongLyricsVC.preferredContentSizeChanged(_:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
+        txtView.textColor = .darkGray
+        NotificationCenter.default.addObserver(self, selector: #selector(self.preferredContentSizeChanged(_:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
     }
     
     @objc func preferredContentSizeChanged(_ notification: Notification) {
@@ -71,18 +71,5 @@ class SongLyricsVC: SwipeRightToDismissVC {
     @IBAction func backBtnPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-//    @IBAction func songListBtnPressed(_ sender: AnyObject) {
-//        dismiss(animated: true, completion: nil)
-//        
-//        songListBtn.backgroundColor = UIColor(red: 0.718, green: 0.310, blue: 0.310, alpha: 1.00)
-//    }
-    
-    //    func loadVideo(song: FIRDataSnapshot) {
-    //        if let songDict = song.value as? [String : AnyObject] {
-    //            let video = songDict[DBSongString.videoURL] as! String!
-    //            let youtubeURL = YOUTUBE_URL + video!
-    //            videoView.allowsInlineMediaPlayback = true
-    //            videoView.loadHTMLString("<iframe width=\"\(videoView.frame.width)\" height=\"\(videoView.frame.height)\" src=\"\(youtubeURL)?&playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
-    //        }
-    //    }
+
 }

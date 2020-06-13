@@ -21,7 +21,6 @@ class LoginFlow: SwipeRightToDismissVC {
     func screenHeight() -> CGFloat {
         return UIScreen.main.bounds.height
     }
-    
 
     
     func keyboardHeightConstraintConstant() -> CGFloat {

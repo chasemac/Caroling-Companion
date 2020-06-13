@@ -9,11 +9,7 @@
 import UIKit
 import Firebase
 
-class SongListTVC: UITableViewController, UITextFieldDelegate {
-    
-    @IBOutlet weak var textField: UITextField!
-    fileprivate var text = ""
-    var favorites: [String] = []
+class SongListTVC: UITableViewController {
     
     // MARK: NEW FIREBASE STUFF
     fileprivate var ref: DatabaseReference!
@@ -27,23 +23,15 @@ class SongListTVC: UITableViewController, UITextFieldDelegate {
         super.viewDidLoad()
         print("Logged in user UID ------> \(Auth.auth().currentUser!.uid as Any)")
         
-        textField.delegate = self
         self.hideKeyboardWhenTappedAround()
     }
     
     func configureDatabase() {
-        favorites.removeAll()
-        loadFavoriteSongKeys()
-        text = textField.text!
         songsF = []
         // not lowercasing
-        let lowercaseText = text
         self.ref = DataService.ds.REF_SONGS
-        if text != "" {
-            self.query = ref.queryOrdered(byChild: DBSongString.title).queryStarting(atValue: lowercaseText).queryEnding(atValue: lowercaseText+"\u{f8ff}")
-        } else {
-            self.query = ref.queryOrdered(byChild: DBSongString.title)
-        }
+            
+        self.query = ref.queryOrdered(byChild: DBSongString.title)
         
         self.query?.observe(.value, with: { (snapshot) in
             
@@ -58,21 +46,7 @@ class SongListTVC: UITableViewController, UITextFieldDelegate {
         tableView.reloadData()
         
     }
-    
-    func loadFavoriteSongKeys() {
-        favRef = DataService.ds.REF_USER_CURRENT.child(DBUserString.favorites)
-        favRef.observe(.value, with: { (snapshot) in
-            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
-                for snap in snapshot {
-                    let key = snap.key
-                    self.favorites.append(key)
-                    
-                }
-                print("------------------\(self.favorites)")
-            }
-            self.favRef.removeAllObservers()
-        })
-    }
+
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -87,7 +61,9 @@ class SongListTVC: UITableViewController, UITextFieldDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Dequeue cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "SongCell", for: indexPath) as! SongCellF
-        
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = softGreen
+        cell.selectedBackgroundView = backgroundView
         
         let snapshot = songsF[indexPath.row]
         print("the snap one!! ----->>>> \(snapshot)")
@@ -96,7 +72,7 @@ class SongListTVC: UITableViewController, UITextFieldDelegate {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+//        tableView.deselectRow(at: indexPath, animated: true)
         
         let song = songsF[indexPath.row]
         print("the 1 one!! ----->>>> \(song)")
@@ -110,89 +86,17 @@ class SongListTVC: UITableViewController, UITextFieldDelegate {
             let detailVC = segue.destination as! SongLyricsVC
             detailVC.songF = sender as? DataSnapshot
             
-            print("the detail one!! ----->>>> \(detailVC.songF)")
+            print("the detail one!! ----->>>> \(String(describing: detailVC.songF))")
         }
     }
     
     
     @IBAction func editingChange(_ sender: Any) {
-        print(text)
         configureDatabase()
-    }
-    
-    func adjustFavorite(indexPath: IndexPath) {
-        
-        let song = songsF[indexPath.row]
-        let favoriteRef = DataService.ds.REF_USER_CURRENT.child(DBSongString.favorites).child(song.key)
-        
-        favoriteRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            if let _ = snapshot.value as? NSNull {
-                
-                favoriteRef.setValue(true)
-                
-                //              song.adjustFavorites(true)
-                self.tableView.reloadRows(at: [indexPath], with: .automatic)
-            } else {
-                favoriteRef.removeValue()
-                
-                //               song.adjustFavorites(false)
-                self.tableView.reloadRows(at: [indexPath], with: .automatic)
-            }
-            
-        })
-    }
-    
-    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
-        let song = songsF[indexPath.row]
-        let favoriteRef = DataService.ds.REF_USER_CURRENT.child(DBSongString.favorites).child(song.key)
-        
-        let favorite = UITableViewRowAction(style: .normal, title: "+ \n Favorite") { action, index in
-            self.adjustFavorite(indexPath: indexPath)
-            
-            //            favoriteRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            //                if let _ = snapshot.value as? NSNull {
-            //                    favoriteRef.setValue(true)
-            //
-            //                    song.adjustFavorites(true)
-            //                    //     favoriteRef.database.persistenceEnabled = true
-            //                }
-            // //               tableView.reloadRows(at: [indexPath], with: .left)
-            //            })
-        }
-        favorite.backgroundColor = .gray
-        
-        let removeFavorite = UITableViewRowAction(style: .normal, title: "- \n Favorite") { action, index in
-            favoriteRef.observeSingleEvent(of: .value, with: { (snapshot) in
-                if let _ = snapshot.value as? NSNull {
-                    return
-                } else {
-                    favoriteRef.removeValue()
-                    
-                    //            song.adjustFavorites(false)
-                }
-                self.tableView.reloadRows(at: [indexPath], with: .automatic)
-            })
-        }
-        return [favorite, removeFavorite]
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
-    }
-    
-    // MARK: KEYBOARD FUNCTIONS
-    
-    //presses return key
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        
-        return true
-    }
-    
-    // Hide keyboard when user touches outside keyboard
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
     }
     
 }

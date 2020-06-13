@@ -27,7 +27,7 @@ class PlaylistNameCellF: UITableViewCell {
     func configureCell(_ playlistName: AnyObject, indexPath: NSIndexPath) {
     
         playlistNameLabel.text = playlistName as? String
-        
+        playlistNameLabel.textColor = .darkGray
         self.backgroundColor = christmasWhite
     }
     

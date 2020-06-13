@@ -83,7 +83,7 @@ class ProfileTabVC: UIViewController {
         changeRequest?.commitChanges(completion: { (error) in
             if error != nil {
                 print(error!)
-                setupDefaultAlert(title: "", message: error as! String, actionTitle: "Ok", VC: self)
+                setupDefaultAlert(title: "", message: error.debugDescription, actionTitle: "Ok", VC: self)
             }
             print("New Name: \(Auth.auth().currentUser!.displayName!)")
             DataService.ds.REF_USER_CURRENT.child(DBUserString.name).setValue(name)

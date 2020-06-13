@@ -58,7 +58,9 @@ class PlaylistVCF: UITableViewController {
         let playlist = snapshot.value as! [String: AnyObject]
         let name = playlist[DBPlaylistString.title] ?? "title" as AnyObject
         cell.configureCell(name as AnyObject, indexPath: indexPath as NSIndexPath)
-        
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = softGreen
+        cell.selectedBackgroundView = backgroundView
         return cell
         
         

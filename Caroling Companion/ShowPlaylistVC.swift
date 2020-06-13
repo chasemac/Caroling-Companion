@@ -19,7 +19,7 @@ class ShowPlaylistVC: SongListTVC {
     
     override func viewDidLoad() {
         
-        print("the first one!! ----->>>> \(playlistF)")
+        print("the first one!! ----->>>> \(String(describing: playlistF))")
         super.viewDidLoad()
         let playlist = playlistF.value as! [String:Any]
         let navTitle =  playlist[DBPlaylistString.title] as? String ?? "No Title"
@@ -54,7 +54,7 @@ class ShowPlaylistVC: SongListTVC {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("the second one!! ----->>>> \(playlistF)")
+        print("the second one!! ----->>>> \(String(describing: playlistF))")
         if segue.identifier == "EditPlaylist" {
             let detailVC = segue.destination.contents as! CreatePlaylistVCF
             detailVC.playlistF = sender as? DataSnapshot
@@ -63,7 +63,7 @@ class ShowPlaylistVC: SongListTVC {
     }
     
     @IBAction func editBtnTapped(_ sender: Any) {
-        print("the third one!! ----->>>> \(playlistF)")
+        print("the third one!! ----->>>> \(String(describing: playlistF))")
         performSegue(withIdentifier: "EditPlaylist", sender: playlistF)
     }
     
