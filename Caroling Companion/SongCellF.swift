@@ -13,25 +13,18 @@ class SongCellF: UITableViewCell {
     
     @IBOutlet weak var songNameLabel: UILabel!
 
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
         // Configure the view for the selected state
     }
     
-    
-    func configureCell(_ snapshot: DataSnapshot, indexPath: NSIndexPath, playlistKey: String?) {
-        
-        let song = snapshot.value as! NSDictionary
-        let name = song[DBSongString.title] ?? "No Title" as AnyObject
-        
-        songNameLabel.text = name as? String
+    func configureSongNameCell(song: Song) {
+
+        songNameLabel.text = song.title
         songNameLabel.textColor = .darkGray
         
         self.backgroundColor = christmasWhite

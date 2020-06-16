@@ -13,10 +13,27 @@ class PlaylistSongCellF: SongCellF {
     
     @IBOutlet weak var playlistCheckBox: UIImageView!
     
-    override func configureCell(_ snapshot: DataSnapshot, indexPath: NSIndexPath, playlistKey: String?) {
-        super.configureCell(snapshot, indexPath: indexPath, playlistKey: playlistKey)
+    func configureCell(_ snapshot: DataSnapshot, indexPath: NSIndexPath, playlistKey: String?) {
+        let song = snapshot.value as! NSDictionary
+        let name = song[DBSongString.title] ?? "No Title" as AnyObject
+        
+        songNameLabel.text = name as? String
+        songNameLabel.textColor = .darkGray
+        
+        self.backgroundColor = christmasWhite
         addedToPlaylist(playlistKey: playlistKey, snapshot: snapshot)
     }
+    
+    func configureCreatePlaylistSongNameCell(song: Song) {
+        
+        songNameLabel.text = song.title
+        songNameLabel.textColor = .darkGray
+        
+        self.backgroundColor = christmasWhite
+        self.playlistCheckBox.image = UIImage(named: song.inPlaylist ? "deleteCellBtn" : "addPlusBtn")
+        
+    }
+    
     
     func addedToPlaylist(playlistKey: String?, snapshot: DataSnapshot) {
         if playlistKey != nil {
@@ -27,10 +44,8 @@ class PlaylistSongCellF: SongCellF {
                 } else {
                     self.playlistCheckBox.image = UIImage(named: "deleteCellBtn")
                 }
-                
             })
         }
-
     }
     
 }

@@ -24,9 +24,8 @@ class PlaylistNameCellF: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func configureCell(_ playlistName: AnyObject, indexPath: NSIndexPath) {
-    
-        playlistNameLabel.text = playlistName as? String
+    func configurePlaylistNameCell(playlistName: String) {
+        playlistNameLabel.text = playlistName
         playlistNameLabel.textColor = .darkGray
         self.backgroundColor = christmasWhite
     }

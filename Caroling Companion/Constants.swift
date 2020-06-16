@@ -27,7 +27,7 @@ let KEY_UID = "uid"
 // MARK: ENVIRONMENT
 struct DBEnvironment {
     static let production = "production"
-    static let staging = "staging"
+    static let staging = "staging2"
 }
 
 // MARK: DATABASE

@@ -9,22 +9,51 @@
 import UIKit
 import Firebase
 
-class CreatePlaylistVCF: SongListTVC {
+class CreatePlaylistVCF: UITableViewController {
     
+    private var ref: DatabaseReference!
     var playlistF: DataSnapshot?
     var playlistRef: DatabaseReference?
+    private var query: DatabaseQuery?
+    private var songsArray: [Song] = []
+    private var songKeysDict: [String: Bool] = [:]
+    private var playlist: Playlist?
+    
     var createdPlaylistKey: String?
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+
+        configureDatabase()
+    }
+    
+    func configureDatabase() {
         if playlistF != nil {
-            let playlist = playlistF!.value as! [String:Any]
-            let navTitle = playlist[DBPlaylistString.title] as? String ?? ""
+            playlist = Playlist(data: playlistF!) //playlistF!.value as! [String:Any]
+            let navTitle = playlist!.title! //playlist[DBPlaylistString.title] as? String ?? ""
             navigationItem.title = navTitle.uppercased()
+            songKeysDict = playlist!.songKeysDict
         } else {
             createPlaylist()
         }
-        super.viewDidLoad()
+        
+        self.ref = DataService.ds.REF_SONGS
+        self.query = ref.queryOrdered(byChild: DBSongString.title)
+        self.query?.observe(.value, with: { (snapshot) in
+            for snap in snapshot.children {
+                let songSnap = snap as! DataSnapshot
+                let song = Song(data: songSnap)
+                if self.songKeysDict[song.id] != nil {
+                    song.inPlaylist = true
+                }
+                self.songsArray.append(song)
+                self.tableView.insertRows(at: [IndexPath(row: self.songsArray.count-1, section: 0)], with: .automatic)
+            }
+            self.query?.removeAllObservers()
+        })
+        tableView.reloadData()
     }
+    
     
     func createPlaylist() {
         let newPlaylist : Dictionary<String, Any> = [
@@ -36,19 +65,10 @@ class CreatePlaylistVCF: SongListTVC {
         firebasePlaylist.setValue(newPlaylist)
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Dequeue cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "SongCell", for: indexPath) as! PlaylistSongCellF
-        
-        
-        let snapshot = songsF[indexPath.row]
-        print("the snap one!! ----->>>> \(snapshot)")
-        if playlistF != nil {
-            cell.configureCell(snapshot, indexPath: indexPath as NSIndexPath, playlistKey: playlistF!.key)
-        } else {
-            cell.configureCell(snapshot, indexPath: indexPath as NSIndexPath, playlistKey: createdPlaylistKey)
-        }
+        let song = songsArray[indexPath.row]
+        cell.configureCreatePlaylistSongNameCell(song: song)
         let backgroundView = UIView()
         backgroundView.backgroundColor = .clear
         cell.selectedBackgroundView = backgroundView
@@ -58,23 +78,31 @@ class CreatePlaylistVCF: SongListTVC {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let song = songsF[indexPath.row]
-        if playlistF != nil {
-            self.playlistRef = DataService.ds.REF_PLAYLISTS.child(self.playlistF!.key).child(DBPlaylistString.songs).child(song.key)
-        } else {
-            self.playlistRef = DataService.ds.REF_PLAYLISTS.child(self.createdPlaylistKey!).child(DBPlaylistString.songs).child(song.key)
-        }
-        
-        playlistRef!.observeSingleEvent(of: .value, with: { (snapshot) in
-            if let _ = snapshot.value as? NSNull {
-                self.playlistRef!.setValue(true)
-            } else {
-                self.playlistRef!.removeValue()
-            }
-            
-            tableView.reloadRows(at: [indexPath], with: .fade)
-        })
+//        let song = songsF[indexPath.row]
+//        if playlistF != nil {
+//            self.playlistRef = DataService.ds.REF_PLAYLISTS.child(self.playlistF!.key).child(DBPlaylistString.songs).child(song.key)
+//        } else {
+//            self.playlistRef = DataService.ds.REF_PLAYLISTS.child(self.createdPlaylistKey!).child(DBPlaylistString.songs).child(song.key)
+//        }
+//        
+//        playlistRef!.observeSingleEvent(of: .value, with: { (snapshot) in
+//            if let _ = snapshot.value as? NSNull {
+//                self.playlistRef!.setValue(true)
+//            } else {
+//                self.playlistRef!.removeValue()
+//            }
+//            
+//            tableView.reloadRows(at: [indexPath], with: .fade)
+//        })
         return
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.songsArray.count
     }
     
     @IBAction func saveBtnTapped(_ sender: Any) {

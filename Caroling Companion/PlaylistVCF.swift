@@ -12,22 +12,19 @@ import FirebaseDatabase
 
 class PlaylistVCF: UITableViewController {
     
-    // MARK: NEW FIREBASE STUFF
-    var ref: DatabaseReference!
-    var playlistsF: [DataSnapshot]! = []
-    fileprivate var playlistF : DataSnapshot!
-    fileprivate var _refHandle: DatabaseHandle!
-    
+    // MARK: FIREBASE STUFF
+    private var ref: DatabaseReference!
+    private var playlistsF: [DataSnapshot]! = []
+    private var playlistF : DataSnapshot!
+    private var _refHandle: DatabaseHandle!
     
     override func viewDidLoad() {
-        configureDatabase()
         super.viewDidLoad()
-
+        configureDatabase()
     }
 
     
     func configureDatabase() {
- //   playlistsF = []
         ref = DataService.ds.REF_PLAYLISTS
         // listen for new messages in the firebase database
         _refHandle = ref.observe(.childAdded) { (snapshot: DataSnapshot)in
@@ -40,7 +37,6 @@ class PlaylistVCF: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
@@ -56,8 +52,8 @@ class PlaylistVCF: UITableViewController {
         // unpack message from firebase data snapshot
         let snapshot = playlistsF[indexPath.row]
         let playlist = snapshot.value as! [String: AnyObject]
-        let name = playlist[DBPlaylistString.title] ?? "title" as AnyObject
-        cell.configureCell(name as AnyObject, indexPath: indexPath as NSIndexPath)
+        let name = playlist[DBPlaylistString.title] as? String ?? "Unable To Get Title"
+        cell.configurePlaylistNameCell(playlistName: name)
         let backgroundView = UIView()
         backgroundView.backgroundColor = softGreen
         cell.selectedBackgroundView = backgroundView
@@ -68,7 +64,6 @@ class PlaylistVCF: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
                let playlist = playlistsF[indexPath.row]
-        print("playlistF ============ \(playlist)")
                self.performSegue(withIdentifier: "showPlaylist", sender: playlist)
     }
     

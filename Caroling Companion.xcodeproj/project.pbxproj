@@ -19,6 +19,7 @@
 		0E2EF2ED1C274DD200762053 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2EF2EB1C274DD200762053 /* LaunchScreen.storyboard */; };
 		0E2EF3151C2753B200762053 /* SongLyricsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2EF3141C2753B200762053 /* SongLyricsVC.swift */; };
 		0E5A4C8C1D23519400D8BBD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */; };
+		0E7D22132497E76B009AE5B9 /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7D22122497E76B009AE5B9 /* JSONLoader.swift */; };
 		0E7EAA131DB5E01300E8044A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7EAA121DB5E01300E8044A /* NavigationController.swift */; };
 		0E8F09981CD2B5CB00CF771E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8F09971CD2B5CB00CF771E /* Constants.swift */; };
 		0E9DD7931EA9681900745317 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD7921EA9681900745317 /* FancyView.swift */; };
@@ -72,6 +73,7 @@
 		0E2EF3041C274DD300762053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E2EF3141C2753B200762053 /* SongLyricsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongLyricsVC.swift; sourceTree = "<group>"; };
 		0E5A4C8B1D23519400D8BBD4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0E7D22122497E76B009AE5B9 /* JSONLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
 		0E7EAA121DB5E01300E8044A /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		0E8F09971CD2B5CB00CF771E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0E9DD7921EA9681900745317 /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			children = (
 				0E9DD7A71EAA76A200745317 /* AuthService.swift */,
 				0E9DD7A21EA978E200745317 /* DataService.swift */,
+				0E7D22122497E76B009AE5B9 /* JSONLoader.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 		0ED558311CCEEE44008C0B3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0EFB8E031EE7C2FF00D5F793 /* SongListTVC.swift */,
 				0E2EF3141C2753B200762053 /* SongLyricsVC.swift */,
 				0EFB8E061EE7C2FF00D5F793 /* PlaylistVCF.swift */,
 				0EFB8E001EE7C2F300D5F793 /* CreatePlaylistVCF.swift */,
@@ -252,7 +256,6 @@
 				0E1C27B31EF701D300680CFF /* LandingLoginVC.swift */,
 				0EFB8E151EE7C30800D5F793 /* SongListTabTVC.swift */,
 				0EFB8E091EE7C2FF00D5F793 /* ShowPlaylistVC.swift */,
-				0EFB8E031EE7C2FF00D5F793 /* SongListTVC.swift */,
 				0EFB8E1C1EE7C33500D5F793 /* ProfileVC.swift */,
 				0E7EAA121DB5E01300E8044A /* NavigationController.swift */,
 				0EDB2B211EF87FB000131241 /* CustomTabBarConroller.swift */,
@@ -443,6 +446,7 @@
 				0EDB2B201EF8458300131241 /* PhoneLoginCodeVC.swift in Sources */,
 				0EC7240A1EF32D200003407F /* NeedAccountVC.swift in Sources */,
 				0E9DD79B1EA9684200745317 /* CircleView.swift in Sources */,
+				0E7D22132497E76B009AE5B9 /* JSONLoader.swift in Sources */,
 				0EB8962C1EEB7FEA0050021B /* LoginFlow.swift in Sources */,
 				0EFB8E1F1EE7C33500D5F793 /* ProfileVC.swift in Sources */,
 				0E1AA5281EF219C200EB3B65 /* SwipeRightToDismissVC.swift in Sources */,

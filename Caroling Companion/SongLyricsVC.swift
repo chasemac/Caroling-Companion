@@ -10,23 +10,15 @@ import Firebase
 
 class SongLyricsVC: SwipeRightToDismissVC {
     
-    var songF : DataSnapshot!
-    
+    var song: Song!
 
     @IBOutlet weak var txtView: UITextView!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if Auth.auth().currentUser?.uid != nil {
-            print("Logged in user UID ------> \(Auth.auth().currentUser!.uid as Any)")
-        } else {
-            print("no current user")
-        }
         initText()
-        print("the almost there one!! ----->>>> \(String(describing: self.songF))")
-        loadSongs(song: self.songF)
+        loadSongs(song: song)
         
     }
     
@@ -40,17 +32,12 @@ class SongLyricsVC: SwipeRightToDismissVC {
         self.tabBarController?.tabBar.isHidden = false
     }
     
-    func loadSongs(song: DataSnapshot) {
-        if let songDict = song.value as? [String : AnyObject] {
-            let title = songDict[DBSongString.title] as? String ?? "Title Unavailable"
-            navigationItem.title = title.uppercased()
-            let lyrics = songDict[DBSongString.lyrics] as? String ?? "Lyrics Unavailable"
-            let lyricsSwift = lyrics.replacingOccurrences(of: "<br>", with: "\n")
-            txtView.text = lyricsSwift
-
-        } else {
-            txtView.text = "Unable To Load Song"
-        }
+    func loadSongs(song: Song) {
+        let title = song.title ?? "Title Unavailable"
+        navigationItem.title = title.uppercased()
+        let lyrics = song.lyrics ?? "Lyrics Unavailable"
+        let lyricsSwift = lyrics.replacingOccurrences(of: "<br>", with: "\n")
+        txtView.text = lyricsSwift
     }
     
     func initText() {
