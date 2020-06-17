@@ -8,13 +8,10 @@
 
 import UIKit
 import FirebaseAuth
-//import FBSDKLoginKit
 
 class LandingLoginVC: UIViewController {
     
-    @IBOutlet weak var facebookBtn: OutlineBtn!
-    @IBOutlet weak var skipBtn: UIButton!
-    @IBOutlet weak var phoneBtn: OutlineBtn!
+    @IBOutlet weak var skipBtn: OutlineBtn!
     var darkShade: CGFloat = 0.8
     var labelView: UILabel!
     
@@ -61,56 +58,6 @@ class LandingLoginVC: UIViewController {
         
     }
     
-    func loginWithFacebook() {
-//        let facebookLogin = FBSDKLoginManager()
-//        facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
-//            if error != nil {
-//                print("unable to authenticate with facebook \(String(describing: error))")
-//                if Auth.auth().currentUser != nil {
-//                    let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-//                    AuthService.instance.firebaseFacebookLogin(credential, onComplete: { (errMsg, user) in
-//                        if errMsg != nil {
-//                            self.facebookBtn.isEnabled = true
-//                            self.labelView.alpha = 0
-//                            setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
-//
-//                            return
-//                        }
-//                        if user != nil {
-//                            self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
-//                            self.facebookBtn.isEnabled = true
-//                            self.labelView.alpha = 0
-//                        }
-//                    })
-//                }
-//                self.facebookBtn.isEnabled = true
-//                self.labelView.alpha = 0
-//                setupDefaultAlert(title: "", message: "Unable to authenticate with Facebook", actionTitle: "Ok", VC: self)
-//            } else if result?.isCancelled == true {
-//                print("user canceled")
-//                self.facebookBtn.isEnabled = true
-//                self.labelView.alpha = 0
-//            } else {
-//                print("successfully auth with facebook")
-//                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-//                AuthService.instance.firebaseFacebookLogin(credential, onComplete: { (errMsg, user) in
-//                    if errMsg != nil {
-//                        setupDefaultAlert(title: "", message: errMsg!, actionTitle: "Ok", VC: self)
-//                        self.facebookBtn.isEnabled = true
-//                        self.labelView.alpha = 0
-//                        return
-//                    }
-//                    if user != nil {
-//                        self.performSegue(withIdentifier: SegueToSongListVC, sender: nil)
-//                        self.facebookBtn.isEnabled = true
-//                        self.labelView.alpha = 0
-//                    }
-//                })
-//            }
-//        }
-        
-    }
-    
     
     func loginAnonymously() {
         guard Auth.auth().currentUser == nil else {
@@ -148,15 +95,25 @@ class LandingLoginVC: UIViewController {
         loginAnonymously()
     }
     
-    @IBAction func phoneBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "PhoneLoginVC", sender: nil)
-    }
-    
-    @IBAction func facebookBtnPressed(_ sender: Any) {
-        facebookBtn.isEnabled = false
-        labelView.alpha = darkShade
 
-        loginWithFacebook()
+    
+}
+
+extension UIViewController {
+    var contents: UIViewController {
+        if let navcon = self as? UINavigationController {
+            return navcon.visibleViewController ?? self
+        } else {
+            return self
+        }
+    }
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
     
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

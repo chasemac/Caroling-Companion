@@ -14,9 +14,10 @@ class PlaylistVCF: UITableViewController {
     
     // MARK: FIREBASE STUFF
     private var ref: DatabaseReference!
-    private var playlistsF: [DataSnapshot]! = []
-    private var playlistF : DataSnapshot!
     private var _refHandle: DatabaseHandle!
+    
+    private var playlists: [Playlist] = []
+    private var newPlaylist: Playlist?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +29,9 @@ class PlaylistVCF: UITableViewController {
         ref = DataService.ds.REF_PLAYLISTS
         // listen for new messages in the firebase database
         _refHandle = ref.observe(.childAdded) { (snapshot: DataSnapshot)in
-            self.playlistsF.append(snapshot)
-            self.tableView.insertRows(at: [IndexPath(row: self.playlistsF.count-1, section: 0)], with: .automatic)
+            let playlist = Playlist(data: snapshot)
+            self.playlists.append(playlist)
+            self.tableView.insertRows(at: [IndexPath(row: self.playlists.count-1, section: 0)], with: .automatic)
         }
     }
     
@@ -41,7 +43,7 @@ class PlaylistVCF: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return playlistsF.count
+        return playlists.count
     }
     
     
@@ -49,21 +51,17 @@ class PlaylistVCF: UITableViewController {
 
         // Dequeue cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlaylistNameCell", for: indexPath) as! PlaylistNameCellF
-        // unpack message from firebase data snapshot
-        let snapshot = playlistsF[indexPath.row]
-        let playlist = snapshot.value as! [String: AnyObject]
-        let name = playlist[DBPlaylistString.title] as? String ?? "Unable To Get Title"
+        let playlist = playlists[indexPath.row]
+        let name = playlist.title!
         cell.configurePlaylistNameCell(playlistName: name)
         let backgroundView = UIView()
         backgroundView.backgroundColor = softGreen
         cell.selectedBackgroundView = backgroundView
         return cell
-        
-        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-               let playlist = playlistsF[indexPath.row]
+               let playlist = playlists[indexPath.row]
                self.performSegue(withIdentifier: "showPlaylist", sender: playlist)
     }
     
@@ -71,18 +69,28 @@ class PlaylistVCF: UITableViewController {
         
         if segue.identifier == "showPlaylist" {
             let detailVC = segue.destination.contents as! ShowPlaylistVC
-            detailVC.playlistF = sender as? DataSnapshot
-            
-            
+            detailVC.playlist = sender as? Playlist
         } else if segue.identifier == "CreatePlaylist" {
-         //   let detailVC = segue.destination.contents as! CreatePlaylistVCF
-          //  detailVC.playlistExists = false
+            
+            let detailVC = segue.destination.contents as! CreatePlaylistVCF
+            let playlist : Dictionary<String, Any> = [
+                DBPlaylistString.user : Auth.auth().currentUser?.uid as AnyObject,
+                DBPlaylistString.postedDate : ServerValue.timestamp() as AnyObject
+            ]
+            let firebasePlaylist = DataService.ds.REF_PLAYLISTS.childByAutoId()
+            firebasePlaylist.setValue(playlist)
+            if firebasePlaylist.key != nil {
+               newPlaylist = Playlist(id: firebasePlaylist.key!)
+                detailVC.playlist = newPlaylist
+            }
         }
     }
+
     
     @IBAction func createPlaylist(_ sender: Any) {
-        
-        performSegue(withIdentifier: "CreatePlaylist", sender: nil)
+        if newPlaylist != nil {
+            performSegue(withIdentifier: "CreatePlaylist", sender: newPlaylist)
+        }
     }
     
 }

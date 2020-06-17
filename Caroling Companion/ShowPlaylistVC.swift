@@ -12,7 +12,6 @@ import Firebase
 class ShowPlaylistVC: UITableViewController {
     private var query: DatabaseQuery?
     private var ref: DatabaseReference!
-    var playlistF : DataSnapshot!
     var playlist: Playlist!
     
     private var songsArray: [Song] = []
@@ -25,15 +24,11 @@ class ShowPlaylistVC: UITableViewController {
     }
     
     func configureDatabase() {
-        playlist = Playlist(data: playlistF)
-        
-        let navTitle = playlist.title! // playlistDict[DBPlaylistString.title] as? String ?? "No Title"
+        let navTitle = playlist.title!
         navigationItem.title = navTitle.uppercased()
         
-        if !playlist.songKeys.isEmpty {
-            for key in playlist.songKeys {
-                self.loadSongs(key: key)
-            }
+        for (key, _) in playlist.songKeysDict {
+            self.loadSongs(key: key)
         }
     }
     
@@ -50,7 +45,7 @@ class ShowPlaylistVC: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EditPlaylist" {
             let detailVC = segue.destination.contents as! CreatePlaylistVCF
-            detailVC.playlistF = sender as? DataSnapshot
+            detailVC.playlist = sender as? Playlist
         }
         if segue.identifier == "detailSegue" {
             let detailVC = segue.destination as! SongLyricsVC
@@ -59,7 +54,7 @@ class ShowPlaylistVC: UITableViewController {
     }
     
     @IBAction func editBtnTapped(_ sender: Any) {
-        performSegue(withIdentifier: "EditPlaylist", sender: playlistF)
+        performSegue(withIdentifier: "EditPlaylist", sender: playlist)
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {

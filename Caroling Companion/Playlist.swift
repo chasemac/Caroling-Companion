@@ -12,7 +12,6 @@ import Foundation
 import Firebase
 
 class Playlist {
-    var songKeys: [String]!
     var songKeysDict: [String: Bool]
     var title: String!
     var id: String!
@@ -30,7 +29,12 @@ class Playlist {
         }
         self.songKeysDict = songKeysDict
         self.title = name
-        self.songKeys = songs
+    }
+    
+    init(id: String) {
+        self.id = id
+        self.title = NewPlaylistName
+        self.songKeysDict = [:]
     }
     
 }

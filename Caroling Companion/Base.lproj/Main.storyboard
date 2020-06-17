@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XEL-hq-xHN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oE6-pN-q2C">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,9 +9,6 @@
     <customFonts key="customFonts">
         <array key="Brandon_bld.otf">
             <string>BrandonGrotesque-Bold</string>
-        </array>
-        <array key="Brandon_reg.otf">
-            <string>BrandonGrotesque-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -75,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwG-WW-Y6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3271" y="-843"/>
+            <point key="canvasLocation" x="4529" y="-1392"/>
         </scene>
         <!--PLAYLISTS-->
         <scene sceneID="lqf-yv-lMy">
@@ -132,7 +129,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOb-oj-2oq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2910" y="-86"/>
+            <point key="canvasLocation" x="2636" y="-937"/>
         </scene>
         <!--Create PlaylistVCF-->
         <scene sceneID="Pb8-h0-AOE">
@@ -201,7 +198,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xo1-zu-a7S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4098" y="-843"/>
+            <point key="canvasLocation" x="4529" y="-722"/>
         </scene>
         <!--Title-->
         <scene sceneID="Ou3-VI-lg2">
@@ -276,7 +273,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LTJ-io-3ul" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3927" y="86"/>
+            <point key="canvasLocation" x="3588" y="-774"/>
         </scene>
         <!--Playlists-->
         <scene sceneID="eOI-9d-U6d">
@@ -294,84 +291,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="puL-45-Qtq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2145" y="-83.450704225352112"/>
-        </scene>
-        <!--CAROLING COMPANION-->
-        <scene sceneID="vVP-jl-1aS">
-            <objects>
-                <viewController id="tbR-of-5iZ" customClass="AboutVC" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="71W-IS-lpx"/>
-                        <viewControllerLayoutGuide type="bottom" id="oWl-rF-QWX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4Nl-Yj-h30">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJh-e4-zLO">
-                                <rect key="frame" x="158" y="22" width="59.5" height="34.5"/>
-                                <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEU-NA-YCB">
-                                <rect key="frame" x="36" y="62.5" width="303" height="135"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="135" id="KcU-na-GZA"/>
-                                </constraints>
-                                <string key="text">Version 2.0
-Designed by Katie Chen
-Developed by Chase McElroy
-
-Thanks to Jesus.</string>
-                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Any feedback or questions,  please email: feedback@carolingcompanion.com." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOO-m4-Wcq">
-                                <rect key="frame" x="36" y="255" width="303" height="85"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="Ord-GR-w8A"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21G-hp-e1Q">
-                                <rect key="frame" x="142.5" y="214.5" width="90.5" height="34.5"/>
-                                <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="bOO-m4-Wcq" firstAttribute="top" secondItem="21G-hp-e1Q" secondAttribute="bottom" constant="6" id="2Xd-BI-PmV"/>
-                            <constraint firstItem="NEU-NA-YCB" firstAttribute="leading" secondItem="4Nl-Yj-h30" secondAttribute="leadingMargin" constant="20" id="3x6-za-DAP"/>
-                            <constraint firstItem="JJh-e4-zLO" firstAttribute="top" secondItem="71W-IS-lpx" secondAttribute="bottom" constant="22" id="FTy-hv-VJ6"/>
-                            <constraint firstItem="bOO-m4-Wcq" firstAttribute="leading" secondItem="4Nl-Yj-h30" secondAttribute="leadingMargin" constant="20" id="Gg6-rs-STz"/>
-                            <constraint firstItem="21G-hp-e1Q" firstAttribute="top" secondItem="NEU-NA-YCB" secondAttribute="bottom" constant="17" id="KPn-wI-YzC"/>
-                            <constraint firstItem="21G-hp-e1Q" firstAttribute="centerX" secondItem="4Nl-Yj-h30" secondAttribute="centerX" id="ff1-2R-Bt3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bOO-m4-Wcq" secondAttribute="trailing" constant="20" id="g5C-UL-ktg"/>
-                            <constraint firstItem="JJh-e4-zLO" firstAttribute="centerX" secondItem="4Nl-Yj-h30" secondAttribute="centerX" id="m8a-r4-GNu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NEU-NA-YCB" secondAttribute="trailing" constant="20" id="xUm-Bp-TUw"/>
-                            <constraint firstItem="NEU-NA-YCB" firstAttribute="top" secondItem="JJh-e4-zLO" secondAttribute="bottom" constant="6" id="yOG-Wu-AJF"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="CAROLING COMPANION" id="vLd-Pa-22N">
-                        <barButtonItem key="leftBarButtonItem" image="backArrowCreamColor" id="EMk-aA-aSC">
-                            <color key="tintColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="backBtnPressed:" destination="tbR-of-5iZ" id="m0t-Vl-SQE"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Of9-8X-SWf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="50" y="599"/>
+            <point key="canvasLocation" x="1828" y="-936"/>
         </scene>
         <!--Landing LoginVC-->
         <scene sceneID="09f-Iv-ODo">
@@ -388,28 +308,6 @@ Thanks to Jesus.</string>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Snowmen" translatesAutoresizingMaskIntoConstraints="NO" id="G3G-2X-hef">
                                 <rect key="frame" x="86" y="179" width="203" height="279"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z5u-Hy-fbI">
-                                <rect key="frame" x="94" y="632" width="187" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="Hhw-Ja-gCQ"/>
-                                    <constraint firstAttribute="width" constant="187" id="f1o-e3-tB4"/>
-                                </constraints>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="No thanks, I’ll skip">
-                                            <attributes>
-                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                <font key="NSFont" size="14" name="BrandonGrotesque-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                <integer key="NSUnderline" value="1"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <action selector="skipBtnPressed:" destination="l9E-Ne-nnU" eventType="touchUpInside" id="6Sp-Zd-LZF"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xiG-PX-nM0">
                                 <rect key="frame" x="40" y="74" width="295" height="98"/>
                                 <constraints>
@@ -426,560 +324,50 @@ Thanks to Jesus.</string>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Hl6-qj-iNa">
-                                <rect key="frame" x="39" y="555.5" width="297" height="66.5"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJE-ux-Itd" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="143.5" height="66.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="PJE-ux-Itd" secondAttribute="height" multiplier="28:13" id="XtI-Q1-Quw"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="16"/>
-                                        <state key="normal" title="YOUR PHONE">
-                                            <color key="titleColor" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="phoneBtnPressed:" destination="l9E-Ne-nnU" eventType="touchUpInside" id="XcN-M3-4fH"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRF-v9-GIw" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                        <rect key="frame" x="153.5" y="0.0" width="143.5" height="66.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="fRF-v9-GIw" secondAttribute="height" multiplier="28:13" id="GWx-sd-HJz"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="16"/>
-                                        <state key="normal" title="FACEBOOK">
-                                            <color key="titleColor" red="0.23529411759999999" green="0.35294117650000001" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.23529411759999999" green="0.35294117650000001" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="facebookBtnPressed:" destination="l9E-Ne-nnU" eventType="touchUpInside" id="aeO-qu-Iy8"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continue with:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyg-oe-P0T">
-                                <rect key="frame" x="141" y="518.5" width="93" height="23"/>
-                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJE-ux-Itd" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="557" width="200" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="9oE-MH-Cmz"/>
+                                    <constraint firstAttribute="height" constant="60" id="fK0-mR-Fiq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="16"/>
+                                <state key="normal" title="START SINGING!">
+                                    <color key="titleColor" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="skipBtnPressed:" destination="l9E-Ne-nnU" eventType="touchUpInside" id="UWn-xF-XC7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99215686274509807" green="0.9882352941176471" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="DNX-fy-IOK" firstAttribute="top" secondItem="PJE-ux-Itd" secondAttribute="bottom" constant="50" id="2uO-po-cxY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xiG-PX-nM0" secondAttribute="trailing" constant="24" id="3w0-Xc-Lae"/>
-                            <constraint firstItem="z5u-Hy-fbI" firstAttribute="centerX" secondItem="Ea3-dq-sct" secondAttribute="centerX" id="6a7-vm-5bc"/>
-                            <constraint firstItem="Hl6-qj-iNa" firstAttribute="top" secondItem="eyg-oe-P0T" secondAttribute="bottom" constant="14" id="I6r-Gq-yRZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Hl6-qj-iNa" secondAttribute="trailing" constant="23" id="IiZ-dl-CYw"/>
-                            <constraint firstItem="eyg-oe-P0T" firstAttribute="centerX" secondItem="Ea3-dq-sct" secondAttribute="centerX" id="R6k-Tm-271"/>
                             <constraint firstItem="G3G-2X-hef" firstAttribute="leading" secondItem="Ea3-dq-sct" secondAttribute="leadingMargin" constant="70" id="SsH-zC-bnM"/>
                             <constraint firstItem="xiG-PX-nM0" firstAttribute="leading" secondItem="Ea3-dq-sct" secondAttribute="leadingMargin" constant="24" id="Tnr-pp-eRT"/>
-                            <constraint firstItem="Hl6-qj-iNa" firstAttribute="leading" secondItem="Ea3-dq-sct" secondAttribute="leadingMargin" constant="23" id="UZy-PU-jDn"/>
+                            <constraint firstItem="PJE-ux-Itd" firstAttribute="centerX" secondItem="Ea3-dq-sct" secondAttribute="centerX" id="VFJ-qU-C7e"/>
                             <constraint firstAttribute="trailingMargin" secondItem="G3G-2X-hef" secondAttribute="trailing" constant="70" id="WXK-jP-cPZ"/>
-                            <constraint firstItem="DNX-fy-IOK" firstAttribute="top" secondItem="z5u-Hy-fbI" secondAttribute="bottom" constant="15" id="h20-5J-eTn"/>
                             <constraint firstItem="G3G-2X-hef" firstAttribute="top" secondItem="xiG-PX-nM0" secondAttribute="bottom" constant="7" id="hLh-jT-2Pj"/>
                             <constraint firstItem="xiG-PX-nM0" firstAttribute="top" secondItem="NLp-IL-4Jr" secondAttribute="bottom" constant="30" id="kek-GG-INP"/>
-                            <constraint firstItem="z5u-Hy-fbI" firstAttribute="top" secondItem="Hl6-qj-iNa" secondAttribute="bottom" constant="10" id="lCQ-j0-u0j"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3Ae-wq-xpv"/>
                     <connections>
-                        <outlet property="facebookBtn" destination="fRF-v9-GIw" id="R7f-44-wtO"/>
-                        <outlet property="phoneBtn" destination="PJE-ux-Itd" id="QTL-nB-xI9"/>
-                        <outlet property="skipBtn" destination="z5u-Hy-fbI" id="Y0R-3k-iNy"/>
+                        <outlet property="skipBtn" destination="PJE-ux-Itd" id="QTL-nB-xI9"/>
                         <segue destination="GES-gZ-Igc" kind="show" identifier="SongListVC" id="nPK-h2-N5v"/>
-                        <segue destination="eM2-Lh-Qvw" kind="show" identifier="PhoneLoginVC" id="4zy-ZS-gYo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Th9-bp-KP7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1766" y="1217"/>
-        </scene>
-        <!--Profile-->
-        <scene sceneID="S07-1q-gwi">
-            <objects>
-                <viewController id="CaK-rT-Cyp" customClass="ProfileVC" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aBu-Zp-8Q7"/>
-                        <viewControllerLayoutGuide type="bottom" id="ZoT-5m-Ien"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nDZ-yi-dj5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nZR-Vk-8D2">
-                                <rect key="frame" x="16" y="20" width="323" height="534"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkD-NS-Ugb">
-                                        <rect key="frame" x="147.5" y="0.0" width="28.5" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUc-j9-PWM">
-                                        <rect key="frame" x="139" y="21" width="45" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZP5-ub-MCB">
-                                        <rect key="frame" x="140.5" y="42" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Zg-aQ-3as">
-                                        <rect key="frame" x="140.5" y="63" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsx-8I-bjO">
-                                        <rect key="frame" x="144.5" y="84" width="34" height="31"/>
-                                        <state key="normal" title="Save"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buB-L9-7qw">
-                                        <rect key="frame" x="140" y="115" width="43" height="30.5"/>
-                                        <state key="normal" title="Unlink"/>
-                                        <connections>
-                                            <action selector="unlinkBtnTapped:" destination="CaK-rT-Cyp" eventType="touchUpInside" id="Vso-Dw-nnQ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jx-oI-PWb">
-                                        <rect key="frame" x="137.5" y="145.5" width="48" height="31"/>
-                                        <state key="normal" title="Logout"/>
-                                        <connections>
-                                            <action selector="logoutTapped:" destination="CaK-rT-Cyp" eventType="touchUpInside" id="Zbj-7h-7oW"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Scb-sF-KDY">
-                                        <rect key="frame" x="121" y="176.5" width="81" height="30.5"/>
-                                        <state key="normal" title="Delete User"/>
-                                        <connections>
-                                            <action selector="deleteUser:" destination="CaK-rT-Cyp" eventType="touchUpInside" id="HoR-rb-3D9"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92E-9V-ajM">
-                                        <rect key="frame" x="96" y="207" width="131" height="31"/>
-                                        <state key="normal" title="Disconnect Google"/>
-                                        <connections>
-                                            <action selector="diconnectGoogleTapped:" destination="CaK-rT-Cyp" eventType="touchUpInside" id="HON-wf-gF9"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30m-70-feC">
-                                        <rect key="frame" x="105" y="238" width="113" height="31"/>
-                                        <state key="normal" title="Sign Out Google"/>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4t-vu-JNf" customClass="GIDSignInButton">
-                                        <rect key="frame" x="118" y="269" width="87.5" height="89.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="87.5" id="bwy-5K-MT0"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYp-Kc-EWU" customClass="FBSDKLoginButton">
-                                        <rect key="frame" x="109" y="358.5" width="105.5" height="175.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="105.5" id="M4r-yF-RWm"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.99215686274509807" green="0.9882352941176471" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="nZR-Vk-8D2" firstAttribute="top" secondItem="aBu-Zp-8Q7" secondAttribute="bottom" constant="20" id="EHE-fn-EQo"/>
-                            <constraint firstItem="nZR-Vk-8D2" firstAttribute="leading" secondItem="nDZ-yi-dj5" secondAttribute="leadingMargin" id="S6N-Ea-0cZ"/>
-                            <constraint firstItem="ZoT-5m-Ien" firstAttribute="top" secondItem="nZR-Vk-8D2" secondAttribute="bottom" constant="20" id="XrN-1l-3Vs"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nZR-Vk-8D2" secondAttribute="trailing" constant="20" id="ygV-Ta-bTV"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="iconProfile" id="qge-5R-zTU"/>
-                    <navigationItem key="navigationItem" id="6L3-Fx-HJX"/>
-                    <connections>
-                        <outlet property="emailLabel" destination="ZP5-ub-MCB" id="cte-Rq-Xff"/>
-                        <outlet property="nameLabel" destination="ZUc-j9-PWM" id="Rxi-Za-dWB"/>
-                        <outlet property="providerLabel" destination="4Zg-aQ-3as" id="Vhx-m5-xCi"/>
-                        <outlet property="uidLabel" destination="ZkD-NS-Ugb" id="275-md-pHg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9mc-WK-HTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-711" y="599"/>
-        </scene>
-        <!--Need AccountVC-->
-        <scene sceneID="gnj-G3-AOY">
-            <objects>
-                <viewController id="kJT-k9-y7V" customClass="NeedAccountVC" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Vnn-Dy-Rmi"/>
-                        <viewControllerLayoutGuide type="bottom" id="NjU-IS-V6R"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Z0w-Gy-Z2u">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whoops." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00J-JK-tj5">
-                                <rect key="frame" x="156.5" y="156.5" width="62" height="26"/>
-                                <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have an account." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBW-Dc-5EX">
-                                <rect key="frame" x="95.5" y="217.5" width="184.5" height="26"/>
-                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z8d-7v-jYh">
-                                <rect key="frame" x="38" y="306" width="299" height="135"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jka-m4-VFD" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="299" height="62.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="jka-m4-VFD" secondAttribute="height" multiplier="244:51" id="JG6-wR-ptz"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="20"/>
-                                        <state key="normal" title="PHONE">
-                                            <color key="titleColor" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="phoneBtnPressed:" destination="kJT-k9-y7V" eventType="touchUpInside" id="LCM-Wl-qfl"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1i-gx-WOW" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72.5" width="299" height="62.5"/>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="20"/>
-                                        <state key="normal" title="FACEBOOK">
-                                            <color key="titleColor" red="0.23529411759999999" green="0.35294117650000001" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.23529411759999999" green="0.35294117650000001" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="facebookBtnPressed:" destination="kJT-k9-y7V" eventType="touchUpInside" id="sbj-lI-NT4"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continue with:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJJ-wK-ULj">
-                                <rect key="frame" x="141" y="275" width="93" height="23"/>
-                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zi-CD-luZ">
-                                <rect key="frame" x="36" y="40" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="O3A-Xn-m8e"/>
-                                    <constraint firstAttribute="width" constant="40" id="SBQ-Sj-mQe"/>
-                                </constraints>
-                                <state key="normal" image="backArrow"/>
-                                <connections>
-                                    <action selector="backBtnPressed:" destination="kJT-k9-y7V" eventType="touchUpInside" id="dC2-oI-zQY"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Z8d-7v-jYh" secondAttribute="trailing" constant="22" id="4Is-TA-lpN"/>
-                            <constraint firstItem="zJJ-wK-ULj" firstAttribute="top" secondItem="TBW-Dc-5EX" secondAttribute="bottom" constant="31.5" id="93d-vn-hIt"/>
-                            <constraint firstItem="0Zi-CD-luZ" firstAttribute="top" secondItem="Vnn-Dy-Rmi" secondAttribute="bottom" constant="40" id="Ihg-ej-xlH"/>
-                            <constraint firstItem="0Zi-CD-luZ" firstAttribute="leading" secondItem="Z0w-Gy-Z2u" secondAttribute="leadingMargin" constant="20" id="KGE-ad-UrO"/>
-                            <constraint firstItem="TBW-Dc-5EX" firstAttribute="centerX" secondItem="Z0w-Gy-Z2u" secondAttribute="centerX" id="M1i-cC-fHd"/>
-                            <constraint firstItem="Z8d-7v-jYh" firstAttribute="centerY" secondItem="Z0w-Gy-Z2u" secondAttribute="centerY" constant="50" id="SLR-7g-WEI"/>
-                            <constraint firstItem="Z8d-7v-jYh" firstAttribute="leading" secondItem="Z0w-Gy-Z2u" secondAttribute="leadingMargin" constant="22" id="b8j-w5-F9H"/>
-                            <constraint firstItem="00J-JK-tj5" firstAttribute="centerX" secondItem="Z0w-Gy-Z2u" secondAttribute="centerX" id="lBk-Bu-WGz"/>
-                            <constraint firstItem="Z8d-7v-jYh" firstAttribute="top" secondItem="zJJ-wK-ULj" secondAttribute="bottom" constant="8" id="noe-s2-znM"/>
-                            <constraint firstItem="zJJ-wK-ULj" firstAttribute="centerX" secondItem="Z0w-Gy-Z2u" secondAttribute="centerX" id="p1a-WH-nKp"/>
-                            <constraint firstItem="TBW-Dc-5EX" firstAttribute="top" secondItem="00J-JK-tj5" secondAttribute="bottom" constant="35" id="v3R-r9-SVK"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <segue destination="eM2-Lh-Qvw" kind="show" identifier="PhoneLoginVC" id="L9M-kO-NPH"/>
-                        <segue destination="xn2-7c-IpW" kind="unwind" identifier="unwindToSongListTab" unwindAction="unwindToSongListTabTVCWithSegue:" id="Gmz-55-Sqv"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IZh-0E-t1j" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="xn2-7c-IpW" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="-1581" y="454"/>
-        </scene>
-        <!--PROFILE-->
-        <scene sceneID="q0U-w3-CNH">
-            <objects>
-                <viewController id="96H-yd-xXX" customClass="ProfileTabVC" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pDb-Hf-9BR"/>
-                        <viewControllerLayoutGuide type="bottom" id="pc3-iP-zad"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Axt-Gm-Fkg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile-picture-default" translatesAutoresizingMaskIntoConstraints="NO" id="b6G-Cy-5bv" customClass="CircleView" customModule="Caroling_Companion" customModuleProvider="target">
-                                <rect key="frame" x="124" y="30" width="127" height="127"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="b6G-Cy-5bv" secondAttribute="height" multiplier="1:1" id="ORW-Ec-GwL"/>
-                                    <constraint firstAttribute="width" constant="127" id="k1y-30-G8F"/>
-                                    <constraint firstAttribute="height" constant="127" id="qe6-0X-hB4"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vd0-OJ-ExO">
-                                <rect key="frame" x="36" y="165" width="303" height="34.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theodore Duggleby-Chen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ctJ-ao-zRq">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="34.5"/>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uK6-jD-ujR">
-                                        <rect key="frame" x="275" y="0.0" width="28" height="34.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="28" id="dEY-0z-cKv"/>
-                                        </constraints>
-                                        <state key="normal" image="pencilEditIcon"/>
-                                        <connections>
-                                            <action selector="editNameTapped:" destination="96H-yd-xXX" eventType="touchUpInside" id="hNZ-qH-1xp"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zt8-Tx-kEY">
-                                <rect key="frame" x="142.5" y="517" width="90" height="49"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="U8Y-t6-RxD">
-                                        <rect key="frame" x="15.5" y="0.0" width="59" height="22"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ch-Lu-2LK">
-                                                <rect key="frame" x="0.0" y="0.0" width="59" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="tBr-y7-kUR"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="14"/>
-                                                <state key="normal" title="Log out">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="logOutBtnTapped:" destination="96H-yd-xXX" eventType="touchUpInside" id="gHb-tI-Vm7"/>
-                                                </connections>
-                                            </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Tz-Lu-3In">
-                                                <rect key="frame" x="0.0" y="20" width="59" height="2"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="2" id="t8E-sS-2XH"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="3Tz-Lu-3In" firstAttribute="width" secondItem="3ch-Lu-2LK" secondAttribute="width" id="31l-N7-mDB"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yXK-hC-9Vh">
-                                        <rect key="frame" x="0.0" y="27" width="90" height="22"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSP-cB-QyG">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="a4v-go-Cqr"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="14"/>
-                                                <state key="normal" title="About the app">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="AboutBtnTapped:" destination="96H-yd-xXX" eventType="touchUpInside" id="MeN-2B-xOa"/>
-                                                </connections>
-                                            </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xoY-Kx-cjd">
-                                                <rect key="frame" x="0.0" y="20" width="90" height="2"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="2" id="gRJ-vF-dAn"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="xoY-Kx-cjd" firstAttribute="width" secondItem="LSP-cB-QyG" secondAttribute="width" id="ZhY-e6-Feg"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oea-Rh-4rk">
-                                <rect key="frame" x="140" y="226" width="95" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Secret Button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="CaK-rT-Cyp" kind="show" id="pOW-Kz-ZcM"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Wwh-RP-uVW">
-                                <rect key="frame" x="122.5" y="316" width="130" height="150"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3rT-j6-LGu">
-                                        <rect key="frame" x="0.0" y="0.0" width="130" height="46"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="fcg-Xo-JTI">
-                                                <rect key="frame" x="5" y="0.0" width="120" height="23"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login Method" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Or0-pd-IyO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="89" height="23"/>
-                                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="16"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWO-5z-yiy">
-                                                        <rect key="frame" x="92" y="0.5" width="28" height="22"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="28" id="Cgh-2f-LAk"/>
-                                                        </constraints>
-                                                        <state key="normal" image="pencilEditIcon"/>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="t07-o7-s5B">
-                                                <rect key="frame" x="35" y="23" width="60" height="23"/>
-                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tIk-2U-maU">
-                                        <rect key="frame" x="0.0" y="52" width="130" height="46"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="hsc-q6-0EV">
-                                                <rect key="frame" x="31.5" y="0.0" width="67.5" height="23"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="sEG-YD-aRw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="36.5" height="23"/>
-                                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="16"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghi-D4-4hL">
-                                                        <rect key="frame" x="39.5" y="0.0" width="28" height="23"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="28" id="fC9-15-pVT"/>
-                                                        </constraints>
-                                                        <state key="normal" image="pencilEditIcon"/>
-                                                        <connections>
-                                                            <action selector="editEmailBtnTapped:" destination="96H-yd-xXX" eventType="touchUpInside" id="Faf-Nv-RTX"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ichasem@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="kJu-WB-8bz">
-                                                <rect key="frame" x="0.0" y="23" width="130" height="23"/>
-                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NkC-7q-Fkn">
-                                        <rect key="frame" x="0.0" y="104" width="130" height="46"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XBp-V2-WpE">
-                                                <rect key="frame" x="2.5" y="0.0" width="125.5" height="23"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="nvd-hL-tqr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="97.5" height="23"/>
-                                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="16"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xa2-qx-HhN">
-                                                        <rect key="frame" x="97.5" y="0.5" width="28" height="22"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="28" id="oNZ-9E-1R1"/>
-                                                        </constraints>
-                                                        <state key="normal" image="pencilEditIcon"/>
-                                                        <connections>
-                                                            <action selector="editPhoneNumberTapped:" destination="96H-yd-xXX" eventType="touchUpInside" id="KYZ-xp-fWD"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="559-871-1720" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="rMZ-ca-CJU">
-                                                <rect key="frame" x="19.5" y="23" width="91.5" height="23"/>
-                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkR-X9-ePz">
-                                <rect key="frame" x="177" y="480" width="21" height="28"/>
-                                <state key="normal" image="ShareButton"/>
-                                <connections>
-                                    <action selector="shareBtnTapped:" destination="96H-yd-xXX" eventType="touchUpInside" id="4oM-L8-346"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="vd0-OJ-ExO" secondAttribute="trailing" constant="20" id="0oi-af-gyE"/>
-                            <constraint firstItem="SkR-X9-ePz" firstAttribute="centerX" secondItem="Axt-Gm-Fkg" secondAttribute="centerX" id="3Wa-fd-jXn"/>
-                            <constraint firstItem="Wwh-RP-uVW" firstAttribute="centerX" secondItem="Axt-Gm-Fkg" secondAttribute="centerX" id="Fre-lT-mjl"/>
-                            <constraint firstItem="3ch-Lu-2LK" firstAttribute="top" secondItem="SkR-X9-ePz" secondAttribute="bottom" constant="9" id="GNE-o9-Z3N"/>
-                            <constraint firstItem="zt8-Tx-kEY" firstAttribute="centerX" secondItem="Axt-Gm-Fkg" secondAttribute="centerX" id="KMX-9V-ZTm"/>
-                            <constraint firstItem="b6G-Cy-5bv" firstAttribute="centerX" secondItem="Axt-Gm-Fkg" secondAttribute="centerX" id="Kyl-dg-jGR"/>
-                            <constraint firstItem="b6G-Cy-5bv" firstAttribute="top" secondItem="pDb-Hf-9BR" secondAttribute="bottom" constant="30" id="QCB-1G-egm"/>
-                            <constraint firstItem="SkR-X9-ePz" firstAttribute="top" secondItem="Wwh-RP-uVW" secondAttribute="bottom" constant="14" id="VrD-vh-vsX"/>
-                            <constraint firstItem="vd0-OJ-ExO" firstAttribute="top" secondItem="b6G-Cy-5bv" secondAttribute="bottom" constant="8" id="ekN-H9-3by"/>
-                            <constraint firstItem="pc3-iP-zad" firstAttribute="top" secondItem="zt8-Tx-kEY" secondAttribute="bottom" constant="8" id="luu-QN-jOz"/>
-                            <constraint firstItem="vd0-OJ-ExO" firstAttribute="leading" secondItem="Axt-Gm-Fkg" secondAttribute="leadingMargin" constant="20" id="t1Q-Sk-AwT"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="iconProfile" id="gRJ-25-Zn6"/>
-                    <navigationItem key="navigationItem" title="PROFILE" id="cWM-4u-00K"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="emailEditBtn" destination="ghi-D4-4hL" id="e7R-58-6j2"/>
-                        <outlet property="emailLabel" destination="kJu-WB-8bz" id="z6N-DC-jGd"/>
-                        <outlet property="loginMethod" destination="t07-o7-s5B" id="x8e-tW-lnR"/>
-                        <outlet property="loginMethodEditBtn" destination="JWO-5z-yiy" id="yVe-Po-sLM"/>
-                        <outlet property="nameLabel" destination="ctJ-ao-zRq" id="tjd-wZ-97K"/>
-                        <outlet property="phoneNumberEditBtn" destination="xa2-qx-HhN" id="hRZ-WY-4qu"/>
-                        <outlet property="phoneNumberLabel" destination="rMZ-ca-CJU" id="woX-AJ-Q1q"/>
-                        <outlet property="profileImg" destination="b6G-Cy-5bv" id="dwu-JG-10v"/>
-                        <segue destination="tbR-of-5iZ" kind="show" identifier="AboutVC" id="wYf-BK-4iU"/>
-                        <segue destination="kJT-k9-y7V" kind="presentation" identifier="NeedAccountVC" id="ZbO-np-mDf"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fj6-sY-Anc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-711" y="-374"/>
+            <point key="canvasLocation" x="860" y="-1699.7001499250375"/>
         </scene>
         <!--Custom Tab Bar Conroller-->
         <scene sceneID="CLp-ku-iHx">
@@ -998,12 +386,11 @@ Thanks to Jesus.</string>
                     <connections>
                         <segue destination="wh6-6x-aNL" kind="relationship" relationship="viewControllers" id="f3m-gU-xUE"/>
                         <segue destination="1t2-hq-4zg" kind="relationship" relationship="viewControllers" id="UU8-A2-gEf"/>
-                        <segue destination="c3w-Rn-U2o" kind="relationship" relationship="viewControllers" id="Vnl-LG-Eh3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Kx-Wj-QUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="889" y="-1699"/>
+            <point key="canvasLocation" x="1828" y="-1699.7001499250375"/>
         </scene>
         <!--SONG LIST-->
         <scene sceneID="ao7-4G-gTr">
@@ -1068,7 +455,7 @@ Thanks to Jesus.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Mx-TI-3oB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2495.1999999999998" y="-1541.3793103448277"/>
+            <point key="canvasLocation" x="3588" y="-1700"/>
         </scene>
         <!--Songs-->
         <scene sceneID="jbw-Li-Yj1">
@@ -1088,307 +475,40 @@ Thanks to Jesus.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eua-XB-MtF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1733" y="-1541"/>
-        </scene>
-        <!--Phone LoginVC-->
-        <scene sceneID="yBN-r7-sST">
-            <objects>
-                <viewController id="eM2-Lh-Qvw" customClass="PhoneLoginVC" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="OpL-lx-QnH"/>
-                        <viewControllerLayoutGuide type="bottom" id="qvy-PH-GSf"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="esX-TP-KAq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNw-pg-LdP" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                <rect key="frame" x="38" y="379" width="299" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="DNw-pg-LdP" secondAttribute="height" multiplier="299:64" id="e8C-6O-okm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="20"/>
-                                <state key="normal" title="NEXT">
-                                    <color key="titleColor" red="0.46666666670000001" green="0.59999999999999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.46666666670000001" green="0.59999999999999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="nextBtnPressed:" destination="eM2-Lh-Qvw" eventType="touchUpInside" id="C8m-Nw-vXf"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5xG-cA-itD">
-                                <rect key="frame" x="40" y="74" width="295" height="98"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="98" id="nZJ-0N-B0E"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="CAROLING COMPANION">
-                                        <attributes>
-                                            <color key="NSColor" red="0.71764705882352942" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="44" name="BrandonGrotesque-Black"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="0.59999999999999998" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgY-Oq-K4A">
-                                <rect key="frame" x="21" y="44" width="22" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="22" id="5iA-xd-hhV"/>
-                                    <constraint firstAttribute="height" constant="22" id="RXH-iL-tKs"/>
-                                </constraints>
-                                <state key="normal" image="backArrow"/>
-                                <connections>
-                                    <action selector="backBtnPressed:" destination="eM2-Lh-Qvw" eventType="touchUpInside" id="1H2-AM-isj"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xdv-0B-DJp">
-                                <rect key="frame" x="38" y="320" width="299" height="27"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="13" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="tbi-AX-jC4">
-                                        <rect key="frame" x="0.0" y="0.0" width="299" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="ny1-hV-0dY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad"/>
-                                        <connections>
-                                            <action selector="numberPressed:" destination="eM2-Lh-Qvw" eventType="editingChanged" id="tGj-P1-ivk"/>
-                                        </connections>
-                                    </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSH-IK-Z9D">
-                                        <rect key="frame" x="0.0" y="25" width="299" height="2"/>
-                                        <color key="backgroundColor" red="0.46666666670000001" green="0.59999999999999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="2" id="2la-rH-CTd"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your phone number below to receive a one time text message to create your account." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdm-jB-cLW">
-                                <rect key="frame" x="64" y="178" width="246" height="69"/>
-                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="DNw-pg-LdP" firstAttribute="leading" secondItem="esX-TP-KAq" secondAttribute="leadingMargin" constant="22" id="4og-Wb-QHc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5xG-cA-itD" secondAttribute="trailing" constant="24" id="5Ub-7g-qR9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Pdm-jB-cLW" secondAttribute="trailing" constant="49" id="CTN-JA-90k"/>
-                            <constraint firstItem="Pdm-jB-cLW" firstAttribute="top" secondItem="5xG-cA-itD" secondAttribute="bottom" constant="6" id="MZp-SX-lak"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xdv-0B-DJp" secondAttribute="trailing" constant="22" id="Uff-ZE-dNp"/>
-                            <constraint firstItem="fgY-Oq-K4A" firstAttribute="top" secondItem="OpL-lx-QnH" secondAttribute="bottom" id="Vvm-Zu-fUw"/>
-                            <constraint firstItem="Pdm-jB-cLW" firstAttribute="leading" secondItem="esX-TP-KAq" secondAttribute="leadingMargin" constant="48" id="ZrB-ob-G4z"/>
-                            <constraint firstItem="qvy-PH-GSf" firstAttribute="top" secondItem="DNw-pg-LdP" secondAttribute="bottom" constant="224" id="aA0-fi-cih"/>
-                            <constraint firstItem="xdv-0B-DJp" firstAttribute="leading" secondItem="esX-TP-KAq" secondAttribute="leadingMargin" constant="22" id="bfV-pX-iyt"/>
-                            <constraint firstItem="5xG-cA-itD" firstAttribute="leading" secondItem="esX-TP-KAq" secondAttribute="leadingMargin" constant="24" id="cvc-aK-65a"/>
-                            <constraint firstItem="DNw-pg-LdP" firstAttribute="top" secondItem="xdv-0B-DJp" secondAttribute="bottom" constant="32" id="dht-Ft-1vF"/>
-                            <constraint firstItem="fgY-Oq-K4A" firstAttribute="leading" secondItem="esX-TP-KAq" secondAttribute="leadingMargin" constant="5" id="jB4-yl-khH"/>
-                            <constraint firstItem="5xG-cA-itD" firstAttribute="top" secondItem="OpL-lx-QnH" secondAttribute="bottom" constant="30" id="o5i-nc-TCE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="DNw-pg-LdP" secondAttribute="trailing" constant="22" id="ojn-yQ-cpj"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="xvY-vr-Kgs"/>
-                    <connections>
-                        <outlet property="loginBtnToBottom" destination="aA0-fi-cih" id="NHm-lx-Vd4"/>
-                        <outlet property="nextBtn" destination="DNw-pg-LdP" id="jOj-MY-HmG"/>
-                        <outlet property="phoneNumberField" destination="tbi-AX-jC4" id="zXs-9W-B9e"/>
-                        <segue destination="6j2-Ri-hVh" kind="show" identifier="PhoneLoginCodeVC" id="e5s-rW-PEt"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VZt-K5-aaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2969" y="1068"/>
-        </scene>
-        <!--Profile-->
-        <scene sceneID="DRD-uc-eWu">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c3w-Rn-U2o" customClass="NavigationController" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="iconProfileUnselected" selectedImage="iconProfileSelected" id="ebI-L5-1jD"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="nHF-mP-YlB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="96H-yd-xXX" kind="relationship" relationship="rootViewController" id="Plt-b6-zT8"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0aA-09-GqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationItem title="PROFILE" id="597-HL-Mhs"/>
-            </objects>
-            <point key="canvasLocation" x="-711" y="-1251"/>
-        </scene>
-        <!--Phone Login CodeVC-->
-        <scene sceneID="dPb-sn-J1T">
-            <objects>
-                <viewController id="6j2-Ri-hVh" customClass="PhoneLoginCodeVC" customModule="Caroling_Companion" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8yL-wS-FsD"/>
-                        <viewControllerLayoutGuide type="bottom" id="K0J-1l-NUV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GYj-CK-Ste">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNy-0x-2oW" customClass="OutlineBtn" customModule="Caroling_Companion" customModuleProvider="target">
-                                <rect key="frame" x="38" y="379" width="299" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="VNy-0x-2oW" secondAttribute="height" multiplier="299:64" id="N4h-Zd-hHq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="20"/>
-                                <state key="normal" title="CREATE ACCOUNT">
-                                    <color key="titleColor" red="0.46666666670000001" green="0.59999999999999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.46666666670000001" green="0.59999999999999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="createAccountBtnPressed:" destination="6j2-Ri-hVh" eventType="touchUpInside" id="Xll-8K-QaN"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="38I-1Z-Ip2">
-                                <rect key="frame" x="40" y="74" width="295" height="98"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="98" id="maO-OB-oZy"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="CAROLING COMPANION">
-                                        <attributes>
-                                            <color key="NSColor" red="0.71764705882352942" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="44" name="BrandonGrotesque-Black"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="0.59999999999999998" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24L-Vr-Fia">
-                                <rect key="frame" x="21" y="44" width="22" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="Gwz-3O-VVn"/>
-                                    <constraint firstAttribute="width" constant="22" id="gfb-A5-ebH"/>
-                                </constraints>
-                                <state key="normal" image="backArrow"/>
-                                <connections>
-                                    <action selector="backBtnPressed:" destination="6j2-Ri-hVh" eventType="touchUpInside" id="2Pu-uV-tCw"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="S26-iA-O0h">
-                                <rect key="frame" x="38" y="322" width="299" height="27"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Activation Code" textAlignment="natural" minimumFontSize="13" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="eRy-JN-ekj">
-                                        <rect key="frame" x="0.0" y="0.0" width="299" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="bze-hd-01J"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
-                                    </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDn-Lk-Azw">
-                                        <rect key="frame" x="0.0" y="25" width="299" height="2"/>
-                                        <color key="backgroundColor" red="0.46666666670000001" green="0.59999999999999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="2" id="ldg-gU-Anv"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the activation code you received below to get started." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1E-Av-QZ5">
-                                <rect key="frame" x="51" y="202" width="273" height="46"/>
-                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="38I-1Z-Ip2" firstAttribute="top" secondItem="8yL-wS-FsD" secondAttribute="bottom" constant="30" id="0qf-0n-3of"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="I1E-Av-QZ5" secondAttribute="trailing" constant="35" id="176-wo-UBB"/>
-                            <constraint firstItem="I1E-Av-QZ5" firstAttribute="top" secondItem="38I-1Z-Ip2" secondAttribute="bottom" constant="30" id="19h-Rx-ojc"/>
-                            <constraint firstItem="38I-1Z-Ip2" firstAttribute="leading" secondItem="GYj-CK-Ste" secondAttribute="leadingMargin" constant="24" id="Af7-tT-SfV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="S26-iA-O0h" secondAttribute="trailing" constant="22" id="EM4-mb-7Jv"/>
-                            <constraint firstItem="VNy-0x-2oW" firstAttribute="top" secondItem="S26-iA-O0h" secondAttribute="bottom" constant="30" id="KTp-Em-B6d"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="VNy-0x-2oW" secondAttribute="trailing" constant="22" id="McB-dr-CoW"/>
-                            <constraint firstItem="K0J-1l-NUV" firstAttribute="top" secondItem="VNy-0x-2oW" secondAttribute="bottom" constant="224" id="OjJ-XM-ZXu"/>
-                            <constraint firstItem="24L-Vr-Fia" firstAttribute="leading" secondItem="GYj-CK-Ste" secondAttribute="leadingMargin" constant="5" id="XkN-M8-xKX"/>
-                            <constraint firstItem="VNy-0x-2oW" firstAttribute="leading" secondItem="GYj-CK-Ste" secondAttribute="leadingMargin" constant="22" id="cdr-bL-7Ql"/>
-                            <constraint firstItem="S26-iA-O0h" firstAttribute="leading" secondItem="GYj-CK-Ste" secondAttribute="leadingMargin" constant="22" id="eTY-KZ-caD"/>
-                            <constraint firstItem="24L-Vr-Fia" firstAttribute="top" secondItem="8yL-wS-FsD" secondAttribute="bottom" id="gBc-Kt-6od"/>
-                            <constraint firstItem="I1E-Av-QZ5" firstAttribute="leading" secondItem="GYj-CK-Ste" secondAttribute="leadingMargin" constant="35" id="j2A-ap-5zB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="38I-1Z-Ip2" secondAttribute="trailing" constant="24" id="ztl-EU-D8N"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="Bqw-s8-9dA"/>
-                    <connections>
-                        <outlet property="activationCodeField" destination="eRy-JN-ekj" id="uP8-go-skw"/>
-                        <outlet property="createAccountBtn" destination="VNy-0x-2oW" id="4ed-3y-lfO"/>
-                        <outlet property="loginBtnToBottom" destination="OjJ-XM-ZXu" id="YQT-Ea-B7z"/>
-                        <segue destination="GES-gZ-Igc" kind="presentation" identifier="SongListVC" id="qkn-84-QOs"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3b3-Kt-chT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3926" y="869"/>
+            <point key="canvasLocation" x="2673" y="-1701"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="eZt-xo-vrT">
+        <scene sceneID="8TV-iU-2Jt">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XEL-hq-xHN" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oE6-pN-q2C" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RMk-5A-GSw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JFb-gn-OpG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="l9E-Ne-nnU" kind="relationship" relationship="rootViewController" id="3sb-SX-hXI"/>
+                        <segue destination="l9E-Ne-nnU" kind="relationship" relationship="rootViewController" id="yEK-2d-F6Z"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EAj-Wl-mTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fhH-wZ-Z6q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868" y="1217"/>
+            <point key="canvasLocation" x="-79.200000000000003" y="-1700.5997001499252"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4zy-ZS-gYo"/>
-        <segue reference="nPK-h2-N5v"/>
-        <segue reference="UTV-V0-aRm"/>
+        <segue reference="Bbm-R5-zzA"/>
         <segue reference="EV3-wj-5fI"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.71764705880000002" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
     <resources>
-        <image name="Profile-picture-default" width="150" height="150"/>
-        <image name="ShareButton" width="21" height="28"/>
         <image name="Snowmen" width="225" height="279"/>
         <image name="addPlusBtn" width="20" height="21"/>
-        <image name="backArrow" width="18" height="20"/>
         <image name="backArrowCreamColor" width="18" height="20"/>
         <image name="editPlaylistBtn" width="19" height="19"/>
         <image name="iconPlaylistSelected" width="27" height="30"/>
         <image name="iconPlaylistsUnselected" width="27" height="30"/>
-        <image name="iconProfile" width="23" height="31"/>
-        <image name="iconProfileSelected" width="23" height="31"/>
-        <image name="iconProfileUnselected" width="23" height="31"/>
         <image name="iconSongsSelected" width="20" height="30"/>
         <image name="iconSongsUnselected" width="20" height="30"/>
-        <image name="pencilEditIcon" width="19" height="19"/>
     </resources>
 </document>
