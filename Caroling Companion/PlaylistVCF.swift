@@ -14,26 +14,28 @@ class PlaylistVCF: UITableViewController {
         
     // MARK: FIREBASE STUFF
     private var ref: DatabaseReference!
-    
+    private var query: DatabaseQuery?
+
     private var playlists: [Playlist] = []
-    
     private var newPlaylist: Playlist?
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         configureDatabase()
-
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        self.ref.removeAllObservers()
+        ref.removeAllObservers()
+        query?.removeAllObservers()
     }
     
     func configureDatabase() {
         ref = DataService.ds.REF_PLAYLISTS
-        // listen for new messages in the firebase database
-        ref.observe(.value) { (snapshot: DataSnapshot) in
+        query = ref
+            .queryOrdered(byChild: DBPlaylistString.user)
+            .queryEqual(toValue: DataService.ds.REF_USER_CURRENT.key)
+        query?.observe(.value) { (snapshot: DataSnapshot) in
             self.playlists = []
             for snap in snapshot.children {
                 let playlistSnap = snap as! DataSnapshot
@@ -44,34 +46,44 @@ class PlaylistVCF: UITableViewController {
         }
     }
     
-    
     // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return playlists.count
+        return playlists.isEmpty ? 1 : playlists.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        // Dequeue cell
+        print(playlists.count)
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlaylistNameCell", for: indexPath) as! PlaylistNameCellF
-        let playlist = playlists[indexPath.row]
-        let name = playlist.title!
-        cell.configurePlaylistNameCell(playlistName: name)
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = softGreen
-        cell.selectedBackgroundView = backgroundView
-        return cell
+        if playlists.isEmpty {
+            cell.configurePlaylistNameCell(playlistName: "Create New Playlist!")
+//            cell.isUserInteractionEnabled = false
+            let backgroundView = UIView()
+            backgroundView.backgroundColor = .clear
+            cell.selectedBackgroundView = backgroundView
+            return cell
+
+        } else {
+            let playlist = playlists[indexPath.row]
+            let name = playlist.title!
+            cell.configurePlaylistNameCell(playlistName: name)
+            let backgroundView = UIView()
+            backgroundView.backgroundColor = softGreen
+            cell.selectedBackgroundView = backgroundView
+            return cell
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let playlist = playlists[indexPath.row]
-        self.performSegue(withIdentifier: "showPlaylist", sender: playlist)
+        if playlists.isEmpty {
+            performSegue(withIdentifier: "CreatePlaylist", sender: newPlaylist)
+        } else {
+            let playlist = playlists[indexPath.row]
+            self.performSegue(withIdentifier: "showPlaylist", sender: playlist)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -24,14 +24,14 @@ class SongListTVC: UITableViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        self.query?.removeAllObservers()
-        self.ref.removeAllObservers()
+        query?.removeAllObservers()
+        ref.removeAllObservers()
     }
     
     func configureDatabase() {
-        self.ref = DataService.ds.REF_SONGS
-        self.query = ref.queryOrdered(byChild: DBSongString.title)
-        self.query?.observe(.value, with: { (snapshot) in
+        ref = DataService.ds.REF_SONGS
+        query = ref.queryOrdered(byChild: DBSongString.title)
+        query?.observe(.value, with: { (snapshot) in
             self.songsArray = []
             for snap in snapshot.children {
                 let songSnap = snap as! DataSnapshot
