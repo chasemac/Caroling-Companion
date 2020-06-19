@@ -56,13 +56,10 @@ class CreatePlaylistVCF: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let song = songsArray[indexPath.row]
         if playlist!.songKeysDict[song.id!] != nil {
-            print("removing: ",song.id!)
-
             playlist!.songKeysDict[song.id!] = nil
             songsArray[indexPath.row].inPlaylist = false
             tableView.reloadData()
         } else {
-            print("adding: ",song.id!)
             playlist!.songKeysDict[song.id!] = true
             songsArray[indexPath.row].inPlaylist = true
         }

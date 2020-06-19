@@ -11,27 +11,36 @@ import Firebase
 import FirebaseDatabase
 
 class PlaylistVCF: UITableViewController {
-    
+        
     // MARK: FIREBASE STUFF
     private var ref: DatabaseReference!
-    private var _refHandle: DatabaseHandle!
     
     private var playlists: [Playlist] = []
+    
     private var newPlaylist: Playlist?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         configureDatabase()
-    }
 
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.ref.removeAllObservers()
+    }
     
     func configureDatabase() {
         ref = DataService.ds.REF_PLAYLISTS
         // listen for new messages in the firebase database
-        _refHandle = ref.observe(.childAdded) { (snapshot: DataSnapshot)in
-            let playlist = Playlist(data: snapshot)
-            self.playlists.append(playlist)
-            self.tableView.insertRows(at: [IndexPath(row: self.playlists.count-1, section: 0)], with: .automatic)
+        ref.observe(.value) { (snapshot: DataSnapshot) in
+            self.playlists = []
+            for snap in snapshot.children {
+                let playlistSnap = snap as! DataSnapshot
+                let playlist = Playlist(data: playlistSnap)
+                self.playlists.append(playlist)
+            }
+            self.tableView.reloadData()
         }
     }
     
@@ -48,7 +57,7 @@ class PlaylistVCF: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         // Dequeue cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlaylistNameCell", for: indexPath) as! PlaylistNameCellF
         let playlist = playlists[indexPath.row]
@@ -61,8 +70,8 @@ class PlaylistVCF: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-               let playlist = playlists[indexPath.row]
-               self.performSegue(withIdentifier: "showPlaylist", sender: playlist)
+        let playlist = playlists[indexPath.row]
+        self.performSegue(withIdentifier: "showPlaylist", sender: playlist)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -80,20 +89,15 @@ class PlaylistVCF: UITableViewController {
             let firebasePlaylist = DataService.ds.REF_PLAYLISTS.childByAutoId()
             firebasePlaylist.setValue(playlist)
             if firebasePlaylist.key != nil {
-               newPlaylist = Playlist(id: firebasePlaylist.key!)
+                newPlaylist = Playlist(id: firebasePlaylist.key!)
                 detailVC.playlist = newPlaylist
             }
         }
     }
-
     
     @IBAction func createPlaylist(_ sender: Any) {
         if newPlaylist != nil {
             performSegue(withIdentifier: "CreatePlaylist", sender: newPlaylist)
         }
     }
-    
 }
-
-
-

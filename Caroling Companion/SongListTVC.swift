@@ -22,19 +22,24 @@ class SongListTVC: UITableViewController {
         configureDatabase()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.query?.removeAllObservers()
+        self.ref.removeAllObservers()
+    }
+    
     func configureDatabase() {
         self.ref = DataService.ds.REF_SONGS
         self.query = ref.queryOrdered(byChild: DBSongString.title)
         self.query?.observe(.value, with: { (snapshot) in
+            self.songsArray = []
             for snap in snapshot.children {
                 let songSnap = snap as! DataSnapshot
                 let song = Song(data: songSnap)
                 self.songsArray.append(song)
-                self.tableView.insertRows(at: [IndexPath(row: self.songsArray.count-1, section: 0)], with: .automatic)
             }
-            self.query?.removeAllObservers()
+            self.tableView.reloadData()
         })
-        tableView.reloadData()
     }
     
     // MARK: TableViewMethods

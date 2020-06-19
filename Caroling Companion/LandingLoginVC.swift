@@ -34,7 +34,6 @@ class LandingLoginVC: UIViewController {
     }
     
     
-    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         super.viewWillAppear(true)
