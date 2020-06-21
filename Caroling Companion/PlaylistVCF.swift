@@ -60,12 +60,10 @@ class PlaylistVCF: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlaylistNameCell", for: indexPath) as! PlaylistNameCellF
         if playlists.isEmpty {
             cell.configurePlaylistNameCell(playlistName: "Create New Playlist!")
-//            cell.isUserInteractionEnabled = false
             let backgroundView = UIView()
             backgroundView.backgroundColor = .clear
             cell.selectedBackgroundView = backgroundView
             return cell
-
         } else {
             let playlist = playlists[indexPath.row]
             let name = playlist.title!
@@ -75,6 +73,23 @@ class PlaylistVCF: UITableViewController {
             cell.selectedBackgroundView = backgroundView
             return cell
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if let id = playlists[indexPath.row].id {
+                ref.child(id).removeValue()
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+            let deleteButton = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
+                self.tableView.dataSource?.tableView!(self.tableView, commit: .delete, forRowAt: indexPath)
+                return
+            }
+        deleteButton.backgroundColor = christmasRed
+            return [deleteButton]
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
