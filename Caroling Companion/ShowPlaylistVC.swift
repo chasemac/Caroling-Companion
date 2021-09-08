@@ -9,69 +9,85 @@
 import UIKit
 import Firebase
 
-class ShowPlaylistVC: SongListTVC {
+class ShowPlaylistVC: UITableViewController {
+    private var query: DatabaseQuery?
+    private var ref: DatabaseReference!
+    var playlist: Playlist!
     
-    fileprivate var query: DatabaseQuery?
-    fileprivate var ref: DatabaseReference!
-    var playlistF : DataSnapshot!
+    private var songsArray: [Song] = []
     
     var playListSongKeys: [String] = []
     
     override func viewDidLoad() {
-        
-        print("the first one!! ----->>>> \(playlistF)")
         super.viewDidLoad()
-        let playlist = playlistF.value as! [String:Any]
-        let navTitle =  playlist[DBPlaylistString.title] as? String ?? "No Title"
-        navigationItem.title = navTitle.uppercased()
+        configureDatabase()
     }
-
-    override func configureDatabase() {
-        let playlistDict = playlistF.value as! NSDictionary
-        if playlistDict[DBPlaylistString.songs] != nil {
-            let songKeyDict = playlistDict[DBPlaylistString.songs] as! [String:Any]
-            for (key, _) in songKeyDict {
-                self.playListSongKeys.append(key)
-                
-            }
-            for key in playListSongKeys {
-                self.loadSongs(key: key)
-            }
+    
+    func configureDatabase() {
+        let navTitle = playlist.title!
+        navigationItem.title = navTitle.uppercased()
+        
+        for (key, _) in playlist.songKeysDict {
+            self.loadSongs(key: key)
         }
-
     }
     
     func loadSongs(key: String) {
-        songsF = []
         let songRef = DataService.ds.REF_SONGS
-        
         songRef.child(key).observeSingleEvent(of: .value, with: { (snapshot) in
-                self.songsF.append(snapshot)
-            print("the snap building one!! ----->>>> \(snapshot)")
-                self.tableView.insertRows(at: [IndexPath(row: self.songsF.count-1, section: 0)], with: .automatic)
+            let song = Song(data: snapshot)
+            self.songsArray.append(song)
+            self.tableView.insertRows(at: [IndexPath(row: self.songsArray.count-1, section: 0)], with: .automatic)
         })
         tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("the second one!! ----->>>> \(playlistF)")
         if segue.identifier == "EditPlaylist" {
             let detailVC = segue.destination.contents as! CreatePlaylistVCF
-            detailVC.playlistF = sender as? DataSnapshot
+            detailVC.playlist = sender as? Playlist
         }
-        super.prepare(for: segue, sender: sender)
+        if segue.identifier == "detailSegue" {
+            let detailVC = segue.destination as! SongLyricsVC
+            detailVC.song = sender as? Song
+        }
     }
     
     @IBAction func editBtnTapped(_ sender: Any) {
-        print("the third one!! ----->>>> \(playlistF)")
-        performSegue(withIdentifier: "EditPlaylist", sender: playlistF)
+        performSegue(withIdentifier: "EditPlaylist", sender: playlist)
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    // TODO: Clicking Edit Button While Searching Crashes
-//    override func editingChange(_ sender: Any) {
-//        // Fix this
-//    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.songsArray.count
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let song = songsArray[indexPath.row]
+        performSegue(withIdentifier: "detailSegue", sender: song)
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SongCell", for: indexPath) as! SongCellF
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = softGreen
+        cell.selectedBackgroundView = backgroundView
+        
+        let song = songsArray[indexPath.row]
+        cell.configureSongNameCell(song: song)
+        
+        return cell
+    }
+    
+    
+    
+
 }

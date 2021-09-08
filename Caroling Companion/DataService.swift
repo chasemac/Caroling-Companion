@@ -8,7 +8,6 @@
 
 import Foundation
 import Firebase
-// import SwiftKeychainWrapper
 
 fileprivate var production: Bool = false
 
@@ -78,13 +77,6 @@ class DataService {
             REF_USERS.child(user!.uid).updateChildValues(userData as Any as! [AnyHashable : Any])
         
     }
-    
-//    func setTextFieldToDataBaseText(_ DBRef: String, textField: UITextField) {
-//        REF_USER_CURRENT.child(DBRef).observeSingleEvent(of: .value, with: { (snapshot) in
-//            if snapshot.value != nil {
-//                textField.text = snapshot.value! as? String
-//            }
-//        })
-//    }
+
     
 }

@@ -13,24 +13,12 @@ class PlaylistSongCellF: SongCellF {
     
     @IBOutlet weak var playlistCheckBox: UIImageView!
     
-    override func configureCell(_ snapshot: DataSnapshot, indexPath: NSIndexPath, playlistKey: String?) {
-        super.configureCell(snapshot, indexPath: indexPath, playlistKey: playlistKey)
-        addedToPlaylist(playlistKey: playlistKey, snapshot: snapshot)
+    func configureCreatePlaylistSongNameCell(song: Song) {
+        songNameLabel.text = song.title
+        songNameLabel.textColor = .darkGray
+        
+        self.backgroundColor = christmasWhite
+        self.playlistCheckBox.image = UIImage(named: song.inPlaylist ? "deleteCellBtn" : "addPlusBtn")
+        
     }
-    
-    func addedToPlaylist(playlistKey: String?, snapshot: DataSnapshot) {
-        if playlistKey != nil {
-            let playlistRef = DataService.ds.REF_PLAYLISTS.child(playlistKey!).child(DBPlaylistString.songs).child(snapshot.key)
-            playlistRef.observeSingleEvent(of: .value, with: { (snapshot) in
-                if let _ = snapshot.value as? NSNull {
-                    self.playlistCheckBox.image = UIImage(named: "addPlusBtn")
-                } else {
-                    self.playlistCheckBox.image = UIImage(named: "deleteCellBtn")
-                }
-                
-            })
-        }
-
-    }
-    
 }

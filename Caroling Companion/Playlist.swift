@@ -1,95 +1,42 @@
-////
-////  Playlist.swift
-////  Caroling Companion
-////
-////  Created by Chase McElroy on 5/17/17.
-////  Copyright © 2017 Chase McElroy. All rights reserved.
-////
+//
+//  Playlist.swift
+//  Caroling Companion
+//
+//  Created by Chase McElroy on 5/17/17.
+//  Copyright © 2017 Chase McElroy. All rights reserved.
+//
 // Testing something in Git
 
-//import Foundation
-//import FirebaseDatabase
-//
-////
-////  Song.swift
-////  Caroling Companion
-////
-////  Created by Chase McElroy on 4/20/17.
-////  Copyright © 2017 Chase McElroy. All rights reserved.
-////
-//
-//import Foundation
-//import Firebase
-//
-//class Playlist {
-//    
-//    fileprivate var _songs: String!
-//    fileprivate var _user: String!
-//    fileprivate var _title: String?
-//    fileprivate var _playlistKey: String!
-//    fileprivate var _playlistRef: FIRDatabaseReference!
-//    fileprivate var _postedDate: String!
-//    
-//    
-//    var songs: String {
-//        return _songs
-//    }
-//    
-//    var user: String {
-//        return _user
-//    }
-//    
-//    var title: String? {
-//        return _title
-//    }
-//    
-//    var playlistKey: String {
-//        return _playlistKey
-//    }
-//    
-//    
-//    var postedDate: String {
-//        return _postedDate
-//    }
-//    
-//    
-//    init(songs: String, user: String, title: String, postedDate: String) {
-//        self._songs = songs
-//        self._user = user
-//        self._title = title
-//        self._postedDate = postedDate
-//    }
-//    
-//    init(playlistKey: String) {
-//        self._playlistKey = playlistKey
-//    }
-//    
-//    init(playlistKey: String, playlistData: Dictionary<String, AnyObject>) {
-//        
-//        self._playlistKey = playlistKey
-//        
-//        if let songs = playlistData[DBPlaylistString.songs] as? String {
-//            self._songs = songs
-//        }
-//        
-//        if let user = playlistData[DBPlaylistString.user] as? String {
-//            self._user = user
-//        }
-//        
-//        if let title = playlistData[DBPlaylistString.title] as? String {
-//            self._title = title
-//        }
-//        
-//        if let postedDate = playlistData[DBPlaylistString.postedDate] as? String {
-//            self._postedDate = postedDate
-//        }
-//        
-//
-//        _playlistRef = DataService.ds.REF_PLAYLISTS.child(_playlistKey)
-//
-//        
-//    }
-//    
-//}
-//
-//
+
+import Foundation
+import Firebase
+
+class Playlist {
+    var songKeysDict: [String: Bool]
+    var title: String!
+    var id: String!
+    
+    init(data: DataSnapshot) {
+        var songs: [String] = []
+        self.id = data.key
+        let playlist = data.value as! NSDictionary
+        let name = playlist[DBSongString.title] as? String ?? "No Title"
+        let songList = playlist[DBPlaylistString.songs] as? [String: Any] ?? [:]
+        var songKeysDict: [String: Bool] = [:]
+        for (key, _) in songList {
+            songs.append(key)
+            songKeysDict[key] = true
+        }
+        self.songKeysDict = songKeysDict
+        self.title = name
+    }
+    
+    init(id: String) {
+        self.id = id
+        self.title = NewPlaylistName
+        self.songKeysDict = [:]
+    }
+    
+}
+
+

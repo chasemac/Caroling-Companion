@@ -10,23 +10,15 @@ import Firebase
 
 class SongLyricsVC: SwipeRightToDismissVC {
     
-    var songF : DataSnapshot!
-    
+    var song: Song!
 
     @IBOutlet weak var txtView: UITextView!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if Auth.auth().currentUser?.uid != nil {
-            print("Logged in user UID ------> \(Auth.auth().currentUser!.uid as Any)")
-        } else {
-            print("no current user")
-        }
         initText()
-        print("the almost there one!! ----->>>> \(self.songF)")
-        loadSongs(song: self.songF)
+        loadSongs(song: song)
         
     }
     
@@ -40,23 +32,18 @@ class SongLyricsVC: SwipeRightToDismissVC {
         self.tabBarController?.tabBar.isHidden = false
     }
     
-    func loadSongs(song: DataSnapshot) {
-        if let songDict = song.value as? [String : AnyObject] {
-            let title = songDict[DBSongString.title] as? String ?? "Title Unavailable"
-            navigationItem.title = title.uppercased()
-            let lyrics = songDict[DBSongString.lyrics] as? String ?? "Lyrics Unavailable"
-            let lyricsSwift = lyrics.replacingOccurrences(of: "<br>", with: "\n")
-            txtView.text = lyricsSwift
-
-        } else {
-            txtView.text = "Unable To Load Song"
-        }
+    func loadSongs(song: Song) {
+        let title = song.title ?? "Title Unavailable"
+        navigationItem.title = title.uppercased()
+        let lyrics = song.lyrics ?? "Lyrics Unavailable"
+        let lyricsSwift = lyrics.replacingOccurrences(of: "<br>", with: "\n")
+        txtView.text = lyricsSwift
     }
     
     func initText() {
         txtView.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(SongLyricsVC.preferredContentSizeChanged(_:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
+        txtView.textColor = .darkGray
+        NotificationCenter.default.addObserver(self, selector: #selector(self.preferredContentSizeChanged(_:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
     }
     
     @objc func preferredContentSizeChanged(_ notification: Notification) {
@@ -71,18 +58,5 @@ class SongLyricsVC: SwipeRightToDismissVC {
     @IBAction func backBtnPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-//    @IBAction func songListBtnPressed(_ sender: AnyObject) {
-//        dismiss(animated: true, completion: nil)
-//        
-//        songListBtn.backgroundColor = UIColor(red: 0.718, green: 0.310, blue: 0.310, alpha: 1.00)
-//    }
-    
-    //    func loadVideo(song: FIRDataSnapshot) {
-    //        if let songDict = song.value as? [String : AnyObject] {
-    //            let video = songDict[DBSongString.videoURL] as! String!
-    //            let youtubeURL = YOUTUBE_URL + video!
-    //            videoView.allowsInlineMediaPlayback = true
-    //            videoView.loadHTMLString("<iframe width=\"\(videoView.frame.width)\" height=\"\(videoView.frame.height)\" src=\"\(youtubeURL)?&playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
-    //        }
-    //    }
+
 }

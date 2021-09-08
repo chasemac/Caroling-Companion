@@ -8,8 +8,6 @@
 
 import Foundation
 import FirebaseAuth
-//import FBSDKLoginKit
-
 
 typealias Completion = (_ errMsg: String?, _ data: AnyObject?) -> Void
 
@@ -33,81 +31,6 @@ class AuthService {
             }
         })
     }
-    
-    func loginwithPhoneNumber(verificationCode: String, onComplete: Completion?) {
-        let verificationID = UserDefaults.standard.string(forKey: "authVerificationID")
-        let credential = PhoneAuthProvider.provider().credential(
-            withVerificationID: verificationID!,
-            verificationCode: verificationCode)
-        Auth.auth().signIn(with: credential) { (user, error) in
-            if let error = error {
-                self.handleFirebaseError(error: error as NSError, onComplete: onComplete, email: "")
-                print(error)
-                return
-            }
-            // User is signed in
-//            DataService.ds.createFirebaseDBUser(provider: DBProviderString.phoneNumber, user: user, error: error)
-//            print("We signed in!!!! ----> UID: \(user!.uid)")
-            onComplete!(nil, user)
-        }
-    }
-    
-    func firebaseFacebookLogin(_ credential: AuthCredential, onComplete: Completion?) {
-//        guard Auth.auth().currentUser?.isAnonymous != true else {
-//            let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-//            print("attenpting to merge \(String(describing: Auth.auth().currentUser?.uid)) with Facebook")
-//            Auth.auth().signIn(with: credential, completion: { (user, error) in
-//                if error != nil {
-//                    print("CHASE: Unable to auth with Firebase - \(String(describing: error))")
-//                    // Handle Errors
-//                    self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: "")
-//                } else {
-//                    user?.link(with: credential, completion: { (user, error) in
-//                        print("CHASE: Attempted Link with Firebase")
-//                        if user != nil {
-//                            DataService.ds.createFirebaseDBUser(provider: DBProviderString.facebook, user: user, error: error)
-//                            onComplete!(nil, user)
-//                        } else {
-//                            onComplete!(error as? String, nil)
-//                            print("error saving user")
-//                            print(error!)
-//                        }
-//
-//                    })
-//                }
-//            })
-//            return
-//        }
-//
-//        Auth.auth().signIn(with: credential, completion: { (user, error) in
-//            if error != nil {
-//                print("CHASE: Unable to auth with Firebase - \(String(describing: error))")
-//                // Handle Errors
-//                self.handleFirebaseError(error: error! as NSError, onComplete: onComplete, email: "")
-//            } else if user != nil {
-//                print("CHASE: Succesffully authenticated with Firebase")
-//                DataService.ds.createFirebaseDBUser(provider: DBProviderString.facebook, user: user, error: error)
-//                onComplete!(nil, user)
-//            }
-//        })
-    }
-    
-//    func createFirebaseUserWithEmail(email: String, password: String, onComplete: Completion?) {
-//        guard Auth.auth().currentUser?.isAnonymous != true else {
-//            print("merger")
-//            let credential = EmailAuthProvider.credential(withEmail: email, password: password)
-//            Auth.auth().currentUser!.link(with: credential, completion: { (user, error) in
-//                DataService.ds.createFirebaseDBUser(provider: DBProviderString.email, user: user, error: error)
-//                onComplete!(nil, user)
-//            })
-//            return
-//        }
-//        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-//            DataService.ds.createFirebaseDBUser(provider: DBProviderString.email, user: user, error: error)
-//            onComplete!(nil, user)
-//        })
-//
-//    }
     
     
     func handleFirebaseError(error: NSError, onComplete: Completion?, email: String?) {
